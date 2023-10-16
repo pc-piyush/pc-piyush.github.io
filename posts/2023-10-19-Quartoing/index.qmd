@@ -7,7 +7,7 @@ author:
     orcid: 0000-0003-0970-5552
     #affiliation: Master of Environmental Data Science Program @ The Bren School (UCSB) & The National Center for Ecological Analysis & Synthesis
     #affiliation-url: https://ucsb-meds.github.io/ 
-date: 10-19-2023
+date: 10-16-2023
 categories: [Quarto, R, Website] # self-defined categories
 citation: 
   url: https://pc-piyush.github.io/posts/2023-10-19-Quartoing/ 
