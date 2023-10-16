@@ -29,7 +29,9 @@ about:
       url: "https://github.com/pc-piyush"
     - text: Substack
       #icon: substack
-      url: "https://substack.com/@piyushchaudhari"      
+      url: "https://substack.com/@piyushchaudhari" 
+    - text: Posts
+      url: "posts.qmd"
 comments: false
 ---
 
