@@ -36,9 +36,9 @@ comments: false
 ::: panel-tabset
 # Welcome
 
-I am a Data Analyst working at [UF Health Integrated Data Repository](https://idr.ufhealth.org/). My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the [OneFlorida+ Clinical Research Consortium](https://onefloridaconsortium.org/). Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests.
+I am a Data Analyst working at [UF Health Integrated Data Repository](https://idr.ufhealth.org/). My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the [OneFlorida+ Clinical Research Consortium](https://onefloridaconsortium.org/). Additionally, I also work to improve research infrastructure at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and fulfilling research data requests.
 
-Previously, I have working as a Statistical Data Analyst at [Department of Epidemiology](https://epidemiology.phhp.ufl.edu/) working on research projects with NIH, NCATS, CDC and NIDA to design targeted interventions.
+Previously, I have worked as a Statistical Data Analyst at [Department of Epidemiology](https://epidemiology.phhp.ufl.edu/) working on research projects with NIH, NCATS, CDC and NIDA to design targeted interventions.
 
 # Work
 
@@ -54,7 +54,7 @@ Previously, I have working as a Statistical Data Analyst at [Department of Epide
 [Data Management Analyst II]{.underline} \| UF Department of Epidemiology (06/18 - 02/23)
 
 -   Lead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions
--   Creating visualizations, hotspots and heatmap analysis for community intervention planning
+-   Created visualizations, hotspots and heatmap analysis for community intervention planning
 
 # Education
 
