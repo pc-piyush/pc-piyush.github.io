@@ -12,9 +12,9 @@ about:
   image-width: 10cm
   #postcards: onofre
   links:
-    - text: LinkedIn
-      url: "https://www.linkedin.com/in/piyush-chaudhari/"
-      icon: linkedin
+    #- text: LinkedIn
+    #  url: "https://www.linkedin.com/in/piyush-chaudhari/"
+    #  icon: linkedin
     - text: Email
       url: "mailto:piyushchaudhari244@gmail.com"
       icon: envelope
@@ -28,10 +28,11 @@ about:
       icon: github
       url: "https://github.com/pc-piyush"
     - text: Substack
-      #icon: substack
+      icon: substack
       url: "https://substack.com/@piyushchaudhari" 
-    - text: Posts
+    - text: Portfolio
       url: "posts.qmd"
+      icon: code
 comments: false
 ---
 

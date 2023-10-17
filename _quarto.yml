@@ -23,6 +23,10 @@ website:
   page-footer: 
     background: "#D6DBDF"
     right: 
+      - icon: github
+        href: https://github.com/pc-piyush
+      - icon: linkedin
+        href: https://www.linkedin.com/in/piyush-chaudhari/
       - icon: twitter
         href: https://twitter.com/iampiyushvc 
       - icon: instagram
