@@ -1,26 +1,17 @@
 project:
   type: website
   output-dir: docs
-  
-execute: 
-  freeze: auto
-
 website:
   title: "Piyush Chaudhari"
   favicon: photos/Piyush.png
   twitter-card:
-     creator: "@iampiyushvc"
-  navbar: 
-    #background: black
+    creator: "@iampiyushvc"
+  navbar:
     right:
-      - href: index.qmd
-        text: Piyush
-      - href: about.qmd
-        text: Profile
-      
-  #page-footer:
-    #background: black
-    #left: "© Copyright 2023 Piyush Chaudhari. Except where otherwise noted, all text and images licensed CC-BY-NC 4.0."
+      - text: "Piyush"
+        href: index.qmd
+      - text: "Profile"
+        href: about.qmd
   page-footer: 
     background: "#D6DBDF"
     right: 
@@ -28,8 +19,7 @@ website:
         href: https://twitter.com/iampiyushvc 
       - icon: instagram
         href: https://www.instagram.com/iampiyushvc
-     
-    left: "This website was build using [Quarto](https://quarto.org/). 2023 Piyush Chaudhari"
+    left: "This website was build using [Quarto](https://quarto.org/). 2024 Piyush Chaudhari"
 format:
   html:
     theme: 
@@ -41,4 +31,3 @@ format:
     page-layout: full
 
 editor: visual
-

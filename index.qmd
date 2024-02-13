@@ -7,7 +7,7 @@ navbar: false
 about:
   id: hero-heading
   template: trestles
-  image: "Home DP.jpeg"
+  image: "Seaworld.jpeg"
   image-shape: round
   image-width: 10cm
   #postcards: onofre
@@ -24,34 +24,34 @@ about:
     #- text: Instagram
     #  url: "https://www.instagram.com/iampiyushvc/"
     #  icon: instagram
-    - text: GitHub
-      icon: github
-      url: "https://github.com/pc-piyush"
+    #- text: GitHub
+    #  icon: github
+    #  url: "https://github.com/pc-piyush"
     - text: Substack
-      #icon: substack
-      url: "https://substack.com/@piyushchaudhari"      
+      icon: substack
+      url: "https://substack.com/@piyushchaudhari"
+    #- text: LetterBoxd
+    #  icon: letterboxd
+    #  url: "https://letterboxd.com/iampiyushvc/"    
 comments: false
 ---
 
 ::: panel-tabset
 # Welcome
 
-I am a Data Analyst working at [UF Health Integrated Data Repository](https://idr.ufhealth.org/). My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the [OneFlorida+ Clinical Research Consortium](https://onefloridaconsortium.org/). Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests.
-
-Previously, I have working as a Statistical Data Analyst at [Department of Epidemiology](https://epidemiology.phhp.ufl.edu/) working on research projects with NIH, NCATS, CDC and NIDA to design targeted interventions.
+I am a Data Analyst working at [UF Health Integrated Data Repository](https://idr.ufhealth.org/). My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the [OneFlorida+ Clinical Research Consortium](https://onefloridaconsortium.org/). In my current role, I will be various common data models like [OMOP](https://ohdsi.github.io/CommonDataModel/) and [PCORNET](https://pcornet.org/news/resources-pcornet-common-data-model/). Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests. 
 
 # Work
 
-[Data Management Analyst III]{.underline} \| UF Health IDR (02/23-now)
+[Data Management Analyst III]{.underline} \| UF Health IDR
 
--   Liaison between IDR and OneFlorida+ Clinical Research Network
 -   Design and develop data science pipelines to improve the coverage and quality of the data
 -   Working as an honest broker for research data focusing on electronic health records
--   Running ETL pipelines for OneFlorida+ data refresh, All of Us Research Program, UF Health Tumor Registry, COVID-19 PCORI data refresh, National COVID Cohort Collaborative (N3C), OneFlorida+ i2b2 refresh and other data requests
+-   Running ETL pipelines for [OneFlorida+](https://onefloridaconsortium.org), [All of Us Research Program](https://allofus.nih.gov) and [AoU CLAD](https://allofus.nih.gov/funding-and-program-partners/center-for-linkage-and-aquisition-of-data), [National COVID Cohort Collaborative- N3C](https://ncats.nih.gov/research/research-activities/n3c) and other custom requests
 -   Develop software and packages to run and validate data in OMOP Common Data Model
--   Conduct OneFlorida+ i2b2 trainings and workshops for hospital and research partners and working with OneFlorida+ Coordinating Center to process new user provisioning
+-   Conduct i2b2 and OMOp ATLAS trainings and workshops for hospital and research partners
 
-[Data Management Analyst II]{.underline} \| UF Department of Epidemiology (06/18 - 02/23)
+[Data Management Analyst II]{.underline} \| UF Department of Epidemiology
 
 -   Lead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions
 -   Creating visualizations, hotspots and heatmap analysis for community intervention planning
@@ -72,7 +72,7 @@ Coming up ......
 
 # Publications
 
--   Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida (*accepted for publication in Journal of the American Board of Family Medicine in September 2023*)
+-   Ayodeji Otufowora, Kathleen L. Egan, Piyush V. Chaudhari, Aderonke A. Okusanya, Afeez O. Ogidan, Linda B. Cottler [Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida](https://www.jabfm.org/content/early/2023/12/01/jabfm.2023.230227R1). The Journal of the American Board of Family Medicine Dec 2023, jabfm.2023.230227R1; DOI: 10.3122/jabfm.2023.230227R1
 
 -   Fidler AL, Chaudhari P, Sims V, Payne-Murphy J, Fischer J, Cottler LB. [Insomnia among community members in Florida: Associations with demographics, health conditions, and social support](https://pubmed.ncbi.nlm.nih.gov/37313380/). J Clin Transl Sci. 2023 May 5;7(1):e128. doi: 10.1017/cts.2023.536. PMID: 37313380; PMCID: PMC10260341.
 
