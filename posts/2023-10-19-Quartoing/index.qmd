@@ -1,0 +1,23 @@
+---
+title: "Quartoing"
+description: "The story of an old procrastination and a young inspiration"
+author:
+  - name: Piyush Chaudhari
+    url: https://pc-piyush.github.io/
+    orcid: 0000-0003-0970-5552
+    #affiliation: Master of Environmental Data Science Program @ The Bren School (UCSB) & The National Center for Ecological Analysis & Synthesis
+    #affiliation-url: https://ucsb-meds.github.io/ 
+date: 10-16-2023
+categories: [Quarto, R, Website] # self-defined categories
+citation: 
+  url: https://pc-piyush.github.io/posts/2023-10-19-Quartoing/ 
+#image: preview_image.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..
+
+Obviously, preaching doesn't get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.
+
+The inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn't much surprised given her work ethic is unparalleled, and she doesn't stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out [here](https://kaitlynswacil.github.io/). Its still a work in progress, like mine is, and like most of the world is.
+

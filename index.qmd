@@ -39,32 +39,37 @@ comments: false
 ::: panel-tabset
 # Welcome
 
-I am a Data Analyst working at [UF Health Integrated Data Repository](https://idr.ufhealth.org/). My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the [OneFlorida+ Clinical Research Consortium](https://onefloridaconsortium.org/). In my current role, I will be various common data models like [OMOP](https://ohdsi.github.io/CommonDataModel/) and [PCORNET](https://pcornet.org/news/resources-pcornet-common-data-model/). Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests. 
+I am a Data Analyst working at [UF Health Integrated Data Repository](https://idr.ufhealth.org/). My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the [OneFlorida+ Clinical Research Consortium](https://onefloridaconsortium.org/). In my current role, I work on common data models like [OMOP](https://ohdsi.github.io/CommonDataModel/) and [PCORNET](https://pcornet.org/news/resources-pcornet-common-data-model/). Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests.
 
 # Work
 
-[Data Management Analyst III]{.underline} \| UF Health IDR
+##### [Data Management Analyst III]{.underline}
+
+*UF Health Office of Data Science and Research Implementation*
 
 -   Design and develop data science pipelines to improve the coverage and quality of the data
 -   Working as an honest broker for research data focusing on electronic health records
 -   Running ETL pipelines for [OneFlorida+](https://onefloridaconsortium.org), [All of Us Research Program](https://allofus.nih.gov) and [AoU CLAD](https://allofus.nih.gov/funding-and-program-partners/center-for-linkage-and-aquisition-of-data), [National COVID Cohort Collaborative- N3C](https://ncats.nih.gov/research/research-activities/n3c) and other custom requests
+-   Adding new elements to source databases
 -   Develop software and packages to run and validate data in OMOP Common Data Model
--   Conduct i2b2 and OMOp ATLAS trainings and workshops for hospital and research partners
+-   Conduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners
 
-[Data Management Analyst II]{.underline} \| UF Department of Epidemiology
+##### [Data Management Analyst II]{.underline}
+
+*UF Department of Epidemiology*
 
 -   Lead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions
 -   Creating visualizations, hotspots and heatmap analysis for community intervention planning
 
 # Education
 
-[**Master of Science in Biostatistics**]{.underline}
+##### [Master of Science in Biostatistics]{.underline}
 
-University of Florida \| Gainesville, FL (2016-2018)
+*University of Florida \| Gainesville, FL (2016-2018)*
 
-[**Bachelor of Technology in Biotechnology**]{.underline}
+##### [Bachelor of Technology in Biotechnology]{.underline}
 
-Vellore Institute of Technology \| India (2012 - 2016)
+*Vellore Institute of Technology \| India (2012 - 2016)*
 
 # Projects
 
@@ -72,11 +77,11 @@ Coming up ......
 
 # Publications
 
--   Ayodeji Otufowora, Kathleen L. Egan, Piyush V. Chaudhari, Aderonke A. Okusanya, Afeez O. Ogidan, Linda B. Cottler [Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida](https://www.jabfm.org/content/early/2023/12/01/jabfm.2023.230227R1). The Journal of the American Board of Family Medicine Dec 2023, jabfm.2023.230227R1; DOI: 10.3122/jabfm.2023.230227R1
+-   Ayodeji Otufowora, Kathleen L. Egan, Piyush V. Chaudhari, Aderonke A. Okusanya, Afeez O. Ogidan, Linda B. Cottler [*Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida*](https://www.jabfm.org/content/37/1/112). The Journal of the American Board of Family Medicine Dec 2023, jabfm.2023.230227R1; DOI: 10.3122/jabfm.2023.230227R1
 
--   Fidler AL, Chaudhari P, Sims V, Payne-Murphy J, Fischer J, Cottler LB. [Insomnia among community members in Florida: Associations with demographics, health conditions, and social support](https://pubmed.ncbi.nlm.nih.gov/37313380/). J Clin Transl Sci. 2023 May 5;7(1):e128. doi: 10.1017/cts.2023.536. PMID: 37313380; PMCID: PMC10260341.
+-   Fidler AL, Chaudhari P, Sims V, Payne-Murphy J, Fischer J, Cottler LB. [*Insomnia among community members in Florida: Associations with demographics, health conditions, and social support*](https://pubmed.ncbi.nlm.nih.gov/37313380/). J Clin Transl Sci. 2023 May 5;7(1):e128. doi: 10.1017/cts.2023.536. PMID: 37313380; PMCID: PMC10260341.
 
--   Austin-Datta RJ, Chaudhari PV, Cheng TD, Klarenberg G, Striley CW, Cottler LB. [Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program](https://pubmed.ncbi.nlm.nih.gov/36436165/). J Community Health. 2023 Apr;48(2):338-346. doi: 10.1007/s10900-022-01169-2. Epub 2022 Nov 27. PMID: 36436165; PMCID: PMC9702843.
+-   Austin-Datta RJ, Chaudhari PV, Cheng TD, Klarenberg G, Striley CW, Cottler LB. [*Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program*](https://pubmed.ncbi.nlm.nih.gov/36436165/). J Community Health. 2023 Apr;48(2):338-346. doi: 10.1007/s10900-022-01169-2. Epub 2022 Nov 27. PMID: 36436165; PMCID: PMC9702843.
 
--   Cheng TD, Chaudhari PV, Bitsie KR, Striley CW, Varma DS, Cottler LB. [The HealthStreet Cancer Survivor Cohort: a Community Registry for Cancer Research](https://pubmed.ncbi.nlm.nih.gov/35089522/). J Cancer Surviv. 2022 Jan 28:10.1007/s11764-022-01173-4. doi: 10.1007/s11764-022-01173-4. Epub ahead of print. PMID: 35089522; PMCID: PMC9329490.
+-   Cheng TD, Chaudhari PV, Bitsie KR, Striley CW, Varma DS, Cottler LB. [*The HealthStreet Cancer Survivor Cohort: a Community Registry for Cancer Research*](https://pubmed.ncbi.nlm.nih.gov/35089522/). J Cancer Surviv. 2022 Jan 28:10.1007/s11764-022-01173-4. doi: 10.1007/s11764-022-01173-4. Epub ahead of print. PMID: 35089522; PMCID: PMC9329490.
 :::
