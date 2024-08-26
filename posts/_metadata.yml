@@ -5,4 +5,4 @@ freeze: true
 
 # enable banner style tile blocks
 title-block-banner: true
-navbar: false
+navbar: true
