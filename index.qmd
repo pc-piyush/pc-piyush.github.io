@@ -3,7 +3,7 @@ title: "Piyush Chaudhari"
 #subtitle: "I am a statistician by education and a data analyst by profession. I love solving problems, and the problem I want to dedicate my professional aptitude is to make understanding data easy and accessible by storytelling and visualization."
 #backgroundcolor: black
 #body-color: white
-navbar: false
+navbar: true
 about:
   id: hero-heading
   template: trestles
