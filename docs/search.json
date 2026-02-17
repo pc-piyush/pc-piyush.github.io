@@ -1,10 +1,157 @@
 [
   {
+    "objectID": "Untitled/2023-10-19-Quartoing/index.html",
+    "href": "Untitled/2023-10-19-Quartoing/index.html",
+    "title": "Quartoing",
+    "section": "",
+    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Chaudhari, Piyush},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nChaudhari, Piyush. 2023. “Quartoing.” October 16, 2023. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#limitations-in-current-methods-of-variant-interpretation",
+    "href": "presentations/GMS6804_20260217/slides.html#limitations-in-current-methods-of-variant-interpretation",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Limitations in current methods of variant interpretation",
+    "text": "Limitations in current methods of variant interpretation\n\nTraditional penetrance estimates rely on small, disease-enriched cohorts → ascertainment bias\nPatients are classified in a binary manner - case/control, sick/healthy, etc. while ignoring the fact that diseases exist on a spectrum\nStudies with smaller scope cannot assess rare variants with significant accuracy\nDifficult to interpret if Variants of Uncertain Signifance (VUS) are associated with disease pathogenecity or are harmful"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#research-question",
+    "href": "presentations/GMS6804_20260217/slides.html#research-question",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Research Question",
+    "text": "Research Question\n\n\nGiven a genetic variant exists in a patient, can machine learning and statistical methods predict what is its penetrance?"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#methodology",
+    "href": "presentations/GMS6804_20260217/slides.html#methodology",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Methodology",
+    "text": "Methodology\n\n\n\nDevelopment, testing, and application of disease-predictive ML models to generate disease scores\nIdentification of individuals carrying rare P variants in genes corresponding to 10 dominant genetic conditions\n\n\n\n\n\n\nArrhythmogenic Right Ventricular Cardiomyopathy (ARVC)\nFamilial Breast Cancer (FBC)\nFamilial Hypercholesterolemia (FH)\nHypertrophic Cardiomyopathy (HCM)\nAdult Hypophosphatasia (HPP)\n\n\n\n\n\nLong QT Syndrome (LQTS)\nLynch Syndrome (LS)\nMonogenic Diabetes (MD)\nPolycystic Kidney Disease (PKD)\nvon Willebrand Disease (VWD)\n\n\n\n\n\nComputation and characterization of ML penetrance"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#methodology-1",
+    "href": "presentations/GMS6804_20260217/slides.html#methodology-1",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Methodology",
+    "text": "Methodology\n\n\n\nThe disease scores can be used as a continuous measure of measuring odds of disease.\nInstead of\n\n\n“you have the variant, you might get sick”\n\n\nthe model will allow us to predict\n\n\n“you have this variant, based on the data, you risk for disease is x%”"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#data",
+    "href": "presentations/GMS6804_20260217/slides.html#data",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nCohort\nN Participants\nPurpose\nMedian Age\n\n\n\n\nMSDW\n1,325,257\nModel training & validation\n55 years\n\n\nBioMe ML\n22,041\nModel testing (holdout)\n56 years\n\n\nBioMe Exome\n28,953\nPenetrance assessment\n65 years"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#workflow",
+    "href": "presentations/GMS6804_20260217/slides.html#workflow",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Workflow",
+    "text": "Workflow"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#prediction-model-features",
+    "href": "presentations/GMS6804_20260217/slides.html#prediction-model-features",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Prediction Model Features",
+    "text": "Prediction Model Features\n\nInput Features (47 lab tests + 9 vital signs)\n\nRoutine laboratory measurements (median values)\nComplete blood count, metabolic panel\nLipid profiles, liver/kidney function\nVital signs (BP, heart rate, BMI)\nDemographics (age, sex, ancestry)"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#predictive-performance-of-ml-models",
+    "href": "presentations/GMS6804_20260217/slides.html#predictive-performance-of-ml-models",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Predictive Performance of ML Models",
+    "text": "Predictive Performance of ML Models\n\n\n\n\nMetric\nMSDW (Internal)\nBioMe (Holdout)\n\n\n\n\nMean AUROC\n0.85 (0.77-0.95)\n0.84 (0.79-0.95)\n\n\nSensitivity\n0.77 (0.70-0.87)\n0.78 (0.74-0.88)\n\n\nSpecificity\n0.78 (0.68-0.91)\n0.78 (0.67-0.92)\n\n\n\nExample:\n\nFH model identified LDL-C, total cholesterol, age, and HDL-C as most important features\nGlucose, age, body mass index (BMI), and glomerular filtration rate (GFR) were the most important features for the MD models"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#ml-penetrance-evaluation",
+    "href": "presentations/GMS6804_20260217/slides.html#ml-penetrance-evaluation",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "ML Penetrance Evaluation",
+    "text": "ML Penetrance Evaluation\n\n\nApply ML models to generate continuous disease probability scores (0-1)\nUse Generalized Linear Mixed-Effects Model (GLMM) to compute penetrance\nAccounts for variability between carriers and across ML iterations\n\nlogit-transformed disease scores from all 50 ML iterations in all carriers, which accounted for variability in scores between different carriers (random effects term) and variability in scores between different ML iterations within the same individual (residual random effects term)\nThe model’s inverse logit coefficients and error terms were then used to provide a point estimate of ML penetrance, 95% confidence interval (95% CI), and p-value"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results",
+    "href": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "ML Penetrance Results",
+    "text": "ML Penetrance Results\n\n\n\n\n\n\n\n\n\nFinding Category\nKey Results\nStatistical Significance\n\n\n\n\nPathogenic vs. Benign Variants\nPathogenic variants: median ML penetrance = 0.52 (IQR 0.38)Benign variants: median ML penetrance = 0.28 (IQR 0.22)\np-value = 6.1 × 10⁻⁸\n\n\nRare vs. Common Variants\nRare variants (AF &lt;0.001): median penetrance = 0.46Common variants (AF ≥0.001): median penetrance = 0.28\np-value = 8.9 × 10⁻⁴⁸"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-1",
+    "href": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-1",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "ML Penetrance Results",
+    "text": "ML Penetrance Results\n\n\n\n\n\n\n\n\n\nFinding Category\nKey Results\nStatistical Significance\n\n\n\n\nClinical Outcome Correlation - PKD\nPer 0.1 increase in ML penetrance:• Chronic kidney disease: OR = 1.11• End-stage renal disease: OR = 1.09• Secondary hypertension: OR = 1.05\np-value = 2.9×10⁻¹³p-value = 4.7×10⁻¹³p-value = 1.3×10⁻⁸\n\n\nClinical Outcome Correlation - FH\nMyocardial infarction: OR = 1.02 per 0.1 ML penetrance increase\np-value = 2.4×10⁻³"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-2",
+    "href": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-2",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "ML Penetrance Results",
+    "text": "ML Penetrance Results\n\n\n\n\n\n\n\n\n\nFinding Category\nKey Results\nStatistical Significance\n\n\n\n\nFunctional Validation - BRCA1\n0.01 increase in ML penetrance → 0.027 decrease in DNA repair function score\np-value = 2.9×10⁻³\n\n\nFunctional Validation - LDLR\nHigher ML penetrance correlated with reduced LDL uptake\nr = -0.76, p-value = 0.021\n\n\nFunctional Validation - KCNQ1\nHigher ML penetrance → 303-ms increase in deactivation time\np-value = 9.1×10⁻³"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-3",
+    "href": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-3",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "ML Penetrance Results",
+    "text": "ML Penetrance Results\n\n\n\n\n\n\n\n\n\nFinding Category\nKey Results\nStatistical Significance\n\n\n\n\nModel Performance\nMean AUROC: 0.85 (MSDW) and 0.84 (BioMe ML)Mean sensitivity: 0.77-0.78Mean specificity: 0.78\nRange: 0.77-0.95\n\n\nVUS Characterization\nVUS median ML penetrance = 0.46 (IQR 0.31)Higher than benign, lower than pathogenic\np-value = 4.9×10⁻⁸ vs. Bp-value = 0.011 vs. P"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-4",
+    "href": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-4",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "ML Penetrance Results",
+    "text": "ML Penetrance Results\n\n\n\n\n\n\n\n\n\nFinding Category\nKey Results\nStatistical Significance\n\n\n\n\nLoF Variants\nMedian ML penetrance = 0.48 (IQR 0.36)Higher than benign variants21% had high penetrance ≥0.75, 18% had low penetrance ≤0.25\np-value = 5.7×10⁻⁸"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-5",
+    "href": "presentations/GMS6804_20260217/slides.html#ml-penetrance-results-5",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "ML Penetrance Results",
+    "text": "ML Penetrance Results\n\n\n\n\n\n\n\n\n\nFinding Category\nKey Results\nStatistical Significance\n\n\n\n\nUK Biobank Validation\nML penetrance values significantly correlated across BioMe and UK BiobankStrongest correlations: ARVC (R=0.96), MD (R=0.58)\np-value = 1.8×10⁻³ overall"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#clinical-applications",
+    "href": "presentations/GMS6804_20260217/slides.html#clinical-applications",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Clinical Applications",
+    "text": "Clinical Applications\n\n\nImproved Variant Classification: Quantitative risk estimates beyond P/LP/VUS categories\nEnhanced Risk Stratification: Individualized screening protocols based on ML penetrance\nGenetic Counseling: More precise risk communication to patients\nClinical Trial Recruitment: Identify high-penetrance variant carriers\nResource Allocation: Prioritize monitoring for high-risk individuals"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#study-strengths",
+    "href": "presentations/GMS6804_20260217/slides.html#study-strengths",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Study Strengths",
+    "text": "Study Strengths\n\n\nLarge-scale: &gt;1.3 million participants with deep phenotyping\nUnselected population: Reduced ascertainment bias vs. family studies\nQuantitative: Continuous penetrance estimates, not binary\nClinically grounded: Uses routine lab data already in EHR\nValidated: Functional data, clinical outcomes, external cohorts\nHigh-throughput: Scalable to other health systems and diseases"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#limitations-future-directions",
+    "href": "presentations/GMS6804_20260217/slides.html#limitations-future-directions",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Limitations & Future Directions",
+    "text": "Limitations & Future Directions\n\nLimitations:\n\nDependent on EHR data quality and completeness\nFocused on autosomal dominant conditions\nLimited diversity in training cohorts\nDoes not address genetic modifiers or environmental factors\n\nFuture Work:\n\nExtend to other inheritance patterns and rare diseases\nDevelop ancestry-specific models\nProspective studies following variant carriers longitudinally\nIntegration with functional assays and polygenic risk scores"
+  },
+  {
+    "objectID": "presentations/GMS6804_20260217/slides.html#key-takeaways",
+    "href": "presentations/GMS6804_20260217/slides.html#key-takeaways",
+    "title": "Machine Learning-Based Penetrance of Genetic Variants",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\n\nML-based penetrance provides refined, quantitative disease risk estimates for genetic variants\nML penetrance correlates with clinical outcomes and functional data, validating biological relevance\nEnables interpretation of VUS and LoF variants through clinical trajectory analysis\nRepresents a scalable blueprint for precision medicine using routine EHR data"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Piyush Chaudhari",
     "section": "",
     "text": "WelcomeWorkEducationProjectsPublications\n\n\nI am a Data Analyst working at UF Health Integrated Data Repository. My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the OneFlorida+ Clinical Research Consortium. In my current role, I work on common data models like OMOP and PCORNET. Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests.\n\n\n\nData Management Analyst III\nUF Health Office of Data Science and Research Implementation\n\nDesign and develop data science pipelines to improve the coverage and quality of the data\nWorking as an honest broker for research data focusing on electronic health records\nRunning ETL pipelines for OneFlorida+, All of Us Research Program and AoU CLAD, National COVID Cohort Collaborative- N3C and other custom requests\nAdding new elements to source databases\nDevelop software and packages to run and validate data in OMOP Common Data Model\nConduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners\n\n\n\nData Management Analyst II\nUF Department of Epidemiology\n\nLead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions\nCreating visualizations, hotspots and heatmap analysis for community intervention planning\n\n\n\n\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)\n\n\n\nComing up 12345 ……\n\n\n\nAyodeji Otufowora, Kathleen L. Egan, Piyush V. Chaudhari, Aderonke A. Okusanya, Afeez O. Ogidan, Linda B. Cottler Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida. The Journal of the American Board of Family Medicine Dec 2023, jabfm.2023.230227R1; DOI: 10.3122/jabfm.2023.230227R1\nFidler AL, Chaudhari P, Sims V, Payne-Murphy J, Fischer J, Cottler LB. Insomnia among community members in Florida: Associations with demographics, health conditions, and social support. J Clin Transl Sci. 2023 May 5;7(1):e128. doi: 10.1017/cts.2023.536. PMID: 37313380; PMCID: PMC10260341.\nAustin-Datta RJ, Chaudhari PV, Cheng TD, Klarenberg G, Striley CW, Cottler LB. Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program. J Community Health. 2023 Apr;48(2):338-346. doi: 10.1007/s10900-022-01169-2. Epub 2022 Nov 27. PMID: 36436165; PMCID: PMC9702843.\nCheng TD, Chaudhari PV, Bitsie KR, Striley CW, Varma DS, Cottler LB. The HealthStreet Cancer Survivor Cohort: a Community Registry for Cancer Research. J Cancer Surviv. 2022 Jan 28:10.1007/s11764-022-01173-4. doi: 10.1007/s11764-022-01173-4. Epub ahead of print. PMID: 35089522; PMCID: PMC9329490."
+  },
+  {
+    "objectID": "posts/2023-10-19-Quartoing/index.html",
+    "href": "posts/2023-10-19-Quartoing/index.html",
+    "title": "Quartoing",
+    "section": "",
+    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Chaudhari, Piyush},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nChaudhari, Piyush. 2023. “Quartoing.” October 16, 2023. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
   },
   {
     "objectID": "about.html",
@@ -14,24 +161,10 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "posts/2023-10-19-Quartoing/index.html",
-    "href": "posts/2023-10-19-Quartoing/index.html",
-    "title": "Quartoing",
-    "section": "",
-    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Piyush Chaudhari},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nPiyush Chaudhari. 2023. “Quartoing.” October 16, 2023. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
-  },
-  {
-    "objectID": "Untitled/2023-10-19-Quartoing/index.html",
-    "href": "Untitled/2023-10-19-Quartoing/index.html",
-    "title": "Quartoing",
-    "section": "",
-    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Piyush Chaudhari},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nPiyush Chaudhari. 2023. “Quartoing.” October 16, 2023. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
-  },
-  {
     "objectID": "posts.html",
     "href": "posts.html",
     "title": "Piyush Chaudhari",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nOct 16, 2023\n\n\nQuartoing\n\n\nPiyush Chaudhari\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nOct 16, 2023\n\n\nQuartoing\n\n\nPiyush Chaudhari\n\n\n\n\n\n\nNo matching items"
   }
 ]
