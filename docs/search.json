@@ -32,7 +32,7 @@
     "href": "presentations/GMS6804_20260217/slides.html#methodology-1",
     "title": "Machine Learning-Based Penetrance of Genetic Variants",
     "section": "Methodology",
-    "text": "Methodology\n\n\n\nThe disease scores can be used as a continuous measure of measuring odds of disease.\nInstead of\n\n\n“you have the variant, you might get sick”\n\n\nthe model will allow us to predict\n\n\n“you have this variant, based on the data, you risk for disease is x%”"
+    "text": "Methodology\n\n\n\nThe disease scores can be used as a continuous measure of measuring odds of disease.\nInstead of\n\n\n“you have the variant, you might get sick”\n\n\nthe model will allow us to predict\n\n“you have this variant, based on the data, you risk for disease is x%”"
   },
   {
     "objectID": "presentations/GMS6804_20260217/slides.html#data",
