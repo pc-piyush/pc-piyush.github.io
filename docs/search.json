@@ -221,7 +221,7 @@
     "href": "presentations/GMS6805_20260226/slides.html#future-directions",
     "title": "Learning the natural history of human disease with generative transformers",
     "section": "Future Directions",
-    "text": "Future Directions\n\n\nAdd genomic data, imaging, wearables, prescription records\nConnect Delphi to LLMs as a risk module\nIntegration of free-text clinical notes"
+    "text": "Future Directions\n\n\nAdd genomic data, imaging, wearables, prescription records\nConnect Delphi to LLMs as a risk module\nIntegration of free-text clinical notes\n\nIf interested, you can also read Dr. Yonghui Wu’s thoughts on the paper in Nature"
   },
   {
     "objectID": "presentations/GMS6805_20260226/slides.html#information-modelling-context",
@@ -235,7 +235,7 @@
     "href": "presentations/GMS6805_20260226/slides.html#questions",
     "title": "Learning the natural history of human disease with generative transformers",
     "section": "Questions?",
-    "text": "Questions?\nIf interested, you can also read Dr. Yonghui Wu’s thoughts on the paper in Nature"
+    "text": "Questions?"
   },
   {
     "objectID": "posts.html",
