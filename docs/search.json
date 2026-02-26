@@ -207,7 +207,7 @@
     "href": "presentations/GMS6805_20260226/slides.html#clinical-and-biological-revalence-2",
     "title": "Learning the natural history of human disease with generative transformers",
     "section": "Clinical and Biological Revalence",
-    "text": "Clinical and Biological Revalence\n\n\nEarly Cancer or any disease screenings\nClinical Decision Support by including multi-disease risk\nPredicting community-level disease burden for healthcare planning"
+    "text": "Clinical and Biological Revalence\n\n\nEarly Cancer or any disease screenings\nClinical Decision Support by including multi-disease risk\nPredicting community-level disease burden for healthcare planning\nDigital Twin technology and Similar Patient identification for personalized medicine"
   },
   {
     "objectID": "presentations/GMS6805_20260226/slides.html#limitations",
@@ -235,7 +235,7 @@
     "href": "presentations/GMS6805_20260226/slides.html#questions",
     "title": "Learning the natural history of human disease with generative transformers",
     "section": "Questions?",
-    "text": "Questions?"
+    "text": "Questions?\nIf interested, you can also read Dr. Yonghui Wu’s thoughts on the paper in Nature"
   },
   {
     "objectID": "posts.html",
