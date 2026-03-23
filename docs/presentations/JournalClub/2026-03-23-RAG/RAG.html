@@ -158,14 +158,14 @@ Piyush Chaudhari
 <li><p>Limitations -</p>
 <ul>
 <li><strong>Difficult to update</strong> without retraining</li>
-<li><strong>Hallucinations</strong>- model interpolate from compressed parametric memory,</li>
+<li><strong>Hallucinations</strong>- model interpolate from compressed parametric memory</li>
 <li>There is no way to tell what part was looked at to produce output</li>
 </ul></li>
-<li><p>This paper treats retrival as a <strong>learnable</strong>, <strong>differentiable</strong> element that can be plugged into a generative model</p></li>
+<li><p>This paper treats retrieval as a <strong>learnable</strong>, <strong>differentiable</strong> element that can be plugged into a generative model</p></li>
 <li><p>A jointly trained system where</p>
 <ul>
 <li><strong>Model</strong> knows what to query</li>
-<li><strong>Generator</strong> knows how to use what is query</li>
+<li><strong>Generator</strong> knows how to use what is queried</li>
 </ul></li>
 </ul>
 </div>
@@ -186,22 +186,24 @@ Piyush Chaudhari
 <p><strong>Non-parametric Memory</strong></p>
 </ins>
 <ul>
-<li>Indexed text, external to the model, that model looks up at runtime</li>
+<li>Indexed text, external to the model, which the model looks up at runtime</li>
 <li>The index can be swapped, updated or replaced independent of model weights</li>
 </ul></li>
-<li><p>RAG combines both types of memories - retriever fetches relevant documents from non-parametric memory, and generators (that stores parametric knowledge) synthesizes a response using both</p></li>
-<li><p>Prior work on the hybrid approach was done only on extractive tasks (REALM,ORQA) but RAG extends it to generative seq2seq tasks</p></li>
+<li><p>RAG combines both types of memories - <strong>retriever</strong> fetches relevant documents from non-parametric memory, and <strong>generators</strong> (that stores parametric knowledge) synthesizes a response using both</p></li>
+<li><p>Prior work on the hybrid approach was done only on extractive tasks (<span title="REALM is a pre-training method that uses a neural retriever to find relevant documents to help a language model learn knowledge, resulting in improved performance on open-domain QA tasks"><strong>REALM</strong></span>,<span title="ORQA focuses specifically on the open-retrieval QA framework, often serving as the foundational fine-tuning structure for models like REALM"><strong>ORQA</strong></span>) but RAG extends it to generative seq2seq tasks</p></li>
 </ul>
 </div>
 </section>
 <section id="approach" class="slide level2">
 <h2>Approach</h2>
 <!-- ![](images/x1.png){.absolute .fragment bottom="10" right="10" width="650"} -->
+<div style="font-size: 65%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="images/x1.PNG" class="lightbox" data-gallery="my-gallery2" title="The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query x, we use Maximum Inner Product Search (MIPS) to find the top-K documents zi. For final prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents"><img data-src="images/x1.PNG" alt="The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query x, we use Maximum Inner Product Search (MIPS) to find the top-K documents zi. For final prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents"></a></p>
 <figcaption>The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query <span class="math inline">\(x\)</span>, we use Maximum Inner Product Search (MIPS) to find the top-K documents <span class="math inline">\(z\)</span><sub><span class="math inline">\(i\)</span></sub>. For final prediction <span class="math inline">\(y\)</span>, we treat <span class="math inline">\(z\)</span> as a latent variable and marginalize over seq2seq predictions given different documents</figcaption>
 </figure>
+</div>
 </div>
 </section>
 <section id="methods" class="slide level2">
@@ -237,6 +239,15 @@ Piyush Chaudhari
 $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j|\mathbf{x}) \prod_{i=1}^{N} P_{\theta}(y_i|\mathbf{x}, \mathbf{z}_j, \mathbf{y}_{<i})
 -->
 </div>
+<div style="font-size: 65%;">
+<ul>
+<li><span title="BART generates the answer one token at a time, each token conditioned on everything before it. Multiplying these token probabilities together gives the probability of the whole sequence y given one specific document z"><span class="math inline">\(\prod p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span></span> is the standard autoregressive generator</li>
+<li><span title="weight each full-sequence probability by how likely we were to retrieve that document, and sum them all up"><span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x)\)</span></span> does it for top-K documents</li>
+</ul>
+<!--
+$p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j|\mathbf{x}) \prod_{i=1}^{N} P_{\theta}(y_i|\mathbf{x}, \mathbf{z}_j, \mathbf{y}_{<i})
+-->
+</div>
 </section>
 <section id="models-1" class="slide level2">
 <h2>Models</h2>
@@ -245,20 +256,35 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li><strong>RAG-Token Model</strong></li>
 </ol>
 <ul>
-<li>draw different latent document for each target token</li>
-<li>allows the generator to choose content from different documents when generating a response</li>
+<li>Draw different latent document for each target token</li>
+<li>Allows the generator to choose content from different documents when generating a response</li>
 <li>Once top K documents are retrieved, the generator produces a distribution for the next output token for each document, before marginalizing</li>
-<li>the process is repeated for following output token</li>
+<li>The process is repeated for following output token</li>
 </ul>
 </div>
 <div style="font-size: 60%;">
 <center>
-<span class="math inline">\(p\)</span><sub>RAG-Token</sub><span class="math inline">\((y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x)\prod p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
+<span class="math inline">\(p\)</span><sub>RAG-Token</sub><span class="math inline">\((y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x) p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
+</center>
+</div>
+</section>
+<section id="models-2" class="slide level2">
+<h2>Models</h2>
+<div style="font-size: 65%;">
+<ol start="2" type="1">
+<li><strong>RAG-Token Model</strong></li>
+</ol>
+</div>
+<div style="font-size: 60%;">
+<center>
+<span class="math inline">\(p\)</span><sub>RAG-Token</sub><span class="math inline">\((y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x) p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
 </center>
 </div>
 <div style="font-size: 65%;">
 <ul>
-<li>RAG can be used for sequence classification tasks by considering target class as a target sequence of length one, where <strong>RAG-Sequence</strong> and <strong>RAG-Token</strong> are equivalent</li>
+<li><p>The product is outside while the sum is inside, compared to RAG Sequence. At each token position <span class="math inline">\(i\)</span>, the model considers all K documents simultaneously, weights each document’s contribution to this specific token by the retrieval probability, and sums.</p></li>
+<li><p>Then moves to position <span class="math inline">\(i+1\)</span> and does it again — potentially with a different document dominating.</p></li>
+<li><p>RAG can be used for sequence classification tasks by considering target class as a target sequence of length one, where <strong>RAG-Sequence</strong> and <strong>RAG-Token</strong> are equivalent</p></li>
 </ul>
 </div>
 </section>
@@ -285,7 +311,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </div>
 <div style="font-size: 65%;">
 <ul>
-<li>Higher dot product equals higher probability of retrival</li>
+<li><span title="Both the query and every document get compressed into vectors of the same dimension — say 768 numbers each. The dot product measures how geometrically aligned those two vectors are. High alignment = high similarity = high retrieval probability. The exp turns the raw dot product score into a positive number. Dividing by the sum across all documents (the normalization implied by ∝) turns it into a proper probability distribution that sums to 1.">Higher dot product equals higher probability of retrival</span></li>
 <li>Finding top-K is a <span title="Maximum Inner Product Search (MIPS) is a retrieval technique that finds the vector in a dataset with the highest inner product (often representing similarity) to a given query vector"><strong>Maximum Inner Product Search</strong></span> problem</li>
 <li>Solved approximately using <span title="Faiss (Facebook AI Similarity Search) is an open-source library for efficient, high-dimensional dense vector similarity search and clustering. Developed by Meta AI Research, it enables searching through millions or billions of vectors—even those not fitting in RAM—using algorithms like HNSW and PCA. It supports CPU and GPU acceleration, making it ideal for recommendation systems and semantic search"><strong>FAISS</strong></span> + <span title="Hierarchical Navigable Small World (HNSW) is a state-of-the-art graph-based algorithm for Approximate Nearest Neighbor (ANN) search, designed for fast, high-recall similarity searches in large vector datasets. It builds a multi-layered, hierarchical graph structure where higher layers feature long-range links for fast, coarse searching, and lower layers provide short-range links for refined, accurate searches"><strong>HNSW</strong></span> graphs - sub-linear time over 21 million documents</li>
 </ul>
@@ -405,14 +431,14 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <div style="font-size: 65%;">
 <ul>
 <li>Trained end-to-end on input/output pairs (<span class="math inline">\(x\)</span><sub><span class="math inline">\(j\)</span></sub>,<span class="math inline">\(y\)</span><sub><span class="math inline">\(j\)</span></sub> ) only — no supervision on which document to retrieve</li>
-<li>Loss function: negative marginal log-likelihood of the target output
+<li><span title="log p(yⱼ|xⱼ) is the log probability the model assigns to the correct answer. If the model is confident and correct, this number is close to 0 (log of 1). If the model is wrong or uncertain, it’s a large negative number. We want to maximize the log probability of correct answers — equivalently, minimize the negative log probability. That’s the loss.">Loss function</span>: negative marginal log-likelihood of the target output
 <center>
 <span class="math inline">\(Loss\)</span> = - <span class="math inline">\(\sum\)</span><sub><span class="math inline">\(j\)</span></sub> <span class="math inline">\(log\)</span> <span class="math inline">\(p(y\)</span><sub><span class="math inline">\(j\)</span></sub>|<span class="math inline">\(x\)</span><sub><span class="math inline">\(j\)</span></sub> <span class="math inline">\()\)</span>
 </center></li>
-<li>Gradient flows through BART (generator) and the query encoder</li>
-<li>The system learns to retrieve by learning what helps it generate correct answers</li>
+<li><span title="The gradient of this loss flows backward through BART (adjusting how it generates) and through the query encoder (adjusting what it retrieves). Both improve simultaneously from a single signal: did you produce the right answer?">Gradient flows through BART (generator) and the query encoder</span></li>
+<li><span title="No document is ever labeled as correct or incorrect. The retriever learns what to fetch purely because fetching the right documents leads to lower loss on the generation side">The system learns to retrieve by learning what helps it generate correct answers</span></li>
 <li>Only the query encoder and BART are updated; document encoder + index are frozen</li>
-<li>Optimizer: Adam with stochastic gradient descent</li>
+<li>Optimizer: <span title="Adaptive Moment estimation.“Adaptive” — each parameter gets its own effective learning rate, adapted based on history. “Moment” — it tracks two statistical moments of the gradients over time- the mean of recent gradients and the mean of recent squared gradients">Adam</span> with stochastic gradient descent</li>
 </ul>
 </div>
 </section>
@@ -422,7 +448,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <ul>
 <li>RAG-Token
 <ul>
-<li>Per-token probability factors cleanly → plug directly into standard beam decoder</li>
+<li>Per-token probability factors are plugged directly into standard beam decoder</li>
 <li>Transition probability</li>
 </ul>
 <center>

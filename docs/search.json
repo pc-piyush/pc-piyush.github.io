@@ -11,21 +11,21 @@
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#limitations-in-current-methods",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Limitations in current methods",
-    "text": "Limitations in current methods\n\n\nStandard models (For e.g. BART) store their knowledge as model weights during training\nLimitations -\n\nDifficult to update without retraining\nHallucinations- model interpolate from compressed parametric memory,\nThere is no way to tell what part was looked at to produce output\n\nThis paper treats retrival as a learnable, differentiable element that can be plugged into a generative model\nA jointly trained system where\n\nModel knows what to query\nGenerator knows how to use what is query"
+    "text": "Limitations in current methods\n\n\nStandard models (For e.g. BART) store their knowledge as model weights during training\nLimitations -\n\nDifficult to update without retraining\nHallucinations- model interpolate from compressed parametric memory\nThere is no way to tell what part was looked at to produce output\n\nThis paper treats retrieval as a learnable, differentiable element that can be plugged into a generative model\nA jointly trained system where\n\nModel knows what to query\nGenerator knows how to use what is queried"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#types-of-memory",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#types-of-memory",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Types of Memory",
-    "text": "Types of Memory\n\n\n\nParametric Memory\n\n\nKnowledge is frozen into model weights\nCan’t update it without retraining\nFast to infer insights but limited and brittle\n\n\nNon-parametric Memory\n\n\nIndexed text, external to the model, that model looks up at runtime\nThe index can be swapped, updated or replaced independent of model weights\n\nRAG combines both types of memories - retriever fetches relevant documents from non-parametric memory, and generators (that stores parametric knowledge) synthesizes a response using both\nPrior work on the hybrid approach was done only on extractive tasks (REALM,ORQA) but RAG extends it to generative seq2seq tasks"
+    "text": "Types of Memory\n\n\n\nParametric Memory\n\n\nKnowledge is frozen into model weights\nCan’t update it without retraining\nFast to infer insights but limited and brittle\n\n\nNon-parametric Memory\n\n\nIndexed text, external to the model, which the model looks up at runtime\nThe index can be swapped, updated or replaced independent of model weights\n\nRAG combines both types of memories - retriever fetches relevant documents from non-parametric memory, and generators (that stores parametric knowledge) synthesizes a response using both\nPrior work on the hybrid approach was done only on extractive tasks (REALM,ORQA) but RAG extends it to generative seq2seq tasks"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#approach",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#approach",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Approach",
-    "text": "Approach\n\n\n\n\nThe paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query \\(x\\), we use Maximum Inner Product Search (MIPS) to find the top-K documents \\(z\\)\\(i\\). For final prediction \\(y\\), we treat \\(z\\) as a latent variable and marginalize over seq2seq predictions given different documents"
+    "text": "Approach\n\n\n\n\n\nThe paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query \\(x\\), we use Maximum Inner Product Search (MIPS) to find the top-K documents \\(z\\)\\(i\\). For final prediction \\(y\\), we treat \\(z\\) as a latent variable and marginalize over seq2seq predictions given different documents"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#methods",
@@ -39,14 +39,21 @@
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Models",
-    "text": "Models\n\n\nRAG-Sequence Model\n\n\nuses the same retrived document to generate complete sequence\ntreats retrieved document as a single latent variable marginalized to get seq2seq probability \\(p(y|x)\\) via a top-K approximation\ntop K documents are retrived using the retriver and generator produces output sequence probability of each document, then marginalized\n\n\n\n\\(p\\)RAG-Sequence\\((y|x)\\) \\(\\approx\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)p\\)\\(\\theta\\)\\((y|x,z)\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)"
+    "text": "Models\n\n\nRAG-Sequence Model\n\n\nuses the same retrived document to generate complete sequence\ntreats retrieved document as a single latent variable marginalized to get seq2seq probability \\(p(y|x)\\) via a top-K approximation\ntop K documents are retrived using the retriver and generator produces output sequence probability of each document, then marginalized\n\n\n\n\\(p\\)RAG-Sequence\\((y|x)\\) \\(\\approx\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)p\\)\\(\\theta\\)\\((y|x,z)\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\n\n\n\\(\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\) is the standard autoregressive generator\n\\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\) does it for top-K documents"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models-1",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models-1",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Models",
-    "text": "Models\n\n\nRAG-Token Model\n\n\ndraw different latent document for each target token\nallows the generator to choose content from different documents when generating a response\nOnce top K documents are retrieved, the generator produces a distribution for the next output token for each document, before marginalizing\nthe process is repeated for following output token\n\n\n\n\n\\(p\\)RAG-Token\\((y|x)\\) \\(\\approx\\) \\(\\prod_{i}^{N}\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\n\n\nRAG can be used for sequence classification tasks by considering target class as a target sequence of length one, where RAG-Sequence and RAG-Token are equivalent"
+    "text": "Models\n\n\nRAG-Token Model\n\n\nDraw different latent document for each target token\nAllows the generator to choose content from different documents when generating a response\nOnce top K documents are retrieved, the generator produces a distribution for the next output token for each document, before marginalizing\nThe process is repeated for following output token\n\n\n\n\n\\(p\\)RAG-Token\\((y|x)\\) \\(\\approx\\) \\(\\prod_{i}^{N}\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x) p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)"
+  },
+  {
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models-2",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models-2",
+    "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "section": "Models",
+    "text": "Models\n\n\nRAG-Token Model\n\n\n\n\n\\(p\\)RAG-Token\\((y|x)\\) \\(\\approx\\) \\(\\prod_{i}^{N}\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x) p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\n\n\nThe product is outside while the sum is inside, compared to RAG Sequence. At each token position \\(i\\), the model considers all K documents simultaneously, weights each document’s contribution to this specific token by the retrieval probability, and sums.\nThen moves to position \\(i+1\\) and does it again — potentially with a different document dominating.\nRAG can be used for sequence classification tasks by considering target class as a target sequence of length one, where RAG-Sequence and RAG-Token are equivalent"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#retriever",
@@ -95,7 +102,7 @@
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Decoding",
-    "text": "Decoding\n\n\nRAG-Token\n\nPer-token probability factors cleanly → plug directly into standard beam decoder\nTransition probability\n\n\n\\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z\\)\\(i\\)\\(|x)p\\)\\(\\theta\\)\\((y\\)i\\(|x,z\\)\\(i\\)\\(,y\\)1:i-1 \\()\\)\n\n\nTo decode, \\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) can be plugged into a standard beam decoder"
+    "text": "Decoding\n\n\nRAG-Token\n\nPer-token probability factors are plugged directly into standard beam decoder\nTransition probability\n\n\n\\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z\\)\\(i\\)\\(|x)p\\)\\(\\theta\\)\\((y\\)i\\(|x,z\\)\\(i\\)\\(,y\\)1:i-1 \\()\\)\n\n\nTo decode, \\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) can be plugged into a standard beam decoder"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding-1",
