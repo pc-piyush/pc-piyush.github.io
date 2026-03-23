@@ -25,7 +25,7 @@
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#approach",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Approach",
-    "text": "Approach\n\n\n\n\nOverview of the approach. The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query \\(x\\), we use Maximum Inner Product Search (MIPS) to find the top-K documents \\(z\\)i. For final prediction \\(y\\), we treat \\(z\\) as a latent variable and marginalize over seq2seq predictions given different documents"
+    "text": "Approach\n\n\n\n\nThe paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query \\(x\\), we use Maximum Inner Product Search (MIPS) to find the top-K documents \\(z\\)\\(i\\). For final prediction \\(y\\), we treat \\(z\\) as a latent variable and marginalize over seq2seq predictions given different documents"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#methods",
@@ -67,14 +67,14 @@
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#generator",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Generator",
-    "text": "Generator\n\n\n400M parameter seq2seq transformer, pre-trained with a denoising objective\nInput is simply the concatenation of query and retrieved document: [\\(x\\) ; \\(z\\)]\nNo special fusion architecture — just concatenation before the encoder\nGenerates answer autoregressively, one token at a time:\n\n\n\n\n\\(p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\n\n\nAt each step: conditioned on the full query, the retrieved document, and all prior output tokens\nBART over T5:\n\nBART outperforms comparably-sized T5 on generation tasks\nBidirectional encoder + left-to-right decoder is well-suited for this hybrid input structure"
+    "text": "Generator\n\n\n400M parameter seq2seq transformer, pre-trained with a denoising objective\nInput is simply the concatenation of query and retrieved document: [\\(x\\) ; \\(z\\)]\nGenerates answer autoregressively, one token at a time:\n\n\n\n\n\\(p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\n\n\nAt each step: conditioned on the full query, the retrieved document, and all prior output tokens\nBART over T5:\n\nBART outperforms comparably-sized T5 on generation tasks\nBidirectional encoder + left-to-right decoder is well-suited for this hybrid input structure"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#marginalizing-over-documents",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#marginalizing-over-documents",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Marginalizing Over Documents",
-    "text": "Marginalizing Over Documents\n\n\nSince the “correct” document is unknown, both RAG variants sum (marginalize) over top-K documents, weighted by retrieval probability\n\n\n\n\nRAG-Sequence has the same document for the whole output\n\n\n\\(p(y|x)=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\nGenerates a complete answer for each document, then weight by how likely it was to be retrieved\nRAG-Token potentially has different document per output token\n\n\n\\(p(y|x)\\) \\(\\approx\\) \\(\\prod_{i}^{N}\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\nAt each token step, the model can draw from a different document"
+    "text": "Marginalizing Over Documents\n\n\nSince the “correct” document is unknown, both RAG variants sum (marginalize) over top-K documents, weighted by retrieval probability\n\n\n\n\nRAG-Sequence has the same document for the whole output\n\nGenerates a complete answer for each document, then weight by how likely it was to be retrieved\n\n\n\n\\(p(y|x)=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\nRAG-Token potentially has different document per output token\n\nAt each token step, the model can draw from a different document\n\n\n\n\\(p(y|x)\\) \\(\\approx\\) \\(\\prod_{i}^{N}\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#rag-sequence-vs-rag-token",
@@ -95,7 +95,7 @@
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Decoding",
-    "text": "Decoding\n\n\nRAG-Token\n\nPer-token probability factors cleanly → plug directly into standard beam decoder\nTransition probability\n\n\n\n\\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z\\)\\(i\\)\\(|x)p\\)\\(\\theta\\)\\((y\\)i\\(|x,z\\)\\(i\\)\\(,y\\)1:i-1 \\()\\)\n\n- To decode, $p'$~$\\theta$~$(y$~i~$|x,y$~1:i-1~ $)$ can be plugged into a **standard beam decoder**"
+    "text": "Decoding\n\n\nRAG-Token\n\nPer-token probability factors cleanly → plug directly into standard beam decoder\nTransition probability\n\n\n\\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z\\)\\(i\\)\\(|x)p\\)\\(\\theta\\)\\((y\\)i\\(|x,z\\)\\(i\\)\\(,y\\)1:i-1 \\()\\)\n\n\nTo decode, \\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) can be plugged into a standard beam decoder"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding-1",
