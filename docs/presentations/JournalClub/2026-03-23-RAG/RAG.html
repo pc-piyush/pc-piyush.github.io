@@ -381,7 +381,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 <center>
-<span class="math inline">\(p(y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x)\prod p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
+<span class="math inline">\(p(y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x) . p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
 </center>
 </div>
 </section>
