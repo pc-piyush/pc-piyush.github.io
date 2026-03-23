@@ -152,7 +152,7 @@ Piyush Chaudhari
 </section>
 <section id="limitations-in-current-methods" class="slide level2">
 <h2>Limitations in current methods</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li><p>Standard models (For e.g.&nbsp;BART) store their knowledge as <ins><strong>model weights</strong></ins> during training</p></li>
 <li><p>Limitations -</p>
@@ -172,7 +172,7 @@ Piyush Chaudhari
 </section>
 <section id="types-of-memory" class="slide level2">
 <h2>Types of Memory</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li><ins>
 <p><strong>Parametric Memory</strong></p>
@@ -206,7 +206,7 @@ Piyush Chaudhari
 </section>
 <section id="methods" class="slide level2">
 <h2>Methods</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li><p>The paper explores RAG models, that uses input sequence <span class="math inline">\(x\)</span> to retrieve text documents <span class="math inline">\(z\)</span> to use them as additional context when generating the target sequence <span class="math inline">\(y\)</span></p></li>
 <li><p>The model leverages two components</p>
@@ -221,7 +221,7 @@ Piyush Chaudhari
 </section>
 <section id="models" class="slide level2">
 <h2>Models</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ol type="1">
 <li><strong>RAG-Sequence Model</strong></li>
 </ol>
@@ -240,7 +240,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="models-1" class="slide level2">
 <h2>Models</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ol start="2" type="1">
 <li><strong>RAG-Token Model</strong></li>
 </ol>
@@ -256,7 +256,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <span class="math inline">\(p\)</span><sub>RAG-Token</sub><span class="math inline">\((y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x)\prod p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
 </center>
 </div>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>RAG can be used for sequence classification tasks by considering target class as a target sequence of length one, where <strong>RAG-Sequence</strong> and <strong>RAG-Token</strong> are equivalent</li>
 </ul>
@@ -264,7 +264,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="retriever" class="slide level2">
 <h2>Retriever</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>The retriever <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x)\)</span> is based on <span title="Dense Passage Retrieval (DPR) is a search technique that maps queries and documents into high-dimensional, semantic vectors (embeddings) using neural networks, enabling retrieval based on conceptual similarity rather than exact keywords. It generally outperforms traditional methods like BM25 by using twin encoders to identify contextually relevant information"><strong>Dense Passage Retrival (DPR)</strong></span> that follows a bi-encoder structure</li>
 </ul>
@@ -275,7 +275,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <span class="math inline">\(q(x)\)</span> = BERT<sub><span class="math inline">\(q\)</span></sub><span class="math inline">\((x)\)</span> <em>query encoder</em>
 </center>
 </div>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <p>with a retrival probability of</p>
 </div>
 <div style="font-size: 60%;">
@@ -283,7 +283,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x)\)</span> <span class="math inline">\(\propto\)</span> exp <span class="math inline">\((d(z)^T.q(x))\)</span>
 </center>
 </div>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>Higher dot product equals higher probability of retrival</li>
 <li>Finding top-K is a <span title="Maximum Inner Product Search (MIPS) is a retrieval technique that finds the vector in a dataset with the highest inner product (often representing similarity) to a given query vector"><strong>Maximum Inner Product Search</strong></span> problem</li>
@@ -293,7 +293,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="retriever-1" class="slide level2">
 <h2>Retriever</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li><p>One performace tradeoff is that the Document Encoder <span class="math inline">\(d(z)\)</span> is frozen during fine-tuning</p>
 <ul>
@@ -308,7 +308,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="generator" class="slide level2">
 <h2>Generator</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>400M parameter seq2seq transformer, pre-trained with a denoising objective</li>
 <li>Input is simply the concatenation of query and retrieved document: [<span class="math inline">\(x\)</span> ; <span class="math inline">\(z\)</span>]</li>
@@ -316,12 +316,12 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>Generates answer autoregressively, one token at a time:</li>
 </ul>
 </div>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <center>
 <span class="math inline">\(p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
 </center>
 </div>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>At each step: conditioned on the full query, the retrieved document, and all prior output tokens</li>
 <li>BART over T5:
@@ -334,12 +334,12 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="marginalizing-over-documents" class="slide level2">
 <h2>Marginalizing Over Documents</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>Since the “correct” document is unknown, both RAG variants sum (marginalize) over top-K documents, weighted by retrieval probability</li>
 </ul>
 </div>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li><strong>RAG-Sequence</strong> has the same document for the whole output</li>
 </ul>
@@ -360,7 +360,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="rag-sequence-vs-rag-token" class="slide level2">
 <h2>RAG-Sequence vs RAG-Token</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 25%">
@@ -401,7 +401,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="training" class="slide level2">
 <h2>Training</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>Trained end-to-end on input/output pairs (<span class="math inline">\(x\)</span><sub><span class="math inline">\(j\)</span></sub>,<span class="math inline">\(y\)</span><sub><span class="math inline">\(j\)</span></sub> ) only — no supervision on which document to retrieve</li>
 <li>Loss function: negative marginal log-likelihood of the target output
@@ -417,7 +417,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="decoding" class="slide level2">
 <h2>Decoding</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>RAG-Token
 <ul>
@@ -433,7 +433,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="decoding-1" class="slide level2">
 <h2>Decoding</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>RAG-Sequence
 <ul>
@@ -456,7 +456,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="decoding-2" class="slide level2">
 <h2>Decoding</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <ul>
 <li>RAG-Sequence
 <ul>
@@ -472,7 +472,7 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </section>
 <section id="experiments" class="slide level2">
 <h2>Experiments</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 65%;">
 <p>RAG was tested across five distinct task types to prove generality:</p>
 <ul>
 <li>Open-Domain QA (Natural Questions, TriviaQA, WebQuestions, CuratedTrec) — exact match</li>
