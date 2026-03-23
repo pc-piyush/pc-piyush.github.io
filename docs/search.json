@@ -7,190 +7,190 @@
     "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Chaudhari, Piyush},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nChaudhari, Piyush. 2023. “Quartoing.” October 16. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#limitations-in-current-methods",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#limitations-in-current-methods",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#limitations-in-current-methods",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#limitations-in-current-methods",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Limitations in current methods",
     "text": "Limitations in current methods\n\n\nStandard models (For e.g. BART) store their knowledge as model weights during training\nLimitations -\n\nDifficult to update without retraining\nHallucinations- model interpolate from compressed parametric memory,\nThere is no way to tell what part was looked at to produce output\n\nThis paper treats retrival as a learnable, differentiable element that can be plugged into a generative model\nA jointly trained system where\n\nModel knows what to query\nGenerator knows how to use what is query"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#types-of-memory",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#types-of-memory",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#types-of-memory",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#types-of-memory",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Types of Memory",
     "text": "Types of Memory\n\n\n\nParametric Memory\n\n\nKnowledge is frozen into model weights\nCan’t update it without retraining\nFast to infer insights but limited and brittle\n\n\nNon-parametric Memory\n\n\nIndexed text, external to the model, that model looks up at runtime\nThe index can be swapped, updated or replaced independent of model weights\n\nRAG combines both types of memories - retriever fetches relevant documents from non-parametric memory, and generators (that stores parametric knowledge) synthesizes a response using both\nPrior work on the hybrid approach was done only on extractive tasks (REALM,ORQA) but RAG extends it to generative seq2seq tasks"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#approach",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#approach",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#approach",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#approach",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Approach",
     "text": "Approach\n\n\n\n\nOverview of the approach. The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query \\(x\\), we use Maximum Inner Product Search (MIPS) to find the top-K documents \\(z\\)i. For final prediction \\(y\\), we treat \\(z\\) as a latent variable and marginalize over seq2seq predictions given different documents"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#methods",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#methods",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#methods",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#methods",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Methods",
     "text": "Methods\n\n\nThe paper explores RAG models, that uses input sequence \\(x\\) to retrieve text documents \\(z\\) to use them as additional context when generating the target sequence \\(y\\)\nThe model leverages two components\n\nRetriever \\(p\\)\\(\\eta\\)\\((z | x)\\) with parameters \\(\\eta\\) that returns top-K truncated distributions over the text given a query \\(x\\)\nGenerator \\(p\\)\\(\\theta\\)(\\(y\\)i | \\(x,z,y\\)1:i-1) parametrized by \\(\\theta\\) that generates a current token based on the context of the previous \\(i-1\\) tokens \\(y\\)1:i-1 , the original input \\(x\\) and a retrieved text \\(z\\)\n\nThe retrieved documents are treated as latent variable - the model never directly supervises which document is correct\nThe paper proposes two models - RAG-Sequence that uses the same document to predict each target token and RAG-Token which can predict each target token based on a different document"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#models",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#models",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Models",
     "text": "Models\n\n\nRAG-Sequence Model\n\n\nuses the same retrived document to generate complete sequence\ntreats retrieved document as a single latent variable marginalized to get seq2seq probability \\(p(y|x)\\) via a top-K approximation\ntop K documents are retrived using the retriver and generator produces output sequence probability of each document, then marginalized\n\n\n\n\\(p\\)RAG-Sequence\\((y|x)\\) \\(\\approx\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)p\\)\\(\\theta\\)\\((y|x,z)\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#models-1",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#models-1",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models-1",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#models-1",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Models",
     "text": "Models\n\n\nRAG-Token Model\n\n\ndraw different latent document for each target token\nallows the generator to choose content from different documents when generating a response\nOnce top K documents are retrieved, the generator produces a distribution for the next output token for each document, before marginalizing\nthe process is repeated for following output token\n\n\n\n\n\\(p\\)RAG-Token\\((y|x)\\) \\(\\approx\\) \\(\\prod_{i}^{N}\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\n\n\nRAG can be used for sequence classification tasks by considering target class as a target sequence of length one, where RAG-Sequence and RAG-Token are equivalent"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#retriever",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#retriever",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#retriever",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#retriever",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Retriever",
     "text": "Retriever\n\n\nThe retriever \\(p\\)\\(\\eta\\)\\((z|x)\\) is based on Dense Passage Retrival (DPR) that follows a bi-encoder structure\n\n\n\n\n\\(d(z)\\) = BERT\\(d\\)\\((z)\\) document encoder\n\\(q(x)\\) = BERT\\(q\\)\\((x)\\) query encoder\n\n\n\nwith a retrival probability of\n\n\n\n\\(p\\)\\(\\eta\\)\\((z|x)\\) \\(\\propto\\) exp \\((d(z)^T.q(x))\\)\n\n\n\n\nHigher dot product equals higher probability of retrival\nFinding top-K is a Maximum Inner Product Search problem\nSolved approximately using FAISS + HNSW graphs - sub-linear time over 21 million documents"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#retriever-1",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#retriever-1",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#retriever-1",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#retriever-1",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Retriever",
     "text": "Retriever\n\n\nOne performace tradeoff is that the Document Encoder \\(d(z)\\) is frozen during fine-tuning\n\nRe-embedding 21 million documents every training step is expensive\nThe initialization DPR retriever was pre-trained specifically to retrieve passages relevant to Natural Questions and TriviaQA. This means the document embeddings it produces are already semantically well-organized\nSo \\(d(z)\\) already has a meaningful embedding space before fine-tuning begins\nDoesn’t hurt the performance significantly\nPrevents catastrophic indexing - Updating the encoded during training changes the embedding, clashing with FAISS which was build over old embeddings"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#generator",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#generator",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#generator",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#generator",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Generator",
     "text": "Generator\n\n\n400M parameter seq2seq transformer, pre-trained with a denoising objective\nInput is simply the concatenation of query and retrieved document: [\\(x\\) ; \\(z\\)]\nNo special fusion architecture — just concatenation before the encoder\nGenerates answer autoregressively, one token at a time:\n\n\n\n\n\\(p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\n\n\nAt each step: conditioned on the full query, the retrieved document, and all prior output tokens\nBART over T5:\n\nBART outperforms comparably-sized T5 on generation tasks\nBidirectional encoder + left-to-right decoder is well-suited for this hybrid input structure"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#marginalizing-over-documents",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#marginalizing-over-documents",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#marginalizing-over-documents",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#marginalizing-over-documents",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Marginalizing Over Documents",
     "text": "Marginalizing Over Documents\n\n\nSince the “correct” document is unknown, both RAG variants sum (marginalize) over top-K documents, weighted by retrieval probability\n\n\n\n\nRAG-Sequence has the same document for the whole output\n\n\n\\(p(y|x)=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\nGenerates a complete answer for each document, then weight by how likely it was to be retrieved\nRAG-Token potentially has different document per output token\n\n\n\\(p(y|x)\\) \\(\\approx\\) \\(\\prod_{i}^{N}\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z|x)\\prod p\\)\\(\\theta\\)\\((y\\)i\\(|x,z,y\\)1:i-1 \\()\\)\n\n\nAt each token step, the model can draw from a different document"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#rag-sequence-vs-rag-token",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#rag-sequence-vs-rag-token",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#rag-sequence-vs-rag-token",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#rag-sequence-vs-rag-token",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "RAG-Sequence vs RAG-Token",
     "text": "RAG-Sequence vs RAG-Token\n\n\n\n\n\n\n\n\n\nCohort\nRAG-Sequence\nRAG-Token\n\n\n\n\nDocument Usage\nOne Document for full answer\nDifferent document per token\n\n\nFlexibility\nLower\nHigher\n\n\nApplications\nCoherent, Single-Source Outputs\nOutputs synthesizing multiple sources\n\n\nDecoding\nBeam Search per document + re-scoring\nStandard Beam Decoder"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#training",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#training",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#training",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#training",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Training",
     "text": "Training\n\n\nTrained end-to-end on input/output pairs (\\(x\\)\\(j\\),\\(y\\)\\(j\\) ) only — no supervision on which document to retrieve\nLoss function: negative marginal log-likelihood of the target output\n\n\\(Loss\\) = - \\(\\sum\\)\\(j\\) \\(log\\) \\(p(y\\)\\(j\\)|\\(x\\)\\(j\\) \\()\\)\n\nGradient flows through BART (generator) and the query encoder\nThe system learns to retrieve by learning what helps it generate correct answers\nOnly the query encoder and BART are updated; document encoder + index are frozen\nOptimizer: Adam with stochastic gradient descent"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#decoding",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#decoding",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Decoding",
     "text": "Decoding\n\n\nRAG-Token\n\nPer-token probability factors cleanly → plug directly into standard beam decoder\nTransition probability\n\n\n\n\\(p'\\)\\(\\theta\\)\\((y\\)i\\(|x,y\\)1:i-1 \\()\\) \\(=\\) \\(\\sum_{z\\in top-k(p(.|x))}\\) \\(p\\)\\(\\eta\\)\\((z\\)\\(i\\)\\(|x)p\\)\\(\\theta\\)\\((y\\)i\\(|x,z\\)\\(i\\)\\(,y\\)1:i-1 \\()\\)\n\n- To decode, $p'$~$\\theta$~$(y$~i~$|x,y$~1:i-1~ $)$ can be plugged into a **standard beam decoder**"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#decoding-1",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#decoding-1",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding-1",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding-1",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Decoding",
     "text": "Decoding\n\n\nRAG-Sequence\n\nFull sequence probability \\(p(y|x)\\) doesn’t factor per-token, hence can’t do a single beam search\nThorough Decoding:\n\nGet \\(K\\) sets of candidate sequences by running beam search independently for each of the \\(K\\) retrieved documents\n\nTake the union of all candidates across all K beams which is the hypothesis set \\(Y\\)\nFor any candidate \\(y\\) that didn’t appear in a particular document’s beam, run an additional forward pass through BART to score it against that document anyway\nFinal probability\n\n\\(p(y|x)=\\) \\(\\sum_{z}\\) \\(p\\)\\(\\eta\\)\\((z|x) . p\\)\\(\\theta\\)\\((y|x,z)\\) summed across all \\(K\\) documents\n\nPick the highest scoring \\(y\\)"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#decoding-2",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#decoding-2",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding-2",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#decoding-2",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Decoding",
     "text": "Decoding\n\n\nRAG-Sequence\n\nFast Decoding\n\nSimilar to Thorough, but skips Step 3\nIf a candidate was generated from document 1’s beam but not document 2’s, Thorough Decoding still need to score it against document 2. With K=10 and a large hypothesis set, this is computinally expensive\nIn Fast Decoding, if \\(y\\) didn’t appear in document \\(z\\)’s beam, \\(p\\)\\(\\theta\\)\\((y|x,z)\\) is assumed as 0"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#experiments",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#experiments",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#experiments",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#experiments",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Experiments",
     "text": "Experiments\n\nRAG was tested across five distinct task types to prove generality:\n\nOpen-Domain QA (Natural Questions, TriviaQA, WebQuestions, CuratedTrec) — exact match\nAbstractive QA (MS-MARCO) — free-form answer generation, BLEU + Rouge-L\nJeopardy Question Generation — given an entity, generate the Jeopardy clue — Q-BLEU-1 + human evaluation\nFact Verification (FEVER) — classify claims as supported / refuted / not enough information"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
     "text": "Results\nOpen-Domain Q&A\n\n\n\n\n\n\n\n\n\n\n\nModel\nNatural Questions\nTriviaQA\nWebQ\nCuratedTrec\n\n\n\n\nT5-11B (closed book)\n34.5\n—/50.1\n37.4\n—\n\n\nT5-11B+SSM (closed book)\n36.6\n—/60.5\n44.7\n—\n\n\nREALM (open book)\n40.4\n—\n40.7\n46.8\n\n\nDPR (open book)\n41.5\n57.9\n41.1\n50.6\n\n\nRAG-Token\n44.1\n55.2/66.1\n45.5\n50.0\n\n\nRAG-Sequence\n44.5\n56.8/68.0\n45.2\n52.2\n\n\n\n\nRAG beats T5-11B (27x larger, expensive pre-training) on NQ and WebQ\nRAG beats DPR’s extractive pipeline — without a re-ranker or cross-encoder\nRAG scores 11.8% accuracy even when the correct answer is absent from all retrieved documents — extractive systems score 0% in this case"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results-1",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results-1",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-1",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-1",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
     "text": "Results\nGeneration Tasks\n\n\n\n\n\n\n\n\n\n\nModel\nJeopardy Q-BLEU-1\nMS-MARCO Rouge-L\nFEVER-3 Accuracy\n\n\n\n\nBART baseline\n19.7\n38.2\n64.0\n\n\nRAG-Token\n22.2\n40.1\n72.5\n\n\nRAG-Sequence\n21.4\n40.8\n—\n\n\nState of the art*\n—\n49.8*\n76.8\n\n\n\n*SotA uses gold context/evidence passages; RAG retrieves its own"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results-2",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results-2",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-2",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-2",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
     "text": "Results\nJeopardy\n\nHuman evaluation on Jeopardy (452 pairs):\n\nRAG more factual than BART: 42.7% of cases\nBART more factual than RAG: 7.1% of cases\nRAG more specific: 37.4% vs. 16.8%\n\nOn FEVER, RAG comes within 4.3% of complex pipeline systems that use domain-specific architectures and supervised retrieval labels — while using none of that."
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results-3",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#results-3",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-3",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-3",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
     "text": "Results\nGeneration Diversity\n\nMeasured as ratio of distinct tri-grams to total tri-grams:\n\n\n\nModel\nMS-MARCO\nJeopardy\n\n\n\n\nGold (human)\n89.6%\n90.0%\n\n\nBART\n70.7%\n32.4%\n\n\nRAG-Token\n77.8%\n46.8%\n\n\nRAG-Sequence\n83.5%\n53.8%\n\n\n\n\nRAG generates significantly more diverse outputs than BART — without any diversity-promoting decoding tricks\nThe retrieval of varied evidence naturally pushes the generator toward more specific, varied language\nBART on Jeopardy at 32.4% - a pure parametric model tends to repeat generic patterns\nRAG is anchored to specific retrieved facts"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#ablations",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#ablations",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#ablations",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#ablations",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Ablations",
     "text": "Ablations\n\n\nFrozen vs. learned retrieval:\n\nRAG-Token with frozen retriever: 37.8 on NQ and 43.5 with learned\nLearning to retrieve is worth ~6 EM points on NQ alone\n\nDense retrieval (DPR) vs. sparse retrieval (BM25):\n\nBM25 replacement tanks QA performance significantly (29.7 vs. 43.5 on NQ for RAG-Token)\nException: FEVER — BM25 performs comparably or better, because fact-checking claims are entity-heavy and keyword overlap is a reliable signal\nFor generation tasks: dense retrieval is crucial\n\nNumber of retrieved documents:\n\nRAG-Sequence: more docs monotonically helps QA\nRAG-Token: performance peaks at K=10, then levels off\nFlexibility to adjust K at inference time without retraining is a practical advantage"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#index-hot-swapping",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#index-hot-swapping",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#index-hot-swapping",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#index-hot-swapping",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Index Hot-Swapping",
     "text": "Index Hot-Swapping\n\n\nSame trained RAG model, two different Wikipedia indexes (Dec 2016 vs. Dec 2018)\n82 world leaders who changed roles between those dates\n\n\n\n\nIndex\n2016 leaders query\n2018 leaders query\n\n\n\n\n2016 index\n70% correct\n4% correct\n\n\n2018 index\n12% correct\n68% correct\n\n\n\n\nMismatched index has a near-zero accuracy\nMatched index has about 70% accuracy with same model weights, but different index\nRAG’s world knowledge lives in the index, not the weights, and hence a deplyed RAG system can be updated on factual knowledge by replacing its document store\n\nwithout retraining\nwithout fine-tuning"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#generation-vs-extraction",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#generation-vs-extraction",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#generation-vs-extraction",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#generation-vs-extraction",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Generation vs Extraction",
     "text": "Generation vs Extraction\n\n\nAll four QA benchmarks in the paper are classified as extractive tasks — the answer exists verbatim in some document.\nStill, RAG’s generative approach beats purpose-built extractive systems.\n\nDocuments that contain clues but not the verbatim answer can still guide generation — extraction can’t use them at all\nMarginalization over \\(K\\) documents lets multiple partial-evidence documents contribute to a single correct answer\nGeneration can synthesize across documents while extraction is limited to one span in one document\nRAG can produce correct answers even when no retrieved document contains the answer"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#parametric-vs-non-parametric-memory",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#parametric-vs-non-parametric-memory",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#parametric-vs-non-parametric-memory",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#parametric-vs-non-parametric-memory",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Parametric vs Non-Parametric Memory",
     "text": "Parametric vs Non-Parametric Memory\n\n\n\n\nProperty\nParametric (BART weights)\nNon-Parametric (FAISS index)\n\n\n\n\nUpdate mechanism\nRetraining\nIndex replacement\n\n\nInterpretability\nOpaque\nHuman-readable raw text\n\n\nWritability\nNo\nYes — edit documents directly\n\n\nAccess speed\nInstant (forward pass)\nFast (MIPS, sub-linear)\n\n\nKnowledge source\nTraining corpus\nAny document collection\n\n\nHallucination risk\nHigh\nLower (grounded in text)\n\n\n\n\nThe non-parametric memory being raw text (not embeddings) is a design choice\nKeeps the memory human-readable and human-writable\nGives you authority to correct - a factual error can be corrected by editing a document in the index, the same thing cannot be done with weights"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#limitations",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#limitations",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#limitations",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#limitations",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Limitations",
     "text": "Limitations\n\n\nSingle knowledge source (Wikipedia was the one source tested)\nJoint pre-training wasn’t explored, only fine-tuning. was performed\nRAG-Sequencing Decoding doesn’t scale optimally\nKnowledge spanning multiple documents can’t be multi-hopped while reasoning natively\nNo inference regarding when to retrieve vs. when to rely purely on parametric memory"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#legacy-of-the-paper",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#legacy-of-the-paper",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#legacy-of-the-paper",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#legacy-of-the-paper",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Legacy of the Paper",
     "text": "Legacy of the Paper\n\nWhile some of the specific components have been replaced by stronger alternatives, the core ideas from this paper propel the field even today\n\nTreat retrieval as a learnable, differentiable function\nMarginalize over uncertainty in which document is relevant\nSeparate updatable knowledge (index) from reasoning capability (weights)\nTrain end-to-end on (input, output) pairs without document-level supervision\nHot-Swapping has saved retraining costs across the industry- The observation that a 400M parameter model with a good index beats an 11B parameter model without one reshaped how to think about the scaling-vs-retrieval tradeoff"
   },
   {
-    "objectID": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#current-advances",
-    "href": "presentations/Journal Club/2026-03-23-RAG/Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks.html#current-advances",
+    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#current-advances",
+    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#current-advances",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Current Advances",
     "text": "Current Advances\n\n\nRetrievers\n\nSparse + Dense Hybrid Retrievals outperform and have replaced DPR\nBoth encoders can be fine-tuned using. contrastive learning, solving the frozen document-encoder compromise\n\nGenerators\n\nBART has been replaced by stronger LLMs like LLaMA, Mistral, GPT-4\nCapability to synthesize retrieved context has improved\n\nMulti-Hop RAG\n\nModern systems reads retrieved docs, generates a sub-question, retrieves again, and chains reasoning across multiple retrieval steps\n\nProduction RAG\n\nThe index hot-swap insight became the architectural backbone of virtually every enterprise AI system — LlamaIndex, LangChain, and similar frameworks are essentially RAG pipelines with better chunking, re-ranking, and hybrid retrieval layered on top"
