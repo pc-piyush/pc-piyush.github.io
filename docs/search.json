@@ -203,6 +203,13 @@
     "text": "Current Advances\n\n\nRetrievers\n\nSparse + Dense Hybrid Retrievals outperform and have replaced DPR\nBoth encoders can be fine-tuned using. contrastive learning, solving the frozen document-encoder compromise\n\nGenerators\n\nBART has been replaced by stronger LLMs like LLaMA, Mistral, GPT-4\nCapability to synthesize retrieved context has improved\n\nMulti-Hop RAG\n\nModern systems reads retrieved docs, generates a sub-question, retrieves again, and chains reasoning across multiple retrieval steps\n\nProduction RAG\n\nThe index hot-swap insight became the architectural backbone of virtually every enterprise AI system — LlamaIndex, LangChain, and similar frameworks are essentially RAG pipelines with better chunking, re-ranking, and hybrid retrieval layered on top"
   },
   {
+    "objectID": "presentations/HOBISharkTank_2026/Pitch.html#thank-you",
+    "href": "presentations/HOBISharkTank_2026/Pitch.html#thank-you",
+    "title": "Zero Knowledge Medicine",
+    "section": "Thank you",
+    "text": "Thank you\n\nThis presentation was made using Quarto. Quarto enables you to weave together content and executable code into a finished document. Click here learn more about Quarto."
+  },
+  {
     "objectID": "presentations/GMS6805_20260226/slides.html#limitations-in-current-methods",
     "href": "presentations/GMS6805_20260226/slides.html#limitations-in-current-methods",
     "title": "Learning the natural history of human disease with generative transformers",
@@ -432,6 +439,20 @@
     "title": "Machine Learning-Based Penetrance of Genetic Variants",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\n\nML-based penetrance provides refined, quantitative disease risk estimates for genetic variants\nML penetrance correlates with clinical outcomes and functional data, validating biological relevance\nEnables interpretation of VUS and LoF variants through clinical trajectory analysis\nRepresents a scalable blueprint for precision medicine using routine EHR data"
+  },
+  {
+    "objectID": "presentations/HOBISharkTank_2026/pitch_2026.html#section",
+    "href": "presentations/HOBISharkTank_2026/pitch_2026.html#section",
+    "title": "Zero Knowledge Medicine",
+    "section": "",
+    "text": "Zero Knowledge Proofs\n\n\n\n\n\n\n\n\nGeneral ZKP workflow - Click on the image for details\n\n\n\nZero Knowledge Proofs (ZKPs) can prove - for a given input and model, an output is produced, without revealing any of the above\n\n\n\n\n\n\nStep 1 - Hospital A publishes one commitment K — a cryptographic fingerprint of its model\n\n\n\n\n\nStep 2 - Hospital B can run that commitment against any of its own patients, any number of times, without Hospital A ever being involved again\n\n\n\n\n\nExample: For Patient 1, the arithmetic circuit finds the feature vector satisfies the AKI decision boundary → proof is TRUE, and the onset window is disclosed. Image generated using Claude\n\n\n\n\n\nExample: For Patient 2, the same circuit finds the vector falls outside the boundary → proof is FALSE, and nothing further is revealed — not even how far below the threshold the patient is. Image generated using Claude"
+  },
+  {
+    "objectID": "presentations/HOBISharkTank_2026/pitch_2026.html#thank-you",
+    "href": "presentations/HOBISharkTank_2026/pitch_2026.html#thank-you",
+    "title": "Zero Knowledge Medicine",
+    "section": "Thank You!",
+    "text": "Thank You!\n\nThis presentation was made using Quarto. Quarto enables you to weave together content and executable code into a finished document. Click here learn more about Quarto."
   },
   {
     "objectID": "posts.html",
