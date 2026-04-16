@@ -12,7 +12,7 @@ format:
         preview-links: auto
         logo: images/favicon.ico
         #css: styles.css
-footer: "April 16th, 2026"
+footer: "April 17th, 2026"
 theme: "dracula"
 editor: 
   markdown: 
