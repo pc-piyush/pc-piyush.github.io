@@ -14,12 +14,14 @@ website:
         href: about.qmd
   page-footer: 
     background: "#D6DBDF"
-    right: 
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/piyush-chaudhari/
       - icon: twitter
         href: https://twitter.com/iampiyushvc 
       - icon: instagram
         href: https://www.instagram.com/iampiyushvc
-    left: "This website was build using [Quarto](https://quarto.org/). 2024 Piyush Chaudhari"
+    left: This website was build using [Quarto](https://quarto.org/). 2025 Piyush Chaudhari.
 format:
   html:
     theme: 

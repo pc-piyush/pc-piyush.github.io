@@ -1,0 +1,55 @@
+---
+title: "Twitter Feed on Quarto"
+description: "XFeed just didn't feel right"
+#navbar: false
+author:
+  - name: Piyush Chaudhari
+    url: https://pc-piyush.github.io/
+    orcid: 0000-0003-0970-5552
+    #affiliation: Master of Environmental Data Science Program @ The Bren School (UCSB) & The National Center for Ecological Analysis & Synthesis
+    #affiliation-url: https://ucsb-meds.github.io/ 
+date: 09-04-2024
+#date-modified: "5/23/2021"
+categories: [Quarto, Twitter, X] # self-defined categories
+citation: 
+  url: https://pc-piyush.github.io/posts/2024-08-30-TwitterFeedonQuarto/ 
+#image: preview_image.jpg
+draft: true # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+<!-- **Adding Twitter on Quarto** -->
+
+::: {.columns}
+::: {.column width="75%"}
+
+<!-- <div> -->
+<div style="padding: 20px;">
+I have seen an embedding of Twitter feed (well the )
+[`Piyush Chaudhari`](https://twitter.com/iampiyushvc) 
+
+Obviously, preaching doesn't get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.
+ 
+The inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn't much surprised given her work ethic is unparalleled, and she doesn't stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out [here](https://kaitlynswacil.github.io/). Its still a work in progress, like mine is, and like most of the world is.
+
+
+```         
+<a class="twitter-timeline" data-width="600" data-height="300" data-theme="light" href="https://twitter.com/iampiyushvc?ref_src=twsrc%5Etfw"></a> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```
+
+</div>
+
+
+<!-- ::: {.columns} -->
+:::
+::: {.column width="25%"}
+<div>
+<a class="twitter-timeline" data-width="400" data-height="600" data-theme="light" href="https://twitter.com/iampiyushvc?ref_src=twsrc%5Etfw"></a>
+
+```{=html}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```
+
+</div>
+:::
+:::

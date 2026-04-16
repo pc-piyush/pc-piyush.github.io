@@ -1,0 +1,16 @@
+{
+  "hash": "9e558589a7932e720c6162a75e4b750d",
+  "result": {
+    "markdown": "---\ntitle: \"Twitter Feed on Quarto\"\ndescription: \"XFeed just didn't feel right\"\n#navbar: false\nauthor:\n  - name: Piyush Chaudhari\n    url: https://pc-piyush.github.io/\n    orcid: 0000-0003-0970-5552\n    #affiliation: Master of Environmental Data Science Program @ The Bren School (UCSB) & The National Center for Ecological Analysis & Synthesis\n    #affiliation-url: https://ucsb-meds.github.io/ \ndate: 08-30-2024\n#date-modified: \"5/23/2021\"\ncategories: [Quarto, Twitter, X] # self-defined categories\ncitation: \n  url: https://pc-piyush.github.io/posts/2024-08-30-TwitterFeedonQuarto/ \n#image: preview_image.jpg\ndraft: true # setting this to `true` will prevent your post from appearing on your listing page until you're ready!\n---\n\n\n**Adding Twitter on Quarto**\n\n::: {.columns}\n::: {.column width=\"50%\"}\n## Left Column\n\nThis is the content of the left column. You can add text, images, or code here.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Example R code\nplot(cars)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n<div>\n<a class=\"twitter-timeline\" data-width=\"600\" data-height=\"300\" data-theme=\"light\" href=\"https://twitter.com/iampiyushvc?ref_src=twsrc%5Etfw\"></a>\n\n\n```{=html}\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n```\n\n\n</div>\n\n```         \n<a class=\"twitter-timeline\" data-width=\"600\" data-height=\"300\" data-theme=\"light\" href=\"https://twitter.com/iampiyushvc?ref_src=twsrc%5Etfw\"></a> \n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n```\n\n[`Piyush Chaudhari`](https://twitter.com/iampiyushvc) Obviously, preaching doesn't get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\n\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn't much surprised given her work ethic is unparalleled, and she doesn't stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out [here](https://kaitlynswacil.github.io/). Its still a work in progress, like mine is, and like most of the world is.\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

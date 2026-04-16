@@ -1,6 +1,7 @@
 ---
 title: "Quartoing"
 description: "The story of an old procrastination and a young inspiration"
+navbar: false
 author:
   - name: Piyush Chaudhari
     url: https://pc-piyush.github.io/
@@ -8,6 +9,7 @@ author:
     #affiliation: Master of Environmental Data Science Program @ The Bren School (UCSB) & The National Center for Ecological Analysis & Synthesis
     #affiliation-url: https://ucsb-meds.github.io/ 
 date: 10-16-2023
+#date-modified: "5/23/2021"
 categories: [Quarto, R, Website] # self-defined categories
 citation: 
   url: https://pc-piyush.github.io/posts/2023-10-19-Quartoing/ 
