@@ -33,7 +33,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-4df01d85d5cf19cc6202400f4f043f84.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-fdc93494f2580a7e050003a96af38920.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -192,7 +192,7 @@ Piyush Chaudhari
 <section class="slide level2">
 
 <h3 id="issue-with-traditional-reinforcement-learning">Issue with Traditional Reinforcement Learning</h3>
-<div style="font-size: 60%;">
+<div style="font-size: 55%;">
 <p><strong>Traditional RL requires:</strong></p>
 <ul>
 <li>Millions of environment interactions</li>
@@ -291,8 +291,8 @@ ATTEMPT → FAIL → REFLECT → STORE → RETRY
 <p><span class="math display">\[\pi_\theta(a_t \mid s_t), \quad \theta = \{M_a,\ \textit{mem}\}\]</span></p>
 <p>Where:</p>
 <ul>
-<li><span class="math inline">\(M_a\)</span> = the Actor LLM (frozen weights)</li>
-<li><span class="math inline">\(\textit{mem}\)</span> = episodic memory buffer of self-reflections</li>
+<li><strong><span class="math inline">\(M_a\)</span></strong> = the Actor LLM (frozen weights)</li>
+<li><strong><span class="math inline">\(\textit{mem}\)</span></strong> = episodic memory buffer of self-reflections</li>
 </ul>
 <blockquote>
 <p><strong>Key Insight:</strong> By adding <code>mem</code> as a second policy parameter, Reflexion “optimises” agent behaviour through verbal learning — without ever touching LLM weights. The self-reflection text acts as a <strong>semantic gradient signal</strong>.</p>
@@ -367,7 +367,7 @@ ATTEMPT → FAIL → REFLECT → STORE → RETRY
 <div style="font-size: 55%;">
 <p><strong>Short-Term Memory (trajectory):</strong></p>
 <ul>
-<li>= Current trial’s trajectory history</li>
+<li>Current trial’s trajectory history</li>
 <li>Contains: <span class="math inline">\(\tau_t = [a_0, o_0, a_1, o_1, \ldots, a_n, o_n]\)</span></li>
 <li>Actions <span class="math inline">\(a_i\)</span> and observations <span class="math inline">\(o_i\)</span> from the ongoing episode</li>
 <li>Resets at the start of each new trial</li>
@@ -375,7 +375,7 @@ ATTEMPT → FAIL → REFLECT → STORE → RETRY
 </ul>
 <p><strong>Long-Term Memory (<code>mem</code>):</strong></p>
 <ul>
-<li>= Accumulated self-reflection outputs <span class="math inline">\(\{sr_0, sr_1, \ldots\}\)</span></li>
+<li>Accumulated self-reflection outputs <span class="math inline">\(\{sr_0, sr_1, \ldots\}\)</span></li>
 <li>Persists across trials as a <strong>sliding window</strong></li>
 <li>Bounded by <span class="math inline">\(\Omega = 1\text{–}3\)</span> most recent reflections (to fit context)</li>
 <li>Provides “self-hints” for the next episode</li>
