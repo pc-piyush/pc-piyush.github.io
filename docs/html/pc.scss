@@ -1,0 +1,19 @@
+/*-- scss:rules --*/
+
+/* Light mode */
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #efe8f7 !important;
+}
+
+.nav-footer {
+  color: #efe8f7;
+}
+
+.nav-footer a {
+  color: #C4B5FD;
+}
+
+/*-- scss:defaults --*/
+
+$link-decoration: none !default;

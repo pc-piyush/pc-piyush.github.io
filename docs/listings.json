@@ -1,5 +1,14 @@
 [
   {
+    "listing": "/research/index.html",
+    "items": [
+      "/research/papers/cheng2024healthstreet/index.html",
+      "/research/papers/fidler2023insomnia/index.html",
+      "/research/papers/otufowora2024drug/index.html",
+      "/research/papers/austin2023electronic/index.html"
+    ]
+  },
+  {
     "listing": "/posts.html",
     "items": [
       "/posts/2023-10-19-Quartoing/index.html"

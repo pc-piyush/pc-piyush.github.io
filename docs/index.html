@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -27,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -39,23 +38,28 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-166398dc28bc788c75b5e3fe62af5912.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-e14b1314d6ac29b3ec49c0deae9a2908.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-166398dc28bc788c75b5e3fe62af5912.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2f32e6c700c999862537f03ba5733488.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-592b7925244515848defe6d8fe29634c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ab4529e3ef1a344e960b49be4c2d27db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-592b7925244515848defe6d8fe29634c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
-  "type": "overlay",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -72,102 +76,259 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="Piyush Chaudhari">
+<meta name="twitter:title" content="– Piyush Chaudhari">
+<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@iampiyushvc">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="quarto-light">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./photos/PC_White.png" alt="" class="navbar-logo light-content">
+    <img src="./photos/PC_White.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Piyush Chaudhari</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./research/index.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./posts.html"> 
+<span class="menu-text">p.log()</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
 <div class="quarto-about-trestles column-page">
   <div class="about-entity">
-    <img src="Seaworld.jpeg" class="about-image
+    <img src="photos/Seaworld.jpeg" class="about-image
   round " style="height: 10cm; width: 10cm;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Piyush Chaudhari</h1>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header>
+<header id="title-block-header" class="quarto-title-block"></header>
     <div class="about-links">
   <a href="mailto:piyushchaudhari244@gmail.com" class="about-link" rel="" target="">
     <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
+     <span class="about-link-text"></span>
+  </a>
+  <a href="https://github.com/pc-piyush" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text"></span>
   </a>
   <a href="https://substack.com/@piyushchaudhari" class="about-link" rel="" target="">
     <i class="bi bi-substack"></i>
-     <span class="about-link-text">Substack</span>
+     <span class="about-link-text"></span>
   </a>
-  <a href="/posts.html" class="about-link" rel="" target="">
-    <i class="bi bi-newspaper"></i>
-     <span class="about-link-text">p.log()</span>
+  <a href="https://bsky.app/profile/pc-piyush.github.io" class="about-link" rel="" target="">
+    <i class="bi bi-bluesky"></i>
+     <span class="about-link-text"></span>
+  </a>
+  <a href="https://scholar.google.com/citations?hl=en&amp;user=gGrOPjwAAAAJ" class="about-link" rel="" target="">
+     <span class="about-link-text"><i class="fa-brands fa-google-scholar" aria-label="google-scholar"></i></span>
   </a>
 </div>
   </div>
   <div class="about-contents"><main class="content column-page" id="quarto-document-content">
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Welcome</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Work</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Education</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Projects</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Publications</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+
 <p>I am a Data Analyst working at <a href="https://idr.ufhealth.org/">UF Health Integrated Data Repository</a>. My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the <a href="https://onefloridaconsortium.org/">OneFlorida+ Clinical Research Consortium</a>. In my current role, I work on common data models like <a href="https://ohdsi.github.io/CommonDataModel/">OMOP</a> and <a href="https://pcornet.org/news/resources-pcornet-common-data-model/">PCORNET</a>. Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="data-management-analyst-iii" class="level5">
-<h5 data-anchor-id="data-management-analyst-iii"><u>Data Management Analyst III</u></h5>
-<p><em>UF Health Office of Data Science and Research Implementation</em></p>
-<ul>
-<li>Design and develop data science pipelines to improve the coverage and quality of the data</li>
-<li>Working as an honest broker for research data focusing on electronic health records</li>
-<li>Running ETL pipelines for <a href="https://onefloridaconsortium.org">OneFlorida+</a>, <a href="https://allofus.nih.gov">All of Us Research Program</a> and <a href="https://allofus.nih.gov/funding-and-program-partners/center-for-linkage-and-aquisition-of-data">AoU CLAD</a>, <a href="https://ncats.nih.gov/research/research-activities/n3c">National COVID Cohort Collaborative- N3C</a> and other custom requests</li>
-<li>Adding new elements to source databases</li>
-<li>Develop software and packages to run and validate data in OMOP Common Data Model</li>
-<li>Conduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners</li>
-</ul>
-</section>
-<section id="data-management-analyst-ii" class="level5">
-<h5 data-anchor-id="data-management-analyst-ii"><u>Data Management Analyst II</u></h5>
-<p><em>UF Department of Epidemiology</em></p>
-<ul>
-<li>Lead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions</li>
-<li>Creating visualizations, hotspots and heatmap analysis for community intervention planning</li>
-</ul>
-</section>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<section id="master-of-science-in-biostatistics" class="level5">
-<h5 data-anchor-id="master-of-science-in-biostatistics"><u>Master of Science in Biostatistics</u></h5>
-<p><em>University of Florida | Gainesville, FL (2016-2018)</em></p>
-</section>
-<section id="bachelor-of-technology-in-biotechnology" class="level5">
-<h5 data-anchor-id="bachelor-of-technology-in-biotechnology"><u>Bachelor of Technology in Biotechnology</u></h5>
-<p><em>Vellore Institute of Technology | India (2012 - 2016)</em></p>
-</section>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<p>Coming up</p>
-</div>
-<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
-<ul>
-<li><p>Ayodeji Otufowora, Kathleen L. Egan, Piyush V. Chaudhari, Aderonke A. Okusanya, Afeez O. Ogidan, Linda B. Cottler <a href="https://www.jabfm.org/content/37/1/112"><em>Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida</em></a>. The Journal of the American Board of Family Medicine Dec 2023, jabfm.2023.230227R1; DOI: 10.3122/jabfm.2023.230227R1</p></li>
-<li><p>Fidler AL, Chaudhari P, Sims V, Payne-Murphy J, Fischer J, Cottler LB. <a href="https://pubmed.ncbi.nlm.nih.gov/37313380/"><em>Insomnia among community members in Florida: Associations with demographics, health conditions, and social support</em></a>. J Clin Transl Sci. 2023 May 5;7(1):e128. doi: 10.1017/cts.2023.536. PMID: 37313380; PMCID: PMC10260341.</p></li>
-<li><p>Austin-Datta RJ, Chaudhari PV, Cheng TD, Klarenberg G, Striley CW, Cottler LB. <a href="https://pubmed.ncbi.nlm.nih.gov/36436165/"><em>Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program</em></a>. J Community Health. 2023 Apr;48(2):338-346. doi: 10.1007/s10900-022-01169-2. Epub 2022 Nov 27. PMID: 36436165; PMCID: PMC9702843.</p></li>
-<li><p>Cheng TD, Chaudhari PV, Bitsie KR, Striley CW, Varma DS, Cottler LB. <a href="https://pubmed.ncbi.nlm.nih.gov/35089522/"><em>The HealthStreet Cancer Survivor Cohort: a Community Registry for Cancer Research</em></a>. J Cancer Surviv. 2022 Jan 28:10.1007/s11764-022-01173-4. doi: 10.1007/s11764-022-01173-4. Epub ahead of print. PMID: 35089522; PMCID: PMC9329490.</p></li>
-</ul>
-</div>
-</div>
-</div>
-<!--
-::: panel-tabset
-:::
--->
 
 
 </main></div>
@@ -175,6 +336,19 @@ ul.task-list li input[type="checkbox"] {
  <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -570,7 +744,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>This website was build using <a href="https://quarto.org/">Quarto</a>. 2025 Piyush Chaudhari.</p>
+<p><span class="faux-block"> Made with <a href="https://quarto.org/">Quarto</a>.</span> <span class="faux-block"> Piyush Chaudhari 2026</span></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
@@ -583,23 +757,10 @@ ul.task-list li input[type="checkbox"] {
 </i> 
     </a>
   </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://bsky.app/profile/pc-piyush.bsky.social">
-      <i class="bi bi-bluesky" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/pc-piyush">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://www.instagram.com/iampiyushvc">
-      <i class="bi bi-instagram" role="img">
-</i> 
-    </a>
+    <li class="nav-item">
+    <a class="nav-link" href="https://boxd.it/1uvEr">
+<p><i class="fa-brands fa-square-letterboxd" aria-label="square-letterboxd"></i></p>
+</a>
   </li>  
 </ul>
     </div>
