@@ -115,9 +115,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-date','listing-author','listing-pub-info',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-date","listing-author","listing-pub-info"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -383,7 +383,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#proceedings-journals" id="toc-proceedings-journals" class="nav-link active" data-scroll-target="#proceedings-journals">Proceedings &amp; Journals</a></li>
-  <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations">Presentations</a></li>
   </ul>
 </nav>
     </div>
@@ -564,102 +563,23 @@ window.Quarto = {
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
+<!-- ## Presentations
+
+:::{#presentations}
+::: -->
+
+
+
 </section>
-<section id="presentations" class="level2">
-<h2 class="anchored" data-anchor-id="presentations">Presentations</h2>
-<div id="listing-presentations" class="quarto-listing quarto-listing-container-custom">
+
+<div class="quarto-listing quarto-listing-container-custom" id="listing-presentations">
 <div class="research project-list">
 <ul class="list">
     
-        <li class="project" data-index="0" data-listing-date-sort="1747713600000">
-            <div class="project-content listing-pub-info">
-                <p><strong>Colglazier, Carl.</strong> "The Origins and Evolution of Rules on the Fediverse." <em>PhD Symposium at the 17th ACM Web Science Conference</em>, New Brunswick, NJ, 2025.</p>
-            </div>
-
-            
-            
-        </li>
-        
-        <li class="project" data-index="1" data-listing-date-sort="1721448000000">
-            <div class="project-content listing-pub-info">
-                <p><strong>Colglazier, Carl</strong>. "Do Servers Matter on Mastodon? Data-driven Design for Decentralized Social Media." <em>10th International Conference on Computational Social Science</em>, Philadelphia, 2024.</p>
-            </div>
-
-            
-            
-        </li>
-        
-        <li class="project" data-index="2" data-listing-date-sort="1717387200000">
-            <div class="project-content listing-pub-info">
-                <p><strong>Colglazier, Carl</strong>. "Do Servers Matter on Mastodon? Data-driven Design for Decentralized Social Media." <em>1st International Workshop on Decentralizing the Web</em>, Buffalo, 2024.</p>
-            </div>
-
-            
-            
-                <div class="project-details-listing">
-                    <ul class="project-links">
-                        
-                        
-                            
-                        <li class="project-link">
-                            
-                            <a href="https://doi.org/10.36190/2024.43">
-                            
-                                <i class="fa-solid fa-scroll"></i> Workshop paper
-                            </a>
-                        </li>
-                            
-                        <li class="project-link">
-                            
-                            <a href="https://carlcolglazier.com/demos/deweb2024/">
-                            
-                                <i class=""></i> Demo
-                            </a>
-                        </li>
-                            
-                        
-                    </ul>
-                </div>
-            
-        </li>
-        
-        <li class="project" data-index="3" data-listing-date-sort="1682827200000">
-            <div class="project-content listing-pub-info">
-                <p><strong>Colglazier, Carl</strong>. "The Effects of Sanctions on Decentralized Social Networking Sites: Quasi-experimental Evidence from the Fediverse." <em>73rd Annual International Communication Association Conference</em>, Toronto, 2023.</p>
-            </div>
-
-            
-            
-        </li>
-        
-        <li class="project" data-index="4" data-listing-date-sort="1651291200000">
-            <div class="project-content listing-pub-info">
-                <p><strong>Colglazier, Carl</strong> and Nicholas Diakopoulos. "Predictive Models in News Coverage of the COVID-19 Pandemic in the U.S." <em>72nd Annual International Communication Association Conference</em>, Paris, 2022.</p>
-            </div>
-
-            
-            
-        </li>
-        
-        <li class="project" data-index="5" data-listing-date-sort="1651291200000">
-            <div class="project-content listing-pub-info">
-                <p><strong>Colglazier, Carl</strong>, Aaron Shaw, and Benjamin Mako Hill. "Extended Abstract: Exhaustive Longitudinal Trace Data From Over 70,000 Wiki Communities." <em>72nd Annual International Communication Association Conference</em>, Paris, 2022.</p>
-            </div>
-
-            
-            
-        </li>
-        
 </ul>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div>
-
-
-
-</section>
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
