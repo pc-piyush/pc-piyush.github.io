@@ -1,33 +1,63 @@
 project:
   type: website
   output-dir: docs
+
+  preview: 
+    port: 5555
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+  render:
+    - "*.qmd"
+    - "*.md"
+    - "!etc/"
+
+  resources:
+    - "photos/**"
+    - "html/**"
+    - "brand/**"
+bibliography: "research/publications.bib"
+# csl: apa.csl
+brand: "brand/_brand.yml"
 website:
   title: "Piyush Chaudhari"
-  favicon: photos/Piyush.png
+  favicon: "photos/Piyush.png"
+  search: 
+    location: navbar
+    type: textbox
   twitter-card:
     creator: "@iampiyushvc"
   navbar:
+    logo: "photos/PC_White.png"
+    pinned: true
     right:
-      - text: "Piyush"
+      - text: "Home"
         href: index.qmd
-      - text: "Profile"
-        href: about.qmd
+      # - text: "CV"
+      #   href: cv.qmd
+      # - text: "Projects"
+      #   href: cv.qmd
+      - text: "Research"
+        href: "research/index.qmd"
+      - text: "p.log()"
+        href: posts.qmd
   page-footer: 
-    background: "#D6DBDF"
+    background: "#373a3c"
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/piyush-chaudhari/
-      - icon: twitter
-        href: https://twitter.com/iampiyushvc 
-      - icon: instagram
-        href: https://www.instagram.com/iampiyushvc
-    left: This website was build using [Quarto](https://quarto.org/). 2025 Piyush Chaudhari.
+      - text: "{{< fa brands square-letterboxd >}}"
+        url: "https://boxd.it/1uvEr"
+    left: | 
+      <span class="faux-block"> Made with [Quarto](https://quarto.org/).</span>
+      <span class="faux-block"> Piyush Chaudhari 2026</span>
 format:
   html:
     theme: 
-      - _variables.scss
-      #light: yeti
-      #dark: darkly
+      # - _variables.scss
+      light: [brand,"html/dfb.scss"]
+      dark: [brand,"html/dfb_dark.scss"]
     #css: styles.css
     toc: true
     page-layout: full

@@ -1,0 +1,79 @@
+---
+title: "HealthStreet Cancer Survivor Cohort: A Community Registry for Cancer Research"
+date: 2024-04
+title-block-banner: "#1F1F1F"
+author:
+  - name: Ting-Yuan David Cheng
+    url: 
+    affiliation: University of Florida 
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Kevin R Bitsie
+    affiliation: University of Florida
+  - name: Catherine W Striley
+    affiliation: University of Florida
+  - name: Deepthi S Varma
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+doi: 10.1007/s11764-022-01173-4
+pub-info:
+  reference: >-
+    Cheng TD, <strong>Chaudhari PV</strong>, Bitsie KR, Striley CW, Varma DS, Cottler LB. The HealthStreet Cancer Survivor Cohort: a Community Registry for Cancer Research. J Cancer Surviv. 2024;18(2):366-374. doi:10.1007/s11764-022-01173-4
+  links:
+  - name: Final version
+    url: https://doi.org/10.1007/s11764-022-01173-4
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1007/s11764-022-01173-4
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+
+---
+
+
+## Abstract
+
+### Purpose
+This report describes a cancer survivor cohort from a community engagement program and compares characteristics and willingness to participate in health research between the cancer survivors and non-cancer community members.
+
+### Methods
+Among 11,857 members enrolled in HealthStreet at the University of Florida (10/2011–03/2020), 991 cancer survivors were identified and 1:1 matched to control members without cancer on sex, age, and zip code. Demographics, body weight, height, social determinants of health, history of cancer, and willingness to participate in research were recorded by Community Health Workers as a part of the baseline Health Needs Assessment.
+
+### Results
+Among the cancer survivors, 71.6% were female and 19.2% lived in rural areas with a mean age of 56.7 years in females and 60.8 years in males. At baseline, 44.7% received a cancer diagnosis within 5 years, while 15.8%, more than 20 years. Cancer survivors (vs. matched non-cancer controls) were less likely to be Black (31.1% vs. 63.6%) but more likely to be divorced, separated, or widowed (49.5% vs. 41.2%), be normal/underweight (34.0% vs. 25.6%) and have health insurance (80.0% vs. 68.6%; all p<0.05). Cancer survivors versus matched controls reported higher rates of ever being in a health research study (32.4% vs. 24.9%) and interest in participating in studies ranging from minimal risk to greater-than-minimal risk.
+
+### Conclusions
+Cancer survivors from this community engagement program agnostic to cancer types and treatment are diverse in geography, race, and social determinants of health and can be a valuable resource for observational, interventional, and biospecimen research in cancer survivorship.
+
+**Keywords**: cancer survivors, community outreach and engagement, disparity, rural, research participation
+
+## Citation
+
+```
+@article{cheng2024healthstreet,
+  title={The HealthStreet Cancer Survivor Cohort: a community registry for cancer research},
+  author={Cheng, Ting-Yuan David and Chaudhari, Piyush V and Bitsie, Kevin R and Striley, Catherine W and Varma, Deepthi S and Cottler, Linda B},
+  journal={Journal of Cancer Survivorship},
+  volume={18},
+  number={2},
+  pages={366--374},
+  year={2024},
+  publisher={Springer US New York}
+}
+```
+
+
+<p class="buttons" style="text-align:center;">
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1007/s11764-022-01173-4"><i class="fa-solid fa-z"></i>&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+</p>
+
+

@@ -1,0 +1,79 @@
+---
+title: "Insomnia among community members in Florida: Associations with demographics, health conditions, and social support"
+date: 2023-05
+title-block-banner: "#1F1F1F"
+author:
+  - name: Andrea L Fidler
+    affiliation: University of Florida 
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Victoria Sims
+    affiliation: University of Florida
+  - name: Jessica Payne-Murphy
+    affiliation: University of Florida
+  - name: Jonathan Fischer
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+doi: 10.1017/cts.2023.536
+pub-info:
+  reference: >-
+    Fidler AL, <strong>Chaudhari P</strong>, Sims V, Payne-Murphy J, Fischer J, Cottler LB. Insomnia among community members in Florida: Associations with demographics, health conditions, and social support. J Clin Transl Sci. 2023;7(1):e128. Published 2023 May 5. doi:10.1017/cts.2023.536
+  links:
+  - name: Final version
+    url: https://doi.org/10.1017/cts.2023.536
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1017/cts.2023.536
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+
+---
+
+
+## Abstract
+
+### Objectives
+To identify associations between demographics, social determinants of health, health conditions, and reported history of insomnia. A cross-sectional study including 11,960 adult community members recruited through HealthStreet, a community outreach program at University of Florida.
+
+### Methods
+Health assessments were conducted via interviews. Participants reported their demographic background, level of social support, history of health conditions, and insomnia. Logistic regression was used to understand associations between risk factors and history of insomnia.
+
+### Results 
+The prevalence of self-reported insomnia was 27.3%. Adults aged ≥ 65 years (OR = 1.16) and women (OR = 1.18) reported higher rates of insomnia than their counterparts. Black/African American individuals reported lower rates of insomnia (OR = 0.72) than White individuals. Individuals with food insecurity (OR = 1.53), a military history (OR = 1.30), lower social support (OR = 1.24), living alone (OR = 1.14), anxiety (OR = 2.33), cardiometabolic disease (OR = 1.58), and attention-deficit hyperactivity disorder (ADHD) (OR = 1.44) were significantly more likely to endorse insomnia compared with their counterparts. Depression (OR = 2.57) had the strongest association with insomnia.
+
+### Conclusions
+This study provides evidence regarding who is at greater risk for insomnia among a large community-based sample. Our findings highlight the importance of screening for insomnia, particularly among patients who experience food insecurity, are military veterans, have anxiety, depression, ADHD, or cardiometabolic disease, as well as those who live alone or have lower levels of social support. Future public health campaigns should provide education on insomnia symptoms, treatments, and evidenced-based sleep-promotion strategies.
+
+**Keywords**: Insomnia; community sample; health disparities; mental health; sleep problems; social support.
+
+
+## Citation
+
+```
+@article{fidler2023insomnia,
+  title={Insomnia among community members in Florida: Associations with demographics, health conditions, and social support},
+  author={Fidler, Andrea L and Chaudhari, Piyush and Sims, Victoria and Payne-Murphy, Jessica and Fischer, Jonathan and Cottler, Linda B},
+  journal={Journal of Clinical and Translational Science},
+  volume={7},
+  number={1},
+  pages={e128},
+  year={2023},
+  publisher={Cambridge University Press}
+}
+```
+
+
+<p class="buttons" style="text-align:center;">
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1017/cts.2023.536"><i class="fa-solid fa-z"></i>&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+</p>
+
+

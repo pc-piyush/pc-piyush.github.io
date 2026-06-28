@@ -1,7 +1,9 @@
 ---
 title: "Quartoing"
 description: "The story of an old procrastination and a young inspiration"
-navbar: false
+navbar: true
+title-block-banner: "#1F1F1F"
+
 author:
   - name: Piyush Chaudhari
     url: https://pc-piyush.github.io/

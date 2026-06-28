@@ -1,0 +1,33 @@
+---
+title: ""
+listing:
+  - id: proceedings-journals
+    contents: "papers/*/index.qmd"
+    sort: "date desc"
+    template: "../html/research/listing.ejs"
+  - id: presentations
+    contents: ["workshops.yml", "conferences.yml", "presentations.yml"]
+    sort: "date desc"
+    template: "../html/research/listing.ejs"
+page-layout: full
+include-back-link: false
+toc-location: right
+toc: true
+brand: ../brand/_brand.yml
+format:
+  html:
+    # css: html/cv.scss
+    theme: 
+      light: ["../html/dfb.scss","brand"]
+      dark: ["../html/dfb_dark.scss","brand"]
+---
+
+## Proceedings & Journals
+
+:::{#proceedings-journals}
+:::
+
+## Presentations
+
+:::{#presentations}
+:::

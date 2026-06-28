@@ -1,0 +1,65 @@
+<% preprocessListing(items) %>
+
+<% items.forEach(function(pub){ %>
+
+<div class="publication">
+
+<h3>
+
+<%= pub.star %>
+
+<%= pub.title %>
+
+</h3>
+
+<p>
+
+<%- pub.authorString %>
+
+</p>
+
+<p>
+
+<em><%= pub.venue %></em>
+
+(<%= pub.year %>)
+
+<span class="<%= pub.badge %>">
+
+<%= pub.status %>
+
+</span>
+
+</p>
+
+<% if(pub.topics){ %>
+
+<div class="topics">
+
+<% pub.topics.forEach(function(topic){ %>
+
+<span class="topic"><%= topic %></span>
+
+<% }) %>
+
+</div>
+
+<% } %>
+
+<div class="buttons">
+
+<% pub.links.forEach(function(link){ %>
+
+<a href="<%= link.url %>">
+
+<%= link.text %>
+
+</a>
+
+<% }) %>
+
+</div>
+
+</div>
+
+<% }) %>

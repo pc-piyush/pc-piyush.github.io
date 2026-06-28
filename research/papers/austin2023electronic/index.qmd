@@ -1,0 +1,69 @@
+---
+title: "Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program"
+date: 2023-04
+title-block-banner: "#1F1F1F"
+author:
+  - name: Rebecca J Austin-Datta
+    affiliation: University of Florida 
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Ting-Yuan David Cheng
+    affiliation: University of Florida
+  - name: Geraldine Klarenberg
+    affiliation: University of Florida
+  - name: Catherine Woodstock Striley
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+doi: 10.1007/s10900-022-01169-2
+pub-info:
+  reference: >-
+    Austin-Datta RJ, <strong>Chaudhari PV</strong>, Cheng TD, Klarenberg G, Striley CW, Cottler LB. Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program. J Community Health. 2023;48(2):338-346. doi:10.1007/s10900-022-01169-2
+  links:
+  - name: Final version
+    url: https://doi.org/10.1007/s10900-022-01169-2
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1007/s10900-022-01169-2
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+
+---
+
+
+## Abstract
+
+Electronic nicotine delivery systems (ENDS) are relatively new and ENDS use data from community engagement programs may help us understand usage patterns and facilitate targeted longitudinal studies. Community members in Florida, USA, were asked about ENDS use, tobacco use, and health history/concerns by Community Health Workers. Among 7253 members recruited during 2014 to 2021 into our HealthStreet program, 1177 had ever used ENDS; the proportion increased from 12 to 27% from 2014 to 2021 (adjusted odds ratio (aOR) 2.5; 95% CI 1.7-3.5; Ever versus never used ENDS). Ever tobacco use was strongly associated with ENDS use; 69% of ever users were current tobacco users. Demographic determinants (sex, age, race) and food insecurity were strongest predictors of ENDS use. Most who had ever used ENDS were aged 18-25 (aOR 5.9; 95% CI 4.6-7.6; vs. aged 60 + years), White (aOR 3.7; 95% CI 3.2-4.3; vs. Black/African American), male (aOR 1.5; 95% CI 1.3-1.7; vs. female), and recently food insecure (aOR 1.8; 95% CI 1.5-2.0; vs. not recently food insecure). Those with respiratory issues were more likely to have used ENDS compared to those without (aOR 2.0; 95% CI 1.6-2.6; aOR 1.3; 95% CI 1.1-1.5). Members concerned about hypertension were less likely to have used ENDS (aOR 0.7; 95% CI 0.5-0.9). In this relatively rural, micropolitan sample, tobacco use, socio-economic determinants, and certain health history/concerns were strongly associated with ENDS use. Community outreach approaches are needed to further understand these factors and implement interventions.
+
+**Keywords**: Community engagement; Electronic nicotine delivery systems (ENDS); HealthStreet; Socio-economic determinants; Tobacco use.
+
+
+## Citation
+
+```
+@article{austin2023electronic,
+  title={Electronic Nicotine Delivery Systems (ENDS) use among members of a community engagement program},
+  author={Austin-Datta, Rebecca J and Chaudhari, Piyush Vilas and Cheng, Ting-Yuan David and Klarenberg, Geraldine and Striley, Catherine Woodstock and Cottler, Linda B},
+  journal={Journal of Community Health},
+  volume={48},
+  number={2},
+  pages={338--346},
+  year={2023},
+  publisher={Springer US New York}
+}
+```
+
+
+<p class="buttons" style="text-align:center;">
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1007/s10900-022-01169-2"><i class="fa-solid fa-z"></i>&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+</p>
+
+

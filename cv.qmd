@@ -1,0 +1,213 @@
+---
+title: ""
+page-layout: full
+toc: true
+#title-block-banner: "#EE6A24"
+#title-block-banner-color: "#000000"
+brand: brand/_brand.yml
+format:
+  html:
+    # css: html/cv.scss
+    theme: 
+      light: ["html/dfb.scss","brand"]
+      dark: ["html/dfb_dark.scss","brand"]
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-lg-4}
+
+# Curriculum Vitae
+
+**Statistics • Clinical Informatics Data Science • Machine Learning**
+
+
+---
+
+📍 Gainesville, Florida
+
+✉️ [piyushchaudhari@ufl.edu](mailto:piyushchaudhari@ufl.edu)
+
+🌐 [pc-piyush.github.io](https://pc-piyush.github.io)
+
+[{{< fa brands github >}}](https://github.com/pc-piyush)
+[{{< fa brands linkedin >}}](https://www.linkedin.com/in/piyush-chaudhari/)
+[{{< fa brands google-scholar >}}](https://scholar.google.com/citations?hl=en&user=gGrOPjwAAAAJ)
+
+---
+
+## Summary
+
+I work in the intersection of Statistics and Machine Learning for their applications in Clinical Informatics, Modeling and Computation and Data Democratization
+
+---
+
+## Technical Skills
+
+### Programming
+
+Python • R • SQL • SAS • Markdown
+
+### Data Science
+
+Machine Learning • Deep Learning • NLP • Statistics
+
+### Clinical Data
+
+- OMOP CDM
+- PCORnet
+- Epic Caboodle
+- Clarity
+
+### Visualization
+
+- Quarto
+- Shiny
+- Streamlit
+- Power BI
+
+---
+
+## Research Interests
+
+- Clinical AI
+- Biomedical NLP
+- Representation Learning
+- Patient Embeddings
+- Knowledge Graphs
+- RAG
+
+:::
+
+::: {.g-col-12 .g-col-lg-8}
+
+
+## Data Management Analyst
+
+*UF Health Office of Data Science and Research Implementation* *(Feb 2023 - Current)*
+
+- Design and develop data science pipelines to improve the coverage and quality of the data
+- Working as an honest broker for research data focusing on electronic health records
+- Running ETL pipelines for [OneFlorida+](https://onefloridaconsortium.org), [All of Us Research Program](https://allofus.nih.gov) and [AoU CLAD](https://allofus.nih.gov/funding-and-program-partners/center-for-linkage-and-aquisition-of-data), [National COVID Cohort Collaborative- N3C](https://ncats.nih.gov/research/research-activities/n3c) and other custom requests
+- Adding new elements to source databases
+- Develop software and packages to run and validate data in OMOP Common Data Model
+- Conduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners
+
+---
+
+*UF Department of Epidemiology* *(Jun 2018-Jan 2023)*
+
+- Lead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions
+- Creating visualizations, hotspots and heatmap analysis for community intervention planning
+
+---
+
+# Education
+
+### PhD in Biomedical Informatics
+
+*University of Florida \| Gainesville, FL (2025-current)*
+
+### Master of Science in Biostatistics
+
+*University of Florida \| Gainesville, FL (2016-2018)*
+
+### Bachelor of Technology in Biotechnology
+
+*Vellore Institute of Technology \| India (2012 - 2016)*
+
+
+---
+
+# Selected Projects
+
+## Fixed Coordinate Patient Representation
+
+Designed a temporal patient representation capable of supporting classical ML and deep learning while preserving temporal consistency.
+
+**Technology**
+
+Python • PyTorch • OMOP • DuckDB
+
+---
+
+## Clinical NLP Extraction Pipeline
+
+Built hybrid rule-based + transformer extraction system with confidence scoring.
+
+**Technology**
+
+Python • Transformers • Regex • SQL Server
+
+---
+
+## Quarto Research Website
+
+Created an academic website hosting publications, presentations, and reproducible analyses.
+
+---
+
+# Publications
+
+### 2026
+
+**Paper title**
+
+Journal
+
+---
+
+### 2025
+
+**Paper title**
+
+Conference
+
+---
+
+# Presentations
+
+- AMIA Annual Symposium
+- Department Seminar
+- Journal Club
+
+---
+
+# Awards
+
+- Graduate Research Award
+- Best Poster
+- Dean's List
+
+---
+
+# Certifications
+
+- AWS
+- Azure
+- Coursera
+
+---
+
+# Teaching
+
+- Graduate Teaching Assistant
+- Guest Lectures
+
+---
+
+# Professional Memberships
+
+- AMIA
+- IEEE
+- ACM
+
+---
+
+# References
+
+Available upon request.
+
+:::
+
+:::

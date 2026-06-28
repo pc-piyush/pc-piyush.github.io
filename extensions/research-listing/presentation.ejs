@@ -1,0 +1,66 @@
+<% preprocessListing(items) %>
+
+<div class="presentation-listing">
+
+<% items.forEach(function(pres){ %>
+
+  <div class="presentation-card">
+
+    <div class="presentation-header">
+
+      <h3 class="presentation-title">
+        🎤 <%= pres.title %>
+      </h3>
+
+      <p class="presentation-authors">
+        <%- pres.authorString %>
+      </p>
+
+      <p class="presentation-meta">
+
+        <% if (pres.event) { %>
+          <strong><%= pres.event %></strong>
+        <% } %>
+
+        <% if (pres.location) { %>
+          — <%= pres.location %>
+        <% } %>
+
+        <% if (pres.date) { %>
+          (<%= pres.date %>)
+        <% } %>
+
+      </p>
+
+    </div>
+
+    <% if (pres.topics) { %>
+      <div class="topic-tags">
+        <% pres.topics.forEach(function(t){ %>
+          <span class="tag"><%= t %></span>
+        <% }) %>
+      </div>
+    <% } %>
+
+    <!-- Links -->
+    <div class="link-buttons">
+
+      <% if (pres.slides) { %>
+        <a class="btn" href="<%= pres.slides %>">Slides</a>
+      <% } %>
+
+      <% if (pres.video) { %>
+        <a class="btn" href="<%= pres.video %>">Video</a>
+      <% } %>
+
+      <% if (pres.poster) { %>
+        <a class="btn" href="<%= pres.poster %>">Poster</a>
+      <% } %>
+
+    </div>
+
+  </div>
+
+<% }) %>
+
+</div>

@@ -1,0 +1,66 @@
+<% preprocessListing(items) %>
+
+<div class="poster-listing">
+
+<% items.forEach(function(poster){ %>
+
+  <div class="poster-card">
+
+    <!-- Thumbnail (optional) -->
+    <% if (poster.image) { %>
+      <div class="poster-image">
+        <img src="<%= poster.image %>" alt="<%= poster.title %> poster">
+      </div>
+    <% } %>
+
+    <div class="poster-content">
+
+      <h3 class="poster-title">
+        🖼️ <%= poster.title %>
+      </h3>
+
+      <p class="poster-authors">
+        <%- poster.authorString %>
+      </p>
+
+      <p class="poster-meta">
+        <strong><%= poster.conference %></strong>
+        <% if (poster.location) { %>
+          — <%= poster.location %>
+        <% } %>
+        <% if (poster.date) { %>
+          (<%= poster.date %>)
+        <% } %>
+      </p>
+
+      <% if (poster.topics) { %>
+        <div class="topic-tags">
+          <% poster.topics.forEach(function(t){ %>
+            <span class="tag"><%= t %></span>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <!-- Links -->
+      <div class="link-buttons">
+
+        <% if (poster.poster) { %>
+          <a class="btn" href="<%= poster.poster %>">Poster (PDF)</a>
+        <% } %>
+
+        <% if (poster.slides) { %>
+          <a class="btn" href="<%= poster.slides %>">Slides</a>
+        <% } %>
+
+        <% if (poster.video) { %>
+          <a class="btn" href="<%= poster.video %>">Talk</a>
+        <% } %>
+
+      </div>
+
+    </div>
+  </div>
+
+<% }) %>
+
+</div>
