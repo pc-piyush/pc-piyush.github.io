@@ -256,56 +256,70 @@
     "href": "cv.html",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Statistics • Clinical Informatics Data Science • Machine Learning\n\n📍 Gainesville, Florida\n✉️ piyushchaudhari@ufl.edu\n🌐 pc-piyush.github.io\n  \n\n\n\nI work in the intersection of Statistics and Machine Learning for their applications in Clinical Informatics, Modeling and Computation and Data Democratization\n\n\n\n\n\n\nPython • R • SQL • SAS • Markdown\n\n\n\nMachine Learning • Deep Learning • NLP • Statistics\n\n\n\n\nOMOP CDM\nPCORnet\nEpic Caboodle\nClarity\n\n\n\n\n\nQuarto\nShiny\nStreamlit\nPower BI\n\n\n\n\n\n\n\nClinical AI\nBiomedical NLP\nRepresentation Learning\nPatient Embeddings\nKnowledge Graphs\nRAG\n\n\n\n\n\n\nUF Health Office of Data Science and Research Implementation (Feb 2023 - Current)\n\nDesign and develop data science pipelines to improve the coverage and quality of the data\nWorking as an honest broker for research data focusing on electronic health records\nRunning ETL pipelines for OneFlorida+, All of Us Research Program and AoU CLAD, National COVID Cohort Collaborative- N3C and other custom requests\nAdding new elements to source databases\nDevelop software and packages to run and validate data in OMOP Common Data Model\nConduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nLead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions\nCreating visualizations, hotspots and heatmap analysis for community intervention planning\n\n\n\n\n\n\n\nUniversity of Florida | Gainesville, FL (2025-current)\n\n\n\nUniversity of Florida | Gainesville, FL (2016-2018)\n\n\n\nVellore Institute of Technology | India (2012 - 2016)\n\n\n\n\n\n\n\nDesigned a temporal patient representation capable of supporting classical ML and deep learning while preserving temporal consistency.\nTechnology\nPython • PyTorch • OMOP • DuckDB\n\n\n\n\nBuilt hybrid rule-based + transformer extraction system with confidence scoring.\nTechnology\nPython • Transformers • Regex • SQL Server\n\n\n\n\nCreated an academic website hosting publications, presentations, and reproducible analyses.\n\n\n\n\n\n\n\nPaper title\nJournal\n\n\n\n\nPaper title\nConference\n\n\n\n\n\n\nAMIA Annual Symposium\nDepartment Seminar\nJournal Club\n\n\n\n\n\n\nGraduate Research Award\nBest Poster\nDean’s List\n\n\n\n\n\n\nAWS\nAzure\nCoursera\n\n\n\n\n\n\nGraduate Teaching Assistant\nGuest Lectures\n\n\n\n\n\n\nAMIA\nIEEE\nACM\n\n\n\n\n\nAvailable upon request."
+    "text": "📍 Gainesville, Florida\n✉️ piyushchaudhari@ufl.edu\n🌐 pc-piyush.github.io\n  \n\n\n\nI work in the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization\n\n\n\n\n\nStatistical Machine Learning\nClinical Informatics and Decision Support\nPatient Representation Learning\nPhentyping and Sub-Phenotyping\nPrivacy-Preserving Zero Knowledge Learning\nData Democratization\n\n\n\n\n\n\n\nPython | R | SQL | SAS | Markdown\n\n\n\nMachine Learning | Deep Learning | NLP  Statistics\n\n\n\nOMOP | i2b2 | PCORNET | EPIC Clarity EPIC Caboodle | EPIC Cosmos\n\n\n\nPowerBI | SPSS | RedCAP | ArcGIS | Git SAP Data Services | SAP Business Objects\n\n\n\n\n\nPhD in Biomedical Informatics (currently pursuing)\nUniversity of Florida | Gainesville, FL (2025-current)\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)\n\n\n\n\n\n\n\nUF Health Integrated Data Repository (Feb 2023 - Current)\n\nDesigning and developing data science pipelines to improve coverage and quality of data for UF Health Research Enterprise\nCurating data elements from EPIC Clarity and Caboodle for research purposes\nDeveloping Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like OMOP, PCORNET and i2b2\nMantaining databases for free-text sources like clinical notes, order and pathology reports, Social Determinants of Health variables, genetic sequences, etc.\nBuilding patient-centric Digital Twin technology for UF Health Enterprise and implementing in i2b2 to improve cohort phenotyping\nWorking as an honest broker between researchers and UF Health/Shands data server to provision access of data based on IRB approved research protocols\nTraining research partners in i2b2 and OHDSI ATLAS\nApplying appropriate informatics methods to answer research questions\nCurrently working on projects involving OneFlorida+ Clinical Research Consortium, UF Cancer Institute, UF Health, and UF College of Dentistry\nSelected accomplishments\n\n10x+ improvement in data delivery for free-text clinical notes and order reports\n5x+ improvement in data delivery through OMOP Common Data Model\n5x+ improvement for custom de-identification for data delivery\n\n\n\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nConducting statistical analysis, data management and quality control at UF HealthStreet (substance abuse and public health epidemiology data) for ~13,000 individuals across 700 data points\nCreating visualizations, hotspots and heatmap analysis for intervention planning\nWorking with UF Integrated Data Repository to link self-reported data from community members to their Electronic Health Records at UF Health, analyzing data from UF Survey Research Center, BEBR\nStatistical consulting for grant and study design (IRB protocol development, risk assessment, data management plan), cohort discovery (i2b2) and mentoring UF students working on Cottlerlab legacy data\nProviding technical support for DSM-V software (developed on MS Access)\n\nSelected Grants: Lead Statistician and Data Management Analyst\n\nProgram to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus Principal Investigator: Linda B. Cottler (Funded by CDC)\nWomen Helping Women- Lung Cancer Screening Study Principal Investigator: Catherine W. Striley; (Funded by UF Cancer Center; IRB202100009)\nCommunity Engagement and Research Program- HealthStreet Principal Investigator: Linda B. Cottler, (Funded by NIH NCATS; IRB201600459)\nPrecision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities Principal Investigator: Linda B. Cottler (Funded by FL Department of Health)\nStudy of Non-Oral Administration of Prescription Stimulants Principal Investigator: Linda B. Cottler (Funded by Arbor Pharmaceuticals)\n\n\n\n\nUF Department of Biostatistics (Aug 2017-May 2018)\n\nInvolved in data reconfiguration, management, and consulting for the Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)\n\n\n\n\n\n\n\n\nYou can find my publications in the Research tab or at my Google Scholar page\n\n\n\n\n\nEmerging Research Scholars PhD Fellow (Aug 2025 - Dec 2026)\nUniversity of Florida Superior Accomplishment Award\n\nUniversity-Gold Award for Individual Employee Performance in Finance, Research, and Compliance (April 2025)\nDivision-Level Winner (Division 5- Health Affairs) for Individual Employee Performance (March 2025)\n\n\n\n\n\n\n\nCompleted EPIC-led coursework for Cosmos, Cogito, Clarity Data Model, Caboodle Data Model and Clinical Data Model\nSAS Certified Specialist: Base Programming Using SAS 9.4\nDesign for Six Sigma (License: 13361772) and Six Sigma Green Belt Certified (License: 13361771)\n\n\n\n\n\n\nAvailable upon request."
   },
   {
     "objectID": "cv.html#summary",
     "href": "cv.html#summary",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "I work in the intersection of Statistics and Machine Learning for their applications in Clinical Informatics, Modeling and Computation and Data Democratization"
-  },
-  {
-    "objectID": "cv.html#technical-skills",
-    "href": "cv.html#technical-skills",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Python • R • SQL • SAS • Markdown\n\n\n\nMachine Learning • Deep Learning • NLP • Statistics\n\n\n\n\nOMOP CDM\nPCORnet\nEpic Caboodle\nClarity\n\n\n\n\n\nQuarto\nShiny\nStreamlit\nPower BI"
+    "text": "I work in the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization"
   },
   {
     "objectID": "cv.html#research-interests",
     "href": "cv.html#research-interests",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Clinical AI\nBiomedical NLP\nRepresentation Learning\nPatient Embeddings\nKnowledge Graphs\nRAG"
+    "text": "Statistical Machine Learning\nClinical Informatics and Decision Support\nPatient Representation Learning\nPhentyping and Sub-Phenotyping\nPrivacy-Preserving Zero Knowledge Learning\nData Democratization"
   },
   {
-    "objectID": "cv.html#data-management-analyst",
-    "href": "cv.html#data-management-analyst",
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "UF Health Office of Data Science and Research Implementation (Feb 2023 - Current)\n\nDesign and develop data science pipelines to improve the coverage and quality of the data\nWorking as an honest broker for research data focusing on electronic health records\nRunning ETL pipelines for OneFlorida+, All of Us Research Program and AoU CLAD, National COVID Cohort Collaborative- N3C and other custom requests\nAdding new elements to source databases\nDevelop software and packages to run and validate data in OMOP Common Data Model\nConduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nLead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions\nCreating visualizations, hotspots and heatmap analysis for community intervention planning"
+    "text": "Python | R | SQL | SAS | Markdown\n\n\n\nMachine Learning | Deep Learning | NLP  Statistics\n\n\n\nOMOP | i2b2 | PCORNET | EPIC Clarity EPIC Caboodle | EPIC Cosmos\n\n\n\nPowerBI | SPSS | RedCAP | ArcGIS | Git SAP Data Services | SAP Business Objects"
   },
   {
-    "objectID": "cv.html#fixed-coordinate-patient-representation",
-    "href": "cv.html#fixed-coordinate-patient-representation",
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Designed a temporal patient representation capable of supporting classical ML and deep learning while preserving temporal consistency.\nTechnology\nPython • PyTorch • OMOP • DuckDB"
+    "text": "PhD in Biomedical Informatics (currently pursuing)\nUniversity of Florida | Gainesville, FL (2025-current)\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)"
   },
   {
-    "objectID": "cv.html#clinical-nlp-extraction-pipeline",
-    "href": "cv.html#clinical-nlp-extraction-pipeline",
+    "objectID": "cv.html#work-experience",
+    "href": "cv.html#work-experience",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Built hybrid rule-based + transformer extraction system with confidence scoring.\nTechnology\nPython • Transformers • Regex • SQL Server"
+    "text": "UF Health Integrated Data Repository (Feb 2023 - Current)\n\nDesigning and developing data science pipelines to improve coverage and quality of data for UF Health Research Enterprise\nCurating data elements from EPIC Clarity and Caboodle for research purposes\nDeveloping Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like OMOP, PCORNET and i2b2\nMantaining databases for free-text sources like clinical notes, order and pathology reports, Social Determinants of Health variables, genetic sequences, etc.\nBuilding patient-centric Digital Twin technology for UF Health Enterprise and implementing in i2b2 to improve cohort phenotyping\nWorking as an honest broker between researchers and UF Health/Shands data server to provision access of data based on IRB approved research protocols\nTraining research partners in i2b2 and OHDSI ATLAS\nApplying appropriate informatics methods to answer research questions\nCurrently working on projects involving OneFlorida+ Clinical Research Consortium, UF Cancer Institute, UF Health, and UF College of Dentistry\nSelected accomplishments\n\n10x+ improvement in data delivery for free-text clinical notes and order reports\n5x+ improvement in data delivery through OMOP Common Data Model\n5x+ improvement for custom de-identification for data delivery\n\n\n\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nConducting statistical analysis, data management and quality control at UF HealthStreet (substance abuse and public health epidemiology data) for ~13,000 individuals across 700 data points\nCreating visualizations, hotspots and heatmap analysis for intervention planning\nWorking with UF Integrated Data Repository to link self-reported data from community members to their Electronic Health Records at UF Health, analyzing data from UF Survey Research Center, BEBR\nStatistical consulting for grant and study design (IRB protocol development, risk assessment, data management plan), cohort discovery (i2b2) and mentoring UF students working on Cottlerlab legacy data\nProviding technical support for DSM-V software (developed on MS Access)\n\nSelected Grants: Lead Statistician and Data Management Analyst\n\nProgram to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus Principal Investigator: Linda B. Cottler (Funded by CDC)\nWomen Helping Women- Lung Cancer Screening Study Principal Investigator: Catherine W. Striley; (Funded by UF Cancer Center; IRB202100009)\nCommunity Engagement and Research Program- HealthStreet Principal Investigator: Linda B. Cottler, (Funded by NIH NCATS; IRB201600459)\nPrecision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities Principal Investigator: Linda B. Cottler (Funded by FL Department of Health)\nStudy of Non-Oral Administration of Prescription Stimulants Principal Investigator: Linda B. Cottler (Funded by Arbor Pharmaceuticals)\n\n\n\n\nUF Department of Biostatistics (Aug 2017-May 2018)\n\nInvolved in data reconfiguration, management, and consulting for the Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)"
   },
   {
-    "objectID": "cv.html#quarto-research-website",
-    "href": "cv.html#quarto-research-website",
+    "objectID": "cv.html#publications",
+    "href": "cv.html#publications",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Created an academic website hosting publications, presentations, and reproducible analyses."
+    "text": "You can find my publications in the Research tab or at my Google Scholar page"
+  },
+  {
+    "objectID": "cv.html#awards-and-scholarships",
+    "href": "cv.html#awards-and-scholarships",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Emerging Research Scholars PhD Fellow (Aug 2025 - Dec 2026)\nUniversity of Florida Superior Accomplishment Award\n\nUniversity-Gold Award for Individual Employee Performance in Finance, Research, and Compliance (April 2025)\nDivision-Level Winner (Division 5- Health Affairs) for Individual Employee Performance (March 2025)"
+  },
+  {
+    "objectID": "cv.html#certifications",
+    "href": "cv.html#certifications",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Completed EPIC-led coursework for Cosmos, Cogito, Clarity Data Model, Caboodle Data Model and Clinical Data Model\nSAS Certified Specialist: Base Programming Using SAS 9.4\nDesign for Six Sigma (License: 13361772) and Six Sigma Green Belt Certified (License: 13361771)"
+  },
+  {
+    "objectID": "cv.html#references",
+    "href": "cv.html#references",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Available upon request."
   },
   {
     "objectID": "posts.html",
