@@ -1,0 +1,111 @@
+/*-- scss:defaults --*/
+
+/* Slightly larger base font than the Reveal.js default */
+$presentation-font-size-root: 40px;
+
+/*-- scss:rules --*/
+
+/* Base slide typography */
+.reveal {
+  font-family: Georgia, serif;
+  color: #1A1A1A;
+
+  p,
+  li,
+  td,
+  th {
+    font-size: 1.05em;
+    line-height: 1.5;
+  }
+
+  ul,
+  ol {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    color: #0E0E0F;
+    margin-bottom: 0.4em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    color: #0E0E0F;
+    border-bottom: 3px solid #D6001C;
+    padding-bottom: 0.15em;
+    margin-bottom: 0.6em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    color: #0E0E0F;
+  }
+
+  strong {
+    color: #D6001C;
+  }
+
+  a {
+    color: #D6001C;
+  }
+
+  a:hover {
+    color: #FFCE00;
+  }
+
+  code {
+    font-size: 0.9em;
+  }
+
+  pre code {
+    font-size: 0.8em;
+  }
+
+  blockquote {
+    border-left: 5px solid #D6001C;
+    padding-left: 1em;
+  }
+}
+
+/* Footer */
+.reveal .footer {
+  font-size: 0.9rem;
+  color: #666;
+  pointer-events: auto;
+}
+
+.reveal .footer a {
+  color: #D6001C;
+  text-decoration: none;
+}
+
+.reveal .footer a:hover {
+  color: #FFCE00;
+}
+
+/* Optional: nicer tables */
+.reveal table {
+  font-size: 0.9em;
+  border-collapse: collapse;
+}
+
+.reveal th {
+  border-bottom: 2px solid #D6001C;
+}
+
+.reveal td,
+.reveal th {
+  padding: 0.4em 0.8em;
+}
+
+.reveal p code,
+.reveal li code,
+.reveal td code {
+  color: #1d1f94;          /* text color */
+  background-color: rgba(#D6001C,0.1); /* optional background */
+  padding: 0.1em 0.25em;
+  border-radius: 3px;
+}
+
