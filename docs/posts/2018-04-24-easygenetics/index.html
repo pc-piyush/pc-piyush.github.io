@@ -199,8 +199,10 @@
     }
   </style>
 <meta name="twitter:title" content="easygenetics – Piyush Chaudhari">
-<meta name="twitter:image" content="images/Fig1.png">
+<meta name="twitter:image" content="https://pc-piyush.github.io/posts/2018-04-24-easygenetics/images/Fig1.png">
 <meta name="twitter:creator" content="@iampiyushvc">
+<meta name="twitter:image-height" content="575">
+<meta name="twitter:image-width" content="1170">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="quarto-light">
@@ -282,7 +284,7 @@
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/1j/qb3qtyq94gxfdcs5wx9wt4zr0000gn/T//Rtmp8QLTQ8/downloaded_packages</code></pre>
+    /var/folders/1j/qb3qtyq94gxfdcs5wx9wt4zr0000gn/T//RtmpfXtX8y/downloaded_packages</code></pre>
 </div>
 </div>
 <p>Then the <code>easygenetics</code> package can be installed using <code>install_github()</code> function from <code>devtools</code> package as below:</p>
@@ -468,6 +470,121 @@ The downloaded binary packages are in
 <figure>
 <img data-src="images/Fig4.png" class="r-stretch" style="width:25.0%">
 <figcaption>Fig 4: <code>Interval_Mapping()</code></figcaption>
+</figure>
+</div>
+</center>
+</section>
+<section id="multiple_qtl_mapping" class="slide level2">
+<h2><code>Multiple_QTL_Mapping()</code></h2>
+<div style="font-size: 35%;">
+<p><code>Multiple_QTL_Mapping()</code> is the next function in the tab and is used for multiple QTL mapping by the Haley-Knott Regression</p>
+<ul>
+<li>The downside of mapping one QTL at a time is that a second QTL might be missed, or ghosted</li>
+<li>By performing multiple QTL mapping, more QTLs can be identified on the same chromosome</li>
+</ul>
+<h3 id="input-2">Input</h3>
+<p>To execute this function, there are parameters that need to be set, which will be described below</p>
+<ul>
+<li>The <strong>Enter Seed</strong> is a numeric value that allows the results to be reproducible</li>
+<li>The <strong>Type of Function</strong> is a select list input with the options of
+<ul>
+<li><strong>Genetic Map</strong></li>
+<li><strong>Single QTL</strong></li>
+<li><strong>Two QTLs</strong></li>
+<li><strong>Heat Map-Two QTLs Comparison</strong></li>
+<li><strong>Two QTLs Comparison</strong></li>
+<li><strong>Composite Interval Mapping</strong></li>
+</ul></li>
+<li>The default is set to <strong>Genetic Map</strong></li>
+</ul>
+</div>
+</section>
+<section id="multiple_qtl_mapping-1" class="slide level2">
+<h2><code>Multiple_QTL_Mapping()</code></h2>
+<section id="output-2" style="font-size: 35%;">
+<h3>Output</h3>
+<p>Depending on what is selected and what the other inputs are, determines the output displayed</p>
+<ul>
+<li>By selecting <strong>Genetic Map</strong> , the output shows a plot marker map</li>
+<li>The <strong>Single QTL</strong> option plots the LOD score for each map position in centimorgans of a single QTL, which is the QTL the user clarifies in QTL1. A summary of this using Haley-Knott regression is presented below the plot</li>
+<li>The same output is shown for when <strong>Two QTLs</strong> is selected, except now the method uses a two-QTL model</li>
+<li>Choosing <strong>Heat Map-Two QTLs Comparison</strong> changes the output into a heat map of the QTLs</li>
+<li>With <strong>Composite Interval Mapping</strong> a plot is given with the black curve representing single interval mapping where the QTLs are not clearly distinguished and the blue curve is the composite interval curve. Below the plot the LOD threshold of the composite interval curve is provided in summary.</li>
+</ul>
+<p>The rest of the parameters are similar to the ones in the <code>Interval_Mapping</code> function. In order for the output to be present, there needs to be a numeric value entered into the <code>length of chromosome</code> , the <code>number of markers</code> , the <code>number of individuals</code> , the <code>position of QTL1 and QTL2</code> , and the <code>effect of QTL1 and QTL2</code>. <code>Equal Spacing</code> has a choice between TRUE and FALSE that determines the presence of equal spacing in the genetic map simulation. <code>Type of Cross</code> has options <code>bc</code> for backcross and <code>f2</code> for intercross to determine what kind of population to simulate.</p>
+</section>
+</section>
+<section id="multiple_qtl_mapping-2" class="slide level2">
+<h2><code>Multiple_QTL_Mapping()</code></h2>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<img data-src="images/Fig5.png" class="r-stretch" style="width:35.0%">
+<figcaption>Fig 5: <code>Multiple_QTL_Mapping()</code></figcaption>
+</figure>
+</div>
+</center>
+</section>
+<section id="covariance_estimation" class="slide level2">
+<h2><code>Covariance_Estimation()</code></h2>
+<div style="font-size: 35%;">
+<ul>
+<li>The <code>Covariance_Estimation</code> function is used to estimate variance between a parent and offspring</li>
+</ul>
+<h3 id="input-3">Input</h3>
+<ul>
+<li><p>The user must specify the number of generations <span class="math inline">\(n\)</span> as a numeric value under parameter <code>Enter n</code></p>
+<p>The covariance is estimated through simulation, using a normal distribution to randomly generate the two parental allelic effects and a binomial distribution to randomly determine the transmitted allele. The transmitted allele assists in determining the offspring’s phenotype. Before estimating the covariance the appropriate errors are added to the parent and offspring, such as the environmental error.</p></li>
+<li><p>The <code>Enter Seed</code> is a numeric value that allows the results to be reproducible.</p></li>
+</ul>
+<h3 id="output-3">Output</h3>
+<p>The output displayed is the covariance estimation between parents and offsprings established from <span class="math inline">\(n\)</span></p>
+</div>
+</section>
+<section id="covariance_estimation-1" class="slide level2">
+<h2><code>Covariance_Estimation()</code></h2>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<img data-src="images/Fig6.png" class="r-stretch" style="width:50.0%">
+<figcaption>Fig 6: <code>Covariance_Estimation()</code></figcaption>
+</figure>
+</div>
+</center>
+</section>
+<section id="haseman-elston_regression" class="slide level2">
+<h2><code>Haseman-Elston_Regression()</code></h2>
+<div style="font-size: 35%;">
+<p>The Haseman-Elston Regression function is used to obtain a series of plots which represent the relationship between the phenotypes of two siblings.For each sibling pair, the proportion of alleles IBD are determined at a given locus. The regression is done on squared difference between the sibling trait values on the proportion of alleles shared IBD. The variance component comes from genetic and environmental factors.</p>
+<p>If <span class="math inline">\(y\)</span><sub><span class="math inline">\(i\)</span></sub> denote the outcome variable for subject <span class="math inline">\(i\)</span>, then the Haseman-Elston regression model is-</p>
+<center>
+<p><span class="math inline">\(y\)</span><sub><span class="math inline">\(i\)</span></sub> = <span class="math inline">\(\mu\)</span> + <span class="math inline">\(\alpha\)</span><sub><span class="math inline">\(i\)</span></sub> + <span class="math inline">\(\alpha\)</span>*<sub><span class="math inline">\(i\)</span></sub> + <span class="math inline">\(\epsilon\)</span><sub><span class="math inline">\(i\)</span></sub></p>
+</center>
+<p>where <span class="math inline">\(\alpha\)</span><sub><span class="math inline">\(i\)</span></sub> and <span class="math inline">\(\alpha\)</span>* represents the additive genetic variance contribution from QTLs from inside and outside the interval. <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\alpha\)</span>* and <span class="math inline">\(\epsilon\)</span> are uncorrelated random errors, and the phenotypic variance is the sum of variance of these 3 random terms. The sum of <span class="math inline">\(\sigma_\alpha^2\)</span> and <span class="math inline">\(\sigma_\alpha^{*2}\)</span> is the total genotypic variance, whereas <span class="math inline">\(\sigma_\epsilon^2\)</span> represents the error variance, which is the difference between the total variance and sum of genotypic and environmental variance.</p>
+</div>
+</section>
+<section id="haseman-elston_regression-1" class="slide level2">
+<h2><code>Haseman-Elston_Regression()</code></h2>
+<div style="font-size: 35%;">
+<h3 id="input-4">Input</h3>
+<ul>
+<li><p>The <code>Enter Seed</code> is a numeric value that allows the results to be reproducible</p></li>
+<li><p><code>Type of Plot</code> is the select list input where we can select the type of plot we want in the result window. The options are <code>Histogram of IBD</code> , <code>IBD vs Squared differences between phenotypes</code> , <code>Phenotype plot- Sibling 1 vs Sibling 2</code> and <code>Phenotype plot- Sibling 1 vs Sibling 2</code> for <code>IBD= 0,1,2</code>. An additional option is <code>All</code> , which shows all the above mentioned plots together</p></li>
+<li><p><code>Number of Families</code> is a numeric input variable which indicates the number of families on which the regression is to be performed</p></li>
+<li><p><code>Total Variance</code> , <code>Genetic Variance</code> and <code>Environmental Variance</code> represent the Total Phenotypic Variance and the contribution of Genetic and Environmental component respectively</p></li>
+<li><p><code>Minor Allele Frequency</code> is the frequency of the minor allele in the population.</p></li>
+</ul>
+<h3 id="output-4">Output</h3>
+<p>The default output plot type is <code>All</code> , which produces all plots- <code>Histogram of IBD</code> , <code>IBD vs Squared differences between phenotypes</code> , <code>Phenotype plot- Sibling 1 vs Sibling 2</code> and <code>Phenotype plot- Sibling 1 vs Sibling 2</code> for <code>IBD= 0,1,2</code>. <code>Histogram of IBD</code> shows the frequency distribution of population which belongs to each IBD category. <code>IBD vs Squared differences between phenotypes</code> plots the squared difference between phenotypic values of siblings by the three IBD values- 0,1 and 2. <code>Phenotype plot- Sibling 1 vs Sibling 2</code> shows the overall scatter plot of phenotypic values of sibling 1 and sibling 2. <code>Phenotype plot- Sibling 1 vs Sibling 2</code> for <code>IBD= 0,1,2</code> represent the subset of the overall phenotypic plot segmented by IBD values 0,1 and 2.</p>
+</div>
+</section>
+<section id="covariance_estimation-2" class="slide level2">
+<h2><code>Covariance_Estimation()</code></h2>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<img data-src="images/Fig6.png" class="r-stretch" style="width:50.0%">
+<figcaption>Fig 6: <code>Covariance_Estimation()</code></figcaption>
 </figure>
 </div>
 </center>
@@ -800,7 +917,7 @@ The downloaded binary packages are in
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/pc-piyush\.github\.io");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
