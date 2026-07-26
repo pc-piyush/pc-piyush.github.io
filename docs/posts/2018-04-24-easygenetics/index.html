@@ -284,7 +284,7 @@
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/1j/qb3qtyq94gxfdcs5wx9wt4zr0000gn/T//RtmpfXtX8y/downloaded_packages</code></pre>
+    /var/folders/1j/qb3qtyq94gxfdcs5wx9wt4zr0000gn/T//RtmpRnOu7G/downloaded_packages</code></pre>
 </div>
 </div>
 <p>Then the <code>easygenetics</code> package can be installed using <code>install_github()</code> function from <code>devtools</code> package as below:</p>
@@ -341,19 +341,19 @@ The downloaded binary packages are in
 <p>The function located on the first tab titled <code>Simulate_Genotypes()</code> is used to simulate genotypes at a SNP over multiple generations with the assumption that the mutation only happens one way</p>
 <h3 id="input">Input</h3>
 <ul>
-<li>The arguments that are required in order for this function to properly run is the <strong>initial sample size</strong> , <strong>mutation rate</strong> , <strong>average number of offspring per generation</strong> and <strong>number of generations</strong></li>
-<li>The <strong>Enter Seed</strong> is a numeric value that allows the results to be reproducible</li>
+<li>The arguments that are required in order for this function to properly run is the <code>initial sample size</code> , <code>mutation rate</code> , <code>average number of offspring per generation</code> and <code>number of generations</code></li>
+<li>The <code>Enter Seed</code> is a numeric value that allows the results to be reproducible</li>
 <li>All of the required arguments needed in order for the function to work are numeric values</li>
-<li>The <strong>initial sample size</strong> is the starting population size at the beginning of the simulation</li>
-<li>The <strong>mutation rate</strong> is the frequency of the target mutation in one gene over time</li>
-<li>The <strong>average number of offspring per generation</strong> is the mean growth in each generation</li>
+<li>The <code>initial sample size</code> is the starting population size at the beginning of the simulation</li>
+<li>The <code>mutation rate</code> is the frequency of the target mutation in one gene over time</li>
+<li>The <code>average number of offspring per generation</code> is the mean growth in each generation</li>
 </ul>
 <h3 id="output">Output</h3>
 <ul>
 <li>The output of this function produces two plots
 <ul>
-<li>The first plot shows the <strong>growth in population size over generation</strong></li>
-<li>The second plot provides the <strong>allele frequency over generation</strong></li>
+<li>The first plot shows the <code>growth in population size over generation</code></li>
+<li>The second plot provides the <code>allele frequency over generation</code></li>
 </ul></li>
 </ul>
 <p>These plots are both determined by the user’s arguments that are defined above.</p>
@@ -377,17 +377,17 @@ The downloaded binary packages are in
 <h3 id="input-1">Input</h3>
 <ul>
 <li>The inputs for this function are all numeric</li>
-<li><strong>A1A1</strong> is the number of observations of the phenotypic means of the specified homozygous genotype</li>
-<li><strong>A1A2</strong> is the number of observations of the phenotypic means of the heterozygous genotype, and</li>
-<li><strong>A2A2</strong> is the number of observations of the phenotypic means of the specified homozygous genotype</li>
-<li>The <strong>Frequency of Allele A1</strong> is the rate at which allele A1 occurs, and the <strong>Frequency of Allele A2</strong> is the rate at which allele A2 occurs</li>
+<li><code>A1A1</code> is the number of observations of the phenotypic means of the specified homozygous genotype</li>
+<li><code>A1A2</code> is the number of observations of the phenotypic means of the heterozygous genotype, and</li>
+<li><code>A2A2</code> is the number of observations of the phenotypic means of the specified homozygous genotype</li>
+<li>The <code>Frequency of Allele A1</code> is the rate at which allele A1 occurs, and the <code>Frequency of Allele A2</code> is the rate at which allele A2 occurs</li>
 </ul>
 <h3 id="output-1">Output</h3>
 <ul>
 <li><p>The output of this function provides</p>
 <ul>
-<li>Table that includes <strong>midpoint (m)</strong> , <strong>population mean (M)</strong> , <strong>additive effect (a)</strong> , <strong>dominance effect (d)</strong></li>
-<li>Another table with the <strong>frequency</strong> , <strong>genotypic value</strong> , <strong>breeding value</strong> and <strong>dominance deviation of each genotype</strong></li>
+<li>Table that includes <code>midpoint (m)</code> , <code>population mean (M)</code> , <code>additive effect (a)</code> , <code>dominance effect (d)</code></li>
+<li>Another table with the <code>frequency</code> , <code>genotypic value</code> , <code>breeding value</code> and <code>dominance deviation of each genotype</code></li>
 </ul></li>
 </ul>
 </div>
@@ -428,20 +428,20 @@ The downloaded binary packages are in
 <p><code>Interval_Mapping()</code> is the function located on the third tab of the app - Interval mapping is currently the most common method used for QTL mapping - Its used by assuming the presence of a single QTL, and estimates the QTL position between two chosen markers after considering each locus one at a time</p>
 <h3 id="input-and-output">Input and Output</h3>
 <ul>
-<li><p>The <strong>Enter Seed</strong> is a numeric value that allows the results to be reproducible</p></li>
-<li><p><strong>Function</strong> is a select list input with the options</p>
+<li><p>The <code>Enter Seed</code> is a numeric value that allows the results to be reproducible</p></li>
+<li><p><code>Function</code> is a select list input with the options</p>
 <ul>
-<li><strong>Properties of Cross</strong></li>
-<li><strong>Plot</strong></li>
-<li><strong>LOD Thresholds</strong>, and</li>
-<li><strong>LOD Intervals</strong></li>
+<li><code>Properties of Cross</code></li>
+<li><code>Plot</code></li>
+<li><code>LOD Thresholds</code>, and</li>
+<li><code>LOD Intervals</code></li>
 </ul>
-<p>The default in this list is <strong>Properties of Cross</strong> and the output changes depending on this selection</p>
+<p>The default in this list is <code>Properties of Cross</code> and the output changes depending on this selection</p>
 <ul>
-<li><p>If <strong>Properties of Cross</strong> is selected and all the other parameters are entered and selected, the output displays the summary of a data simulation for a QTL experiment. This summary includes information such as the <strong>type of cross</strong> , <strong>number of individuals</strong> , <strong>number of phenotypes</strong> , <strong>total markers</strong> , <strong>percent genotyped</strong> and so on</p></li>
-<li><p>If <strong>Plot</strong> is selected and all the other parameters are entered and selected, the output displays an interval mapping plot. Depending on what is selected under Interval Mapping Method determines what plot is displayed</p></li>
-<li><p>If the option <strong>LOD Thresholds</strong> is selected, the output provides the summary of a genome scan with a single QTL model. This includes the interval mapping threshold that shows which chromosome , position and LOD value where the LOD threshold is located</p></li>
-<li><p>Selecting <strong>LOD Interval</strong> under Function produces an output that shows the LOD support interval for the chromosome</p></li>
+<li><p>If <code>Properties of Cross</code> is selected and all the other parameters are entered and selected, the output displays the summary of a data simulation for a QTL experiment. This summary includes information such as the <code>type of cross</code> , <code>number of individuals</code> , <code>number of phenotypes</code> , <code>total markers</code> , <code>percent genotyped</code> and so on</p></li>
+<li><p>If <code>Plot</code> is selected and all the other parameters are entered and selected, the output displays an interval mapping plot. Depending on what is selected under Interval Mapping Method determines what plot is displayed</p></li>
+<li><p>If the option <code>LOD Thresholds</code> is selected, the output provides the summary of a genome scan with a single QTL model. This includes the interval mapping threshold that shows which chromosome , position and LOD value where the LOD threshold is located</p></li>
+<li><p>Selecting <code>LOD Interval</code> under Function produces an output that shows the LOD support interval for the chromosome</p></li>
 </ul></li>
 </ul>
 </div>
@@ -452,13 +452,13 @@ The downloaded binary packages are in
 <h3>Input and Output</h3>
 <ul>
 <li><p>The output described above is determined based on the other parameters that the user provides</p></li>
-<li><p>This includes the <strong>length of chromosome</strong> , the <strong>number of markers</strong> , the <strong>number of individuals</strong> , the <strong>number of permutations</strong> , the <strong>position of QTL1</strong> and <strong>QTL2</strong> and the <strong>effect of QTL1</strong> and <strong>QTL2</strong> , which are all numeric values</p></li>
-<li><p><strong>Equal Spacing</strong> , <strong>Type of Cross</strong> , <strong>No.&nbsp;of QTLs</strong> and <strong>Interval Mapping</strong> Method are all select list inputs due to the restrictions of the function</p>
+<li><p>This includes the <code>length of chromosome</code> , the <code>number of markers</code> , the <code>number of individuals</code> , the <code>number of permutations</code> , the <code>position of QTL1</code> and <code>QTL2</code> and the <code>effect of QTL1</code> and <code>QTL2</code> , which are all numeric values</p></li>
+<li><p><code>Equal Spacing</code> , <code>Type of Cross</code> , <code>No. of QTLs</code> and <code>Interval Mapping</code> Method are all select list inputs due to the restrictions of the function</p>
 <ul>
-<li><strong>Equal Spacing</strong> provides the option of TRUE or FALSE that determines the presence of equal spacing in the genetic map simulation</li>
-<li><strong>Type of Cross</strong> specifies what kind of population to simulate, and has the option of <code>bc</code> which stands for backcross and <code>f2</code> for intercross.</li>
-<li>The choices for <strong>No.&nbsp;of QTLs</strong> are <code>1</code> and <code>2</code> due to function constraints</li>
-<li><strong>Interval Mapping</strong> method is used to determine which plot is shown. The options for the different methods are <code>EM</code> , <code>HK</code> , <code>EHK</code> and <code>All</code> .</li>
+<li><code>Equal Spacing</code> provides the option of TRUE or FALSE that determines the presence of equal spacing in the genetic map simulation</li>
+<li><code>Type of Cross</code> specifies what kind of population to simulate, and has the option of <code>bc</code> which stands for backcross and <code>f2</code> for intercross</li>
+<li>The choices for <code>No. of QTLs</code> are <code>1</code> and <code>2</code> due to function constraints</li>
+<li><code>Interval Mapping</code> method is used to determine which plot is shown. The options for the different methods are <code>EM</code> , <code>HK</code> , <code>EHK</code> and <code>All</code></li>
 </ul></li>
 </ul>
 </section>
@@ -485,17 +485,17 @@ The downloaded binary packages are in
 <h3 id="input-2">Input</h3>
 <p>To execute this function, there are parameters that need to be set, which will be described below</p>
 <ul>
-<li>The <strong>Enter Seed</strong> is a numeric value that allows the results to be reproducible</li>
-<li>The <strong>Type of Function</strong> is a select list input with the options of
+<li>The <code>Enter Seed</code> is a numeric value that allows the results to be reproducible</li>
+<li>The <code>Type of Function</code> is a select list input with the options of
 <ul>
-<li><strong>Genetic Map</strong></li>
-<li><strong>Single QTL</strong></li>
-<li><strong>Two QTLs</strong></li>
-<li><strong>Heat Map-Two QTLs Comparison</strong></li>
-<li><strong>Two QTLs Comparison</strong></li>
-<li><strong>Composite Interval Mapping</strong></li>
+<li><code>Genetic Map</code></li>
+<li><code>Single QTL</code></li>
+<li><code>Two QTLs</code></li>
+<li><code>Heat Map-Two QTLs Comparison</code></li>
+<li><code>Two QTLs Comparison</code></li>
+<li><code>Composite Interval Mapping</code></li>
 </ul></li>
-<li>The default is set to <strong>Genetic Map</strong></li>
+<li>The default is set to <code>Genetic Map</code></li>
 </ul>
 </div>
 </section>
@@ -505,11 +505,11 @@ The downloaded binary packages are in
 <h3>Output</h3>
 <p>Depending on what is selected and what the other inputs are, determines the output displayed</p>
 <ul>
-<li>By selecting <strong>Genetic Map</strong> , the output shows a plot marker map</li>
-<li>The <strong>Single QTL</strong> option plots the LOD score for each map position in centimorgans of a single QTL, which is the QTL the user clarifies in QTL1. A summary of this using Haley-Knott regression is presented below the plot</li>
-<li>The same output is shown for when <strong>Two QTLs</strong> is selected, except now the method uses a two-QTL model</li>
-<li>Choosing <strong>Heat Map-Two QTLs Comparison</strong> changes the output into a heat map of the QTLs</li>
-<li>With <strong>Composite Interval Mapping</strong> a plot is given with the black curve representing single interval mapping where the QTLs are not clearly distinguished and the blue curve is the composite interval curve. Below the plot the LOD threshold of the composite interval curve is provided in summary.</li>
+<li>By selecting <code>Genetic Map</code> , the output shows a plot marker map</li>
+<li>The <code>Single QTL</code> option plots the LOD score for each map position in centimorgans of a single QTL, which is the QTL the user clarifies in QTL1. A summary of this using Haley-Knott regression is presented below the plot</li>
+<li>The same output is shown for when <code>Two QTLs</code> is selected, except now the method uses a two-QTL model</li>
+<li>Choosing <code>Heat Map-Two QTLs Comparison</code> changes the output into a heat map of the QTLs</li>
+<li>With <code>Composite Interval Mapping</code> a plot is given with the black curve representing single interval mapping where the QTLs are not clearly distinguished and the blue curve is the composite interval curve. Below the plot the LOD threshold of the composite interval curve is provided in summary.</li>
 </ul>
 <p>The rest of the parameters are similar to the ones in the <code>Interval_Mapping</code> function. In order for the output to be present, there needs to be a numeric value entered into the <code>length of chromosome</code> , the <code>number of markers</code> , the <code>number of individuals</code> , the <code>position of QTL1 and QTL2</code> , and the <code>effect of QTL1 and QTL2</code>. <code>Equal Spacing</code> has a choice between TRUE and FALSE that determines the presence of equal spacing in the genetic map simulation. <code>Type of Cross</code> has options <code>bc</code> for backcross and <code>f2</code> for intercross to determine what kind of population to simulate.</p>
 </section>
@@ -578,13 +578,13 @@ The downloaded binary packages are in
 <p>The default output plot type is <code>All</code> , which produces all plots- <code>Histogram of IBD</code> , <code>IBD vs Squared differences between phenotypes</code> , <code>Phenotype plot- Sibling 1 vs Sibling 2</code> and <code>Phenotype plot- Sibling 1 vs Sibling 2</code> for <code>IBD= 0,1,2</code>. <code>Histogram of IBD</code> shows the frequency distribution of population which belongs to each IBD category. <code>IBD vs Squared differences between phenotypes</code> plots the squared difference between phenotypic values of siblings by the three IBD values- 0,1 and 2. <code>Phenotype plot- Sibling 1 vs Sibling 2</code> shows the overall scatter plot of phenotypic values of sibling 1 and sibling 2. <code>Phenotype plot- Sibling 1 vs Sibling 2</code> for <code>IBD= 0,1,2</code> represent the subset of the overall phenotypic plot segmented by IBD values 0,1 and 2.</p>
 </div>
 </section>
-<section id="covariance_estimation-2" class="slide level2">
-<h2><code>Covariance_Estimation()</code></h2>
+<section id="haseman-elston_regression-2" class="slide level2">
+<h2><code>Haseman-Elston_Regression()</code></h2>
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<img data-src="images/Fig6.png" class="r-stretch" style="width:50.0%">
-<figcaption>Fig 6: <code>Covariance_Estimation()</code></figcaption>
+<img data-src="images/Fig7.png" class="r-stretch" style="width:40.0%">
+<figcaption>Fig 7: <code>Haseman-Elston_Regression()</code></figcaption>
 </figure>
 </div>
 </center>
