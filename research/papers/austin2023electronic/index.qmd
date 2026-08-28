@@ -32,12 +32,12 @@ pub-info:
 brand: ../../../brand/_brand.yml
 format:
   html:
+    code-fold: true
+    code-tools: true
     theme: 
       light: ["../../../html/dfb.scss","brand"]
       dark: ["../../../html/dfb_dark.scss","brand"]
-
 ---
-
 
 ## Abstract
 
@@ -45,10 +45,9 @@ Electronic nicotine delivery systems (ENDS) are relatively new and ENDS use data
 
 **Keywords**: Community engagement; Electronic nicotine delivery systems (ENDS); HealthStreet; Socio-economic determinants; Tobacco use.
 
-
 ## Citation
 
-```
+```         
 @article{austin2023electronic,
   title={Electronic Nicotine Delivery Systems (ENDS) use among members of a community engagement program},
   author={Austin-Datta, Rebecca J and Chaudhari, Piyush Vilas and Cheng, Ting-Yuan David and Klarenberg, Geraldine and Striley, Catherine Woodstock and Cottler, Linda B},
@@ -61,9 +60,8 @@ Electronic nicotine delivery systems (ENDS) are relatively new and ENDS use data
 }
 ```
 
-
 <p class="buttons" style="text-align:center;">
-<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1007/s10900-022-01169-2"><i class="fa-solid fa-z"></i>&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1007/s10900-022-01169-2"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
 </p>
-
-

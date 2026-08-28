@@ -1,0 +1,68 @@
+---
+title: "Sustaining community engagement during COVID-19: High stress and loneliness reported"
+date: 2022-04
+title-block-banner: "#1F1F1F"
+author:
+  - name: Catherine Woodstock Striley
+    affiliation: University of Florida
+  - name: Deepthi Varma
+    affiliation: University of Florida
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+
+doi: 10.1017/cts.2022.68
+pub-info:
+  reference: >-
+    Striley CW, Varma DS, <strong>Chaudhari PV</strong>, Cottler LB. 160 Sustaining community engagement during COVID-19: High stress and loneliness reported. Journal of Clinical and Translational Science. 2022;6(s1):17-17. doi:10.1017/cts.2022.68
+  links:
+  - name: Final version
+    url: https://doi.org/10.1017/cts.2022.68
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1017/cts.2022.68
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+---
+
+## Abstract
+
+**OBJECTIVES/GOALS**: COVID-19 has taken a big toll on health, mental health and community well-being. COVID-19 has also presented unique opportunities for community engagement programs to sustain their work within communities. Low-tech methods of engagement might provide opportunities for success.
+
+**METHODS/STUDY POPULATION**: When we could not be in the field due to COVID-19, we recontacted our 12.4k HealthStreet members by phone and in 12 months successfully contacted 3.2k. By contrast, over the two COVID affected years (2019 & 2020), our in-person recruitment efforts in the community fell to 832 from 1817 in the two prior years (2017 & 2018). Reconnecting with existing members is an important aspect of sustainable community engagement.
+
+**RESULTS/ANTICIPATED RESULTS**: While 8/10 of the 3.2 K sample had internet access in their homes, 9/10 said having it was somewhat to very important. Importantly, 1 in 3 people who had additional needs or suggestions were looking for better COVID-19 knowledge or ways to reduce the threat of illness, 1 in 4 wanted resources; and 1 in 5 encouraged us to keep doing what we were doing. Among recontacted members, 30.2% indicated a high stress level (8 & over on a 10 point scale) while 15.2% reported a high level of loneliness (8 & over on a 10 point scale). High stress was significantly more likely among those identifying as African American (23.1%) compared to non-African American (16.6%). Loneliness did not vary (10.1% among both).
+
+**DISCUSSION/SIGNIFICANCE**: Sustainable community engagement was important to reach community members during the pandemic, especially given the high rates of stress and loneliness among members contacted. In-person connections were reduced, but phone contact provided an opportunity for successful engagement.
+
+## Citation
+
+```         
+@article{striley2022160,
+  title={160 Sustaining community engagement during COVID-19: High stress and loneliness reported},
+  author={Striley, Catherine Woodstock and Varma, Deepthi S and Chaudhari, Piyush V and Cottler, Linda B},
+  journal={Journal of Clinical and Translational Science},
+  volume={6},
+  number={s1},
+  pages={17--17},
+  year={2022},
+  publisher={Cambridge University Press}
+}
+```
+
+<p class="buttons" style="text-align:center;">
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1017/cts.2022.68"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+</p>

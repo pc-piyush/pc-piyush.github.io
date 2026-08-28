@@ -1,0 +1,68 @@
+---
+title: "Social Role Protective Factors in Risky Substance Use Among a Community Sample of Emerging Adults"
+date: 2024-07
+title-block-banner: "#1F1F1F"
+author:
+  - name: Melissa Fenton
+    affiliation: University of Florida 
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+  - name: Catherine Woodstock Striley
+    affiliation: University of Florida
+doi: 10.1016/j.drugalcdep.2023.110635
+pub-info:
+  reference: >-
+    Fenton, M.; <strong>Chaudhari, P.</strong>; Cottler, L.; Striley, C. Social Role Protective Factors in Risky Substance Use Among a Community Sample of Emerging Adults. Drug and Alcohol Dependence 2024, 260, 110635. https://doi.org/10.1016/j.drugalcdep.2023.110635
+  links:
+  - name: Final version
+    url: https://doi.org/10.1016/j.drugalcdep.2023.110635
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1016/j.drugalcdep.2023.110635
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+---
+
+## Abstract
+
+**Aim**: Emerging adulthood is a developmental period characterized by transitions into new adult social roles (e.g. marriage, parenthood) and a heightened risk of substance use. Limited research explores how adult roles protect against risky substance use behaviors among non-college samples of emerging adults. This study examines marriage and parenthood as protective factors against binge drinking and marijuana use among a community sample of emerging adults.
+
+**Methods**: Emerging adults (age 18 to 29) were community-recruited by University of Florida HealthStreet Community Health Workers using the Health Needs Assessment (n=2,759). Emerging adults were on average 23.4 years old (SD=3.35), mostly female (61%), non-Hispanic/Latinx (89%), and 55% were African American or Black. Descriptive analyses and logistic regression models were conducted using SAS® 9.4.
+
+**Results**: Among this sample of emerging adults, 28% reported binge drinking in the last 30 days and 54% reported lifetime marijuana use. Parenthood protected against past 30-day binge drinking among females (OR: 0.51, 95% CI: 0.40-0.65). Marriage was protective against lifetime marijuana use (OR: 0.48, 95% CI: 0.29-0.80) but parenthood was a risk factor for lifetime marijuana use (OR: 2.06, 95% CI: 1.48-2.86) among males only.
+
+**Conclusions**: Among a community sample of emerging adults, parenthood was protective against binge drinking for females and marriage was protective for lifetime marijuana use among males. Surprisingly, parenthood was a risk factor for lifetime marijuana use among males. These mixed risk and protective effects deserve further study with implications for adapting intervention strategies to fit the social context of at-risk individuals.
+
+**Financial Support**: Melissa Fenton was supported by the UF Substance Abuse Training Center in Public Health from the National Institute of Drug Abuse (NIDA) of the National Institutes of Health under award number T32DA035167. The content is solely the responsibility of the author(s) and does not necessarily represent the official views of the National Institutes of Health.
+
+## Citation
+
+```         
+@article{fenton2024social,
+  title={Social Role Protective Factors in Risky Substance Use Among a Community Sample of Emerging Adults},
+  author={Fenton, Melissa and Chaudhari, Piyush and Cottler, Linda and Striley, Catherine},
+  journal={Drug and Alcohol Dependence},
+  volume={260},
+  pages={110635},
+  year={2024},
+  publisher={Elsevier}
+}
+```
+
+<p class="buttons" style="text-align:center;">
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1016/j.drugalcdep.2023.110635"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+</p>

@@ -1,0 +1,197 @@
+---
+title: "Piyush Chaudhari's CV"
+author:
+  firstname: Piyush
+  lastname: Chaudhari
+  address: "3300 SW Williston Rd, Gainesville, Florida- 32608"
+  #position: "Data Management Analyst"
+  contacts:
+    - icon: fa brands envelope
+      text: piyushchaudhari@ufl.edu
+      url: "mailto:piyushchaudhari@ufl.edu"
+    - icon: assets/icon/globe-solid-full.svg
+      text: pc-piyush.github.io
+      url: https://pc-piyush.github.io
+    - icon: fa brands github
+      text: GitHub
+      url: https://github.com/pc-piyush
+    - icon: fa brands linkedin
+      text: LinkedIn
+      url: https://www.linkedin.com/in/piyush-chaudhari/
+    - icon: assets/icon/google-scholar-brands-solid-full.svg
+      text: Google Scholar
+      url: https://scholar.google.com/citations?hl=en&user=gGrOPjwAAAAJ
+    # - icon: fa brands orcid
+    #   text: Orcid
+    #   url: https://orcid.org/0000-0003-0970-5552
+    # - icon: assets/icon/bluesky-brands-solid-full.svg
+    #   text: Bluesky
+    #   url: https://bsky.app/profile/pc-piyush.github.io
+format: awesomecv-typst
+# brand: ../brand/_brand.yml
+footer: July 2026
+bibliography: []
+---
+
+## SUMMARY
+I work at the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization
+
+## RESEARCH INTERESTS
+
+Statistical Machine Learning, 
+Clinical Informatics and Decision Support, 
+Patient Representation Learning, 
+Phenotyping and Sub-Phenotyping, 
+Privacy-Preserving Zero Knowledge Learning, 
+Data Democratization
+
+
+## EDUCATION
+
+{{< yaml assets/yml/education.yml >}}
+
+## WORK EXPERIENCE
+
+<!-- {{< yaml assets/yml/work.yml >}} -->
+
+- **Data Management Analyst III** at [*UF Health Integrated Data Repository*](https://idr.ufhealth.org) 
+*(Feb 2023 - Current)*
+
+  - [UF Health](https://ufhealth.org)
+    - Curating data elements from EPIC Clarity and Caboodle and make them available for use in interdisciplinary research projects
+    - Developing Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like [OMOP](https://www.ohdsi.org/data-standardization/), [PCORNET](https://pcornet.org/data/common-data-model/) and [i2b2](https://i2b2.org)
+  
+  - [UF Clinical and Translational Science Institute](https://www.ctsi.ufl.edu)
+
+    - Designing and developing data science pipelines to improve the coverage and quality of data for UF Health Research Enterprise
+
+    - Maintaining databases for free-text sources like clinical notes, order and pathology reports, drivers of health variables, genetic testing data, and additional health data sources
+   
+    - Liasioning as an honest broker between researchers and UF Health/Shands clinical data team to provision access to data based on IRB approved research protocols 
+  
+  - [UF Cancer Institute](https://cancer.ufl.edu)
+
+    - Leading the data team to build the Cancer Data Commons, on the lines of [NCI Genomic Data Commons](https://portal.gdc.cancer.gov), with access to multimodal data for cancer patients
+    - Building domain-specific infrastructure for Cancer with novel extraction methods for [NAACCR Tumor Registry](https://training.seer.cancer.gov/operations/standards/setters/naaccr.html) elements and deployment of oncology elements in OMOP CDM
+  - [i2b2](https://i2b2.org) (Informatics for Integrating Biology and the Bedside)
+    - Leading the development of pipeline from EPIC-native Caboodle Data Model to i2b2 data model
+    - Building i2b2 running on OMOP Common Data Model
+    - Implementing and validating i2b2 [Digital Twin Technology](https://i2b2.atlassian.net/wiki/spaces/BUN/pages/207290428/Digital+Twin+Technologies) based on Computational Phenotypes and Loyalty Cohorts to improve cohort phenotyping
+    - Maintaining [ENACT Network](https://enact-network.org) i2b2 as a UF Health liasion. ENACT Network is comprised on about 59 health system across US
+
+  - [OneFlorida+ Clinical Research Consortium](https://onefl.net)
+    - Leading the transition to OMOP Common Data Model which will improve the workflow of 20+ [OneFL+ partners](https://onefl.net/about/partners/)
+    - Designing i2b2 application that is built over PCORNET common data model with clinical data of 31 million patients across Florida, Georgia, Alabama, California and Minnesota
+    - Serving as UF Health honest broker for multi-site studies under [PCORNET Network](https://pcornet.org/network/)
+    - Building novel, first of its kind  infrastructure to bring large-scale nursing data into OneFlorida+ clinical research network (PI: [Macieira](https://nursing.ufl.edu/profile/macieira-tamara/))
+      - Grant Support: NIH [R21/R33](https://www.sciencedocs.com/nih-r21-r33-phased-innovation-award/)
+    
+  - [Bridge2AI: Patient-Focused Collaborative Hospital Repository Uniting Standards (CHoRUS) for Equitable AI](https://chorus4ai.org)
+    - Working as UF Health Clinical Data Expert to deliver AI-ready datasets in OMOP format (Site PI: [Bihorac](https://nephrology.medicine.ufl.edu/profile/bihorac-azra/) and [Rashidi](https://bme.ufl.edu/people/faculty/name/parisa-rashidi/))
+      - Grant Support: NIH [3OT2OD032701-01S3](https://reporter.nih.gov/search/W43p_ubXdEeDar07Ax8lgg/project-details/11376381)
+
+  - Other Selected Projects
+    - Serving as a concept expert to create a local instance of [BigMouth](https://www.uth.edu/bigmouth/) multi-site dental data repository and i2b2 for [UF College of Dentistry](https://dental.ufl.edu)
+    - Leading the integration of multi-modal data concepts like images, genomic results and waveforms into OMOP CDM
+
+  - Selected accomplishments
+    - **20**-**25x** improvement in structured data delivery to research customers
+    - **10x**+ improvement in data delivery for free-text clinical notes and order reports
+    - **5x**+ improvement in data delivery through OMOP Common Data Model
+    - **5x**+ improvement for custom de-identification for data delivery
+
+- **Data Management Analyst II** at [*UF Department of Epidemiology*](https://phhp.ufl.edu/about/departments/epidemiology/) 
+*(Jun 2018-Jan 2023)*
+
+  - Conducted statistical analyses, data management and quality control at [UF HealthStreet](https://healthstreet.program.ufl.edu) (substance abuse and public health epidemiology data) for \~13,000 individuals across 700 data points
+  - Created visualizations, hotspots and heatmap analysis for intervention planning
+  - Worked with [UF Integrated Data Repository](https://idr.ufhealth.org) to link self-reported data from community members to their Electronic Health Records at [UF Health](https://ufhealth.org), analyzing data from [UF Survey Research Center, BEBR](https://bebr.ufl.edu/ufsrc/) <!-- - Managed statistical consulting for grant and study design (IRB protocol development, risk assessment, data management plan), cohort discovery ([i2b2](https://i2b2.org)) and mentored UF students working on [Cottlerlab](https://phhp.ufl.edu/profile/cottler-linda/) legacy and ongoing research data -->
+  - Provided technical support for Diagnostic and Statistical Manual of Mental Disorder (DSM-V) software (developed in MS Access) to clients across US
+  - Selected Projects (Served as Lead Statistician):
+    - **All of Us Consortium of CTSA Community Engagement Programs** (PI: [Cottler](https://phhp.ufl.edu/profile/cottler-linda/))
+      - Grant Support: National Institute of Health (NIH)
+    - **National Drug Early Warning System Coordinating Center (NDEWS)** (PI: [Cottler](https://phhp.ufl.edu/profile/cottler-linda/))
+      - Grant Support: National Institute on Drug Abuse (NIDA)
+    - **Program to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus** (PI: [Cottler](https://phhp.ufl.edu/profile/cottler-linda/))
+      - Grant Support: Center for Disease Control (CDC) Partnering for Vaccine Equity
+    - **Women Helping Women- Lung Cancer Screening Study** (PI: [Striley](https://phhp.ufl.edu/profile/striley-catherine/)) 
+      - Grant Support: [UF Cancer Institute](https://cancer.ufl.edu)
+    - **Community Engagement and Research Program- HealthStreet** (PI: [Cottler](https://phhp.ufl.edu/profile/cottler-linda/))
+      - Grant Support: NIH National Center for Advancing Translational Sciences (NCATS)
+    - **Precision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities** (PI: [Cottler](https://phhp.ufl.edu/profile/cottler-linda/)) 
+      - Grant Support: FL Department of Health
+    - **Study of Non-Oral Administration of Prescription Stimulants** (PI: [Cottler](https://phhp.ufl.edu/profile/cottler-linda/)) 
+      - Grant Support: [Arbor Pharmaceuticals](https://azurity.com/arbor/)
+
+- **Graduate Research Statistician** at [*UF Department of Biostatistics*](https://phhp.ufl.edu/about/departments/biostatistics/) 
+*(Aug 2017-May 2018)*
+
+  - Involved in data reconfiguration, management, and consulting for the [Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)](https://www.sccahs.org/home/)
+
+
+## TECHNICAL SKILLS
+
+**Programming** : Python, R, SQL, SAS, Markdown
+
+**Common Data Models** : OMOP, i2b2, PCORNET, EPIC Clarity, EPIC Caboodle
+
+**Softwares and Packages** : MS Power BI, SPSS, RedCAP, ArcGIS, Git, SAP Data Services, SAP Business Objects
+
+**Core Concepts** : Data Visualization, Statistical Modeling and Diagnostics, Statistical Computing, Predictive Analytics, Hashing, Clinical Informatics, Privacy-Preserving Informatics, Data Democratization, Applied Survival Analysis, Linear and Generalized linear models, Linear and Non-Linear Mixed Models, Optimization, Cross Validation, Machine Learning, Natural Language Processing, Simulation studies, Clinical Trial Design, Interactive Matrix Language, Monte Carlo methods
+
+## TEACHING AND MENTORING
+
+- Currently assisting with course teaching and design for [GMS 6803 Data Science for Clinical Research](https://hobi.med.ufl.edu/education/courses/) (*Fall 2026*)
+  - Course instructors: Drs. [Yi Guo](https://hobi.med.ufl.edu/profile/guo-yi/) and [Mei Liu](https://hobi.med.ufl.edu/profile/liu-mei/)
+- Conducting [i2b2](https://i2b2.org) and [OHDSI ATLAS](https://github.com/OHDSI/Atlas/wiki) training workshops for professionally diverse cohorts like medical students, residents, clinical faculty, research staff and students at UF Health and other national research partners from (*Feb 2023 - Current*)
+- Mentored for [EGN 4912 Engineering Directed Independent Research](https://www.eng.ufl.edu/undergraduate/programs-and-partnerships/center-for-experiential-learning/join-a-research-lab/egn4912/) undergraduate program (*Spring 2026*)
+- Managed statistical design and provided research mentorship for graduate students and postdoctoral fellows working on [Cottlerlab](https://phhp.ufl.edu/profile/cottler-linda/) legacy and ongoing research data (*Jun 2018 - Jan 2023*)
+
+
+## TALKS AND WORKSHOPS
+
+- **Presenter**
+  - i2b2 training for [GMS 6847 - Translational Research and Therapeutics: Bench, Bedside, Community, & Policy](https://mccormacklab.pathology.ufl.edu/teaching/translational-research/) class (*2023 - current*)
+  - i2b2, ATLAS and SlicerDicer training for UF College of Medicine Faculty Bootcamp Session  (*2023 - current*)
+  - OneFlorida+ i2b2 training for Florida State University and Tallahassee Memorial HealthCare  (*Oct 2023*)
+  - OneFlorida+ i2b2 training for Advent Health University (*Sep 2023*)
+- **Attended**
+  - UF Health EPIC Cosmos Datathon (*May 2026*)
+  - 2024 OHDSI Global Symposium (*Oct 2024*)
+
+## PROFESSIONAL SERVICE
+
+- Volunteer, AMIA [Knowledge Discovery and Data Mining](https://amia.org/communities/working-groups/knowledge-discovery-and-data-mining) Working group (*July 2026 - current*)
+
+
+## PUBLICATIONS
+
+{{< yaml assets/yml/publication.yml >}}
+
+## CONFERENCE PROCEEDINGS
+
+{{< yaml assets/yml/proceedings.yml >}}
+
+
+
+## CERTIFICATIONS
+
+- EPIC Cosmos Data Architect (*Mar 2026*)
+- EPIC Clarity (*May 2025*)
+- EPIC Caboodle (*May 2025*)
+- EPIC Cogito (*May 2025*)
+- EPIC Clinical Data Models (*May 2025*)
+- [SAS Certified Specialist](https://www.sas.com/en_us/certification/credentials/foundation-tools/base-programming-specialist.html): Base Programming Using SAS 9.4 (*Aug 2021*)
+- [Design for Six Sigma](https://courses.msicertified.com/course/design-for-six-sigma-certification) -  License: 13361772 (*Jun 2018*) 
+- [Six Sigma Green Belt Certified](https://courses.msicertified.com/course/six-sigma-green-belt-certification) - License: 13361771 (*Jun 2018*) 
+
+## AWARDS AND SCHOLARSHIPS
+
+{{< yaml assets/yml/award.yml >}}
+
+## IN MEDIA
+
+- [A champion for medical databases]( https://news.drgator.ufl.edu/2025/10/01/a-champion-for-medical-databases/). [Doctor Gator](https://news.drgator.ufl.edu). (accessed 2026-07-26)
+- [UF Medicine faculty, staff honored with Superior Accomplishment Awards](https://news.drgator.ufl.edu/2025/04/21/superior-accomplishment-awards-2025/) . [Doctor Gator](https://news.drgator.ufl.edu).  (accessed 2026-07-26)
+- Guest Columnist
+  - [UF HealthStreet provides nasal spray that reverses opioid overdoses](https://www.gainesville.com/story/opinion/2022/02/06/linda-cottler-uf-healthstreet-provides-life-saving-naloxone-spray/6648532001/), [Gainesville Sun](https://www.gainesville.com). (accessed 2026-07-26)

@@ -330,9 +330,9 @@ i[class^="icon-"]:before {
     background-color: shift-color($ink, -90%);
     font-size: 0.9rem;
 
-    @media (max-width: map-get($grid-breakpoints, md)) {
-      font-size: 0.95rem;
-    }
+    // @media (max-width: map-get($grid-breakpoints, md)) {
+    //   font-size: 0.95rem;
+    // }
 
     .project-link {
       display: inline-block;

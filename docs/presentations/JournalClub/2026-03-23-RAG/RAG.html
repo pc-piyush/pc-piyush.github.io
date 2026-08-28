@@ -1,157 +1,400 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<link href="../../../photos/Piyush.png" rel="icon" type="image/png">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Piyush Chaudhari">
+
+<title>Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks – Piyush Chaudhari</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../photos/Piyush.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-4f4a9b04a0df0ecc7a15b0cf30495706.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-be478a36e08ab8f07746ac1cdff61d18.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-4f4a9b04a0df0ecc7a15b0cf30495706.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-b6ab4d9606bfd8a54cd772cbd2d770ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-fb36b1b9b66b7df85858fee7120e3e0c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-b6ab4d9606bfd8a54cd772cbd2d770ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
-  <meta name="author" content="Piyush Chaudhari">
-  <title>Piyush Chaudhari – Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
-  <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-8c3882d40aa94859a56ecbeb9b3b515d.css">
-  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta name="twitter:title" content="Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks – Piyush Chaudhari">
+<meta name="twitter:image" content="https://pc-piyush.github.io/presentations/JournalClub/2026-03-23-RAG/images/x1.PNG">
 <meta name="twitter:creator" content="@iampiyushvc">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image:alt" content="The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query x, we use Maximum Inner Product Search (MIPS) to find the top-K documents zi. For final prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents">
+<meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="quarto-dark">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks</h1>
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Piyush Chaudhari 
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../photos/PC_White.png" alt="" class="navbar-logo light-content">
+    <img src="../../../photos/PC_White.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Piyush Chaudhari</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/index.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts.html"> 
+<span class="menu-text">p.log()</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#limitations-in-current-methods" id="toc-limitations-in-current-methods" class="nav-link active" data-scroll-target="#limitations-in-current-methods">Limitations in current methods</a></li>
+  <li><a href="#types-of-memory" id="toc-types-of-memory" class="nav-link" data-scroll-target="#types-of-memory">Types of Memory</a></li>
+  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models">Models</a></li>
+  <li><a href="#models-1" id="toc-models-1" class="nav-link" data-scroll-target="#models-1">Models</a></li>
+  <li><a href="#models-2" id="toc-models-2" class="nav-link" data-scroll-target="#models-2">Models</a></li>
+  <li><a href="#retriever" id="toc-retriever" class="nav-link" data-scroll-target="#retriever">Retriever</a></li>
+  <li><a href="#retriever-1" id="toc-retriever-1" class="nav-link" data-scroll-target="#retriever-1">Retriever</a></li>
+  <li><a href="#generator" id="toc-generator" class="nav-link" data-scroll-target="#generator">Generator</a></li>
+  <li><a href="#marginalizing-over-documents" id="toc-marginalizing-over-documents" class="nav-link" data-scroll-target="#marginalizing-over-documents">Marginalizing Over Documents</a></li>
+  <li><a href="#rag-sequence-vs-rag-token" id="toc-rag-sequence-vs-rag-token" class="nav-link" data-scroll-target="#rag-sequence-vs-rag-token">RAG-Sequence vs RAG-Token</a></li>
+  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training</a></li>
+  <li><a href="#decoding" id="toc-decoding" class="nav-link" data-scroll-target="#decoding">Decoding</a></li>
+  <li><a href="#decoding-1" id="toc-decoding-1" class="nav-link" data-scroll-target="#decoding-1">Decoding</a></li>
+  <li><a href="#decoding-2" id="toc-decoding-2" class="nav-link" data-scroll-target="#decoding-2">Decoding</a></li>
+  <li><a href="#experiments" id="toc-experiments" class="nav-link" data-scroll-target="#experiments">Experiments</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#results-2" id="toc-results-2" class="nav-link" data-scroll-target="#results-2">Results</a></li>
+  <li><a href="#results-3" id="toc-results-3" class="nav-link" data-scroll-target="#results-3">Results</a></li>
+  <li><a href="#ablations" id="toc-ablations" class="nav-link" data-scroll-target="#ablations">Ablations</a></li>
+  <li><a href="#index-hot-swapping" id="toc-index-hot-swapping" class="nav-link" data-scroll-target="#index-hot-swapping">Index Hot-Swapping</a></li>
+  <li><a href="#generation-vs-extraction" id="toc-generation-vs-extraction" class="nav-link" data-scroll-target="#generation-vs-extraction">Generation vs Extraction</a></li>
+  <li><a href="#parametric-vs-non-parametric-memory" id="toc-parametric-vs-non-parametric-memory" class="nav-link" data-scroll-target="#parametric-vs-non-parametric-memory">Parametric vs Non-Parametric Memory</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#legacy-of-the-paper" id="toc-legacy-of-the-paper" class="nav-link" data-scroll-target="#legacy-of-the-paper">Legacy of the Paper</a></li>
+  <li><a href="#current-advances" id="toc-current-advances" class="nav-link" data-scroll-target="#current-advances">Current Advances</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="RAG.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks</h1>
 </div>
 
-</section>
-<section id="limitations-in-current-methods" class="slide level2">
-<h2>Limitations in current methods</h2>
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Piyush Chaudhari </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="limitations-in-current-methods" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-in-current-methods">Limitations in current methods</h2>
 <div style="font-size: 65%;">
 <ul>
 <li><p>Standard models (For e.g.&nbsp;BART) store their knowledge as <ins><strong>model weights</strong></ins> during training</p></li>
@@ -169,9 +412,10 @@ Piyush Chaudhari
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="types-of-memory" class="slide level2">
-<h2>Types of Memory</h2>
+<section id="types-of-memory" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-memory">Types of Memory</h2>
 <div style="font-size: 65%;">
 <ul>
 <li><ins>
@@ -193,21 +437,23 @@ Piyush Chaudhari
 <li><p>Prior work on the hybrid approach was done only on extractive tasks (<span title="REALM is a pre-training method that uses a neural retriever to find relevant documents to help a language model learn knowledge, resulting in improved performance on open-domain QA tasks"><strong>REALM</strong></span>,<span title="ORQA focuses specifically on the open-retrieval QA framework, often serving as the foundational fine-tuning structure for models like REALM"><strong>ORQA</strong></span>) but RAG extends it to generative seq2seq tasks</p></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="approach" class="slide level2">
-<h2>Approach</h2>
+<section id="approach" class="level2">
+<h2 class="anchored" data-anchor-id="approach">Approach</h2>
 <!-- ![](images/x1.png){.absolute .fragment bottom="10" right="10" width="650"} -->
 <div style="font-size: 65%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="images/x1.PNG" class="lightbox" data-gallery="my-gallery2" title="The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query x, we use Maximum Inner Product Search (MIPS) to find the top-K documents zi. For final prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents"><img data-src="images/x1.PNG" alt="The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query x, we use Maximum Inner Product Search (MIPS) to find the top-K documents zi. For final prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents"></a></p>
+<figure class="figure">
+<p><a href="images/x1.PNG" class="lightbox" data-gallery="my-gallery2" title="The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query x, we use Maximum Inner Product Search (MIPS) to find the top-K documents zi. For final prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents"><img src="images/x1.PNG" class="img-fluid figure-img" alt="The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query x, we use Maximum Inner Product Search (MIPS) to find the top-K documents zi. For final prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents"></a></p>
 <figcaption>The paper combines a pre-trained retriever (Query Encoder + Document Index) with a pre-trained seq2seq model (Generator) and fine-tune end-to-end. For query <span class="math inline">\(x\)</span>, we use Maximum Inner Product Search (MIPS) to find the top-K documents <span class="math inline">\(z\)</span><sub><span class="math inline">\(i\)</span></sub>. For final prediction <span class="math inline">\(y\)</span>, we treat <span class="math inline">\(z\)</span> as a latent variable and marginalize over seq2seq predictions given different documents</figcaption>
 </figure>
 </div>
 </div>
+<hr>
 </section>
-<section id="methods" class="slide level2">
-<h2>Methods</h2>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <div style="font-size: 65%;">
 <ul>
 <li><p>The paper explores RAG models, that uses input sequence <span class="math inline">\(x\)</span> to retrieve text documents <span class="math inline">\(z\)</span> to use them as additional context when generating the target sequence <span class="math inline">\(y\)</span></p></li>
@@ -220,9 +466,10 @@ Piyush Chaudhari
 <li><p>The paper proposes two models - <strong>RAG-Sequence</strong> that uses the same document to predict each target token and <strong>RAG-Token</strong> which can predict each target token based on a different document</p></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="models" class="slide level2">
-<h2>Models</h2>
+<section id="models" class="level2">
+<h2 class="anchored" data-anchor-id="models">Models</h2>
 <div style="font-size: 65%;">
 <ol type="1">
 <li><strong>RAG-Sequence Model</strong></li>
@@ -248,9 +495,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j|\mathbf{x}) \prod_{i=1}^{N} P_{\theta}(y_i|\mathbf{x}, \mathbf{z}_j, \mathbf{y}_{<i})
 -->
 </div>
+<hr>
 </section>
-<section id="models-1" class="slide level2">
-<h2>Models</h2>
+<section id="models-1" class="level2">
+<h2 class="anchored" data-anchor-id="models-1">Models</h2>
 <div style="font-size: 65%;">
 <ol start="2" type="1">
 <li><strong>RAG-Token Model</strong></li>
@@ -267,9 +515,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <span class="math inline">\(p\)</span><sub>RAG-Token</sub><span class="math inline">\((y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x) p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
 </center>
 </div>
+<hr>
 </section>
-<section id="models-2" class="slide level2">
-<h2>Models</h2>
+<section id="models-2" class="level2">
+<h2 class="anchored" data-anchor-id="models-2">Models</h2>
 <div style="font-size: 65%;">
 <ol start="2" type="1">
 <li><strong>RAG-Token Model</strong></li>
@@ -287,9 +536,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li><p>RAG can be used for sequence classification tasks by considering target class as a target sequence of length one, where <strong>RAG-Sequence</strong> and <strong>RAG-Token</strong> are equivalent</p></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="retriever" class="slide level2">
-<h2>Retriever</h2>
+<section id="retriever" class="level2">
+<h2 class="anchored" data-anchor-id="retriever">Retriever</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>The retriever <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x)\)</span> is based on <span title="Dense Passage Retrieval (DPR) is a search technique that maps queries and documents into high-dimensional, semantic vectors (embeddings) using neural networks, enabling retrieval based on conceptual similarity rather than exact keywords. It generally outperforms traditional methods like BM25 by using twin encoders to identify contextually relevant information"><strong>Dense Passage Retrival (DPR)</strong></span> that follows a bi-encoder structure</li>
@@ -316,9 +566,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>Solved approximately using <span title="Faiss (Facebook AI Similarity Search) is an open-source library for efficient, high-dimensional dense vector similarity search and clustering. Developed by Meta AI Research, it enables searching through millions or billions of vectors—even those not fitting in RAM—using algorithms like HNSW and PCA. It supports CPU and GPU acceleration, making it ideal for recommendation systems and semantic search"><strong>FAISS</strong></span> + <span title="Hierarchical Navigable Small World (HNSW) is a state-of-the-art graph-based algorithm for Approximate Nearest Neighbor (ANN) search, designed for fast, high-recall similarity searches in large vector datasets. It builds a multi-layered, hierarchical graph structure where higher layers feature long-range links for fast, coarse searching, and lower layers provide short-range links for refined, accurate searches"><strong>HNSW</strong></span> graphs - sub-linear time over 21 million documents</li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="retriever-1" class="slide level2">
-<h2>Retriever</h2>
+<section id="retriever-1" class="level2">
+<h2 class="anchored" data-anchor-id="retriever-1">Retriever</h2>
 <div style="font-size: 65%;">
 <ul>
 <li><p>One performace tradeoff is that the Document Encoder <span class="math inline">\(d(z)\)</span> is frozen during fine-tuning</p>
@@ -331,9 +582,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="generator" class="slide level2">
-<h2>Generator</h2>
+<section id="generator" class="level2">
+<h2 class="anchored" data-anchor-id="generator">Generator</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>400M parameter seq2seq transformer, pre-trained with a denoising objective</li>
@@ -356,9 +608,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="marginalizing-over-documents" class="slide level2">
-<h2>Marginalizing Over Documents</h2>
+<section id="marginalizing-over-documents" class="level2">
+<h2 class="anchored" data-anchor-id="marginalizing-over-documents">Marginalizing Over Documents</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>Since the “correct” document is unknown, both RAG variants sum (marginalize) over top-K documents, weighted by retrieval probability</li>
@@ -384,11 +637,12 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <span class="math inline">\(p(y|x)\)</span> <span class="math inline">\(\approx\)</span> <span class="math inline">\(\prod_{i}^{N}\)</span> <span class="math inline">\(\sum_{z\in top-k(p(.|x))}\)</span> <span class="math inline">\(p\)</span><sub><span class="math inline">\(\eta\)</span></sub><span class="math inline">\((z|x) . p\)</span><sub><span class="math inline">\(\theta\)</span></sub><span class="math inline">\((y\)</span><sub>i</sub><span class="math inline">\(|x,z,y\)</span><sub>1:i-1</sub> <span class="math inline">\()\)</span>
 </center>
 </div>
+<hr>
 </section>
-<section id="rag-sequence-vs-rag-token" class="slide level2">
-<h2>RAG-Sequence vs RAG-Token</h2>
+<section id="rag-sequence-vs-rag-token" class="level2">
+<h2 class="anchored" data-anchor-id="rag-sequence-vs-rag-token">RAG-Sequence vs RAG-Token</h2>
 <div style="font-size: 65%;">
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 46%">
@@ -425,9 +679,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </tbody>
 </table>
 </div>
+<hr>
 </section>
-<section id="training" class="slide level2">
-<h2>Training</h2>
+<section id="training" class="level2">
+<h2 class="anchored" data-anchor-id="training">Training</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>Trained end-to-end on input/output pairs (<span class="math inline">\(x\)</span><sub><span class="math inline">\(j\)</span></sub>,<span class="math inline">\(y\)</span><sub><span class="math inline">\(j\)</span></sub> ) only — no supervision on which document to retrieve</li>
@@ -441,9 +696,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>Optimizer: <span title="Adaptive Moment estimation.“Adaptive” — each parameter gets its own effective learning rate, adapted based on history. “Moment” — it tracks two statistical moments of the gradients over time- the mean of recent gradients and the mean of recent squared gradients">Adam</span> with stochastic gradient descent</li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="decoding" class="slide level2">
-<h2>Decoding</h2>
+<section id="decoding" class="level2">
+<h2 class="anchored" data-anchor-id="decoding">Decoding</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>RAG-Token
@@ -459,9 +715,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="decoding-1" class="slide level2">
-<h2>Decoding</h2>
+<section id="decoding-1" class="level2">
+<h2 class="anchored" data-anchor-id="decoding-1">Decoding</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>RAG-Sequence
@@ -482,9 +739,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="decoding-2" class="slide level2">
-<h2>Decoding</h2>
+<section id="decoding-2" class="level2">
+<h2 class="anchored" data-anchor-id="decoding-2">Decoding</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>RAG-Sequence
@@ -498,9 +756,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="experiments" class="slide level2">
-<h2>Experiments</h2>
+<section id="experiments" class="level2">
+<h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
 <div style="font-size: 65%;">
 <p>RAG was tested across five distinct task types to prove generality:</p>
 <ul>
@@ -510,12 +769,14 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>Fact Verification (FEVER) — classify claims as supported / refuted / not enough information</li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="results" class="slide level2">
-<h2>Results</h2>
-<h4 id="open-domain-qa">Open-Domain Q&amp;A</h4>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="open-domain-qa" class="level4">
+<h4 class="anchored" data-anchor-id="open-domain-qa">Open-Domain Q&amp;A</h4>
 <div style="font-size: 65%;">
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 32%">
 <col style="width: 23%">
@@ -583,12 +844,15 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>RAG scores 11.8% accuracy even when the correct answer is&nbsp;<strong>absent from all retrieved documents</strong>&nbsp;— extractive systems score 0% in this case</li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="results-1" class="slide level2">
-<h2>Results</h2>
-<h4 id="generation-tasks">Generation Tasks</h4>
+</section>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<section id="generation-tasks" class="level4">
+<h4 class="anchored" data-anchor-id="generation-tasks">Generation Tasks</h4>
 <div style="font-size: 65%;">
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -632,10 +896,13 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </table>
 <p>*SotA uses gold context/evidence passages; RAG retrieves its own</p>
 </div>
+<hr>
 </section>
-<section id="results-2" class="slide level2">
-<h2>Results</h2>
-<h4 id="jeopardy">Jeopardy</h4>
+</section>
+<section id="results-2" class="level2">
+<h2 class="anchored" data-anchor-id="results-2">Results</h2>
+<section id="jeopardy" class="level4">
+<h4 class="anchored" data-anchor-id="jeopardy">Jeopardy</h4>
 <div style="font-size: 65%;">
 <p><strong>Human evaluation on Jeopardy (452 pairs):</strong></p>
 <ul>
@@ -645,13 +912,16 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul>
 <p>On FEVER, RAG comes within 4.3% of complex pipeline systems that use domain-specific architectures and supervised retrieval labels — while using none of that.</p>
 </div>
+<hr>
 </section>
-<section id="results-3" class="slide level2">
-<h2>Results</h2>
-<h4 id="generation-diversity">Generation Diversity</h4>
+</section>
+<section id="results-3" class="level2">
+<h2 class="anchored" data-anchor-id="results-3">Results</h2>
+<section id="generation-diversity" class="level4">
+<h4 class="anchored" data-anchor-id="generation-diversity">Generation Diversity</h4>
 <div style="font-size: 65%;">
 <p>Measured as ratio of distinct tri-grams to total tri-grams:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Model</th>
@@ -689,9 +959,11 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li><p>RAG is anchored to specific retrieved facts</p></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="ablations" class="slide level2">
-<h2>Ablations</h2>
+</section>
+<section id="ablations" class="level2">
+<h2 class="anchored" data-anchor-id="ablations">Ablations</h2>
 <div style="font-size: 65%;">
 <ul>
 <li><p>Frozen vs.&nbsp;learned retrieval:</p>
@@ -713,15 +985,16 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="index-hot-swapping" class="slide level2">
-<h2>Index Hot-Swapping</h2>
+<section id="index-hot-swapping" class="level2">
+<h2 class="anchored" data-anchor-id="index-hot-swapping">Index Hot-Swapping</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>Same trained RAG model, two different Wikipedia indexes (Dec 2016 vs.&nbsp;Dec 2018)</li>
 <li>82 world leaders who changed roles between those dates</li>
 </ul>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Index</th>
@@ -752,9 +1025,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="generation-vs-extraction" class="slide level2">
-<h2>Generation vs Extraction</h2>
+<section id="generation-vs-extraction" class="level2">
+<h2 class="anchored" data-anchor-id="generation-vs-extraction">Generation vs Extraction</h2>
 <div style="font-size: 65%;">
 <ul>
 <li><p>All four QA benchmarks in the paper are classified as&nbsp;<strong>extractive</strong>&nbsp;tasks — the answer exists verbatim in some document.</p></li>
@@ -767,11 +1041,12 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 </ul></li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="parametric-vs-non-parametric-memory" class="slide level2">
-<h2>Parametric vs Non-Parametric Memory</h2>
+<section id="parametric-vs-non-parametric-memory" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-vs-non-parametric-memory">Parametric vs Non-Parametric Memory</h2>
 <div style="font-size: 65%;">
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Property</th>
@@ -818,9 +1093,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>Gives you authority to correct - a factual error can be corrected by editing a document in the index, the same thing cannot be done with weights</li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="limitations" class="slide level2">
-<h2>Limitations</h2>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>Single knowledge source (Wikipedia was the one source tested)</li>
@@ -830,9 +1106,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>No inference regarding when to retrieve vs.&nbsp;when to rely purely on parametric memory</li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="legacy-of-the-paper" class="slide level2">
-<h2>Legacy of the Paper</h2>
+<section id="legacy-of-the-paper" class="level2">
+<h2 class="anchored" data-anchor-id="legacy-of-the-paper">Legacy of the Paper</h2>
 <div style="font-size: 65%;">
 <p>While some of the specific components have been replaced by stronger alternatives, the core ideas from this paper propel the field even today</p>
 <ul>
@@ -843,9 +1120,10 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 <li>Hot-Swapping has saved retraining costs across the industry-&nbsp;The observation that a 400M parameter model with a good index beats an 11B parameter model without one reshaped how to think about the scaling-vs-retrieval tradeoff</li>
 </ul>
 </div>
+<hr>
 </section>
-<section id="current-advances" class="slide level2">
-<h2>Current Advances</h2>
+<section id="current-advances" class="level2">
+<h2 class="anchored" data-anchor-id="current-advances">Current Advances</h2>
 <div style="font-size: 65%;">
 <ul>
 <li>Retrievers
@@ -871,424 +1149,481 @@ $p$~RAG-Seq~(\mathbf{y}|\mathbf{x}) \approx \sum_{j=1}^{k} P_{\eta}(\mathbf{z}_j
 
 
 </section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="../../../images/favicon.ico" class="slide-logo"></p>
-<div class="footer footer-default">
-<p><a href="https://dl.acm.org/doi/abs/10.5555/3495724.3496517">Retrieval-augmented generation for knowledge-intensive NLP tasks (2020)</a></p>
-</div>
-</div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': true,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":false},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1050,
-
-        height: 700,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/pc-piyush\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          return false;
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
-          return codeEl.innerText;
         }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/pc-piyush\.github\.io");
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
             } else {
-              return "";
+              container.appendChild(child.cloneNode(true));
+              break;
             }
-          });
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
             }
           } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
           }
-        }
-      });
-      </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-    (function() {
-      let previousOnload = window.onload;
-      window.onload = () => {
-        if (previousOnload) {
-          previousOnload();
-        }
-        lightboxQuarto.on('slide_before_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          const href = trigger.getAttribute('href');
-          if (href !== null) {
-            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-            if (imgEl !== null) {
-              const srcAttr = imgEl.getAttribute("src");
-              if (srcAttr && srcAttr.startsWith("data:")) {
-                slideConfig.href = srcAttr;
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
               }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
             }
-          } 
-        });
-      
-        lightboxQuarto.on('slide_after_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(slideNode);
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
           }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
         });
-      
-      };
-      
-    })();
-              </script>
-    
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block"> Made with <a href="https://quarto.org/">Quarto</a>.</span> <span class="faux-block"> Piyush Chaudhari 2026</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/piyush-chaudhari/">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://boxd.it/1uvEr">
+<p><i class="fa-brands fa-square-letterboxd" aria-label="square-letterboxd"></i></p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
 
 </body></html>

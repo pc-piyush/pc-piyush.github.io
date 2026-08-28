@@ -17,11 +17,13 @@ project:
     - "photos/**"
     - "html/**"
     - "brand/**"
+    - ".well-known/**"
 bibliography: "research/publications.bib"
 # csl: apa.csl
 brand: "brand/_brand.yml"
 website:
   title: "Piyush Chaudhari"
+  site-url: "https://pc-piyush.github.io"
   favicon: "photos/Piyush.png"
   search: 
     location: navbar
@@ -34,8 +36,8 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-      # - text: "CV"
-      #   href: cv.qmd
+      - text: "CV"
+        href: cv.qmd
       # - text: "Projects"
       #   href: cv.qmd
       - text: "Research"

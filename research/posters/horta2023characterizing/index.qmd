@@ -1,0 +1,63 @@
+---
+title: "Characterizing Chronic Pain And Co-Occurring Substance Use Across The Adult Lifespan In A Florida Community Sample"
+date: 2023-04
+title-block-banner: "#1F1F1F"
+author:
+  - name: Marilyn Horta
+    affiliation: University of Florida 
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+  - name: Roger Fillingim
+    affiliation: University of Florida
+  - name: Catherine Woodstock Striley
+    affiliation: University of Florida
+doi: 10.1016/j.jpain.2023.02.314
+pub-info:
+  reference: >-
+    Horta, M.; <strong>Chaudhari, P.</strong>; Cottler, L.; Fillingim, R.; Striley, C. Characterizing Chronic Pain And Co-Occurring Substance Use Across The Adult Lifespan In A Florida Community Sample. The Journal of Pain 2023, 24 (4), 111. https://doi.org/10.1016/j.jpain.2023.02.314
+  links:
+  - name: Final version
+    url: https://doi.org/10.1016/j.jpain.2023.02.314
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1016/j.jpain.2023.02.314
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+---
+
+## Abstract
+
+Chronic pain increases with age and substance misuse risk. Self-reported chronic pain and co-occurring drug use among community members from HealthStreet, a program that aims to reduce health disparities, were examined to assess community needs and inform future investigations. A subsample reported chronic bone/back pain, arthritis, and/or headaches (n=8239, 63.2% women). Frequency of cannabis use, opioid use, and dual-use of these drugs in the past 30 days were calculated by race/ethnicity and age group. Most participants with pain did not use either cannabis or opioids (n=5646, 68.5%). Those that experienced pain and used drugs reported similar frequencies of either cannabis (n=1183, 14.4%) or opioid use (n=1143, 13.9%). Few participants reported using both cannabis and opioids (n=267, 3.2%). Multiple logistic regression showed that African Americans and Latinos/Hispanics had lesser odds of using both opioids and cannabis compared to white individuals. Latinos/Hispanics were also less likely to use cannabis only and opioids only. Older adults (60+ years) were the least likely age group to use cannabis only or both cannabis and opioids. Compared to older adults, all other age groups (i.e., 18-25, 26-40, and 41-49-year-olds) had greater odds of using cannabis only or both opioids and cannabis. All other age groups had lower odds of using opioids only than older adults. Findings showed significant variations in opioid and cannabis use patterns by different sociodemographic factors in a community sample with pain, consistent with, and extending, previous work. UF Healthstreet (RC2HL101838, PI: Cottler); NIH/NIDA T32DA035167 (PI: Cottler); Enhanced Interdisciplinary Research Institute for Hispanic Substance Abuse (R25DA050687, PI: Valdez).
+
+## Citation
+
+```         
+@article{horta2023characterizing,
+  title={Characterizing Chronic Pain And Co-Occurring Substance Use Across The Adult Lifespan In A Florida Community Sample},
+  author={Horta, Marilyn and Chaudhari, Piyush and Cottler, Linda and Fillingim, Roger and Striley, Catherine},
+  journal={The Journal of Pain},
+  volume={24},
+  number={4},
+  pages={111},
+  year={2023},
+  publisher={Elsevier}
+}
+```
+
+<p class="buttons" style="text-align:center;">
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1016/j.jpain.2023.02.314"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+</p>

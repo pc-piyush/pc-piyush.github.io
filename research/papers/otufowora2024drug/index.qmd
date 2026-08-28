@@ -1,6 +1,6 @@
 ---
 title: "Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members"
-date: 2023-05
+date: 2024-03
 title-block-banner: "#1F1F1F"
 author:
   - name: Ayodeji Otufowora
@@ -35,19 +35,20 @@ format:
     theme: 
       light: ["../../../html/dfb.scss","brand"]
       dark: ["../../../html/dfb_dark.scss","brand"]
-
 ---
-
 
 ## Abstract
 
 ### Importance
+
 A substantial number of opioid analgesics dispensed into communities will go unused and be susceptible to diversion for misuse. Convenient, efficient, and environmentally safe mechanisms for disposal are needed to prevent the diversion of unused opioid analgesics.
 
 ### Objective
+
 This initiative piloted the feasibility of distributing drug deactivation pouches in a community setting and examined community members’ acceptance, intention to use drug deactivation pouches, and their current disposal practices of unused opioid analgesics. Although many studies have examined the benefits of deactivation pouches in preventing drug overdose, few have explored community members’ perspectives, the feasibility, and the acceptability of these pouches in disposing of unused medications.
 
 ### Methods
+
 In the fall of 2017, we piloted the distribution of drug deactivation pouches to assess the overall interest in the pouches at a three-day community event and continued the second wave of this pilot in the community from the summer of 2018 to the spring of 2019.
 
 Our main outcomes and measures included the acceptance of the drug deactivation pouches and the intention to use the pouches. “Acceptance” was defined as study participants physically taking the kit and “Intention” was how participants intended to use the pouch.
@@ -62,10 +63,9 @@ The distribution of drug deactivation pouches is feasible in a community setting
 
 **Keywords**: Drug Deactivation Pouches, Drug Overdose, Feasibility Studies, Florida, Intention, Opioids, Substance-Related Disorders
 
-
 ## Citation
 
-```
+```         
 @article{otufowora2024drug,
   title={Drug deactivation pouches for primary prevention of opioid overdose: perceptions and attitudes of community members},
   author={Otufowora, Ayodeji and Egan, Kathleen L and Chaudhari, Piyush V and Okusanya, Aderonke A and Ogidan, Afeez O and Cottler, Linda B},
@@ -78,9 +78,8 @@ The distribution of drug deactivation pouches is feasible in a community setting
 }
 ```
 
-
 <p class="buttons" style="text-align:center;">
-<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.3122/jabfm.2023.230227R1"><i class="fa-solid fa-z"></i>&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.3122/jabfm.2023.230227R1"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
 </p>
-
-

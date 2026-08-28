@@ -1,0 +1,16 @@
+idr:
+  title: Data Management Analyst III
+  location: University of Florida
+  date: 2023 - current
+  description: 
+  #link("https://idr.ufhealth.org")[UF Health Integrated Data Repository]
+bern_jp:
+  title: Junior Professor
+  location: Bern, Switzerland
+  date: 1908 - 1909
+  description: University of Bern
+bern_ta:
+  title: Technical Assistant
+  location: Bern, Switzerland
+  date: 1902 - 1908
+  description: Federal Patent Office

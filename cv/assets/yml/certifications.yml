@@ -1,0 +1,38 @@
+cosmos:
+  title: EPIC Cosmos Data Architect
+  # location: Stockholm, Sweden
+  date: 2026
+
+clarity:
+  title: EPIC Clarity
+  # location: Stockholm, Sweden
+  date: 2025
+
+caboodle:
+  title: EPIC Caboodle
+  # location: Stockholm, Sweden
+  date: 2025
+
+cogito:
+  title: EPIC Cogito
+  # location: Stockholm, Sweden
+  date: 2025
+
+cdm:
+  title: EPIC Clinical Data Models
+  # location: Stockholm, Sweden
+  date: 2025
+
+sas-base:
+  title: #link("https://www.sas.com/en_us/certification/credentials/foundation-tools/base-programming-specialist.html")[SAS Certified Specialist]: Base Programming Using SAS 9.4
+  date: 2021
+
+dfss:
+  title: #link("https://courses.msicertified.com/course/design-for-six-sigma-certification")[Design for Six Sigma]
+  date: 2018
+  # description: License- 13361772
+
+green-belt:
+  title: #link("https://courses.msicertified.com/course/six-sigma-green-belt-certification")[Six Sigma Green Belt Certified]
+  date: 2018
+  # description: License- 13361771

@@ -5,8 +5,12 @@ listing:
     contents: "papers/*/index.qmd"
     sort: "date desc"
     template: "../html/research/listing.ejs"
+  - id: proceedings-conference
+    contents: "posters/*/index.qmd"
+    sort: "date desc"
+    template: "../html/research/listing.ejs"
   - id: presentations
-    contents: ["workshops.yml", "conferences.yml", "presentations.yml"]
+    contents: ["presentations.yml"]
     sort: "date desc"
     template: "../html/research/listing.ejs"
 page-layout: full
@@ -16,18 +20,26 @@ toc: true
 brand: ../brand/_brand.yml
 format:
   html:
+    default-image-extension: "" 
     # css: html/cv.scss
     theme: 
       light: ["../html/dfb.scss","brand"]
       dark: ["../html/dfb_dark.scss","brand"]
 ---
 
-## Proceedings & Journals
+## Publications
 
-:::{#proceedings-journals}
+::: {#proceedings-journals}
 :::
 
-## Presentations
+## Conference Proceedings
+
+::: {#proceedings-conference}
+:::
+
+```{=html}
+<!-- ## Presentations
 
 :::{#presentations}
-:::
+::: -->
+```

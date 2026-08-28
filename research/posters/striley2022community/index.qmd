@@ -1,0 +1,61 @@
+---
+title: "COMMUNITY-RECRUITED OLDER ADULTS DIFFER FROM PATIENT POPULATIONS"
+date: 2023-04
+title-block-banner: "#1F1F1F"
+author:
+  - name: Catherine Woodstock Striley
+    affiliation: University of Florida
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Roger Fillingim
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+
+doi: 10.1093/geroni/igac059.3017
+pub-info:
+  reference: >-
+    Striley C, <strong>Chaudhari P</strong>, Fillingim R, Cottler L. COMMUNITY-RECRUITED OLDER ADULTS DIFFER FROM PATIENT POPULATIONS. Innov Aging. 2022;6(Suppl 1):841-842. Published 2022 Dec 20. doi:10.1093/geroni/igac059.3017
+  links:
+  - name: Final version
+    url: https://doi.org/10.1093/geroni/igac059.3017
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1093/geroni/igac059.3017
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+---
+
+## Abstract
+
+Researchers often conduct randomized controlled trials among patient populations that may not reflect the community in which findings will be translated. The University of Florida’s community engagement program HealthStreet provides a diverse sample in which to consider differences between people 65 years of age and older who have seen a physician in the past 12 months and those who have not. This provides a conservative test of potential biases in patient-only samples. Based on a sample of 1,663 people, 65 years of age and older, who were recruited by Community Health Workers in the North Florida region from November 2011 through July 2022, 88% had seen a physician in the past 12 months. Those who had not (12%) were significantly more likely to be non-white than white, to be in good/excellent than fair/poor health, and significantly less likely to have a range of health conditions including high blood pressure, depression, heart conditions, diabetes, a digestive health condition, a dental health condition, or cancer. Yet residents who hadn’t seen a doctor were just as likely to be willing to participate in a future health study (both 94%) that only asked about health, accessed medical records (both 87%) or didn’t provide reimbursement (both 81%), and were not significantly different in attitudes toward participating in research in general. Recruiting of older adults should be conducted in the community, not just in patient populations, which are likely to be less diverse and sicker than those recruited through a community engagement program.
+
+## Citation
+
+```         
+@article{striley2022community,
+  title={COMMUNITY-RECRUITED OLDER ADULTS DIFFER FROM PATIENT POPULATIONS},
+  author={Striley, Catherine and Chaudhari, Piyush and Fillingim, Roger and Cottler, Linda},
+  journal={Innovation in Aging},
+  volume={6},
+  number={Suppl 1},
+  pages={841},
+  year={2022}
+}
+```
+
+<p class="buttons" style="text-align:center;">
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1093/geroni/igac059.3017"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+</p>

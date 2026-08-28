@@ -2,9 +2,19 @@
 title: ""
 page-layout: full
 toc: true
-#title-block-banner: "#EE6A24"
-#title-block-banner-color: "#000000"
+# title-block-banner: "#EE6A24"
+# title-block-banner-color: "#000000"
 brand: brand/_brand.yml
+custom-callout:
+  todo:
+    icon-symbol: ""
+    color: "#f3e6b2"
+  # thumbs-up:
+  #   title: "Great job!"
+  #   icon-symbol: "fa-thumbs-up"
+  #   color: "#008000"
+filters:
+- custom-callout
 format:
   html:
     # css: html/cv.scss
@@ -13,111 +23,130 @@ format:
       dark: ["html/dfb_dark.scss","brand"]
 ---
 
-::: {.grid}
-
+:::::: grid
 ::: {.g-col-12 .g-col-lg-4}
-
 # Curriculum Vitae
 
-**Statistics • Clinical Informatics Data Science • Machine Learning**
-
-
----
+```{=html}
+<!-- 
+------------------------------------------------------------------------ -->
+```
 
 📍 Gainesville, Florida
 
-✉️ [piyushchaudhari@ufl.edu](mailto:piyushchaudhari@ufl.edu)
+✉️ [piyushchaudhari\@ufl.edu](mailto:piyushchaudhari@ufl.edu)
 
 🌐 [pc-piyush.github.io](https://pc-piyush.github.io)
 
-[{{< fa brands github >}}](https://github.com/pc-piyush)
-[{{< fa brands linkedin >}}](https://www.linkedin.com/in/piyush-chaudhari/)
-[{{< fa brands google-scholar >}}](https://scholar.google.com/citations?hl=en&user=gGrOPjwAAAAJ)
+[{{< fa brands github >}}](https://github.com/pc-piyush) [{{< fa brands linkedin >}}](https://www.linkedin.com/in/piyush-chaudhari/) [{{< fa brands google-scholar >}}](https://scholar.google.com/citations?hl=en&user=gGrOPjwAAAAJ)
 
----
+------------------------------------------------------------------------
 
 ## Summary
 
-I work in the intersection of Statistics and Machine Learning for their applications in Clinical Informatics, Modeling and Computation and Data Democratization
+I work at the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization
 
----
+<!-- ------------------------------------------------------------------------ -->
+
+## Research Interests
+
+- Statistical Machine Learning
+- Clinical Informatics and Decision Support
+- Patient Representation Learning
+- Phenotyping and Sub-Phenotyping
+- Privacy-Preserving Zero Knowledge Learning
+- Data Democratization
+
+<!-- ------------------------------------------------------------------------ -->
 
 ## Technical Skills
 
 ### Programming
 
-Python • R • SQL • SAS • Markdown
+Python **\|** R **\|** SQL **\|** SAS **\|** Markdown
 
-### Data Science
+```{=html}
+<!-- ### Data Science
 
-Machine Learning • Deep Learning • NLP • Statistics
+Machine Learning **|** Deep Learning **|** NLP 
+Statistics -->
+```
 
-### Clinical Data
+### Common Data Models
 
-- OMOP CDM
-- PCORnet
-- Epic Caboodle
-- Clarity
+OMOP **\|** i2b2 **\|** PCORNET **\|** EPIC Clarity **\|** EPIC Caboodle **\|** EPIC Cosmos
 
-### Visualization
+### Softwares and Packages
 
-- Quarto
-- Shiny
-- Streamlit
-- Power BI
+MS Power BI **\|** SPSS **\|** RedCAP **\|** ArcGIS **\|** Git **\|** SAP Data Services **\|** SAP Business Objects
 
----
+<!-- ------------------------------------------------------------------------ -->
 
-## Research Interests
+## Education
 
-- Clinical AI
-- Biomedical NLP
-- Representation Learning
-- Patient Embeddings
-- Knowledge Graphs
-- RAG
-
-:::
-
-::: {.g-col-12 .g-col-lg-8}
-
-
-## Data Management Analyst
-
-*UF Health Office of Data Science and Research Implementation* *(Feb 2023 - Current)*
-
-- Design and develop data science pipelines to improve the coverage and quality of the data
-- Working as an honest broker for research data focusing on electronic health records
-- Running ETL pipelines for [OneFlorida+](https://onefloridaconsortium.org), [All of Us Research Program](https://allofus.nih.gov) and [AoU CLAD](https://allofus.nih.gov/funding-and-program-partners/center-for-linkage-and-aquisition-of-data), [National COVID Cohort Collaborative- N3C](https://ncats.nih.gov/research/research-activities/n3c) and other custom requests
-- Adding new elements to source databases
-- Develop software and packages to run and validate data in OMOP Common Data Model
-- Conduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners
-
----
-
-*UF Department of Epidemiology* *(Jun 2018-Jan 2023)*
-
-- Lead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions
-- Creating visualizations, hotspots and heatmap analysis for community intervention planning
-
----
-
-# Education
-
-### PhD in Biomedical Informatics
+**PhD in Biomedical Informatics (currently pursuing)**
 
 *University of Florida \| Gainesville, FL (2025-current)*
 
-### Master of Science in Biostatistics
+<!-- ------------------------------------------------------------------------ -->
+
+**Master of Science in Biostatistics**
 
 *University of Florida \| Gainesville, FL (2016-2018)*
 
-### Bachelor of Technology in Biotechnology
+<!-- ------------------------------------------------------------------------ -->
+
+**Bachelor of Technology in Biotechnology**
 
 *Vellore Institute of Technology \| India (2012 - 2016)*
+:::
 
+:::: {.g-col-12 .g-col-lg-8}
+## Work Experience
 
----
+### Data Managment Analyst III
+
+[*UF Health Integrated Data Repository*](https://idr.ufhealth.org) *(Feb 2023 - Current)*
+
+- Designing and developing data science pipelines to improve the coverage and quality of data for **UF Health Research Enterprise**
+- Curating data elements from EPIC **Clarity** and **Caboodle** and make them available for use in interdisciplinary research projects
+- Developing Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like [OMOP](https://www.ohdsi.org/data-standardization/), [PCORNET](https://pcornet.org/data/common-data-model/) and [i2b2](https://i2b2.org)
+- Maintaining databases for free-text sources like clinical notes, order and pathology reports, social determinants of health variables, genetic testing data, and additional health data sources
+- Building patient-centric Digital Twin technology for UF Health Enterprise and implementing in [i2b2](https://i2b2.org) to improve cohort phenotyping
+- Liasioning as an honest broker between researchers and UF Health/Shands data server to provision access to data based on IRB approved research protocols <!-- - Training research partners in [i2b2](https://i2b2.org) and [OHDSI ATLAS](https://github.com/OHDSI/Atlas/wiki) --> <!-- - Applying appropriate informatics methods to answer research questions -->
+- Currently working on projects involving [UF Health](https://ufhealth.org), [UF Cancer Institute](https://cancer.ufl.edu), [UF Clinical and Translational Science Institute](https://www.ctsi.ufl.edu), [UF College of Medicine](https://med.ufl.edu), [UF College of Nursing](https://nursing.ufl.edu), [UF College of Dentistry](https://dental.ufl.edu), and [OneFlorida+ Clinical Research Consortium](https://onefl.net)
+- Selected accomplishments
+  - **10x**+ improvement in data delivery for free-text clinical notes and order reports
+  - **5x**+ improvement in data delivery through OMOP Common Data Model
+  - **5x**+ improvement for custom de-identification for data delivery
+
+### Data Managment Analyst II
+
+[*UF Department of Epidemiology*](https://phhp.ufl.edu/about/departments/epidemiology/) *(Jun 2018-Jan 2023)*
+
+- Conducted statistical analyses, data management and quality control at [UF HealthStreet](https://healthstreet.program.ufl.edu) (substance abuse and public health epidemiology data) for \~13,000 individuals across 700 data points
+- Created visualizations, hotspots and heatmap analysis for intervention planning
+- Worked with [UF Integrated Data Repository](https://idr.ufhealth.org) to link self-reported data from community members to their Electronic Health Records at [UF Health](https://ufhealth.org), analyzing data from [UF Survey Research Center, BEBR](https://bebr.ufl.edu/ufsrc/) <!-- - Managed statistical consulting for grant and study design (IRB protocol development, risk assessment, data management plan), cohort discovery ([i2b2](https://i2b2.org)) and mentored UF students working on [Cottlerlab](https://phhp.ufl.edu/profile/cottler-linda/) legacy and ongoing research data -->
+- Provided technical support for DSM-V software (developed on MS Access)
+
+::: {.todo title="Selected Grants: Lead Statistician and Data Management Analyst" collapse="true"}
+<!-- **Selected Grants: Lead Statistician and Data Management Analyst** -->
+
+- **Program to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus** Principal Investigator: Linda B. Cottler (Funded by CDC)
+- **Women Helping Women- Lung Cancer Screening Study** Principal Investigator: Catherine W. Striley; (Funded by UF Cancer Center; IRB202100009)
+- **Community Engagement and Research Program- HealthStreet** Principal Investigator: Linda B. Cottler, (Funded by NIH NCATS; IRB201600459)
+- **Precision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities** Principal Investigator: Linda B. Cottler (Funded by FL Department of Health)
+- **Study of Non-Oral Administration of Prescription Stimulants** Principal Investigator: Linda B. Cottler (Funded by Arbor Pharmaceuticals)
+:::
+
+### Graduate Research Statistician
+
+[*UF Department of Biostatistics*](https://phhp.ufl.edu/about/departments/biostatistics/) *(Aug 2017-May 2018)*
+
+- Involved in data reconfiguration, management, and consulting for the Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)
+
+```{=html}
+<!-- ------------------------------------------------------------------------
 
 # Selected Projects
 
@@ -127,9 +156,11 @@ Designed a temporal patient representation capable of supporting classical ML an
 
 **Technology**
 
-Python • PyTorch • OMOP • DuckDB
+Python • PyTorch • OMOP • DuckDB -->
+```
 
----
+```{=html}
+<!-- ------------------------------------------------------------------------
 
 ## Clinical NLP Extraction Pipeline
 
@@ -139,75 +170,65 @@ Built hybrid rule-based + transformer extraction system with confidence scoring.
 
 Python • Transformers • Regex • SQL Server
 
----
+------------------------------------------------------------------------
 
 ## Quarto Research Website
 
 Created an academic website hosting publications, presentations, and reproducible analyses.
+-->
+```
 
----
+<!-- ------------------------------------------------------------------------  -->
 
-# Publications
+## Teaching and Mentorship
 
-### 2026
+- Currently assisting with syllabus design and curation of classroom materials for [GMS 6803 Data Science for Clinical Research](https://hobi.med.ufl.edu/education/courses/) (*Fall 2026*)
+  - Course instructors: Drs. [Yi Guo](https://hobi.med.ufl.edu/profile/guo-yi/) and [Mei Liu](https://hobi.med.ufl.edu/profile/liu-mei/)
+- Conducting [i2b2](https://i2b2.org) and [OHDSI ATLAS](https://github.com/OHDSI/Atlas/wiki) training workshops for professionally diverse cohorts like medical students, residents, clinical faculty, research staff and students at UF Health and other national research partners (OneFlorida+) from (*Feb 2023 - Current*)
+- Mentored for [EGN 4912 Engineering Directed Independent Research](https://www.eng.ufl.edu/undergraduate/programs-and-partnerships/center-for-experiential-learning/join-a-research-lab/egn4912/) undergraduate program (*Spring 2026*)
+- Managed statistical design and provided research mentorship for graduate students and postdoctoral fellows working on [Cottlerlab](https://phhp.ufl.edu/profile/cottler-linda/) legacy and ongoing research data (*Jun 2018 - Jan 2023*)
 
-**Paper title**
+## Publications
 
-Journal
+You can find my publications in the [Research](research/index.qmd) tab or at my [Google Scholar](https://scholar.google.com/citations?hl=en&user=gGrOPjwAAAAJ) page <!-- 
+------------------------------------------------------------------------ -->
 
----
+## Awards and Scholarships
 
-### 2025
+- [Emerging Research Scholars](https://research.med.ufl.edu/education/educational-programs/ers-ai-program-mentors/) PhD Fellow (*Aug 2025 - Dec 2026*)
+- [University of Florida Superior Accomplishment Award](https://hr.ufl.edu/professional-development/employee-awards/superior-accomplishment-awards/)
+  - [University-Gold Award for Individual Employee Performance in Finance, Research, and Compliance](https://news.hr.ufl.edu/awards/2025-superior-accomplishment-awards-recognize-outstanding-and-meritorious-service/) (*Apr 2025*)
+  - [Division-Level Winner](https://hr.ufl.edu/professional-development/employee-awards/superior-accomplishment-awards/saa-2025-division-winners/) (Division 5- Health Affairs) for Individual Employee Performance (*Mar 2025*)
 
-**Paper title**
+<!-- ------------------------------------------------------------------------ -->
 
-Conference
+## Certifications
 
----
+- Completed [EPIC](https://www.epic.com)-led coursework for [Cosmos](https://cosmos.epic.com) (*2025*), Cogito, Clarity Data Model, Caboodle Data Model and Clinical Data Model (*2024*)
+- [SAS Certified Specialist](https://www.sas.com/en_us/certification/credentials/foundation-tools/base-programming-specialist.html): Base Programming Using SAS 9.4 (*2021*)
+- [Design for Six Sigma](https://courses.msicertified.com/course/design-for-six-sigma-certification) (License: 13361772) and [Six Sigma Green Belt Certified](https://courses.msicertified.com/course/six-sigma-green-belt-certification) (License: 13361771) (*2018*)
 
-# Presentations
-
-- AMIA Annual Symposium
-- Department Seminar
-- Journal Club
-
----
-
-# Awards
-
-- Graduate Research Award
-- Best Poster
-- Dean's List
-
----
-
-# Certifications
-
-- AWS
-- Azure
-- Coursera
-
----
+```{=html}
+<!-- ------------------------------------------------------------------------
 
 # Teaching
 
 - Graduate Teaching Assistant
 - Guest Lectures
 
----
+------------------------------------------------------------------------
 
 # Professional Memberships
 
 - AMIA
 - IEEE
-- ACM
+- ACM -->
+```
 
----
+<!-- ------------------------------------------------------------------------ -->
 
-# References
+## References
 
-Available upon request.
-
-:::
-
-:::
+Available upon request
+::::
+::::::

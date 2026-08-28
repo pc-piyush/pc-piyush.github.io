@@ -20,5 +20,13 @@
       "/research/posters/striley2022160/index.html",
       "/research/posters/varma20193418/index.html"
     ]
+  },
+  {
+    "listing": "/teaching/F26_GMS6803/index.html",
+    "items": [
+      "/teaching/F26_GMS6803/week-2/EHR_CDM.html",
+      "/teaching/F26_GMS6803/week-2/i2b2.html",
+      "/teaching/F26_GMS6803/week-1/HiperGator.html"
+    ]
   }
 ]

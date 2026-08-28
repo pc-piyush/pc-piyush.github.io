@@ -1,0 +1,12 @@
+prog:
+  title: Programming
+  description: Python , R , SQL , SAS , Markdown
+cdm:
+  title: Common Data Models
+  description: OMOP, i2b2, PCORNET, EPIC Clarity, EPIC Caboodle
+soft:
+  title: Softwares and Packages
+  description: MS Power BI, SPSS, RedCAP, ArcGIS, Git, SAP Data Services, SAP Business Objects
+concepts:
+  title: Core Concepts
+  description: Data Visualization, Statistical Modeling and Diagnostics, Statistical Computing, Predictive Analytics, Hashing, Clinical Informatics, Privacy-Preserving Informatics, Data Democratization, Applied Survival Analysis, Linear and Generalized linear models, Linear and Non-Linear Mixed Models, Optimization, Cross Validation, Machine Learning, Natural Language Processing, Simulation studies, Clinical Trial Design, Interactive Matrix Language, Monte Carlo methods

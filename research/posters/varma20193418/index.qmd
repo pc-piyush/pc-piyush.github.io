@@ -1,0 +1,71 @@
+---
+title: "Service referral follow up rate among participants of a community engagement initiative in Florida"
+date: 2019-03
+title-block-banner: "#1F1F1F"
+author:
+  - name: Deepthi Varma
+    affiliation: University of Florida
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Krishna Vaddiparti
+    affiliation: University of Florida
+  - name: Catherine Woodstock Striley
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+
+doi: 10.1017/cts.2019.215
+pub-info:
+  reference: >-
+    Varma DS, *Chaudhari PV*, Vaddiparti K, Striley CW, Cottler LB. 3418 Service referral follow up rate among participants of a community engagement initiative in Florida. Journal of Clinical and Translational Science. 2019;3(s1):94-94. doi:10.1017/cts.2019.215
+  links:
+  - name: Final version
+    url: https://doi.org/10.1017/cts.2019.215
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1017/cts.2019.215
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+---
+
+## Abstract
+
+**OBJECTIVES/SPECIFIC AIMS**: To examine the rate of medical and social service referral utilization among community members who are enrolled in HealthStreet - a community engagement initiative at University of Florida. 
+
+**METHODS/STUDY POPULATION**: HealthStreet utilizes the CHW model to conduct health needs assessment, provide referrals to medical and social services and link them to health research at UF. Across two follow-up schedules, these participants are contacted to assess their rate of referral utilization. 
+
+**RESULTS/ANTICIPATED RESULTS**: From October 2011-October 2018, HealthStreet completed 10,829 health needs assessments and provided a total of 15,723 medical and/or social service referrals with an average of 1.48 referrals per person. About a third of people completed first and second follow-up respectively (n=3,461; 32.0% and n=3,477; 32.1%), and another third (n=3,891; 35.9%) completed neither. The total number of follow up attempts was 40,863, with an average of 3.85 attempts per person. The overall service utilization rate was 17.02%. The top barriers to utilization included, could not schedule an appointment (26.3%), busy on the date of appointment (21.9%), transportation (9.4%), and already received the service from elsewhere (4.7%). Others (28.3%) did not identify a specific barrier for non-utilization. 
+
+**DISCUSSION/SIGNIFICANCE OF IMPACT**: Findings show that those who need services are still hampered by barriers to care that CHWs and other service providers could help them overcome. Facilitating the appointment and providing transportation would assist over a third of those needing services.
+
+## Citation
+
+```         
+
+@article{varma20193418,
+  title={3418 Service referral follow up rate among participants of a community engagement initiative in Florida},
+  author={Varma, Deepthi S and Chaudhari, Piyush V and Vaddiparti, Krishna and Striley, Catherine Woodstock and Cottler, Linda B},
+  journal={Journal of Clinical and Translational Science},
+  volume={3},
+  number={s1},
+  pages={94--94},
+  year={2019},
+  publisher={Cambridge University Press}
+}
+```
+
+<p class="buttons" style="text-align:center;">
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1017/cts.2019.215"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+</p>

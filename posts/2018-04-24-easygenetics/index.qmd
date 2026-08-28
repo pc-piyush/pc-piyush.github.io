@@ -1,0 +1,463 @@
+---
+header: easygenetics
+title: "easygenetics"
+navbar: true
+title-block-banner: "#1F1F1F"
+
+# subtitle: "Front end tool for Bioinformatics Training"
+brand: ../../brand/_brand.yml
+# toc: true
+
+format: 
+    revealjs:
+        axe:
+           output: console
+        slide-number: true
+        chalkboard: 
+            buttons: false
+        preview-links: auto
+        logo: "../../photos/Piyush.png"
+        theme: ["../../html/reveal.scss","brand"]
+        
+
+footer: |
+      <a href="https://pc-piyush-easygenetics.share.connect.posit.cloud" target="_blank">
+        easygenetics
+      </a>
+
+author:
+  - name: Candice Sammons
+    url: https://csammons7.wordpress.com
+  - name: Piyush Chaudhari
+    url: https://pc-piyush.github.io/
+    orcid: 0000-0003-0970-5552
+date: 04-24-2018
+image: "images/Fig1.png"
+#date-modified: "5/23/2021"
+categories: [Quarto, R, Teaching, Shiny] # self-defined categories
+citation: 
+  url: https://pc-piyush.github.io/posts/2018-04-24-easygenetics/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Navigating through the package {#nav}
+
+::: {style="font-size: 80%;"}
+- The package is a GUI dimension of basic functions that are used for
+  genetic data analysis
+
+- Navigating through the package requires minimal or no coding exposure
+
+- In the documentation, we have made sure to present the instructions in
+  a way as easy as possible.
+:::
+
+------------------------------------------------------------------------
+
+## Contents
+
+::: {style="font-size: 60%;"}
+- [Introduction to `easygenetics`](#nav)
+- [Installation](#/nav1)
+  - GitHub
+  - Posit Connect Cloud
+- User Interface
+- List of Functions
+- Using functions in easygenetics
+- Significance of easygenetics
+- Additional Details
+- Session Info
+- Contact Details
+:::
+
+------------------------------------------------------------------------
+
+## Introduction to `easygenetics` {#Intro}
+
+
+::: {style="font-size: 70%;"}
+
+<center>
+
+- `easygenetics` is a front end genetic data analysis platform in R
+  programming environment
+- It is a R package, consisting of functions which can be accessed and played with via a graphical interface
+- The aim of this package is to create an easily accessible platform for non-statisticians and non-programmers to work on with minimal coding
+- The user will have the minimum task of just loading the package and running the required function
+- The input variables can be entered in the GUI, and results are available almost instantaneously, which improves the accessibility for non-programmers
+
+</center>
+:::
+
+------------------------------------------------------------------------
+
+## Installation {#Install}
+
+
+::: {style="font-size: 80%;"}
+
+1.  GitHub
+
+The r package `devtools` is needed to install the easygenetics package from GitHub
+
+`devtools` can be installed using 
+```{r}
+#| echo: true
+#| output: true
+install.packages("devtools", repos = "https://cloud.r-project.org/")
+```
+
+Then the `easygenetics` package can be installed using `install_github()` function from `devtools` package as below:
+
+```{r}
+#| echo: true
+#| output: true
+
+devtools::install_github("pc-piyush/easygenetics")
+```
+
+
+
+:::
+
+------------------------------------------------------------------------
+
+## Installation {#Install}
+
+
+::: {style="font-size: 80%;"}
+
+2.  Posit Connect Cloud
+
+
+The Shiny app can be accessed using the link -  [easygenetics](https://pc-piyush-easygenetics.share.connect.posit.cloud/) 
+
+The app is made using [`shiny`](https://shiny.posit.co) package in R and hosted on [Posit Connect Cloud](https://docs.posit.co/connect-cloud/)
+
+:::
+
+------------------------------------------------------------------------
+
+## User Interface
+
+<center>
+![Fig 1: `easygenetics` User Interface](images/Fig1.png){.r-stretch width="60%"}
+</center>
+
+::: {style="font-size: 38%;"}
+
+- The **Function Bar**  consists of the index of functions which makes it easier to access when you are using the package
+
+- The **Action Area** allows you to manipulate the parameters and observe and visualize the results parallely
+
+- The **Results** area allows you to visualize the results
+
+- The **Run** button lets you submit your values and observe the results
+
+:::
+
+------------------------------------------------------------------------
+
+## List of Functions
+
+::: {style="font-size: 60%;"}
+
+- Simulating Genotypes at a SNP over Multiple Generations : `Simulate_Genotypes()`
+- Genotypic Values, Breeding Values, and Dominance Deviation Table : `Breeding_Values()`
+- Interval Mapping : `Interval_Mapping()`
+- Multiple QTL Mapping : `Multiple_QTL_Mapping()` 
+- Simulating Genotype of Parent by Child- Estimating Covariance : `Covariance_Estimation()`
+- Haseman-Elston Regression : `Haseman-Elston_Regression()`
+
+:::
+
+------------------------------------------------------------------------
+
+## `Simulate_Genotypes()`
+
+::: {style="font-size: 40%;"}
+
+The function located on the first tab titled `Simulate_Genotypes()` is used to simulate genotypes at a SNP over multiple generations with the assumption that the mutation only happens one way
+
+### Input
+
+- The arguments that are required in order for this function to properly run is the `initial sample size` , `mutation rate` , `average number of offspring per generation` and `number of generations` 
+- The `Enter Seed` is a numeric value that allows the results to be reproducible
+- All of the required arguments needed in order for the function to work are numeric values
+- The `initial sample size` is the starting population size at the beginning of the simulation
+- The `mutation rate` is the frequency of the target mutation in one gene over time
+- The `average number of offspring per generation` is the mean growth in each generation
+
+### Output
+
+- The output of this function produces two plots
+    - The first plot shows the `growth in population size over generation`
+    - The second plot provides the `allele frequency over generation`
+    
+These plots are both determined by the user’s arguments that are defined above.
+
+:::
+
+------------------------------------------------------------------------
+
+## `Simulate_Genotypes()`
+
+<center>
+![Fig 2: `Simulate_Genotypes()`](images/Fig2.png){.r-stretch width="70%"}
+</center>
+
+
+------------------------------------------------------------------------
+
+## `Breeding_Values()`
+
+::: {style="font-size: 40%;"}
+
+The second tab is titled `Breeding_Values()`, which calculates values based on the inputted arguments
+
+### Input
+- The inputs for this function are all numeric 
+- `A1A1` is the number of observations of the phenotypic means of the specified homozygous genotype
+- `A1A2` is the number of observations of the phenotypic means of the heterozygous genotype, and 
+- `A2A2` is the number of observations of the phenotypic means of the specified homozygous genotype
+- The `Frequency of Allele A1` is the rate at which allele A1 occurs, and the `Frequency of Allele A2` is the rate at which allele A2 occurs
+
+
+### Output
+- The output of this function provides 
+
+  - Table that includes `midpoint (m)` , `population mean (M)` , `additive effect (a)` , `dominance effect (d)` 
+  - Another table with the `frequency` , `genotypic value` , `breeding value` and `dominance deviation of each genotype`
+
+:::
+
+------------------------------------------------------------------------
+
+## `Breeding_Values()`
+
+<center>
+![Fig 3: `Breeding_Values()`](images/Fig3.png){.r-stretch width="70%"}
+</center>
+
+------------------------------------------------------------------------
+
+## `Breeding_Values()`
+
+::: {style="font-size: 40%;"}
+
+### Glossary
+- `Midpoint` is the middle value of the phenotypic means between the two homozygous genotypes
+- `Expected mean phenotype` is calculated using the additive effect and dominance effect , where
+  - `additive effect` is the distance between the midpoint and the phenotypic means of the homozygous genotypes, and 
+  - `dominance effect` is the distance between the midpoint and phenotypic mean of the heterozygous genotype
+- `Population mean` is calculated from the `additive effect` , `dominance effect` and the `frequencies of each genotype` 
+
+- `Frequency` is the rate at which each genotype occurs 
+- `Genotypic value` is the `additive effect` and `dominance effect` estimates
+- `Breeding value` is the sum of average effects of the alleles
+- `Dominance Deviation` is the difference between genotypic value and breeding value
+
+:::
+
+------------------------------------------------------------------------
+
+## `Interval_Mapping()`
+
+::: {style="font-size: 35%;"}
+
+`Interval_Mapping()` is the function located on the third tab of the app
+- Interval mapping is currently the most common method used for QTL mapping
+- Its used by assuming the presence of a single QTL, and estimates the QTL position between two chosen markers after considering each locus one at a time 
+
+### Input and Output
+
+- The `Enter Seed` is a numeric value that allows the results to be reproducible
+- `Function` is a select list input with the options
+  - `Properties of Cross` 
+  - `Plot`
+  - `LOD Thresholds`, and 
+  - `LOD Intervals` 
+
+  The default in this list is `Properties of Cross` and the output changes depending on this selection
+  
+    - If `Properties of Cross` is selected and all the other parameters are entered and selected, the output displays the summary of a data simulation for a QTL experiment. This summary includes information such as the `type of cross` , `number of individuals` , `number of phenotypes` , `total markers` , `percent genotyped` and so on
+
+    - If `Plot` is selected and all the other parameters are entered and selected, the output displays an interval mapping plot. Depending on what is selected under Interval Mapping Method determines what plot is displayed
+
+    - If the option `LOD Thresholds` is selected, the output provides the summary of a genome scan with a single QTL model. This includes the interval mapping threshold that shows which chromosome , position and LOD value where the LOD threshold is located
+
+    - Selecting `LOD Interval` under Function produces an output that shows the LOD support interval for the chromosome
+
+:::
+
+------------------------------------------------------------------------
+
+## `Interval_Mapping()`
+
+::: {style="font-size: 35%;"}
+
+### Input and Output
+
+- The output described above is determined based on the other parameters that the user provides
+    
+- This includes the `length of chromosome` , the `number of markers` , the `number of individuals` , the `number of permutations` , the `position of QTL1` and `QTL2` and the `effect of QTL1` and `QTL2` , which are all numeric values
+
+- `Equal Spacing` , `Type of Cross` , `No. of QTLs` and `Interval Mapping` Method are all select list inputs due to the restrictions of the function
+  - `Equal Spacing` provides the option of TRUE or FALSE that determines the presence of equal spacing in the genetic map simulation
+  - `Type of Cross` specifies what kind of population to simulate, and has the option of `bc` which stands for backcross and `f2` for intercross
+  - The choices for `No. of QTLs` are `1` and `2` due to function constraints
+  - `Interval Mapping` method is used to determine which plot is shown. The options for the different methods are `EM` , `HK` , `EHK` and `All`
+
+:::
+
+------------------------------------------------------------------------
+
+## `Interval_Mapping()`
+
+<center>
+![Fig 4: `Interval_Mapping()`](images/Fig4.png){.r-stretch width="25%"}
+</center>
+
+------------------------------------------------------------------------
+
+## `Multiple_QTL_Mapping()`
+
+::: {style="font-size: 35%;"}
+
+`Multiple_QTL_Mapping()` is the next function in the tab and is used for multiple QTL mapping by the Haley-Knott Regression
+ 
+ - The downside of mapping one QTL at a time is that a second QTL might be missed, or ghosted
+ - By performing multiple QTL mapping, more QTLs can be identified on the same chromosome
+ 
+### Input
+
+ To execute this function, there are parameters that need to be set, which will be described below
+
+- The `Enter Seed` is a numeric value that allows the results to be reproducible
+- The `Type of Function` is a select list input with the options of 
+    - `Genetic Map`
+    - `Single QTL`
+    - `Two QTLs`
+    - `Heat Map-Two QTLs Comparison` 
+    - `Two QTLs Comparison`
+    - `Composite Interval Mapping`
+
+- The default is set to `Genetic Map`
+  
+:::
+
+------------------------------------------------------------------------
+
+## `Multiple_QTL_Mapping()`
+
+::: {style="font-size: 35%;"}
+
+### Output
+
+Depending on what is selected and what the other inputs are, determines the output displayed
+
+  - By selecting `Genetic Map` , the output shows a plot marker map
+  - The `Single QTL` option plots the LOD score for each map position in centimorgans of a single QTL, which is the QTL the user clarifies in QTL1. A summary of this using Haley-Knott regression is presented below the plot
+  - The same output is shown for when `Two QTLs` is selected, except now the method uses a two-QTL model
+  - Choosing `Heat Map-Two QTLs Comparison` changes the output into a heat map of the QTLs
+  - With `Composite Interval Mapping` a plot is given with the black curve representing single interval mapping where the QTLs are not clearly distinguished and the blue curve is the composite interval curve. Below the plot the LOD threshold of the composite interval curve is provided in summary.
+
+The rest of the parameters are similar to the ones in the `Interval_Mapping` function. In order for the output to be present, there needs to be a numeric value entered into the `length of chromosome` , the `number of markers` , the `number of individuals` , the `position of QTL1 and QTL2` , and the `effect of QTL1 and QTL2`. `Equal Spacing` has a choice between TRUE and FALSE that determines the presence of equal spacing in the genetic map simulation. `Type of Cross` has options `bc` for backcross and `f2` for intercross to determine what kind of population to simulate.
+
+
+:::
+
+
+------------------------------------------------------------------------
+
+## `Multiple_QTL_Mapping()`
+
+<center>
+![Fig 5: `Multiple_QTL_Mapping()`](images/Fig5.png){.r-stretch width="35%"}
+</center>
+
+
+
+------------------------------------------------------------------------
+
+## `Covariance_Estimation()`
+
+::: {style="font-size: 35%;"}
+
+- The `Covariance_Estimation` function is used to estimate variance between a parent and offspring
+
+### Input
+
+- The user must specify the number of generations $n$ as a numeric value under parameter `Enter n`  
+
+  The covariance is estimated through simulation, using a normal distribution to randomly generate the two parental allelic effects and a binomial distribution to randomly determine the transmitted allele. The transmitted allele assists in determining the offspring’s phenotype. Before estimating the covariance the appropriate errors are added to the parent and offspring, such as the environmental error.
+
+- The `Enter Seed` is a numeric value that allows the results to be reproducible.
+
+### Output
+
+The output displayed is the covariance estimation between parents and offsprings established from $n$
+
+
+:::
+
+------------------------------------------------------------------------
+
+## `Covariance_Estimation()`
+
+<center>
+![Fig 6: `Covariance_Estimation()`](images/Fig6.png){.r-stretch width="50%"}
+</center> 
+
+------------------------------------------------------------------------
+
+## `Haseman-Elston_Regression()`
+
+::: {style="font-size: 35%;"}
+
+The Haseman-Elston Regression function is used to obtain a series of plots which represent the relationship between the phenotypes of two siblings.For each sibling pair, the proportion of alleles IBD are determined at a given locus. The regression is done on squared difference between the sibling trait values on the proportion of alleles shared IBD. The variance component comes from genetic and environmental factors.
+
+If $y$~$i$~ denote the outcome variable for subject $i$, then the Haseman-Elston regression model is-
+
+<center>
+
+$y$~$i$~ = $\mu$ + $\alpha$~$i$~ + $\alpha$*~$i$~ + $\epsilon$~$i$~
+
+
+</center>
+
+where $\alpha$~$i$~ and $\alpha$* represents the additive genetic variance contribution from QTLs from inside and outside the interval. $\alpha$, $\alpha$* and $\epsilon$ are uncorrelated random errors, and the phenotypic variance is the sum of variance of these 3 random terms. The sum of $\sigma_\alpha^2$ and $\sigma_\alpha^{*2}$ is the total genotypic variance, whereas $\sigma_\epsilon^2$ represents the error variance, which is the difference between the total variance and sum of genotypic and environmental variance.
+
+:::
+
+------------------------------------------------------------------------
+
+## `Haseman-Elston_Regression()`
+
+::: {style="font-size: 35%;"}
+
+### Input
+
+- The `Enter Seed` is a numeric value that allows the results to be reproducible
+
+- `Type of Plot` is the select list input where we can select the type of plot we want in the result window. The options are `Histogram of IBD` , `IBD vs Squared differences between phenotypes` , `Phenotype plot- Sibling 1 vs Sibling 2` and `Phenotype plot- Sibling 1 vs Sibling 2` for `IBD= 0,1,2`. An additional option is `All` , which shows all the above mentioned plots together
+- `Number of Families` is a numeric input variable which indicates the number of families on which the regression is to be performed
+- `Total Variance` , `Genetic Variance` and `Environmental Variance` represent the Total Phenotypic Variance and the contribution of Genetic and Environmental component respectively
+- `Minor Allele Frequency` is the frequency of the minor allele in the population.
+
+### Output
+
+The default output plot type is `All` , which produces all plots- `Histogram of IBD` , `IBD vs Squared differences between phenotypes` , `Phenotype plot- Sibling 1 vs Sibling 2` and `Phenotype plot- Sibling 1 vs Sibling 2` for `IBD= 0,1,2`. `Histogram of IBD` shows the frequency distribution of population which belongs to each IBD category. `IBD vs Squared differences between phenotypes` plots the squared difference between phenotypic values of siblings by the three IBD values- 0,1 and 2. `Phenotype plot- Sibling 1 vs Sibling 2` shows the overall scatter plot of phenotypic values of sibling 1 and sibling 2. `Phenotype plot- Sibling 1 vs Sibling 2` for `IBD= 0,1,2` represent the subset of the overall phenotypic plot segmented by IBD values 0,1 and 2.
+
+:::
+
+------------------------------------------------------------------------
+
+## `Haseman-Elston_Regression()`
+
+<center>
+![Fig 7: `Haseman-Elston_Regression()`](images/Fig7.png){.r-stretch width="40%"}
+</center> 

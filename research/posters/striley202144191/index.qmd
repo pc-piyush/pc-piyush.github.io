@@ -1,0 +1,71 @@
+---
+title: "As Food Insecurity Worsens During COVID-19, Negative Mental Health Impact on Community Members Increases"
+date: 2022-05
+title-block-banner: "#1F1F1F"
+author:
+  - name: Catherine Woodstock Striley
+    affiliation: University of Florida
+  - name: Piyush Chaudhari
+    affiliation: University of Florida
+  - name: Deepthi Varma
+    affiliation: University of Florida
+  - name: Linda B Cottler
+    affiliation: University of Florida
+
+doi: 10.1017/cts.2021.768
+pub-info:
+  reference: >-
+    Striley C, <strong>Chaudhari P</strong>, Varma D, Cottler L. 44191 As Food Insecurity Worsens During COVID-19, Negative Mental Health Impact on Community Members Increases. Journal of Clinical and Translational Science. 2021;5(s1):144-144. doi:10.1017/cts.2021.768
+  links:
+  - name: Final version
+    url: https://doi.org/10.1017/cts.2021.768
+    icon: "fa-solid fa-newspaper"
+  # - name: Code
+  #   url: https://github.com/crcresearch/gos
+  #   icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1017/cts.2021.768
+    icon: "fa-solid fa-z"
+brand: ../../../brand/_brand.yml
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    theme: 
+      light: ["../../../html/dfb.scss","brand"]
+      dark: ["../../../html/dfb_dark.scss","brand"]
+---
+
+## Abstract
+
+**ABSTRACT IMPACT**: For community engagement to be impactful and reduce health inequity, it needs to address timely needs in the community, including COVID-19 impacts. Here, we describe how pre- and post-COVID-19 food insecurity worsened mental health among community members served by HealthStreet University of Florida community engagement program. 
+
+**OBJECTIVES/GOALS**: COVID-19 impacts the economic vitality and the mental health of communities; research and engagement activities must consider the context in which we are practicing and the needs of our community members. 
+
+**METHODS/STUDY POPULATION**: HealthStreet, the University of Florida community engagement program, sends Community Health Workers (CHWs) where people congregate to assess social determinants of health and medical histories, used to make referrals to services and research opportunities. CHWs conducted follow-up COVID-19 assessments measuring perceived stress, loneliness, depression, anxiety, binge drinking, and opioid use, as well as high blood pressure and food insecurity. Here, we consider mental health outcomes among 1,300 adults who reported being food insecure either at some time in the past 12 months at baseline, or at the COVID-19 follow-up assessment, and completed both. Chi-Square Test was used to determine p-values. 
+
+**RESULTS/ANTICIPATED RESULTS**: Overall, at the COVID-19 follow-up assessment, 37.1% (of 1,300) were still food insecure during COVID-19 (same), 20.3% (had become food insecure during COVID-19 (worse) and 42.6% were no longer food insecure (better). Those who were no longer food insecure were more likely to report less stress, while those still food insecure were more likely to report the highest stress and loneliness (p<0.0001), while the worse off group was in the middle. Those who stayed food insecure were most likely to report depression and anxiety, and also high blood pressure and using opioids (p<.05) compared to those getting worse or better. Binge drinking behavior was not significantly different across groups. 
+
+**DISCUSSION/SIGNIFICANCE OF FINDINGS**: Community engagement activities across CTSIs must be sensitive to the needs of their communities. HealthStreet findings show that new and continuing food insecurity negatively influence mental health problems, pointing to the need for engagement to address multiple problems.
+
+## Citation
+
+```         
+
+@article{striley202144191,
+  title={44191 As Food Insecurity Worsens During COVID-19, Negative Mental Health Impact on Community Members Increases},
+  author={Striley, Catherine and Chaudhari, Piyush and Varma, Deepthi and Cottler, Linda},
+  journal={Journal of Clinical and Translational Science},
+  volume={5},
+  number={s1},
+  pages={144--144},
+  year={2021},
+  publisher={Cambridge University Press}
+}
+```
+
+<p class="buttons" style="text-align:center;">
+
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1017/cts.2021.768"><i class="fa-solid fa-z"></i> Add to Zotero {{< fa square-arrow-up-right >}}</a>
+
+</p>
