@@ -59,14 +59,11 @@ The teaching team has created a [GitHub repository](https://github.com/GatorAIM/
 - Once the New User Training is completed, students are recommended to check out additional trainings on this page - [HiperGator Training](https://docs.rc.ufl.edu/training/HiPerGator_training/)
 - UF Research Computing also offers [Practicum AI](https://practicumai.org) training module
 
-
 ## Questions or Concerns
-- In case you have any questions - 
+
+- In case you have any questions -
   - Post on Canvas Discussion Panel
   - Post on [GitHub issues](https://github.com/GatorAIM/gms6803-clinical-data-science)
   - Office Hours
     - Dr. Mei Liu (Thursday 9-11 AM or by appointment)
-    - Dr. Yi Guo (Monday 2-4 PM or by appointment)
-  <!-- - E-Mail Piyush ([piyushchaudhari@ufl.edu](mailto:piyushchaudhari@ufl.edu)) or Qi([qixu@ufl.edu](mailto:qixu@ufl.edu)) -->
-
-
+    - Dr. Yi Guo (Monday 2-4 PM or by appointment) <!-- - E-Mail Piyush ([piyushchaudhari@ufl.edu](mailto:piyushchaudhari@ufl.edu)) or Qi([qixu@ufl.edu](mailto:qixu@ufl.edu)) -->

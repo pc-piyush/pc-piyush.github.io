@@ -24,7 +24,7 @@
 <h2 class="anchored" data-anchor-id="course-materials">Course Materials</h2>
 <div id="listing-materials" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U2xpZGVzJTJDV2VlayUyMDI=" data-listing-date-sort="1787889600000" data-listing-file-modified-sort="1787897450034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="395">
+<div class="quarto-post image-right" data-index="0" data-categories="U2xpZGVzJTJDV2VlayUyMDI=" data-listing-date-sort="1787889600000" data-listing-file-modified-sort="1787927291122" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="418">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../../teaching/F26_GMS6803/week-2/EHR.html" class="no-external">Electronic Health Records</a>
@@ -51,11 +51,11 @@ August 28, 2026
 <div class="listing-author">
 Piyush Chaudhari | Qian Li
 </div>
-<div class="listing-reading-time">2 min</div>
+<div class="listing-reading-time">3 min</div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="UmVzb3VyY2VzJTJDV2VlayUyMDE=" data-listing-date-sort="1787889600000" data-listing-file-modified-sort="1787900899642" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="26">
+<div class="quarto-post image-right" data-index="1" data-categories="UmVzb3VyY2VzJTJDV2VlayUyMDI=" data-listing-date-sort="1787889600000" data-listing-file-modified-sort="1787901039012" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="26">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../../teaching/F26_GMS6803/week-2/HipergatorSetup.html" class="no-external">HiperGator Setup</a>
@@ -67,7 +67,7 @@ Piyush Chaudhari | Qian Li
 
 <div class="listing-category" onclick="window.quartoListingCategory('UmVzb3VyY2Vz'); return false;">Resources</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('V2VlayUyMDE='); return false;">Week 1</div>
+<div class="listing-category" onclick="window.quartoListingCategory('V2VlayUyMDI='); return false;">Week 2</div>
 
 </div>
 <div class="delink listing-description"><a href="../../teaching/F26_GMS6803/week-2/HipergatorSetup.html" class="no-external">
