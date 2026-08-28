@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-08-27">
-<meta name="description" content="This course covers the collection and analytics of real-world health data (RWHD) with a focus on generating real-world evidence and actionable clinical insights">
+<meta name="author" content="Piyush Chaudhari">
+<meta name="dcterms.date" content="2026-08-24">
+<meta name="description" content="Setting up HiperGator for GMS 6803">
 
-<title>GMS 6803 Data Science for Clinical Research – Piyush Chaudhari</title>
+<title>HiperGator Setup – Piyush Chaudhari</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,34 +26,67 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../photos/Piyush.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-166398dc28bc788c75b5e3fe62af5912.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e14b1314d6ac29b3ec49c0deae9a2908.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-166398dc28bc788c75b5e3fe62af5912.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e40fd465bf6a04a12e3e3e33af81cf6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-ba4e6b02301d92e6d03223dcee6aad14.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-e40fd465bf6a04a12e3e3e33af81cf6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../photos/Piyush.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-166398dc28bc788c75b5e3fe62af5912.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e14b1314d6ac29b3ec49c0deae9a2908.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-166398dc28bc788c75b5e3fe62af5912.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-5cafc74292b222e60e9e900299140a1d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-bd41d6777372ead2be3841901c077812.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-5cafc74292b222e60e9e900299140a1d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,68 +113,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-materials .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-author','listing-date','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-materials'] = new List('listing-materials', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="alternate" type="application/rss+xml" title="Piyush Chaudhari" href="index.xml" data-external="1"><meta name="twitter:title" content="GMS 6803 Data Science for Clinical Research – Piyush Chaudhari">
-<meta name="twitter:description" content="This course covers the collection and analytics of real-world health data (RWHD) with a focus on generating real-world evidence and actionable clinical insights">
+<meta name="twitter:title" content="HiperGator Setup – Piyush Chaudhari">
+<meta name="twitter:description" content="Setting up HiperGator for GMS 6803">
 <meta name="twitter:creator" content="@iampiyushvc">
 <meta name="twitter:card" content="summary">
 </head>
@@ -319,38 +295,46 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-materials" id="toc-course-materials" class="nav-link active" data-scroll-target="#course-materials">Course Materials</a></li>
+  <li><a href="#hipergator-setup-check" id="toc-hipergator-setup-check" class="nav-link active" data-scroll-target="#hipergator-setup-check">HiperGator Setup Check</a></li>
+  <li><a href="#check-group-membership" id="toc-check-group-membership" class="nav-link" data-scroll-target="#check-group-membership">Check Group Membership</a></li>
+  <li><a href="#create-shortcutsymlink-to-the-course-directory" id="toc-create-shortcutsymlink-to-the-course-directory" class="nav-link" data-scroll-target="#create-shortcutsymlink-to-the-course-directory">Create Shortcut/SymLink to the Course Directory</a></li>
+  <li><a href="#hipergator-jupyter-hub-and-on-demand" id="toc-hipergator-jupyter-hub-and-on-demand" class="nav-link" data-scroll-target="#hipergator-jupyter-hub-and-on-demand">HiperGator Jupyter Hub and On Demand</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="UmVzb3VyY2Vz">Resources <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U2xpZGVz">Slides <span class="quarto-category-count">(2)</span></div><div class="category" data-category="V2VlayUyMDE=">Week 1 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="V2VlayUyMDI=">Week 2 <span class="quarto-category-count">(2)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GMS 6803 Data Science for Clinical Research</h1>
-<p class="subtitle lead">Fall 2026</p>
+<h1 class="title">HiperGator Setup</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Teaching</div>
-    <div class="quarto-category">Fall 2026</div>
+    <div class="quarto-category">Resources</div>
+    <div class="quarto-category">Week 1</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    This course covers the collection and analytics of real-world health data (RWHD) with a focus on generating real-world evidence and actionable clinical insights
+    Setting up HiperGator for GMS 6803
   </div>
 </div>
 
 
 <div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Piyush Chaudhari </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 27, 2026</p>
+      <p class="date">August 24, 2026</p>
     </div>
   </div>
   
@@ -362,139 +346,24 @@ window.Quarto = {
 </header>
 
 
-<section id="course-materials" class="level2">
-<h2 class="anchored" data-anchor-id="course-materials">Course Materials</h2>
-<div id="listing-materials" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U2xpZGVzJTJDV2VlayUyMDI=" data-listing-date-sort="1787889600000" data-listing-file-modified-sort="1787897450034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="395">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../teaching/F26_GMS6803/week-2/EHR.html" class="no-external">Electronic Health Records</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../teaching/F26_GMS6803/week-2/EHR.html" class="no-external">Fall 2026</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2xpZGVz'); return false;">Slides</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2VlayUyMDI='); return false;">Week 2</div>
-
-</div>
-<div class="delink listing-description"><a href="../../teaching/F26_GMS6803/week-2/EHR.html" class="no-external">
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="../../teaching/F26_GMS6803/week-2/EHR.html" class="no-external">
-<div class="listing-date">
-August 28, 2026
-</div>
-<div class="listing-author">
-Piyush Chaudhari | Qian Li
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="U2xpZGVzJTJDV2VlayUyMDI=" data-listing-date-sort="1787889600000" data-listing-file-modified-sort="1787895342428" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../teaching/F26_GMS6803/week-2/i2b2.html" class="no-external">Introduction to i2b2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../teaching/F26_GMS6803/week-2/i2b2.html" class="no-external">Fall 2026</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2xpZGVz'); return false;">Slides</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2VlayUyMDI='); return false;">Week 2</div>
-
-</div>
-<div class="delink listing-description"><a href="../../teaching/F26_GMS6803/week-2/i2b2.html" class="no-external">
-<p>i2b2 Introduction, Features star schema, UF Health i2b2 Data Availability, Logging in and basic overview</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../../teaching/F26_GMS6803/week-2/i2b2.html" class="no-external">
-<div class="listing-date">
-August 28, 2026
-</div>
-<div class="listing-author">
-Piyush Chaudhari | Qian Li
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UmVzb3VyY2VzJTJDV2VlayUyMDE=" data-listing-date-sort="1787544000000" data-listing-file-modified-sort="1787896762177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="121">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../teaching/F26_GMS6803/week-1/Resources.html" class="no-external">Course Resources</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../teaching/F26_GMS6803/week-1/Resources.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVzb3VyY2Vz'); return false;">Resources</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2VlayUyMDE='); return false;">Week 1</div>
-
-</div>
-<div class="delink listing-description"><a href="../../teaching/F26_GMS6803/week-1/Resources.html" class="no-external">
-<p>Useful traings and resources for GMS 6803 Data Science for Clinical Research</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../../teaching/F26_GMS6803/week-1/Resources.html" class="no-external">
-<div class="listing-date">
-August 24, 2026
-</div>
-<div class="listing-author">
-Piyush Chaudhari
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="UmVzb3VyY2VzJTJDV2VlayUyMDE=" data-listing-date-sort="1787544000000" data-listing-file-modified-sort="1787900774913" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="26">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../teaching/F26_GMS6803/week-2/HipergatorSetup.html" class="no-external">HiperGator Setup</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../teaching/F26_GMS6803/week-2/HipergatorSetup.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVzb3VyY2Vz'); return false;">Resources</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2VlayUyMDE='); return false;">Week 1</div>
-
-</div>
-<div class="delink listing-description"><a href="../../teaching/F26_GMS6803/week-2/HipergatorSetup.html" class="no-external">
-<p>Setting up HiperGator for GMS 6803</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../../teaching/F26_GMS6803/week-2/HipergatorSetup.html" class="no-external">
-<div class="listing-date">
-August 24, 2026
-</div>
-<div class="listing-author">
-Piyush Chaudhari
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-<!-- <center>![](https://miro.medium.com/1*x7P7gqjo8k2_bj2rTQWAfg.jpeg){.lightbox .r-stretch group="my-gallery" width="98%" height="auto"}</center> -->
-
+<section id="hipergator-setup-check" class="level2">
+<h2 class="anchored" data-anchor-id="hipergator-setup-check">HiperGator Setup Check</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> piyushchaudhari@hpg.rc.ufl.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="check-group-membership" class="level2">
+<h2 class="anchored" data-anchor-id="check-group-membership">Check Group Membership</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">id</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-shortcutsymlink-to-the-course-directory" class="level2">
+<h2 class="anchored" data-anchor-id="create-shortcutsymlink-to-the-course-directory">Create Shortcut/SymLink to the Course Directory</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /blue/gms6803 gms6803</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="hipergator-jupyter-hub-and-on-demand" class="level2">
+<h2 class="anchored" data-anchor-id="hipergator-jupyter-hub-and-on-demand">HiperGator Jupyter Hub and On Demand</h2>
+<ul>
+<li>Jupyter Hub: <a href="https://jhub.rc.ufl.edu">jhub.rc.ufl.edu</a></li>
+<li>On Demand: <a href="https://ood.rc.ufl.edu">ood.rc.ufl.edu</a></li>
+</ul>
 
 
 </section>
