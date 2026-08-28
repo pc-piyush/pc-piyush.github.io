@@ -42,6 +42,8 @@ website:
       #   href: cv.qmd
       - text: "Research"
         href: "research/index.qmd"
+      - text: "Teaching"
+        href: "teaching/index.qmd"
       - text: "p.log()"
         href: posts.qmd
   page-footer: 
