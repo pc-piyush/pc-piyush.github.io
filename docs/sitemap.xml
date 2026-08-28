@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/content.html</loc>
+    <lastmod>2026-08-25T21:16:20.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/week-2/EHR_CDM.html</loc>
+    <lastmod>2026-08-28T03:09:58.598Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/index.html</loc>
+    <lastmod>2026-08-28T01:03:56.180Z</lastmod>
+  </url>
+  <url>
     <loc>https://pc-piyush.github.io/resume.html</loc>
     <lastmod>2026-07-25T18:20:39.939Z</lastmod>
   </url>
@@ -34,7 +46,7 @@
   </url>
   <url>
     <loc>https://pc-piyush.github.io/presentations/GMS6805_20260226/slides.html</loc>
-    <lastmod>2026-06-26T02:36:37.055Z</lastmod>
+    <lastmod>2026-08-27T21:21:45.772Z</lastmod>
   </url>
   <url>
     <loc>https://pc-piyush.github.io/posts/2018-04-24-easygenetics/index.html</loc>
@@ -101,16 +113,8 @@
     <lastmod>2026-07-25T22:24:22.415Z</lastmod>
   </url>
   <url>
-    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/index.html</loc>
-    <lastmod>2026-08-28T01:03:56.180Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/content.html</loc>
-    <lastmod>2026-08-25T21:16:20.630Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/week-1/i2b2.html</loc>
-    <lastmod>2026-08-27T21:41:45.649Z</lastmod>
+    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/documents/example-note.html</loc>
+    <lastmod>2026-08-27T23:06:00.530Z</lastmod>
   </url>
   <url>
     <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/week-1/HiperGator.html</loc>
@@ -119,13 +123,5 @@
   <url>
     <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/week-2/i2b2.html</loc>
     <lastmod>2026-08-28T00:56:32.790Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/documents/example-note.html</loc>
-    <lastmod>2026-08-27T23:06:00.530Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pc-piyush.github.io/teaching/F26_GMS6803/week-2/EHR_CDM.html</loc>
-    <lastmod>2026-08-28T03:09:58.598Z</lastmod>
   </url>
 </urlset>

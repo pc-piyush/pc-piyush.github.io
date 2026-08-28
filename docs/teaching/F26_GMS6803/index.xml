@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Piyush Chaudhari</title>
+<link>https://pc-piyush.github.io/teaching/F26_GMS6803/</link>
+<atom:link href="https://pc-piyush.github.io/teaching/F26_GMS6803/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.9.37</generator>
+<lastBuildDate>Fri, 28 Aug 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title></title>
+  <dc:creator>Piyush Chaudhari | Qian Li</dc:creator>
+  <link>https://pc-piyush.github.io/teaching/F26_GMS6803/week-2/EHR_CDM.html</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>Slides</category>
+  <category>Week 2</category>
+  <guid>https://pc-piyush.github.io/teaching/F26_GMS6803/week-2/EHR_CDM.html</guid>
+  <pubDate>Fri, 28 Aug 2026 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <dc:creator>Piyush Chaudhari | Qian Li</dc:creator>
+  <link>https://pc-piyush.github.io/teaching/F26_GMS6803/week-2/i2b2.html</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>Slides</category>
+  <category>Week 2</category>
+  <guid>https://pc-piyush.github.io/teaching/F26_GMS6803/week-2/i2b2.html</guid>
+  <pubDate>Fri, 28 Aug 2026 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Course Resources</title>
+  <dc:creator>Piyush Chaudhari</dc:creator>
+  <link>https://pc-piyush.github.io/teaching/F26_GMS6803/week-1/HiperGator.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="course-github-repository" class="level2">
+<h2 class="anchored" data-anchor-id="course-github-repository">Course GitHub Repository</h2>
+<p>The teaching team has created a <a href="https://github.com/GatorAIM/gms6803-clinical-data-science">GitHub repository</a> for the course to share course materials, sample scripts, and other resources</p>
+</section>
+<section id="training-resources-from-uf-research-computing" class="level2">
+<h2 class="anchored" data-anchor-id="training-resources-from-uf-research-computing">Training Resources from UF Research Computing</h2>
+<ul>
+<li><a href="https://docs.rc.ufl.edu/training/new_user_training/">HiperGator New User Training</a></li>
+<li>Once the New User Training is completed, students are recommended to check out additional trainings on this page - <a href="https://docs.rc.ufl.edu/training/HiPerGator_training/">HiperGator Training</a></li>
+<li>UF Research Computing also offers <a href="https://practicumai.org">Practicum AI</a> training module</li>
+</ul>
+</section>
+<section id="questions-or-concerns" class="level2">
+<h2 class="anchored" data-anchor-id="questions-or-concerns">Questions or Concerns</h2>
+<ul>
+<li>In case you have any questions -
+<ul>
+<li>Post on Canvas Discussion Panel</li>
+<li>Post on <a href="https://github.com/GatorAIM/gms6803-clinical-data-science">GitHub issues</a></li>
+<li>Office Hours
+<ul>
+<li>Dr.&nbsp;Mei Liu (Thursday 9-11 AM or by appointment)</li>
+<li>Dr.&nbsp;Yi Guo (Monday 2-4 PM or by appointment) <!-- - E-Mail Piyush ([piyushchaudhari@ufl.edu](mailto:piyushchaudhari@ufl.edu)) or Qi([qixu@ufl.edu](mailto:qixu@ufl.edu)) --></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>Resources</category>
+  <category>Week 1</category>
+  <guid>https://pc-piyush.github.io/teaching/F26_GMS6803/week-1/HiperGator.html</guid>
+  <pubDate>Mon, 24 Aug 2026 04:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

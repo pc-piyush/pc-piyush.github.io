@@ -1,5 +1,54 @@
 [
   {
+    "objectID": "teaching/F26_GMS6803/content.html",
+    "href": "teaching/F26_GMS6803/content.html",
+    "title": "Piyush Chaudhari",
+    "section": "",
+    "text": "Introduction\ni2b2 CDM- Star schema, flow of data, etc.\nWhat kind of questions can i2b2 answer\nData availbility in i2b2"
+  },
+  {
+    "objectID": "teaching/F26_GMS6803/content.html#i2b2",
+    "href": "teaching/F26_GMS6803/content.html#i2b2",
+    "title": "Piyush Chaudhari",
+    "section": "",
+    "text": "Introduction\ni2b2 CDM- Star schema, flow of data, etc.\nWhat kind of questions can i2b2 answer\nData availbility in i2b2"
+  },
+  {
+    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#representation-of-clinical-data",
+    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#representation-of-clinical-data",
+    "title": "Electronic Health Records and Common Data Model",
+    "section": "Representation of Clinical Data",
+    "text": "Representation of Clinical Data\n\nDigital version of a patient’s medical data and history\nMaintained overtime by a healthcare provider\nStakeholders: Patients and healthcare providers such as physicians, nurses, billing team, …\n\n\n\n\n\nStructured Data Elements\n\nDiagnoses\nProcedures\nMedications\nLaboratory results\nVital signs\n\n\n\n\nUnstructured Data Elements\n\nClinical Notes\nImaging Order Reports\nPathology Reports\nPatient Portal Messages"
+  },
+  {
+    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#electronic-health-records-ehr",
+    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#electronic-health-records-ehr",
+    "title": "Electronic Health Records and Common Data Model",
+    "section": "Electronic Health Records (EHR)",
+    "text": "Electronic Health Records (EHR)\n\n\n\n\n\n\n\n\nFig 1. EPIC Systems\n\n\n\n\n\n\n\n\n\n\nFig 2. Cerner"
+  },
+  {
+    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#clinical-data-warehouse-repository",
+    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#clinical-data-warehouse-repository",
+    "title": "Electronic Health Records and Common Data Model",
+    "section": "Clinical Data Warehouse/ Repository",
+    "text": "Clinical Data Warehouse/ Repository\n\n\n\n\nWhy?\n\n\n\nEHR is designed to support clinical care and workflows, not necessarily research\nEHR data is comprised of data from multiple sources and is not readily usable for downstream analysis, which gives rise to the need for a clinical data warehouse or repository\n\n\n\n\n\n\nClinical Data Warehouse (CDW) is a database that consolidates data from a variety of clinical sources to present a unified view of a single patient\nIt is optimized for record retrieval and reporting, which can be used for research, quality improvement, and operational purposes\nTypically, CDWs include but are not limited to data elements like patient demographics, diagnoses, procedures, medications, laboratory results, and vital signs"
+  },
+  {
+    "objectID": "teaching/F26_GMS6803/index.html",
+    "href": "teaching/F26_GMS6803/index.html",
+    "title": "GMS 6803 Data Science for Clinical Research",
+    "section": "",
+    "text": "Fall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\n\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n1 min\n\n\n\n\n\n\n\nFall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\ni2b2 Introduction, Features star schema, UF Health i2b2 Data Availability, Logging in and basic overview\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nResources\n\nWeek 1\n\n\n\nUseful traings and resources for GMS 6803 Data Science for Clinical Research\n\n\n\n\n\nAugust 24, 2026\n\n\nPiyush Chaudhari\n\n1 min\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "teaching/F26_GMS6803/index.html#course-materials",
+    "href": "teaching/F26_GMS6803/index.html#course-materials",
+    "title": "GMS 6803 Data Science for Clinical Research",
+    "section": "",
+    "text": "Fall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\n\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n1 min\n\n\n\n\n\n\n\nFall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\ni2b2 Introduction, Features star schema, UF Health i2b2 Data Availability, Logging in and basic overview\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nResources\n\nWeek 1\n\n\n\nUseful traings and resources for GMS 6803 Data Science for Clinical Research\n\n\n\n\n\nAugust 24, 2026\n\n\nPiyush Chaudhari\n\n1 min\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "resume.html",
     "href": "resume.html",
     "title": "Curriculum Vitae",
@@ -143,8 +192,8 @@
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#limitations-in-current-methods",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#limitations-in-current-methods",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
-    "section": "",
-    "text": "Standard models (For e.g. BART) store their knowledge as model weights during training\nLimitations -\n\nDifficult to update without retraining\nHallucinations- model interpolate from compressed parametric memory\nThere is no way to tell what part was looked at to produce output\n\nThis paper treats retrieval as a learnable, differentiable element that can be plugged into a generative model\nA jointly trained system where\n\nModel knows what to query\nGenerator knows how to use what is queried"
+    "section": "Limitations in current methods",
+    "text": "Limitations in current methods\n\n\nStandard models (For e.g. BART) store their knowledge as model weights during training\nLimitations -\n\nDifficult to update without retraining\nHallucinations- model interpolate from compressed parametric memory\nThere is no way to tell what part was looked at to produce output\n\nThis paper treats retrieval as a learnable, differentiable element that can be plugged into a generative model\nA jointly trained system where\n\nModel knows what to query\nGenerator knows how to use what is queried"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#types-of-memory",
@@ -263,28 +312,28 @@
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
-    "text": "Results\n\nOpen-Domain Q&A\n\n\n\n\n\n\n\n\n\n\n\nModel\nNatural Questions\nTriviaQA\nWebQ\nCuratedTrec\n\n\n\n\nT5-11B (closed book)\n34.5\n—/50.1\n37.4\n—\n\n\nT5-11B+SSM (closed book)\n36.6\n—/60.5\n44.7\n—\n\n\nREALM (open book)\n40.4\n—\n40.7\n46.8\n\n\nDPR (open book)\n41.5\n57.9\n41.1\n50.6\n\n\nRAG-Token\n44.1\n55.2/66.1\n45.5\n50.0\n\n\nRAG-Sequence\n44.5\n56.8/68.0\n45.2\n52.2\n\n\n\n\nRAG beats T5-11B (27x larger, expensive pre-training) on NQ and WebQ\nRAG beats DPR’s extractive pipeline — without a re-ranker or cross-encoder\nRAG scores 11.8% accuracy even when the correct answer is absent from all retrieved documents — extractive systems score 0% in this case"
+    "text": "Results\nOpen-Domain Q&A\n\n\n\n\n\n\n\n\n\n\n\nModel\nNatural Questions\nTriviaQA\nWebQ\nCuratedTrec\n\n\n\n\nT5-11B (closed book)\n34.5\n—/50.1\n37.4\n—\n\n\nT5-11B+SSM (closed book)\n36.6\n—/60.5\n44.7\n—\n\n\nREALM (open book)\n40.4\n—\n40.7\n46.8\n\n\nDPR (open book)\n41.5\n57.9\n41.1\n50.6\n\n\nRAG-Token\n44.1\n55.2/66.1\n45.5\n50.0\n\n\nRAG-Sequence\n44.5\n56.8/68.0\n45.2\n52.2\n\n\n\n\nRAG beats T5-11B (27x larger, expensive pre-training) on NQ and WebQ\nRAG beats DPR’s extractive pipeline — without a re-ranker or cross-encoder\nRAG scores 11.8% accuracy even when the correct answer is absent from all retrieved documents — extractive systems score 0% in this case"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-1",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-1",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
-    "text": "Results\n\nGeneration Tasks\n\n\n\n\n\n\n\n\n\n\nModel\nJeopardy Q-BLEU-1\nMS-MARCO Rouge-L\nFEVER-3 Accuracy\n\n\n\n\nBART baseline\n19.7\n38.2\n64.0\n\n\nRAG-Token\n22.2\n40.1\n72.5\n\n\nRAG-Sequence\n21.4\n40.8\n—\n\n\nState of the art*\n—\n49.8*\n76.8\n\n\n\n*SotA uses gold context/evidence passages; RAG retrieves its own"
+    "text": "Results\nGeneration Tasks\n\n\n\n\n\n\n\n\n\n\nModel\nJeopardy Q-BLEU-1\nMS-MARCO Rouge-L\nFEVER-3 Accuracy\n\n\n\n\nBART baseline\n19.7\n38.2\n64.0\n\n\nRAG-Token\n22.2\n40.1\n72.5\n\n\nRAG-Sequence\n21.4\n40.8\n—\n\n\nState of the art*\n—\n49.8*\n76.8\n\n\n\n*SotA uses gold context/evidence passages; RAG retrieves its own"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-2",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-2",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
-    "text": "Results\n\nJeopardy\n\nHuman evaluation on Jeopardy (452 pairs):\n\nRAG more factual than BART: 42.7% of cases\nBART more factual than RAG: 7.1% of cases\nRAG more specific: 37.4% vs. 16.8%\n\nOn FEVER, RAG comes within 4.3% of complex pipeline systems that use domain-specific architectures and supervised retrieval labels — while using none of that."
+    "text": "Results\nJeopardy\n\nHuman evaluation on Jeopardy (452 pairs):\n\nRAG more factual than BART: 42.7% of cases\nBART more factual than RAG: 7.1% of cases\nRAG more specific: 37.4% vs. 16.8%\n\nOn FEVER, RAG comes within 4.3% of complex pipeline systems that use domain-specific architectures and supervised retrieval labels — while using none of that."
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-3",
     "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html#results-3",
     "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "section": "Results",
-    "text": "Results\n\nGeneration Diversity\n\nMeasured as ratio of distinct tri-grams to total tri-grams:\n\n\n\nModel\nMS-MARCO\nJeopardy\n\n\n\n\nGold (human)\n89.6%\n90.0%\n\n\nBART\n70.7%\n32.4%\n\n\nRAG-Token\n77.8%\n46.8%\n\n\nRAG-Sequence\n83.5%\n53.8%\n\n\n\n\nRAG generates significantly more diverse outputs than BART — without any diversity-promoting decoding tricks\nThe retrieval of varied evidence naturally pushes the generator toward more specific, varied language\nBART on Jeopardy at 32.4% - a pure parametric model tends to repeat generic patterns\nRAG is anchored to specific retrieved facts"
+    "text": "Results\nGeneration Diversity\n\nMeasured as ratio of distinct tri-grams to total tri-grams:\n\n\n\nModel\nMS-MARCO\nJeopardy\n\n\n\n\nGold (human)\n89.6%\n90.0%\n\n\nBART\n70.7%\n32.4%\n\n\nRAG-Token\n77.8%\n46.8%\n\n\nRAG-Sequence\n83.5%\n53.8%\n\n\n\n\nRAG generates significantly more diverse outputs than BART — without any diversity-promoting decoding tricks\nThe retrieval of varied evidence naturally pushes the generator toward more specific, varied language\nBART on Jeopardy at 32.4% - a pure parametric model tends to repeat generic patterns\nRAG is anchored to specific retrieved facts"
   },
   {
     "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html#ablations",
@@ -973,179 +1022,39 @@
     "text": "Citation\n\n@article{varma20193418,\n  title={3418 Service referral follow up rate among participants of a community engagement initiative in Florida},\n  author={Varma, Deepthi S and Chaudhari, Piyush V and Vaddiparti, Krishna and Striley, Catherine Woodstock and Cottler, Linda B},\n  journal={Journal of Clinical and Translational Science},\n  volume={3},\n  number={s1},\n  pages={94--94},\n  year={2019},\n  publisher={Cambridge University Press}\n}\n\n Add to Zotero"
   },
   {
-    "objectID": "teaching/F26_GMS6803/index.html#publications",
-    "href": "teaching/F26_GMS6803/index.html#publications",
-    "title": "Piyush Chaudhari",
+    "objectID": "teaching/F26_GMS6803/documents/example-note.html",
+    "href": "teaching/F26_GMS6803/documents/example-note.html",
+    "title": "Example course note",
     "section": "",
-    "text": "No matching items"
+    "text": "This is a regular HTML document (not a slide deck). Anything in documents/ that has a title, date, and description will appear in the listing on the course home page alongside the weekly slides, sorted by date.\nDelete or replace this file with real content."
   },
   {
-    "objectID": "teaching/F26_GMS6803/index.html#i2b2",
-    "href": "teaching/F26_GMS6803/index.html#i2b2",
-    "title": "Introduction to i2b2",
-    "section": "i2b2",
-    "text": "i2b2\n\n\n\n\n\n\n\n\n\nFig 1. i2b2 Star Schema\n\n\n\n\n\n\n\ni2b2 is Informatics for Integrating Biology & the Bedside Cohort Discovery System\ni2b2 is an NIH-funded National Center for Biomedical Computing (NCBC) based at Partners’ HealthCare System in Boston\nEnables investigators to identify potential study cohorts using clinical data resources\nIntended for protocol development for grant or IRB submission\nProvides access to curated data through a web client\nReturns only patient counts"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#i2b2-1",
-    "href": "teaching/F26_GMS6803/index.html#i2b2-1",
-    "title": "Introduction to i2b2",
-    "section": "i2b2",
-    "text": "i2b2\n\n\n\n\nUF Health i2b2 Webclient"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/content.html",
-    "href": "teaching/F26_GMS6803/content.html",
-    "title": "Piyush Chaudhari",
+    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html",
+    "href": "teaching/F26_GMS6803/week-1/HiperGator.html",
+    "title": "Course Resources",
     "section": "",
-    "text": "Introduction\ni2b2 CDM- Star schema, flow of data, etc.\nWhat kind of questions can i2b2 answer\nData availbility in i2b2"
+    "text": "The teaching team has created a GitHub repository for the course to share course materials, sample scripts, and other resources"
   },
   {
-    "objectID": "teaching/F26_GMS6803/content.html#i2b2",
-    "href": "teaching/F26_GMS6803/content.html#i2b2",
-    "title": "Piyush Chaudhari",
+    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#course-github-repository",
+    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#course-github-repository",
+    "title": "Course Resources",
     "section": "",
-    "text": "Introduction\ni2b2 CDM- Star schema, flow of data, etc.\nWhat kind of questions can i2b2 answer\nData availbility in i2b2"
+    "text": "The teaching team has created a GitHub repository for the course to share course materials, sample scripts, and other resources"
   },
   {
-    "objectID": "presentations/JournalClub/2026-03-23-RAG/RAG.html",
-    "href": "presentations/JournalClub/2026-03-23-RAG/RAG.html",
-    "title": "Retrival-Augmented Generation for Knowledge-Intensive NLP Tasks",
-    "section": "",
-    "text": "Standard models (For e.g. BART) store their knowledge as model weights during training\nLimitations -\n\nDifficult to update without retraining\nHallucinations- model interpolate from compressed parametric memory\nThere is no way to tell what part was looked at to produce output\n\nThis paper treats retrieval as a learnable, differentiable element that can be plugged into a generative model\nA jointly trained system where\n\nModel knows what to query\nGenerator knows how to use what is queried"
+    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#training-resources-from-uf-research-computing",
+    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#training-resources-from-uf-research-computing",
+    "title": "Course Resources",
+    "section": "Training Resources from UF Research Computing",
+    "text": "Training Resources from UF Research Computing\n\nHiperGator New User Training\nOnce the New User Training is completed, students are recommended to check out additional trainings on this page - HiperGator Training\nUF Research Computing also offers Practicum AI training module"
   },
   {
-    "objectID": "teaching/F26_GMS6803/index.html#i2b2-2",
-    "href": "teaching/F26_GMS6803/index.html#i2b2-2",
-    "title": "Introduction to i2b2",
-    "section": "i2b2",
-    "text": "i2b2\n\n\n\n\n\nArrhythmogenic Right Ventricular Cardiomyopathy (ARVC)\nFamilial Breast Cancer (FBC)\nFamilial Hypercholesterolemia (FH)\nHypertrophic Cardiomyopathy (HCM)\nAdult Hypophosphatasia (HPP)\n\n\n\n\n\nLong QT Syndrome (LQTS)\nLynch Syndrome (LS)\nMonogenic Diabetes (MD)\nPolycystic Kidney Disease (PKD)\nvon Willebrand Disease (VWD)"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#feasibility-and-cohort-discovery",
-    "href": "teaching/F26_GMS6803/index.html#feasibility-and-cohort-discovery",
-    "title": "Introduction to i2b2",
-    "section": "Feasibility and Cohort Discovery",
-    "text": "Feasibility and Cohort Discovery\n\nHow many men with hypertension diagnoses had at least one inpatient encounter between January and December 2018?​\nHow many women ages 45-65 had successful breast cancer surgery?​\nHow many children were diagnosed with diabetes and had Hemoglobin A1c greater than 7% in the same financial encounter?​"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#i2b2-features",
-    "href": "teaching/F26_GMS6803/index.html#i2b2-features",
-    "title": "Introduction to i2b2",
-    "section": "i2b2 features",
-    "text": "i2b2 features\n\n\n\n\ni2b2 Community Webpage"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#i2b2-features-1",
-    "href": "teaching/F26_GMS6803/index.html#i2b2-features-1",
-    "title": "Introduction to i2b2",
-    "section": "i2b2 features",
-    "text": "i2b2 features\n\n\n\n\ni2b2 Community Webpage"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#data-availability-in-i2b2",
-    "href": "teaching/F26_GMS6803/index.html#data-availability-in-i2b2",
-    "title": "Introduction to i2b2",
-    "section": "Data Availability in i2b2",
-    "text": "Data Availability in i2b2\n\ni2b2 data guide​\n\nGo to UF Health IDR i2b2 training page here​\nClick on The i2b2 Data Guide\n\nData is refreshed quarterly, starting June 2011​\nData is represented as closely as possible to the original source​ in the i2b2 Common Data Model"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#i2b2-client-demo",
-    "href": "teaching/F26_GMS6803/index.html#i2b2-client-demo",
-    "title": "Introduction to i2b2",
-    "section": "i2b2 Client Demo",
-    "text": "i2b2 Client Demo\n\n\n\n\nUF Health i2b2 Webclient"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/i2b2.html#i2b2",
-    "href": "teaching/F26_GMS6803/week-1/i2b2.html#i2b2",
-    "title": "Introduction to i2b2",
-    "section": "i2b2",
-    "text": "i2b2\n\n\n\n\n\n\n\n\n\nFig 1. i2b2 Star Schema\n\n\n\n\n\n\n\ni2b2 is Informatics for Integrating Biology & the Bedside Cohort Discovery System\ni2b2 is an NIH-funded National Center for Biomedical Computing (NCBC) based at Partners’ HealthCare System in Boston\nEnables investigators to identify potential study cohorts using clinical data resources\nIntended for protocol development for grant or IRB submission\nProvides access to curated data through a web client\nReturns only patient counts"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/i2b2.html#feasibility-and-cohort-discovery",
-    "href": "teaching/F26_GMS6803/week-1/i2b2.html#feasibility-and-cohort-discovery",
-    "title": "Introduction to i2b2",
-    "section": "Feasibility and Cohort Discovery",
-    "text": "Feasibility and Cohort Discovery\n\nHow many men with hypertension diagnoses had at least one inpatient encounter between January and December 2018?​\nHow many women ages 45-65 had successful breast cancer surgery?​\nHow many children were diagnosed with diabetes and had Hemoglobin A1c greater than 7% in the same financial encounter?​"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/i2b2.html#data-availability-in-i2b2",
-    "href": "teaching/F26_GMS6803/week-1/i2b2.html#data-availability-in-i2b2",
-    "title": "Introduction to i2b2",
-    "section": "Data Availability in i2b2",
-    "text": "Data Availability in i2b2\n\ni2b2 data guide​\n\nGo to UF Health IDR i2b2 training page here​\nClick on The i2b2 Data Guide\n\nData is refreshed quarterly, starting June 2011​\nData is represented as closely as possible to the original source​ in the i2b2 Common Data Model"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/i2b2.html#i2b2-client-demo",
-    "href": "teaching/F26_GMS6803/week-1/i2b2.html#i2b2-client-demo",
-    "title": "Introduction to i2b2",
-    "section": "i2b2 Client Demo",
-    "text": "i2b2 Client Demo\n\n\n\n\nUF Health i2b2 Webclient"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html",
-    "href": "teaching/F26_GMS6803/index.html",
-    "title": "GMS 6803 Data Science for Clinical Research",
-    "section": "",
-    "text": "Fall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\n\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n1 min\n\n\n\n\n\n\n\nFall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\ni2b2 Introduction, Features star schema, UF Health i2b2 Data Availability, Logging in and basic overview\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nResources\n\nWeek 1\n\n\n\nUseful traings and resources for GMS 6803 Data Science for Clinical Research\n\n\n\n\n\nAugust 24, 2026\n\n\nPiyush Chaudhari\n\n1 min\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#conference-proceedings",
-    "href": "teaching/F26_GMS6803/index.html#conference-proceedings",
-    "title": "Piyush Chaudhari",
-    "section": "Conference Proceedings",
-    "text": "Conference Proceedings"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#slides",
-    "href": "teaching/F26_GMS6803/index.html#slides",
-    "title": "GMS 6803: Data Science for Clinical Research",
-    "section": "",
-    "text": "Fall 2026\n\n\n\n\n\nAug 27, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/index.html#course-materials",
-    "href": "teaching/F26_GMS6803/index.html#course-materials",
-    "title": "GMS 6803 Data Science for Clinical Research",
-    "section": "",
-    "text": "Fall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\n\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n1 min\n\n\n\n\n\n\n\nFall 2026\n\n\n\nSlides\n\nWeek 2\n\n\n\ni2b2 Introduction, Features star schema, UF Health i2b2 Data Availability, Logging in and basic overview\n\n\n\n\n\nAugust 28, 2026\n\n\nPiyush Chaudhari | Qian Li\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nResources\n\nWeek 1\n\n\n\nUseful traings and resources for GMS 6803 Data Science for Clinical Research\n\n\n\n\n\nAugust 24, 2026\n\n\nPiyush Chaudhari\n\n1 min\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#i2b2",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#i2b2",
-    "title": "HiperGator - UF Research Computing",
-    "section": "i2b2",
-    "text": "i2b2\n\n\n\n\n\n\n\n\n\nFig 1. i2b2 Star Schema\n\n\n\n\n\n\n\ni2b2 is Informatics for Integrating Biology & the Bedside Cohort Discovery System\ni2b2 is an NIH-funded National Center for Biomedical Computing (NCBC) based at Partners’ HealthCare System in Boston\nEnables investigators to identify potential study cohorts using clinical data resources\nIntended for protocol development for grant or IRB submission\nProvides access to curated data through a web client\nReturns only patient counts"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#feasibility-and-cohort-discovery",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#feasibility-and-cohort-discovery",
-    "title": "HiperGator - UF Research Computing",
-    "section": "Feasibility and Cohort Discovery",
-    "text": "Feasibility and Cohort Discovery\n\nHow many men with hypertension diagnoses had at least one inpatient encounter between January and December 2018?​\nHow many women ages 45-65 had successful breast cancer surgery?​\nHow many children were diagnosed with diabetes and had Hemoglobin A1c greater than 7% in the same financial encounter?​"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#data-availability-in-i2b2",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#data-availability-in-i2b2",
-    "title": "HiperGator - UF Research Computing",
-    "section": "Data Availability in i2b2",
-    "text": "Data Availability in i2b2\n\ni2b2 data guide​\n\nGo to UF Health IDR i2b2 training page here​\nClick on The i2b2 Data Guide\n\nData is refreshed quarterly, starting June 2011​\nData is represented as closely as possible to the original source​ in the i2b2 Common Data Model"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#i2b2-client-demo",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#i2b2-client-demo",
-    "title": "HiperGator - UF Research Computing",
-    "section": "i2b2 Client Demo",
-    "text": "i2b2 Client Demo\n\n\n\n\nUF Health i2b2 Webclient"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/i2b2.html",
-    "href": "teaching/F26_GMS6803/week-2/i2b2.html",
-    "title": "Introduction to i2b2",
-    "section": "",
-    "text": "Fig 1. i2b2 Star Schema\n\n\n\n\n\n\n\n\ni2b2 is Informatics for Integrating Biology & the Bedside Cohort Discovery System\ni2b2 is an NIH-funded National Center for Biomedical Computing (NCBC) based at Partners’ HealthCare System in Boston\nEnables investigators to identify potential study cohorts using clinical data resources\nIntended for protocol development for grant or IRB submission\nProvides access to curated data through a web client\nReturns only patient counts\n\n\n\n\n\n\n\n\n\n\ni2b2 Community Webpage"
+    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#questions-or-concerns",
+    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#questions-or-concerns",
+    "title": "Course Resources",
+    "section": "Questions or Concerns",
+    "text": "Questions or Concerns\n\nIn case you have any questions -\n\nPost on Canvas Discussion Panel\nPost on GitHub issues\nOffice Hours\n\nDr. Mei Liu (Thursday 9-11 AM or by appointment)\nDr. Yi Guo (Monday 2-4 PM or by appointment)"
   },
   {
     "objectID": "teaching/F26_GMS6803/week-2/i2b2.html#i2b2",
@@ -1174,110 +1083,5 @@
     "title": "Introduction to i2b2",
     "section": "i2b2 Client Demo",
     "text": "i2b2 Client Demo\n\n\n\n\nUF Health i2b2 Webclient"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/documents/example-note.html",
-    "href": "teaching/F26_GMS6803/documents/example-note.html",
-    "title": "Example course note",
-    "section": "",
-    "text": "This is a regular HTML document (not a slide deck). Anything in documents/ that has a title, date, and description will appear in the listing on the course home page alongside the weekly slides, sorted by date.\nDelete or replace this file with real content."
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html",
-    "title": "HiperGator - UF Research Computing",
-    "section": "",
-    "text": "32 CPU Cores with 256 GB RAM\n2 TB storage\nIn case you have any questions -\n\nPost on Canvas Discussion Panel\nPost on GitHub issues\n\nPlease reach out to Piyush (piyushchaudhari@ufl.edu) or Qi(qixu@ufl.edu(mailto:qixu@ufl.edu)) for any questions about Hipergator allocation"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#course-allocation-for-gms6803",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#course-allocation-for-gms6803",
-    "title": "HiperGator - UF Research Computing",
-    "section": "",
-    "text": "32 CPU Cores with 256 GB RAM\n2 TB storage\nIn case you have any questions -\n\nPost on Canvas Discussion Panel\nPost on GitHub issues\n\nPlease reach out to Piyush (piyushchaudhari@ufl.edu) or Qi(qixu@ufl.edu(mailto:qixu@ufl.edu)) for any questions about Hipergator allocation"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#hipergatorcourse-allocation-for-gms6803",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#hipergatorcourse-allocation-for-gms6803",
-    "title": "Course Resouces",
-    "section": "",
-    "text": "32 CPU Cores with 256 GB RAM\n2 TB storage\nIn case you have any questions -\n\nPost on Canvas Discussion Panel\nPost on GitHub issues\nE-Mail Piyush (piyushchaudhari@ufl.edu) or Qi(qixu@ufl.edu)"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#hipergator-trainings",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#hipergator-trainings",
-    "title": "Course Resouces",
-    "section": "HiperGator Trainings",
-    "text": "HiperGator Trainings\n\nHiperGator New User Training\nOnce the New User Training is completed, students are recommended to check out additional trainings on this page - HiperGator Training\nUF Research Computing also offers Practicum AI training module"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#course-github-repository",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#course-github-repository",
-    "title": "Course Resouces",
-    "section": "",
-    "text": "The teaching team has created a GitHub repository for the course to share course materials, sample scripts, and other resources"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#training-resources-from-uf-research-computing",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#training-resources-from-uf-research-computing",
-    "title": "Course Resouces",
-    "section": "Training Resources from UF Research Computing",
-    "text": "Training Resources from UF Research Computing\n\nHiperGator New User Training\nOnce the New User Training is completed, students are recommended to check out additional trainings on this page - HiperGator Training\nUF Research Computing also offers Practicum AI training module"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-1/HiperGator.html#questions-or-concerns",
-    "href": "teaching/F26_GMS6803/week-1/HiperGator.html#questions-or-concerns",
-    "title": "Course Resouces",
-    "section": "Questions or Concerns",
-    "text": "Questions or Concerns\n\nIn case you have any questions -\n\nPost on Canvas Discussion Panel\nPost on GitHub issues\nOffice Hours\n\nDr. Mei Liu (Thursday 9-11 AM or by appointment)\nDr. Yi Guo (Monday 2-4 PM or by appointment)"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#representation-of-clinical-data",
-    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#representation-of-clinical-data",
-    "title": "Electronic Health Records and Common Data Model",
-    "section": "",
-    "text": "Digital version of a patient’s medical data and history\nMaintained overtime by a healthcare provider\nStakeholders: Patients and healthcare providers such as physicians, nurses, billing team, …\n\n\n\n\n\nStructured Data Elements\n\nDiagnoses\nProcedures\nMedications\nLaboratory results\nVital signs\n\n\n\n\n\nUnstructured Data Elements\n\nClinical Notes\nImaging Order Reports\nPathology Reports\nPatient Portal Messages"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#feasibility-and-cohort-discovery",
-    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#feasibility-and-cohort-discovery",
-    "title": "Electronic Health Records and Common Data Model",
-    "section": "Feasibility and Cohort Discovery",
-    "text": "Feasibility and Cohort Discovery\n\nHow many men with hypertension diagnoses had at least one inpatient encounter between January and December 2018?​\nHow many women ages 45-65 had successful breast cancer surgery?​\nHow many children were diagnosed with diabetes and had Hemoglobin A1c greater than 7% in the same financial encounter?​"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#data-availability-in-i2b2",
-    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#data-availability-in-i2b2",
-    "title": "Electronic Health Records and Common Data Model",
-    "section": "Data Availability in i2b2",
-    "text": "Data Availability in i2b2\n\ni2b2 data guide​\n\nGo to UF Health IDR i2b2 training page here​\nClick on The i2b2 Data Guide\n\nData is refreshed quarterly, starting June 2011​\nData is represented as closely as possible to the original source​ in the i2b2 Common Data Model"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#i2b2-client-demo",
-    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#i2b2-client-demo",
-    "title": "Electronic Health Records and Common Data Model",
-    "section": "i2b2 Client Demo",
-    "text": "i2b2 Client Demo\n\n\n\n\nUF Health i2b2 Webclient"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#electronic-health-records-ehr",
-    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#electronic-health-records-ehr",
-    "title": "Electronic Health Records and Common Data Model",
-    "section": "Electronic Health Records (EHR)",
-    "text": "Electronic Health Records (EHR)\n\n\n\n\n\n\n\n\nFig 1. EPIC Systems\n\n\n\n\n\n\n\n\n\n\n\nFig 2. Cerner"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html#clinical-data-warehouse-repository",
-    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html#clinical-data-warehouse-repository",
-    "title": "Electronic Health Records and Common Data Model",
-    "section": "Clinical Data Warehouse/ Repository",
-    "text": "Clinical Data Warehouse/ Repository\n\n\n\n\n\n\nTipWhy?\n\n\n\n\n\n\nEHR is designed to support clinical care and workflows, not necessarily research\nEHR data is comprised of data from multiple sources and is not readily usable for downstream analysis, which gives rise to the need for a clinical data warehouse or repository\n\n\n\n\n\nClinical Data Warehouse (CDW) is a database that consolidates data from a variety of clinical sources to present a unified view of a single patient\nIt is optimized for record retrieval and reporting, which can be used for research, quality improvement, and operational purposes\nTypically, CDWs include but are not limited to data elements like patient demographics, diagnoses, procedures, medications, laboratory results, and vital signs"
-  },
-  {
-    "objectID": "teaching/F26_GMS6803/week-2/EHR_CDM.html",
-    "href": "teaching/F26_GMS6803/week-2/EHR_CDM.html",
-    "title": "Electronic Health Records and Common Data Model",
-    "section": "",
-    "text": "Digital version of a patient’s medical data and history\nMaintained overtime by a healthcare provider\nStakeholders: Patients and healthcare providers such as physicians, nurses, billing team, …\n\n\n\n\n\nStructured Data Elements\n\nDiagnoses\nProcedures\nMedications\nLaboratory results\nVital signs\n\n\n\n\n\nUnstructured Data Elements\n\nClinical Notes\nImaging Order Reports\nPathology Reports\nPatient Portal Messages"
   }
 ]
