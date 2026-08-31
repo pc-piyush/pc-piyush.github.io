@@ -606,14 +606,14 @@
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#comparison",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "Comparison",
-    "text": "Comparison\n\nFig 2. A Bayesian method for GWAS analysis\nPopulation-level \\(M_s\\) and GWAS p-values are highly concordant\nSpearman ρ = −0.90; 164/188 top independent SNPs and 18/20 top-5-ranked SNPs overlap between rankings\nThis establishes that the Bayesian framework reproduces GWAS when used non-individually, before the individualizing extension is applied"
+    "text": "Comparison\n\nFig 2. A Bayesian method for GWAS analysis\nPopulation-level \\(M_s\\) and GWAS p-values are highly concordant\nSpearman ρ = −0.90; 164/189 top independent SNPs and 18/20 top-5-ranked SNPs overlap between rankings\nThis establishes that the Bayesian framework reproduces GWAS when used non-individually, before the individualizing extension is applied"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#ibi-vs.-gwas-variant-discovery-discovery-set-n5290",
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#ibi-vs.-gwas-variant-discovery-discovery-set-n5290",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "IBI vs. GWAS: variant discovery (discovery set, n=5,290)",
-    "text": "IBI vs. GWAS: variant discovery (discovery set, n=5,290)\n\n\n\n\nGWAS (Bonferroni α = 0.05/19,276 = 2.59×10⁻⁶): 5 SNPs reach significance\nIBI: 188 SNPs exceed the population-level best-estimator’s \\(M_s\\) (i.e., a two-subgroup explanation beats the single best global explanation)\nOverlap: 40 of the top-188 SNPs shared between IBI and GWAS (agreement); 148 unique to one or the other (complementarity)\nMAF distribution: IBI-only SNPs have markedly lower MAF than GWAS-only SNPs — IBI’s individualized partitioning better surfaces rare-variant signal\nInformation gain (IG): IG for IBI’s top-188 SNPs &gt; GWAS’s top-188 SNPs &gt; 188 random SNPs (all comparisons directionally consistent with expectation)\n\n\n\n\n\n\n\n\n\n\nFig 3. Manhattan plots: IBI’s normalized \\(M_{s,r}\\) (A) vs. GWAS p-values (B)"
+    "text": "IBI vs. GWAS: variant discovery (discovery set, n=5,290)\n\n\n\n\nGWAS (Bonferroni α = 0.05/19,276 = 2.59×10⁻⁶): 5 SNPs reach significance\nIBI: 189 SNPs exceed the population-level best-estimator’s \\(M_s\\) (i.e., a two-subgroup explanation beats the single best global explanation)\nOverlap: 40 of the top-189 SNPs shared between IBI and GWAS (agreement); 148 unique to one or the other (complementarity)\nMAF distribution: IBI-only SNPs have markedly lower MAF than GWAS-only SNPs — IBI’s individualized partitioning better surfaces rare-variant signal\nInformation gain (IG): IG for IBI’s top-189 SNPs &gt; GWAS’s top-189 SNPs &gt; 189 random SNPs (all comparisons directionally consistent with expectation)\n\n\n\n\n\n\n\n\n\n\nFig 3. Manhattan plots: IBI’s normalized \\(M_{s,r}\\) (A) vs. GWAS p-values (B)"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#patient-level-explanation",

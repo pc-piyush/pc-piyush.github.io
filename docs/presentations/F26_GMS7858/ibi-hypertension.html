@@ -159,7 +159,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-gradient="linear-gradient(180deg, #002657 0%, #0020A5 100%)" class="quarto-title-block center">
   <h1 class="title">An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension</h1>
   <p class="subtitle">Rahman MA, Cai C, Bo N, et al.&nbsp;BMC Genomics</p>
 
@@ -373,7 +373,7 @@ INTERACTION POINT 2 (\~2–3 min). This is the conceptual crux — if people can
 
 <img data-src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e65e/10631115/a308a1a99ba4/12864_2023_9757_Fig2_HTML.jpg" class="r-stretch quarto-figure-center" style="width:80.0%" alt="Fig 2. A Bayesian method for GWAS analysis"><p class="caption">Fig 2. A Bayesian method for GWAS analysis</p><ul>
 <li><p>Population-level <span class="math inline">\(M_s\)</span> and GWAS p-values are highly concordant</p></li>
-<li><p>Spearman ρ = <strong>−0.90</strong>; <strong>164/188</strong> top independent SNPs and <strong>18/20</strong> top-5-ranked SNPs overlap between rankings</p></li>
+<li><p>Spearman ρ = <strong>−0.90</strong>; <strong>164/189</strong> top independent SNPs and <strong>18/20</strong> top-5-ranked SNPs overlap between rankings</p></li>
 <li><p>This establishes that the Bayesian framework reproduces GWAS when used non-individually, before the individualizing extension is applied</p></li>
 </ul>
 <!-- ------------------------------------------------------------------------
@@ -383,7 +383,7 @@ INTERACTION POINT 2 (\~2–3 min). This is the conceptual crux — if people can
 ![Fig 2. Manhattan plots: IBI's normalized $M_{s,r}$ (A) vs. GWAS p-values (B)](https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs12864-023-09757-9/MediaObjects/12864_2023_9757_Fig3_HTML.png){.lightbox .r-stretch group="my-gallery-2" width="65%" fig-align="center"}
 <!-- 
 ::: notes
-Point out: after Bonferroni correction, only 5 SNPs reach GWAS significance. 188 SNPs cross IBI's analogous threshold. Don't over-read this as "IBI just finds more hits" — flag that the two methods use different scoring philosophies, which is exactly why they're complementary (next slide).
+Point out: after Bonferroni correction, only 5 SNPs reach GWAS significance. 189 SNPs cross IBI's analogous threshold. Don't over-read this as "IBI just finds more hits" — flag that the two methods use different scoring philosophies, which is exactly why they're complementary (next slide).
 ::: -->
 </section>
 <section id="ibi-vs.-gwas-variant-discovery-discovery-set-n5290" class="slide level2">
@@ -393,10 +393,10 @@ Point out: after Bonferroni correction, only 5 SNPs reach GWAS significance. 188
 <div style="font-size: 70%;">
 <ul>
 <li>GWAS (Bonferroni α = 0.05/19,276 = 2.59×10⁻⁶): <strong>5 SNPs</strong> reach significance</li>
-<li>IBI: <strong>188 SNPs</strong> exceed the population-level best-estimator’s <span class="math inline">\(M_s\)</span> (i.e., a two-subgroup explanation beats the single best global explanation)</li>
-<li><strong>Overlap:</strong> 40 of the top-188 SNPs shared between IBI and GWAS (agreement); 148 unique to one or the other (complementarity)</li>
+<li>IBI: <strong>189 SNPs</strong> exceed the population-level best-estimator’s <span class="math inline">\(M_s\)</span> (i.e., a two-subgroup explanation beats the single best global explanation)</li>
+<li><strong>Overlap:</strong> 40 of the top-189 SNPs shared between IBI and GWAS (agreement); 148 unique to one or the other (complementarity)</li>
 <li><strong>MAF distribution:</strong> IBI-only SNPs have markedly <strong>lower MAF</strong> than GWAS-only SNPs — IBI’s individualized partitioning better surfaces rare-variant signal</li>
-<li><strong>Information gain (IG):</strong> IG for IBI’s top-188 SNPs &gt; GWAS’s top-188 SNPs &gt; 188 random SNPs (all comparisons directionally consistent with expectation)</li>
+<li><strong>Information gain (IG):</strong> IG for IBI’s top-189 SNPs &gt; GWAS’s top-189 SNPs &gt; 189 random SNPs (all comparisons directionally consistent with expectation)</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -838,7 +838,7 @@ flowchart TD
     A[&quot;FHS Cohort&lt;br/&gt;6,613 patients · 19,006 SNPs&quot;] --&gt; B[&quot;Population-level GWAS&lt;br/&gt;(Fisher&#39;s exact test)&quot;]
     A --&gt; C[&quot;IBI: per-patient Bayesian Network&lt;br/&gt;(split population, score two subgroups)&quot;]
     B --&gt; D[&quot;5 Bonferroni-significant SNPs&lt;br/&gt;→ explain 12.9% of HTN patients&quot;]
-    C --&gt; E[&quot;188 SNPs above IBI threshold&lt;br/&gt;→ explain 99.1% of HTN patients&quot;]
+    C --&gt; E[&quot;189 SNPs above IBI threshold&lt;br/&gt;→ explain 99.1% of HTN patients&quot;]
     D --&gt; F{&quot;Compare &amp; Validate&quot;}
     E --&gt; F
     F --&gt; G[&quot;Novel low-MAF variants surfaced&lt;br/&gt;e.g., CSMD1 rs13265032 (46% of patients)&quot;]
