@@ -242,7 +242,7 @@ Piyush Chaudhari
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>IBI uses a bipartite Bayesian Network (BN) is used with two node sets-</p>
+<li><p>IBI uses a bipartite Bayesian Network (BN) with two node sets-</p>
 <ul>
 <li><strong>Set 1</strong>: Variants <span class="math inline">\(V\)</span> (e.g., SNPs)</li>
 <li><strong>Set 2</strong>: Traits <span class="math inline">\(T\)</span> (e.g., hypertension)</li>
@@ -280,11 +280,12 @@ Piyush Chaudhari
 <h2 data-id="quarto-animate-title">The Individualizing Step</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div style="font-size: 75%;">
-<p>For a given patient <strong><span class="math inline">\(h\)</span></strong> who carries the minor allele of <strong><span class="math inline">\(V_s\)</span> (<span class="math inline">\(V_s = 1\)</span>)</strong>:</p>
+<div style="font-size: 65%;">
+<p>For a given patient <strong><span class="math inline">\(h\)</span></strong> who carries the minor allele of</p>
+<p><strong><span class="math inline">\(V_s\)</span> (<span class="math inline">\(V_s = 1\)</span>)</strong></p>
 <ol type="1">
 <li>Partition the population into <strong><span class="math inline">\(D^{V_s=1}\)</span></strong> (“patients-like-me,” carrying the variant) and <strong><span class="math inline">\(D^{V_s=0}\)</span></strong> (everyone else)</li>
-<li>Score <strong><span class="math inline">\(V_s\)</span></strong>’s ability to explain HTN within <strong><span class="math inline">\(D^{V_s=1}\)</span> -&gt; <span class="math inline">\(M_s^1\)</span></strong></li>
+<li>Score <strong><span class="math inline">\(V_s\)</span></strong>’s ability to explain Hypertension within <strong><span class="math inline">\(D^{V_s=1}\)</span> -&gt; <span class="math inline">\(M_s^1\)</span></strong></li>
 <li>Find the variant <strong><span class="math inline">\(V_r\)</span></strong> that best explains the remaining group <strong><span class="math inline">\(D^{V_s=0}\)</span> -&gt; <span class="math inline">\(M_r^0\)</span></strong></li>
 <li>Combine: <strong><span class="math inline">\(M_{s,r} = M_s^1 + M_r^0\)</span></strong> This overall score, <strong><span class="math inline">\(M_{s,r}\)</span></strong>, is higher than the single-population estimator’s score (<strong><span class="math inline">\(M_s\)</span></strong> using one global variant <strong><span class="math inline">\(V_g\)</span></strong>) for many SNPs, because two distinct, subgroup-specific explanations together can fit the data better than one global explanation</li>
 </ol>
@@ -292,8 +293,8 @@ Piyush Chaudhari
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs12864-023-09757-9/MediaObjects/12864_2023_9757_Fig1_HTML.png" class="lightbox" data-gallery="my-gallery" title="Fig 1. Variants (V) -> Traits (T): a bipartite Bayesian network. Adapted from Rahman et al., 2022"><img data-src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs12864-023-09757-9/MediaObjects/12864_2023_9757_Fig1_HTML.png" class="r-stretch" style="width:100.0%" alt="Fig 1. Variants (V) -> Traits (T): a bipartite Bayesian network. Adapted from Rahman et al., 2022"></a></p>
-<figcaption>Fig 1. Variants (<span class="math inline">\(V\)</span>) -&gt; Traits (<span class="math inline">\(T\)</span>): a bipartite Bayesian network. Adapted from Rahman et al., 2022</figcaption>
+<p><a href="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs12864-023-09757-9/MediaObjects/12864_2023_9757_Fig1_HTML.png" class="lightbox" data-gallery="my-gallery" title="Fig 1. Variants (V) -> Traits (T): a bipartite Bayesian network"><img data-src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs12864-023-09757-9/MediaObjects/12864_2023_9757_Fig1_HTML.png" class="r-stretch" style="width:100.0%" alt="Fig 1. Variants (V) -> Traits (T): a bipartite Bayesian network"></a></p>
+<figcaption>Fig 1. Variants (<span class="math inline">\(V\)</span>) -&gt; Traits (<span class="math inline">\(T\)</span>): a bipartite Bayesian network</figcaption>
 </figure>
 </div>
 </div></div>
@@ -397,7 +398,7 @@ Point out: after Bonferroni correction, only 5 SNPs reach GWAS significance. 189
 <li>GWAS (Bonferroni α = 0.05/19,276 = 2.59×10⁻⁶): <strong>5 SNPs</strong> reach significance</li>
 <li>IBI: <strong>189 SNPs</strong> exceed the population-level best-estimator’s <span class="math inline">\(M_s\)</span> (i.e., a two-subgroup explanation beats the single best global explanation)</li>
 <li><strong>Overlap:</strong> 40 of the top-189 SNPs shared between IBI and GWAS (agreement); 148 unique to one or the other (complementarity)</li>
-<li><strong>MAF distribution:</strong> IBI-only SNPs have markedly <strong>lower MAF</strong> than GWAS-only SNPs — IBI’s individualized partitioning better surfaces rare-variant signal</li>
+<li><strong>MAF distribution:</strong> IBI-only SNPs have markedly <strong>lower MAF</strong> than GWAS-only SNPs. IBI’s individualized partitioning better surfaces rare-variant signal</li>
 <li><strong>Information gain (IG):</strong> IG for IBI’s top-189 SNPs &gt; GWAS’s top-189 SNPs &gt; 189 random SNPs (all comparisons directionally consistent with expectation)</li>
 </ul>
 </div>
