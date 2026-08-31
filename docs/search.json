@@ -550,7 +550,7 @@
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#limitations-of-gwas",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "Limitations of GWAS",
-    "text": "Limitations of GWAS\n\nNeeds huge sample sizes (~1 million people) to detect low-frequency variants especially those with low minor allele frequency (MAF)\nThe ~1,000 known BP loci explain only ~5.7% of the genetic variance in blood pressure\nMost detected SNPs are common, small-effect variants\nGWAS can answer questions like what is the population-level risk of a particular variant? but it cannot answer questions like what is the risk of a particular variant for a specific patient?\n\n\n\n\n\n\n\nImportant\n\n\nA given hypertensive patient may carry none of the population’s significant risk alleles."
+    "text": "Limitations of GWAS\n\nNeeds huge sample sizes (~1 million people) to detect low-frequency variants especially those with low minor allele frequency (MAF)\nThe ~1,000 known BP loci explain only ~5.7% of the genetic variance in blood pressure\nMost detected SNPs are common, small-effect variants\nGWAS can answer questions like what is the population-level risk of a particular variant? but it cannot answer questions like what is the risk of a particular variant for a specific patient?\n\n\n\n\n\n\n\nImportant\n\n\nA given hypertensive patient may carry none of the population’s significant risk alleles"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#the-core-idea",
@@ -578,14 +578,14 @@
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#the-individualizing-step",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "The Individualizing Step",
-    "text": "The Individualizing Step\n\n\n\nFor a given patient \\(h\\) who carries the minor allele of \\(V_s\\) (\\(V_s = 1\\)):\n\nPartition the population into \\(D^{V_s=1}\\) (“patients-like-me,” carrying the variant) and \\(D^{V_s=0}\\) (everyone else)\nScore \\(V_s\\)’s ability to explain HTN within \\(D^{V_s=1}\\) -&gt; \\(M_s^1\\)\nFind the variant \\(V_r\\) that best explains the remaining group \\(D^{V_s=0}\\) -&gt; \\(M_r^0\\)\nCombine: \\(M_{s,r} = M_s^1 + M_r^0\\) This overall score, \\(M_{s,r}\\), is higher than the single-population estimator’s score (\\(M_s\\) using one global variant \\(V_g\\)) for many SNPs, because two distinct, subgroup-specific explanations together can fit the data better than one global explanation\n\n\nOne variant explains “people like this patient.” A second explains everyone else. Together they almost always beat the single best population-wide variant\n\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network. Adapted from Rahman et al., 2022"
+    "text": "The Individualizing Step\n\n\n\nFor a given patient \\(h\\) who carries the minor allele of \\(V_s\\) (\\(V_s = 1\\)):\n\nPartition the population into \\(D^{V_s=1}\\) (“patients-like-me,” carrying the variant) and \\(D^{V_s=0}\\) (everyone else)\nScore \\(V_s\\)’s ability to explain HTN within \\(D^{V_s=1}\\) -&gt; \\(M_s^1\\)\nFind the variant \\(V_r\\) that best explains the remaining group \\(D^{V_s=0}\\) -&gt; \\(M_r^0\\)\nCombine: \\(M_{s,r} = M_s^1 + M_r^0\\) This overall score, \\(M_{s,r}\\), is higher than the single-population estimator’s score (\\(M_s\\) using one global variant \\(V_g\\)) for many SNPs, because two distinct, subgroup-specific explanations together can fit the data better than one global explanation\n\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network. Adapted from Rahman et al., 2022\n\n\n\n\n\nOne variant explains “people like this patient.” A second explains everyone else. Together they almost always beat the single best population-wide variant"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#personalized-posterior-probability",
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#personalized-posterior-probability",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "Personalized posterior probability",
-    "text": "Personalized posterior probability\n\n\n\n\nFor each patient, \\(M_{s,r}\\) is normalized across only the minor-allele SNPs present in that individual’s genome, yielding an individualized posterior probability \\(P(V_s^h \\to T_i^h \\mid D)\\)\nThe same SNP can therefore rank differently across patients depending on their distinct genomic backgrounds\nThe highest-ranked variant for a patient is IBI’s proposed individualized explanation of their HTN status &lt;!–\n\nIBI is implemented in Python (vectorized/matrix operations) for scalability to whole-genome data. –&gt;\n\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network"
+    "text": "Personalized posterior probability\n\n\n\n\nFor each patient, \\(M_{s,r}\\) is normalized across only the minor-allele SNPs present in that individual’s genome, yielding an individualized posterior probability \\(P(V_s^h \\to T_i^h \\mid D)\\)\nThe same SNP can therefore rank differently across patients depending on their distinct genomic backgrounds\nThe highest-ranked variant for a patient is IBI’s proposed individualized explanation of their HTN status\n\n\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#the-cohort-framingham-heart-study",
@@ -655,7 +655,7 @@
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#questions-limitations",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "Questions & Limitations",
-    "text": "Questions & Limitations\n\nDoes not yet adjust for age, sex, population structure, or family relatedness (planned: linear mixed models)\nAssociations are not necessarily causal, they are confounded by LD and population structure\nAUROC improvement (0.55 → 0.59–0.60) is real but modest\nSingle cohort (FHS), genotyping array rather than whole-genome sequencing\n“Patients-like-me” subgroup size can be very small for rare variants — stability of estimates worth scrutinizing"
+    "text": "Questions & Limitations\n\nDoes not yet adjust for age, sex, population structure, or family relatedness (planned: linear mixed models)\nAssociations are not necessarily causal, they are confounded by LD and population structure\nAUROC improvement (0.55 → 0.59–0.60) is real but modest\nSingle cohort (FHS), genotyping array rather than whole-genome sequencing\n“Patients-like-me” subgroup size can be very small for rare variants and stability of these estimates is worth scrutinizing"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#next-steps",
@@ -697,14 +697,35 @@
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#individualized-causal-inference",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "Individualized Causal Inference",
-    "text": "Individualized Causal Inference\n\nA family of methods that estimate a model specific to one instance (a patient, a tumor) rather than a single model averaged over the whole population — by partitioning the population into an instance-relevant subgroup and its complement, then combining subgroup-specific explanations.\n\n\n\n\n\n\nflowchart TD\n    Pop[\"Full population D\"] --&gt; D1[\"Subgroup D(Vs=1)&lt;br/&gt;'patients like me'\"]\n    Pop --&gt; D0[\"Subgroup D(Vs=0)&lt;br/&gt;everyone else\"]\n    D1 --&gt; M1[\"Score M(s)¹\"]\n    D0 --&gt; M0[\"Score M(r)⁰\"]\n    M1 --&gt; C[\"Combined score M(s,r)\"]\n    M0 --&gt; C\n    C --&gt; Post[\"Normalized → personalized&lt;br/&gt;posterior probability\"]\n\n\n\n\n\n\nLineage: TCI (tumor-specific causal inference, one tumor genome at a time) serves as an inspiration for IBI (this paper, one patient’s genome at a time)"
+    "text": "Individualized Causal Inference\n\n\n\nA family of methods that estimate a model specific to one instance (a patient, a tumor) rather than a single model averaged over the whole population — by partitioning the population into an instance-relevant subgroup and its complement, then combining subgroup-specific explanations.\n\n\n\n\n\n\n\nflowchart TD\n    Pop[\"Full population D\"] --&gt; D1[\"Subgroup D(Vs=1)&lt;br/&gt;'patients like me'\"]\n    Pop --&gt; D0[\"Subgroup D(Vs=0)&lt;br/&gt;everyone else\"]\n    D1 --&gt; M1[\"Score M(s)¹\"]\n    D0 --&gt; M0[\"Score M(r)⁰\"]\n    M1 --&gt; C[\"Combined score M(s,r)\"]\n    M0 --&gt; C\n    C --&gt; Post[\"Normalized → personalized&lt;br/&gt;posterior probability\"]"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#dags-the-causal-markov-condition",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#dags-the-causal-markov-condition",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "DAGs & the Causal Markov Condition",
+    "text": "DAGs & the Causal Markov Condition\n\n\nDirected acyclic graph (DAG):\n\nnodes = variables\ndirected edges = direct dependence, no directed cycles\n\nCausal Markov condition:\n\nEach node is independent of its non-descendants, given its direct parents. This lets the joint distribution factorize into local pieces\n\nIBI’s own graph is deliberately minimal and it is designed as bipartite, and only one edge \\(V_s \\to T_i\\) evaluated at a time. It never learns a structure with multiple parents pointing into \\(T\\)\n\n\n\n\n\n\n\n\nMC\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nA-&gt;C\n\n\n\n\n\nB-&gt;C"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#faithfulness-and-ibis-consistency-claim",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#faithfulness-and-ibis-consistency-claim",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Faithfulness — and IBI’s Consistency Claim",
+    "text": "Faithfulness — and IBI’s Consistency Claim\n\nFaithfulness: every conditional independence present in the data-generating distribution is a consequence of the graph’s structure (via d-separation) and is not a coincidental cancellation of two or more paths’ effects\n\n\nFaithfulness is what makes learning causal structure from observational data alone possible at all\nNot explicitly tested in this paper: Genomic data is a plausible place for near-violations: strong linkage disequilibrium can produce highly correlated or near-cancelling signals between nearby SNPs, where faithfulness condition may not hold"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#confounding-ld-population-structure",
     "href": "presentations/F26_GMS7858/ibi-hypertension.html#confounding-ld-population-structure",
     "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
     "section": "Confounding: LD & Population Structure",
-    "text": "Confounding: LD & Population Structure\nConfounding: a third variable that influences both the “exposure” (a SNP) and the “outcome” (HTN), creating a spurious or inflated association\n\n\n\n\n\n\n\nConfound\n\n\n\nA\n\nAncestry /\nPopulation structure\n\n\n\nS\n\nObserved SNP\n\n\n\nA-&gt;S\n\n\n\n\n\nH\n\nHypertension\n\n\n\nA-&gt;H\n\n\n\n\n\nS-&gt;H\n\n\n  association\n  (possibly confounded)\n\n\n\n\n\n\n\n\n\nLinkage disequilibrium (LD): nearby SNPs are correlated, so a flagged SNP may just be “riding along” with the true causal variant\nPopulation structure: ancestry differences can independently affect both allele frequencies and disease prevalence, inflating spurious associations — this is exactly why the authors flag it as unmodeled in the current IBI implementation"
+    "text": "Confounding: LD & Population Structure\n\n\nConfounding: a third variable that influences both the “exposure” (a SNP) and the “outcome” (HTN), creating a spurious or inflated association\nLinkage disequilibrium (LD): nearby SNPs are correlated, so a flagged SNP may just be “riding along” with the true causal variant\nPopulation structure: ancestry differences can independently affect both allele frequencies and disease prevalence, inflating spurious associations — this is exactly why the authors flag it as unmodeled in the current IBI implementation\n\n\n\n\n\n\n\n\nConfound\n\n\n\nA\n\nAncestry /\nPopulation structure\n\n\n\nS\n\nObserved SNP\n\n\n\nA-&gt;S\n\n\n\n\n\nH\n\nHypertension\n\n\n\nA-&gt;H\n\n\n\n\n\nS-&gt;H\n\n\n  association\n  (possibly confounded)"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#hypertension-causal-structure-is-more-complex-than-ibis-arc",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#hypertension-causal-structure-is-more-complex-than-ibis-arc",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Hypertension causal structure is more complex than IBI’s Arc",
+    "text": "Hypertension causal structure is more complex than IBI’s Arc\nIBI evaluates a single arc \\(V_s \\to T_i\\). The true system generating hypertension almost certainly has more structure behind it, including\n\n\n\nLD / haplotype fork: SNPs that operate close together are generally inherited together on the same ancestral chromosome segment\n\nA latent haplotype block \\(H\\) can be a common cause of two correlated SNPs\nOne or more SNPs may just “ride along” with the true causal variant\n\n\n\n\n\n\n\n\nLDfork\n\n\n\nH\n\nHaplotype block\n(latent)\n\n\n\nV1\n\nSNP 1\n(tag)\n\n\n\nH-&gt;V1\n\n\n\n\n\nV2\n\nSNP 2\n(true driver?)\n\n\n\nH-&gt;V2\n\n\n\n\n\n\n\n\n\n\n\n\n\nCollider risk in case-control conditioning:\n\nPatient-Coverage results analyze only within the Hypertension patients hence bringing means implicitly conditioning on the trait\nIf two variants each independently influence HTN, that would be a collider, and conditioning on HTN status can induce a spurious association between them that wouldn’t exist population-wide"
   },
   {
     "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#information-gain",

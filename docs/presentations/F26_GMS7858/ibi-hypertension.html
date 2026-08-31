@@ -216,14 +216,14 @@ Piyush Chaudhari
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>A given hypertensive patient may carry <strong>none</strong> of the population’s significant risk alleles.</p>
+<p>A given hypertensive patient may carry <strong>none</strong> of the population’s significant risk alleles</p>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="the-solution-individualized-bayesian-inference-ibi" class="title-slide slide level1 center" data-background-color="#3d1f47">
-<h1>The Solution : Individualized Bayesian Inference (IBI)</h1>
+<section id="individualized-bayesian-inference-ibi" class="title-slide slide level1 center" data-background-color="#3d1f47">
+<h1>Individualized Bayesian Inference (IBI)</h1>
 
 </section>
 <section id="the-core-idea" class="slide level2">
@@ -280,7 +280,7 @@ Piyush Chaudhari
 <h2 data-id="quarto-animate-title">The Individualizing Step</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div style="font-size: 80%;">
+<div style="font-size: 75%;">
 <p>For a given patient <strong><span class="math inline">\(h\)</span></strong> who carries the minor allele of <strong><span class="math inline">\(V_s\)</span> (<span class="math inline">\(V_s = 1\)</span>)</strong>:</p>
 <ol type="1">
 <li>Partition the population into <strong><span class="math inline">\(D^{V_s=1}\)</span></strong> (“patients-like-me,” carrying the variant) and <strong><span class="math inline">\(D^{V_s=0}\)</span></strong> (everyone else)</li>
@@ -288,9 +288,6 @@ Piyush Chaudhari
 <li>Find the variant <strong><span class="math inline">\(V_r\)</span></strong> that best explains the remaining group <strong><span class="math inline">\(D^{V_s=0}\)</span> -&gt; <span class="math inline">\(M_r^0\)</span></strong></li>
 <li>Combine: <strong><span class="math inline">\(M_{s,r} = M_s^1 + M_r^0\)</span></strong> This overall score, <strong><span class="math inline">\(M_{s,r}\)</span></strong>, is higher than the single-population estimator’s score (<strong><span class="math inline">\(M_s\)</span></strong> using one global variant <strong><span class="math inline">\(V_g\)</span></strong>) for many SNPs, because two distinct, subgroup-specific explanations together can fit the data better than one global explanation</li>
 </ol>
-<div class="fragment">
-<p><strong>One variant explains “people like this patient.” A second explains everyone else.</strong> Together they almost always beat the single best population-wide variant</p>
-</div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -300,6 +297,11 @@ Piyush Chaudhari
 </figure>
 </div>
 </div></div>
+<div class="fragment">
+<div style="font-size: 75%;">
+<p><strong>One variant explains “people like this patient.” A second explains everyone else.</strong> Together they almost always beat the single best population-wide variant</p>
+</div>
+</div>
 </section>
 <section id="personalized-posterior-probability" class="slide level2">
 <h2>Personalized posterior probability</h2>
@@ -309,10 +311,10 @@ Piyush Chaudhari
 <ul>
 <li><p>For each patient, <strong><span class="math inline">\(M_{s,r}\)</span></strong> is normalized across only the minor-allele SNPs <strong>present in that individual’s genome</strong>, yielding an individualized posterior probability <strong><span class="math inline">\(P(V_s^h \to T_i^h \mid D)\)</span></strong></p></li>
 <li><p>The same SNP can therefore rank differently across patients depending on their distinct genomic backgrounds</p></li>
-<li><p>The highest-ranked variant for a patient is IBI’s proposed individualized explanation of their HTN status &lt;!–<br>
-</p></li>
-<li><p>IBI is implemented in Python (vectorized/matrix operations) for scalability to whole-genome data. –&gt;</p></li>
+<li><p>The highest-ranked variant for a patient is IBI’s proposed individualized explanation of their HTN status</p></li>
 </ul>
+<!--  
+- IBI is implemented in Python (vectorized/matrix operations) for scalability to whole-genome data. -->
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -451,7 +453,7 @@ Point out: after Bonferroni correction, only 5 SNPs reach GWAS significance. 189
 <li><em>CSMD1</em> variants have been independently linked to BP and hydrochlorothiazide response in prior literature</li>
 </ul>
 </section>
-<section id="additional-findings-missed-by-gwas" class="slide level2">
+<section id="additional-findings-missed-by-gwas" class="slide level2 smaller">
 <h2>Additional Findings missed by GWAS</h2>
 <table class="caption-top">
 <colgroup>
@@ -590,7 +592,7 @@ INTERACTION POINT 3 (optional — use if running toward 30 min; skip or shorten 
 <li>Associations are <strong>not necessarily causal</strong>, they are confounded by LD and population structure</li>
 <li>AUROC improvement (0.55 → 0.59–0.60) is real but <strong>modest</strong></li>
 <li>Single cohort (FHS), genotyping array rather than whole-genome sequencing</li>
-<li>“Patients-like-me” subgroup size can be very small for rare variants — stability of estimates worth scrutinizing</li>
+<li>“Patients-like-me” subgroup size can be very small for rare variants and stability of these estimates is worth scrutinizing</li>
 </ul>
 </section>
 <section id="next-steps" class="slide level2">
@@ -717,10 +719,13 @@ Keep this brief and definitional — the goal is just to make sure "BDeu" and "B
 </section>
 <section id="individualized-causal-inference" class="slide level2 smaller">
 <h2>Individualized Causal Inference</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <blockquote>
 <p>A family of methods that estimate a model <strong>specific to one instance</strong> (a patient, a tumor) rather than a single model averaged over the whole population — by partitioning the population into an instance-relevant subgroup and its complement, then combining subgroup-specific explanations.</p>
 </blockquote>
-<div class="cell" data-reveal="true" data-fig-width="7" data-layout-align="default">
+</div><div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-fig-width="5" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
@@ -739,11 +744,95 @@ Keep this brief and definitional — the goal is just to make sure "BDeu" and "B
 </div>
 </div>
 </div>
-<p><strong>Lineage:</strong> TCI (tumor-specific causal inference, one tumor genome at a time) serves as an inspiration for <strong>IBI</strong> (this paper, one patient’s genome at a time)</p>
+</div></div>
+</section>
+<section id="dags-the-causal-markov-condition" class="slide level2 smaller">
+<h2>DAGs &amp; the Causal Markov Condition</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Directed acyclic graph (DAG):</strong></p>
+<ul>
+<li>nodes = variables</li>
+<li>directed edges = direct dependence, no directed cycles</li>
+</ul>
+<p><strong>Causal Markov condition:</strong></p>
+<ul>
+<li>Each node is independent of its non-descendants, given its direct parents. This lets the joint distribution <strong>factorize</strong> into local pieces</li>
+</ul>
+<p><strong>IBI’s own graph is deliberately minimal</strong> and it is designed as bipartite, and only <strong>one</strong> edge <span class="math inline">\(V_s \to T_i\)</span> evaluated at a time. It never learns a structure with multiple parents pointing into <span class="math inline">\(T\)</span></p>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-fig-width="5" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="480" viewbox="0.00 0.00 89.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>MC</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 85,-184 85,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="54" y="-158.7" font-family="Times,serif" font-size="11.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-86.7" font-family="Times,serif" font-size="11.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M47.6,-144.41C44.49,-136.34 40.67,-126.43 37.17,-117.35"></path>
+<polygon fill="black" stroke="black" points="40.4,-116.03 33.54,-107.96 33.87,-118.55 40.4,-116.03"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="54" y="-14.7" font-family="Times,serif" font-size="11.00">C</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>A-&gt;C</title>
+<path fill="none" stroke="black" d="M57.65,-143.91C59.68,-133.57 61.98,-120.09 63,-108 64.34,-92.06 64.34,-87.94 63,-72 62.28,-63.5 60.93,-54.31 59.49,-46.01"></path>
+<polygon fill="black" stroke="black" points="62.91,-45.29 57.65,-36.09 56.03,-46.56 62.91,-45.29"></polygon>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C36.51,-64.34 40.33,-54.43 43.83,-45.35"></path>
+<polygon fill="black" stroke="black" points="47.13,-46.55 47.46,-35.96 40.6,-44.03 47.13,-46.55"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="faithfulness-and-ibis-consistency-claim" class="slide level2">
+<h2>Faithfulness — and IBI’s Consistency Claim</h2>
+<blockquote>
+<p><strong>Faithfulness:</strong> every conditional independence present in the data-generating distribution is a consequence of the graph’s structure (via d-separation) and is not a coincidental cancellation of two or more paths’ effects</p>
+</blockquote>
+<ul>
+<li>Faithfulness is what makes learning causal structure <strong>from observational data alone</strong> possible at all</li>
+<li><strong>Not explicitly tested in this paper:</strong> Genomic data is a plausible place for near-violations: strong <strong>linkage disequilibrium</strong> can produce highly correlated or near-cancelling signals between nearby SNPs, where faithfulness condition may not hold</li>
+</ul>
 </section>
 <section id="confounding-ld-population-structure" class="slide level2 smaller">
 <h2>Confounding: LD &amp; Population Structure</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <p><strong>Confounding:</strong> a third variable that influences both the “exposure” (a SNP) and the “outcome” (HTN), creating a spurious or inflated association</p>
+<p><strong>Linkage disequilibrium (LD):</strong> nearby SNPs are correlated, so a flagged SNP may just be “riding along” with the true causal variant</p>
+<p><strong>Population structure:</strong> ancestry differences can independently affect both allele frequencies and disease prevalence, inflating spurious associations — this is exactly why the authors flag it as unmodeled in the current IBI implementation</p>
+</div><div class="column" style="width:60%;">
 <div class="cell" data-fig-width="6" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -799,13 +888,81 @@ Keep this brief and definitional — the goal is just to make sure "BDeu" and "B
 </div>
 </div>
 </div>
-<ul>
-<li><strong>Linkage disequilibrium (LD):</strong> nearby SNPs are correlated, so a flagged SNP may just be “riding along” with the true causal variant</li>
-<li><strong>Population structure:</strong> ancestry differences can independently affect both allele frequencies and disease prevalence, inflating spurious associations — this is exactly why the authors flag it as unmodeled in the current IBI implementation</li>
-</ul>
+</div></div>
 <!-- ::: {.notes}
 Directly ties back to the "Open Questions & Limitations" slide from earlier — this is the mechanism *behind* that limitation, spelled out visually.
 ::: -->
+</section>
+<section id="hypertension-causal-structure-is-more-complex-than-ibis-arc" class="slide level2 smaller">
+<h2>Hypertension causal structure is more complex than IBI’s Arc</h2>
+<p>IBI evaluates a single arc <span class="math inline">\(V_s \to T_i\)</span>. The <strong>true</strong> system generating hypertension almost certainly has more structure behind it, including</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div style="font-size: 70%;">
+<p><strong>LD / haplotype fork:</strong> SNPs that operate close together are generally inherited together on the same ancestral chromosome segment</p>
+<ul>
+<li>A latent haplotype block <span class="math inline">\(H\)</span> can be a common cause of two correlated SNPs</li>
+<li>One or more SNPs may just “ride along” with the true causal variant</li>
+</ul>
+<div class="cell" data-fig-width="5" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="480" viewbox="0.00 0.00 274.99 123.65" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 119.65)">
+<title>LDfork</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-119.65 270.99,-119.65 270.99,4 -4,4"></polygon>
+<!-- H -->
+<g id="node1" class="node">
+<title>H</title>
+<ellipse fill="none" stroke="black" cx="62.94" cy="-57.32" rx="62.88" ry="24.15"></ellipse>
+<text text-anchor="middle" x="62.94" y="-60.62" font-family="Times,serif" font-size="11.00">Haplotype block</text>
+<text text-anchor="middle" x="62.94" y="-47.42" font-family="Times,serif" font-size="11.00">(latent)</text>
+</g>
+<!-- V1 -->
+<g id="node2" class="node">
+<title>V1</title>
+<ellipse fill="none" stroke="black" cx="214.43" cy="-91.32" rx="31.33" ry="24.15"></ellipse>
+<text text-anchor="middle" x="214.43" y="-94.62" font-family="Times,serif" font-size="11.00">SNP 1</text>
+<text text-anchor="middle" x="214.43" y="-81.42" font-family="Times,serif" font-size="11.00">(tag)</text>
+</g>
+<!-- H&#45;&gt;V1 -->
+<g id="edge1" class="edge">
+<title>H-&gt;V1</title>
+<path fill="none" stroke="black" d="M117.49,-69.5C136.26,-73.77 156.97,-78.48 174.33,-82.43"></path>
+<polygon fill="black" stroke="black" points="173.6,-85.85 184.13,-84.66 175.15,-79.03 173.6,-85.85"></polygon>
+</g>
+<!-- V2 -->
+<g id="node3" class="node">
+<title>V2</title>
+<ellipse fill="none" stroke="black" cx="214.43" cy="-24.32" rx="52.61" ry="24.15"></ellipse>
+<text text-anchor="middle" x="214.43" y="-27.62" font-family="Times,serif" font-size="11.00">SNP 2</text>
+<text text-anchor="middle" x="214.43" y="-14.42" font-family="Times,serif" font-size="11.00">(true driver?)</text>
+</g>
+<!-- H&#45;&gt;V2 -->
+<g id="edge2" class="edge">
+<title>H-&gt;V2</title>
+<path fill="none" stroke="black" d="M117.91,-45.41C130.45,-42.64 143.83,-39.69 156.5,-36.89"></path>
+<polygon fill="black" stroke="black" points="157.46,-40.27 166.47,-34.69 155.95,-33.43 157.46,-40.27"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:45%;">
+<div style="font-size: 70%;">
+<p><strong>Collider risk in case-control conditioning:</strong></p>
+<ul>
+<li><p>Patient-Coverage results analyze only within the Hypertension patients hence bringing means implicitly conditioning on the trait</p></li>
+<li><p>If two variants each independently influence HTN, that would be a collider, and conditioning on HTN status can induce a spurious association between them that wouldn’t exist population-wide</p></li>
+</ul>
+</div>
+</div></div>
 </section>
 <section id="information-gain" class="slide level2">
 <h2>Information Gain</h2>
