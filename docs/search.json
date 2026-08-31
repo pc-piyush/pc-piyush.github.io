@@ -532,6 +532,307 @@
     "text": "Questions?"
   },
   {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#hypertension",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#hypertension",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Hypertension",
+    "text": "Hypertension\n\nHypertension is the leading modifiable risk factor for cardiovascular disease\n~7.8 million deaths worldwide in 2015 were attributable to high blood pressure\nHypertension is a polygenic disease that is driven by many genomic variants, not one\nGenomic risk is only one factor, along with lifestyle, environment, and other comorbidities, but this paper focuses primarily on the genomic components"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#approaches-used-to-find-genomic-risk-variants",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#approaches-used-to-find-genomic-risk-variants",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Approaches used to find genomic risk variants",
+    "text": "Approaches used to find genomic risk variants\n\nThe state of the art method of identifying genomic risk variants is Genome-Wide Association Studies (GWAS)\nGWAS identify variant-trait associations at a population level, testing each SNP via Logistic regression or Fisher’s exact test with genome-wide signficance at p \\(&lt; 5 x 10^{-8}\\)\nGWAS takes a large population, split into cases vs. controls\nVisualization is commonly done with a Manhattan plot"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#limitations-of-gwas",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#limitations-of-gwas",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Limitations of GWAS",
+    "text": "Limitations of GWAS\n\nNeeds huge sample sizes (~1 million people) to detect low-frequency variants especially those with low minor allele frequency (MAF)\nThe ~1,000 known BP loci explain only ~5.7% of the genetic variance in blood pressure\nMost detected SNPs are common, small-effect variants\nGWAS can answer questions like what is the population-level risk of a particular variant? but it cannot answer questions like what is the risk of a particular variant for a specific patient?\n\n\n\n\n\n\n\nImportant\n\n\nA given hypertensive patient may carry none of the population’s significant risk alleles."
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#the-core-idea",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#the-core-idea",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "The Core Idea",
+    "text": "The Core Idea\n\nInstead of researching “what matters for the average patient?”, the goal is to observe “what matters for patients who share this specific variant with me?”\n\n\nIBI models each variant’s effect in the subpopulation that actually carries it\nBuilds on TCI (tumor-specific causal inference), originally developed for individual cancer genomes\nIBI aims to identify personalized, potentially causal genomic drivers of a trait, beyond just population-average associations"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#building-block-bayesian-networks",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#building-block-bayesian-networks",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Building Block: Bayesian Networks",
+    "text": "Building Block: Bayesian Networks\n\n\n\nIBI uses a bipartite Bayesian Network (BN) is used with two node sets-\n\nSet 1: Variants \\(V\\) (e.g., SNPs)\nSet 2: Traits \\(T\\) (e.g., hypertension)\n\nDirected edges \\(V -&gt; T\\) represent probabilistic dependency with only one assumed influencing variant being evaluated at a time indicated by solid arc\nNetwork structures are scored using the Bayesian Dirichlet equivalent uniform (BDeu) score that tells you how well a proposed structure is supported by the data\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#population-level-bayesian-scoring-using-gwas",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#population-level-bayesian-scoring-using-gwas",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Population-level Bayesian Scoring using GWAS",
+    "text": "Population-level Bayesian Scoring using GWAS\n\n\n\nFor variant \\(V_s\\) and trait \\(T_i\\) over the full population \\(D\\), the marginal likelihood \\(P(D \\mid V_s \\to T_i)\\) (log form: \\(M_s\\)) is computed\nUnder an uniform prior, ranking by \\(M_s\\) is proportional to ranking by global posterior probability, and is directly comparable to GWAS’s p-value ranking\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#the-individualizing-step",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#the-individualizing-step",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "The Individualizing Step",
+    "text": "The Individualizing Step\n\n\n\nFor a given patient \\(h\\) who carries the minor allele of \\(V_s\\) (\\(V_s = 1\\)):\n\nPartition the population into \\(D^{V_s=1}\\) (“patients-like-me,” carrying the variant) and \\(D^{V_s=0}\\) (everyone else)\nScore \\(V_s\\)’s ability to explain HTN within \\(D^{V_s=1}\\) -&gt; \\(M_s^1\\)\nFind the variant \\(V_r\\) that best explains the remaining group \\(D^{V_s=0}\\) -&gt; \\(M_r^0\\)\nCombine: \\(M_{s,r} = M_s^1 + M_r^0\\) This overall score, \\(M_{s,r}\\), is higher than the single-population estimator’s score (\\(M_s\\) using one global variant \\(V_g\\)) for many SNPs, because two distinct, subgroup-specific explanations together can fit the data better than one global explanation\n\n\nOne variant explains “people like this patient.” A second explains everyone else. Together they almost always beat the single best population-wide variant\n\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network. Adapted from Rahman et al., 2022"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#personalized-posterior-probability",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#personalized-posterior-probability",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Personalized posterior probability",
+    "text": "Personalized posterior probability\n\n\n\n\nFor each patient, \\(M_{s,r}\\) is normalized across only the minor-allele SNPs present in that individual’s genome, yielding an individualized posterior probability \\(P(V_s^h \\to T_i^h \\mid D)\\)\nThe same SNP can therefore rank differently across patients depending on their distinct genomic backgrounds\nThe highest-ranked variant for a patient is IBI’s proposed individualized explanation of their HTN status &lt;!–\n\nIBI is implemented in Python (vectorized/matrix operations) for scalability to whole-genome data. –&gt;\n\n\n\n\n\n\nFig 1. Variants (\\(V\\)) -&gt; Traits (\\(T\\)): a bipartite Bayesian network"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#the-cohort-framingham-heart-study",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#the-cohort-framingham-heart-study",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "The Cohort: Framingham Heart Study",
+    "text": "The Cohort: Framingham Heart Study\n\nCohort: Framingham Heart Study (FHS), Affymetrix HuGeneFocused50K genotyping array (dbGaP phs000007.v30.p11)\nQC: --mind 0.03 --geno 0.03 --maf 0.01 --hwe 10e-6 --me 0.05 0.1 --sexCheck gives 38,342 SNPs\n\nAfter removing minor-allele risk ratio &lt; 1, final count= 19,276 SNPs\n\nLinkage Disequilibrium (LD) pruning: d′ threshold 0.2 (SNPRelate) reduces it to 19,006 SNPs (98.5% independent)\nFinal analytic sample: 6,613 patients\nSplit: 80% discovery (5,290) / 20% held-out test (1,323)"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#defining-hypertension",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#defining-hypertension",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Defining “Hypertension”",
+    "text": "Defining “Hypertension”\nA patient is coded HTN = 1 if:\n\nSystolic BP ≥ 140 mmHg, or\nDiastolic BP ≥ 90 mmHg, or\nCurrently on antihypertensive medication (+10 mmHg SBP / +5 mmHg DBP correction applied if on treatment, per TOPMed harmonization)"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#comparison",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#comparison",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Comparison",
+    "text": "Comparison\n\nFig 2. A Bayesian method for GWAS analysis\nPopulation-level \\(M_s\\) and GWAS p-values are highly concordant\nSpearman ρ = −0.90; 164/188 top independent SNPs and 18/20 top-5-ranked SNPs overlap between rankings\nThis establishes that the Bayesian framework reproduces GWAS when used non-individually, before the individualizing extension is applied"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#ibi-vs.-gwas-variant-discovery-discovery-set-n5290",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#ibi-vs.-gwas-variant-discovery-discovery-set-n5290",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "IBI vs. GWAS: variant discovery (discovery set, n=5,290)",
+    "text": "IBI vs. GWAS: variant discovery (discovery set, n=5,290)\n\n\n\n\nGWAS (Bonferroni α = 0.05/19,276 = 2.59×10⁻⁶): 5 SNPs reach significance\nIBI: 188 SNPs exceed the population-level best-estimator’s \\(M_s\\) (i.e., a two-subgroup explanation beats the single best global explanation)\nOverlap: 40 of the top-188 SNPs shared between IBI and GWAS (agreement); 148 unique to one or the other (complementarity)\nMAF distribution: IBI-only SNPs have markedly lower MAF than GWAS-only SNPs — IBI’s individualized partitioning better surfaces rare-variant signal\nInformation gain (IG): IG for IBI’s top-188 SNPs &gt; GWAS’s top-188 SNPs &gt; 188 random SNPs (all comparisons directionally consistent with expectation)\n\n\n\n\n\n\n\n\n\n\nFig 3. Manhattan plots: IBI’s normalized \\(M_{s,r}\\) (A) vs. GWAS p-values (B)"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#patient-level-explanation",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#patient-level-explanation",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Patient-Level Explanation",
+    "text": "Patient-Level Explanation\n\n\nGWAS, using population-significant SNPs\n\nOnly 16 unique SNPs ever serve as a patient’s top explanatory variant\nOnly 12.9% of HTN patients carry a Bonferroni-significant SNP\nEven with relaxed threshold, only 15.7% covered\n\n\nIBI\n\n25 unique SNPs serve as top-1 explanatory variants (more diverse coverage)\n99.1% of HTN patients get a top SNP with posterior probability ≥ 0.10\n79.7% still covered at a stricter threshold of 0.20\n\n\n\nAverage patient carries 7,767 minor-allele SNPs (of 19,276)\nUnder a naive uniform prior this implies ~1.3×10⁻⁴ per-SNP prior probability\nIBI’s assigned posterior probabilities (0.08–0.99 range for top SNP) are far above this baseline\n\n\n\nThat’s the clinical gap this paper is trying to close — most hypertensive patients simply don’t carry a “significant” population-level variant"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#spotlight-one-snp-425-patients",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#spotlight-one-snp-425-patients",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Spotlight: One SNP, 425 Patients",
+    "text": "Spotlight: One SNP, 425 Patients\n\nIntronic SNP rs13265032 in the CSMD1 locus\nAssigned as the top explanatory variant for 46% (425/930) of HTN patients by IBI\nRanked 12th by IBI’s own scoring which implies a real signal, not noise\nRanked 5,361st by GWAS — essentially invisible to standard analysis\nCSMD1 variants have been independently linked to BP and hydrochlorothiazide response in prior literature"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#additional-findings-missed-by-gwas",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#additional-findings-missed-by-gwas",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Additional Findings missed by GWAS",
+    "text": "Additional Findings missed by GWAS\n\n\n\n\n\n\n\n\n\nVariant / Gene\nBiological relevance\nIBI rank\nGWAS rank\n\n\n\n\nrs37369 (AGXT2)\nCardiorenal traits, renal function\nhigh\nlow\n\n\nrs11575542 (DDC)\nRenal dopamine / BP regulation\nhigh\nlow\n\n\nrs723580 (EPO-linked)\nRed blood cell traits ↔︎ hypertension\nhigh\nlow\n\n\nBCHE, GRIK4, MALRD1 loci\nPrior BP associations in literature\nhigh\nlow"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#predictive-performance-held-out-test-set-n1323",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#predictive-performance-held-out-test-set-n1323",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Predictive performance (held-out test set, n=1,323)",
+    "text": "Predictive performance (held-out test set, n=1,323)\n\n\n\n\n\n\n\n\n\nFig 4. ROC curves: random SNPs (AUROC 0.50), GWAS top SNPs (0.55), IBI top SNPs (0.59–0.60)\n\n\n\n\nGenetic risk scores (GRS) built from top-1 and top-3 SNPs (weighted by odds ratio for GWAS, by \\(M_{s,r}\\) for IBI), evaluated via AUROC:\n\n\n\nSNP source\nTop-1 AUROC\nTop-3 AUROC\n\n\n\n\nRandom\n0.50\n0.50\n\n\nGWAS\n0.55\n0.55\n\n\nIBI\n0.59\n0.60\n\n\n\nImprovement of IBI over GWAS is statistically significant (pROC package): p = 0.05 (top-1), p = 0.01 (top-3)"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#strengths-of-the-study",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#strengths-of-the-study",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Strengths of the Study",
+    "text": "Strengths of the Study\n\nDirect, apples-to-apples comparison against GWAS in the same cohort\nMultiple independent lines of evidence: overlap analysis, information gain, MAF distribution, literature cross-checks, held-out prediction\nFully reproducible: code and summary data are public on GitHub\nGrounded in a well-characterized, real longitudinal cohort (Framingham)\n\n\n~30–45 sec."
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#questions-limitations",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#questions-limitations",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Questions & Limitations",
+    "text": "Questions & Limitations\n\nDoes not yet adjust for age, sex, population structure, or family relatedness (planned: linear mixed models)\nAssociations are not necessarily causal, they are confounded by LD and population structure\nAUROC improvement (0.55 → 0.59–0.60) is real but modest\nSingle cohort (FHS), genotyping array rather than whole-genome sequencing\n“Patients-like-me” subgroup size can be very small for rare variants — stability of estimates worth scrutinizing"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#next-steps",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#next-steps",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Next steps",
+    "text": "Next steps\n\nExtend to whole-genome sequencing data (rare variants are IBI’s sweet spot)\nGeneralize beyond discrete traits to continuous traits (swap BDeu → BIC score) — e.g., lipid levels, continuous BP\nIncorporate linear mixed models for population structure / relatedness\nSearch for combinations of variants acting jointly, not just one at a time\nFine-mapping / functional validation / Mendelian randomization to move from association toward causation"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#key-messages",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#key-messages",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Key Messages",
+    "text": "Key Messages\n\nGWAS finds what matters on average — not necessarily what matters for the patient in front of you\nIBI reframes variant discovery around the individual’s genomic background, by scoring a “patients-like-me” subgroup separately from everyone else\nIn the Framingham cohort, IBI explained far more hypertensive patients (99% vs. 16%), surfaced biologically plausible rare variants GWAS missed, and gave a modest but significant boost in predictive accuracy"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#open-discussion",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#open-discussion",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Open Discussion",
+    "text": "Open Discussion\n\nApplicability to my research - Identifying Digital Twin Similar Patients for future trajectory prediction\nQuestions?"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#bayesian-networks-bayesian-inference",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#bayesian-networks-bayesian-inference",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Bayesian Networks & Bayesian Inference",
+    "text": "Bayesian Networks & Bayesian Inference\n\n\nBayesian network: a directed acyclic graph (DAG) where nodes are random variables and edges encode probabilistic (and candidate causal) dependencies. The joint distribution factorizes along the graph\nBayesian inference: updating a prior belief about a hypothesis with observed data (via the likelihood) to get a posterior belief using Bayes’ rule\n\n\n\n\n\n\nflowchart LR\n    P[\"Prior&lt;br/&gt;P(H)\"] --&gt; R{\"Bayes' Rule\"}\n    L[\"Likelihood&lt;br/&gt;P(D | H)\"] --&gt; R\n    R --&gt; Po[\"Posterior&lt;br/&gt;P(H | D)\"]\n\n\n\n\n\n\n\n\n\n\n\n\n\nBN\n\n\n\nV1\n\nVariant V1\n\n\n\nT\n\nTrait T\n(Hypertension)\n\n\n\nV1-&gt;T\n\n\n\n\n\nV2\n\nVariant V2\n\n\n\nV2-&gt;T"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#marginal-likelihood-bayesian-scoring",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#marginal-likelihood-bayesian-scoring",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Marginal Likelihood & Bayesian Scoring",
+    "text": "Marginal Likelihood & Bayesian Scoring\n\nMarginal likelihood \\(P(D \\mid \\text{model})\\): the probability of the observed data, integrating out uncertainty in the model’s parameters. This is used to compare candidate network structures without overfitting to one parameter setting\nBDeu score (Bayesian Dirichlet equivalent uniform): a closed-form marginal likelihood for discrete variables with a uniform structural prior. In this study, IBI uses BDeu for binary HTN status\nBIC (Bayesian information criterion): a large-sample approximation to marginal likelihood, applicable to continuous variables. Under future work, the authors’ proposed swap-in for continuous traits like lipid levels would need to use BIC"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#individualized-causal-inference",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#individualized-causal-inference",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Individualized Causal Inference",
+    "text": "Individualized Causal Inference\n\nA family of methods that estimate a model specific to one instance (a patient, a tumor) rather than a single model averaged over the whole population — by partitioning the population into an instance-relevant subgroup and its complement, then combining subgroup-specific explanations.\n\n\n\n\n\n\nflowchart TD\n    Pop[\"Full population D\"] --&gt; D1[\"Subgroup D(Vs=1)&lt;br/&gt;'patients like me'\"]\n    Pop --&gt; D0[\"Subgroup D(Vs=0)&lt;br/&gt;everyone else\"]\n    D1 --&gt; M1[\"Score M(s)¹\"]\n    D0 --&gt; M0[\"Score M(r)⁰\"]\n    M1 --&gt; C[\"Combined score M(s,r)\"]\n    M0 --&gt; C\n    C --&gt; Post[\"Normalized → personalized&lt;br/&gt;posterior probability\"]\n\n\n\n\n\n\nLineage: TCI (tumor-specific causal inference, one tumor genome at a time) serves as an inspiration for IBI (this paper, one patient’s genome at a time)"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#confounding-ld-population-structure",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#confounding-ld-population-structure",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Confounding: LD & Population Structure",
+    "text": "Confounding: LD & Population Structure\nConfounding: a third variable that influences both the “exposure” (a SNP) and the “outcome” (HTN), creating a spurious or inflated association\n\n\n\n\n\n\n\nConfound\n\n\n\nA\n\nAncestry /\nPopulation structure\n\n\n\nS\n\nObserved SNP\n\n\n\nA-&gt;S\n\n\n\n\n\nH\n\nHypertension\n\n\n\nA-&gt;H\n\n\n\n\n\nS-&gt;H\n\n\n  association\n  (possibly confounded)\n\n\n\n\n\n\n\n\n\nLinkage disequilibrium (LD): nearby SNPs are correlated, so a flagged SNP may just be “riding along” with the true causal variant\nPopulation structure: ancestry differences can independently affect both allele frequencies and disease prevalence, inflating spurious associations — this is exactly why the authors flag it as unmodeled in the current IBI implementation"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#information-gain",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#information-gain",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Information Gain",
+    "text": "Information Gain\nInformation gain (IG): the reduction in uncertainty (entropy) about the outcome (HTN status) once you know a variant’s genotype\n\\[IG(T; V) = H(T) - H(T \\mid V)\\] - \\(H(T)\\): entropy of HTN status before knowing anything about the variant. - \\(H(T \\mid V)\\): remaining entropy after conditioning on the variant’s genotype\n\nA variant that perfectly separates cases from controls has high IG; a variant unrelated to HTN has IG ≈ 0\nUsed in the paper as an independent check that IBI-selected SNPs are more informative about HTN than GWAS-selected or random SNPs"
+  },
+  {
+    "objectID": "presentations/F26_GMS7858/ibi-hypertension.html#thank-you",
+    "href": "presentations/F26_GMS7858/ibi-hypertension.html#thank-you",
+    "title": "An Individualized Bayesian Method for Estimating Genomic Variants of Hypertension",
+    "section": "Thank You",
+    "text": "Thank You\n\nPaper : Rahman MA, Cai C, Bo N, McNamara DM, Ding Y, Cooper GF, Lu X, Liu J. An individualized Bayesian method for estimating genomic variants of hypertension. BMC Genomics 23(Suppl 5):863 (2022). doi.org/10.1186/s12864-023-09757-9\nCode & summary data: github.com/asadcfc/IBI"
+  },
+  {
+    "objectID": "posts/2023-10-19-Quartoing/index.html",
+    "href": "posts/2023-10-19-Quartoing/index.html",
+    "title": "Quartoing",
+    "section": "",
+    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Chaudhari, Piyush},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nChaudhari, Piyush. 2023. “Quartoing.” October 16. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Piyush Chaudhari",
+    "section": "",
+    "text": "Quartoing\n\n\n\nQuarto\n\nR\n\nWebsite\n\n\n\nThe story of an old procrastination and a young inspiration\n\n\n\n\n\nOct 16, 2023\n\n\nPiyush Chaudhari\n\n\n\n\n\n\n\n\n\n\n\n\neasygenetics\n\n\n\nQuarto\n\nR\n\nTeaching\n\nShiny\n\n\n\n\n\n\n\n\n\nApr 24, 2018\n\n\nCandice Sammons, Piyush Chaudhari\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "archive_bkup/index.html",
+    "href": "archive_bkup/index.html",
+    "title": "Piyush Chaudhari",
+    "section": "",
+    "text": "WelcomeWorkEducationProjectsPublications\n\n\nI am a Data Analyst working at UF Health Integrated Data Repository. My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the OneFlorida+ Clinical Research Consortium. In my current role, I work on common data models like OMOP and PCORNET. Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests.\n\n\n\nData Management Analyst III\nUF Health Office of Data Science and Research Implementation\n\nDesign and develop data science pipelines to improve the coverage and quality of the data\nWorking as an honest broker for research data focusing on electronic health records\nRunning ETL pipelines for OneFlorida+, All of Us Research Program and AoU CLAD, National COVID Cohort Collaborative- N3C and other custom requests\nAdding new elements to source databases\nDevelop software and packages to run and validate data in OMOP Common Data Model\nConduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners\n\n\n\nData Management Analyst II\nUF Department of Epidemiology\n\nLead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions\nCreating visualizations, hotspots and heatmap analysis for community intervention planning\n\n\n\n\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)\n\n\n\nComing up 12345 ……\n\n\n\nAyodeji Otufowora, Kathleen L. Egan, Piyush V. Chaudhari, Aderonke A. Okusanya, Afeez O. Ogidan, Linda B. Cottler Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida. The Journal of the American Board of Family Medicine Dec 2023, jabfm.2023.230227R1; DOI: 10.3122/jabfm.2023.230227R1\nFidler AL, Chaudhari P, Sims V, Payne-Murphy J, Fischer J, Cottler LB. Insomnia among community members in Florida: Associations with demographics, health conditions, and social support. J Clin Transl Sci. 2023 May 5;7(1):e128. doi: 10.1017/cts.2023.536. PMID: 37313380; PMCID: PMC10260341.\nAustin-Datta RJ, Chaudhari PV, Cheng TD, Klarenberg G, Striley CW, Cottler LB. Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program. J Community Health. 2023 Apr;48(2):338-346. doi: 10.1007/s10900-022-01169-2. Epub 2022 Nov 27. PMID: 36436165; PMCID: PMC9702843.\nCheng TD, Chaudhari PV, Bitsie KR, Striley CW, Varma DS, Cottler LB. The HealthStreet Cancer Survivor Cohort: a Community Registry for Cancer Research. J Cancer Surviv. 2022 Jan 28:10.1007/s11764-022-01173-4. doi: 10.1007/s11764-022-01173-4. Epub ahead of print. PMID: 35089522; PMCID: PMC9329490."
+  },
+  {
+    "objectID": "archive_bkup/Untitled/2023-10-19-Quartoing/index.html",
+    "href": "archive_bkup/Untitled/2023-10-19-Quartoing/index.html",
+    "title": "Quartoing",
+    "section": "",
+    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Chaudhari, Piyush},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nChaudhari, Piyush. 2023. “Quartoing.” October 16. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "📍 Gainesville, Florida\n✉️ piyushchaudhari@ufl.edu\n🌐 pc-piyush.github.io\n  \n\n\n\nI work at the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization\n\n\n\n\n\nStatistical Machine Learning\nClinical Informatics and Decision Support\nPatient Representation Learning\nPhenotyping and Sub-Phenotyping\nPrivacy-Preserving Zero Knowledge Learning\nData Democratization\n\n\n\n\n\n\n\nPython | R | SQL | SAS | Markdown\n\n\n\n\nOMOP | i2b2 | PCORNET | EPIC Clarity | EPIC Caboodle | EPIC Cosmos\n\n\n\nMS Power BI | SPSS | RedCAP | ArcGIS | Git | SAP Data Services | SAP Business Objects\n\n\n\n\n\nPhD in Biomedical Informatics (currently pursuing)\nUniversity of Florida | Gainesville, FL (2025-current)\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)\n\n\n\n\n\n\n\nUF Health Integrated Data Repository (Feb 2023 - Current)\n\nDesigning and developing data science pipelines to improve the coverage and quality of data for UF Health Research Enterprise\nCurating data elements from EPIC Clarity and Caboodle and make them available for use in interdisciplinary research projects\nDeveloping Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like OMOP, PCORNET and i2b2\nMaintaining databases for free-text sources like clinical notes, order and pathology reports, social determinants of health variables, genetic testing data, and additional health data sources\nBuilding patient-centric Digital Twin technology for UF Health Enterprise and implementing in i2b2 to improve cohort phenotyping\nLiasioning as an honest broker between researchers and UF Health/Shands data server to provision access to data based on IRB approved research protocols  \nCurrently working on projects involving UF Health, UF Cancer Institute, UF Clinical and Translational Science Institute, UF College of Medicine, UF College of Nursing, UF College of Dentistry, and OneFlorida+ Clinical Research Consortium\nSelected accomplishments\n\n10x+ improvement in data delivery for free-text clinical notes and order reports\n5x+ improvement in data delivery through OMOP Common Data Model\n5x+ improvement for custom de-identification for data delivery\n\n\n\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nConducted statistical analyses, data management and quality control at UF HealthStreet (substance abuse and public health epidemiology data) for ~13,000 individuals across 700 data points\nCreated visualizations, hotspots and heatmap analysis for intervention planning\nWorked with UF Integrated Data Repository to link self-reported data from community members to their Electronic Health Records at UF Health, analyzing data from UF Survey Research Center, BEBR \nProvided technical support for DSM-V software (developed on MS Access)\n\n\n\n\n\n\n\nTodoSelected Grants: Lead Statistician and Data Management Analyst\n\n\n\n\n\n\n\nProgram to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus Principal Investigator: Linda B. Cottler (Funded by CDC)\nWomen Helping Women- Lung Cancer Screening Study Principal Investigator: Catherine W. Striley; (Funded by UF Cancer Center; IRB202100009)\nCommunity Engagement and Research Program- HealthStreet Principal Investigator: Linda B. Cottler, (Funded by NIH NCATS; IRB201600459)\nPrecision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities Principal Investigator: Linda B. Cottler (Funded by FL Department of Health)\nStudy of Non-Oral Administration of Prescription Stimulants Principal Investigator: Linda B. Cottler (Funded by Arbor Pharmaceuticals)\n\n\n\n\n\n\n\nUF Department of Biostatistics (Aug 2017-May 2018)\n\nInvolved in data reconfiguration, management, and consulting for the Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)\n\n\n\n\n\n\n\n\n\nCurrently assisting with syllabus design and curation of classroom materials for GMS 6803 Data Science for Clinical Research (Fall 2026)\n\nCourse instructors: Drs. Yi Guo and Mei Liu\n\nConducting i2b2 and OHDSI ATLAS training workshops for professionally diverse cohorts like medical students, residents, clinical faculty, research staff and students at UF Health and other national research partners (OneFlorida+) from (Feb 2023 - Current)\nMentored for EGN 4912 Engineering Directed Independent Research undergraduate program (Spring 2026)\nManaged statistical design and provided research mentorship for graduate students and postdoctoral fellows working on Cottlerlab legacy and ongoing research data (Jun 2018 - Jan 2023)\n\n\n\n\nYou can find my publications in the Research tab or at my Google Scholar page \n\n\n\n\nEmerging Research Scholars PhD Fellow (Aug 2025 - Dec 2026)\nUniversity of Florida Superior Accomplishment Award\n\nUniversity-Gold Award for Individual Employee Performance in Finance, Research, and Compliance (Apr 2025)\nDivision-Level Winner (Division 5- Health Affairs) for Individual Employee Performance (Mar 2025)\n\n\n\n\n\n\n\nCompleted EPIC-led coursework for Cosmos (2025), Cogito, Clarity Data Model, Caboodle Data Model and Clinical Data Model (2024)\nSAS Certified Specialist: Base Programming Using SAS 9.4 (2021)\nDesign for Six Sigma (License: 13361772) and Six Sigma Green Belt Certified (License: 13361771) (2018)\n\n\n\n\n\n\nAvailable upon request"
+  },
+  {
+    "objectID": "cv.html#summary",
+    "href": "cv.html#summary",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "I work at the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization"
+  },
+  {
+    "objectID": "cv.html#research-interests",
+    "href": "cv.html#research-interests",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Statistical Machine Learning\nClinical Informatics and Decision Support\nPatient Representation Learning\nPhenotyping and Sub-Phenotyping\nPrivacy-Preserving Zero Knowledge Learning\nData Democratization"
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Python | R | SQL | SAS | Markdown\n\n\n\n\nOMOP | i2b2 | PCORNET | EPIC Clarity | EPIC Caboodle | EPIC Cosmos\n\n\n\nMS Power BI | SPSS | RedCAP | ArcGIS | Git | SAP Data Services | SAP Business Objects"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "PhD in Biomedical Informatics (currently pursuing)\nUniversity of Florida | Gainesville, FL (2025-current)\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)"
+  },
+  {
+    "objectID": "cv.html#work-experience",
+    "href": "cv.html#work-experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "UF Health Integrated Data Repository (Feb 2023 - Current)\n\nDesigning and developing data science pipelines to improve the coverage and quality of data for UF Health Research Enterprise\nCurating data elements from EPIC Clarity and Caboodle and make them available for use in interdisciplinary research projects\nDeveloping Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like OMOP, PCORNET and i2b2\nMaintaining databases for free-text sources like clinical notes, order and pathology reports, social determinants of health variables, genetic testing data, and additional health data sources\nBuilding patient-centric Digital Twin technology for UF Health Enterprise and implementing in i2b2 to improve cohort phenotyping\nLiasioning as an honest broker between researchers and UF Health/Shands data server to provision access to data based on IRB approved research protocols  \nCurrently working on projects involving UF Health, UF Cancer Institute, UF Clinical and Translational Science Institute, UF College of Medicine, UF College of Nursing, UF College of Dentistry, and OneFlorida+ Clinical Research Consortium\nSelected accomplishments\n\n10x+ improvement in data delivery for free-text clinical notes and order reports\n5x+ improvement in data delivery through OMOP Common Data Model\n5x+ improvement for custom de-identification for data delivery\n\n\n\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nConducted statistical analyses, data management and quality control at UF HealthStreet (substance abuse and public health epidemiology data) for ~13,000 individuals across 700 data points\nCreated visualizations, hotspots and heatmap analysis for intervention planning\nWorked with UF Integrated Data Repository to link self-reported data from community members to their Electronic Health Records at UF Health, analyzing data from UF Survey Research Center, BEBR \nProvided technical support for DSM-V software (developed on MS Access)\n\n\n\n\n\n\n\nTodoSelected Grants: Lead Statistician and Data Management Analyst\n\n\n\n\n\n\n\nProgram to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus Principal Investigator: Linda B. Cottler (Funded by CDC)\nWomen Helping Women- Lung Cancer Screening Study Principal Investigator: Catherine W. Striley; (Funded by UF Cancer Center; IRB202100009)\nCommunity Engagement and Research Program- HealthStreet Principal Investigator: Linda B. Cottler, (Funded by NIH NCATS; IRB201600459)\nPrecision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities Principal Investigator: Linda B. Cottler (Funded by FL Department of Health)\nStudy of Non-Oral Administration of Prescription Stimulants Principal Investigator: Linda B. Cottler (Funded by Arbor Pharmaceuticals)\n\n\n\n\n\n\n\nUF Department of Biostatistics (Aug 2017-May 2018)\n\nInvolved in data reconfiguration, management, and consulting for the Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)"
+  },
+  {
+    "objectID": "cv.html#teaching-and-mentorship",
+    "href": "cv.html#teaching-and-mentorship",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Currently assisting with syllabus design and curation of classroom materials for GMS 6803 Data Science for Clinical Research (Fall 2026)\n\nCourse instructors: Drs. Yi Guo and Mei Liu\n\nConducting i2b2 and OHDSI ATLAS training workshops for professionally diverse cohorts like medical students, residents, clinical faculty, research staff and students at UF Health and other national research partners (OneFlorida+) from (Feb 2023 - Current)\nMentored for EGN 4912 Engineering Directed Independent Research undergraduate program (Spring 2026)\nManaged statistical design and provided research mentorship for graduate students and postdoctoral fellows working on Cottlerlab legacy and ongoing research data (Jun 2018 - Jan 2023)"
+  },
+  {
+    "objectID": "cv.html#publications",
+    "href": "cv.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "You can find my publications in the Research tab or at my Google Scholar page"
+  },
+  {
+    "objectID": "cv.html#awards-and-scholarships",
+    "href": "cv.html#awards-and-scholarships",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Emerging Research Scholars PhD Fellow (Aug 2025 - Dec 2026)\nUniversity of Florida Superior Accomplishment Award\n\nUniversity-Gold Award for Individual Employee Performance in Finance, Research, and Compliance (Apr 2025)\nDivision-Level Winner (Division 5- Health Affairs) for Individual Employee Performance (Mar 2025)"
+  },
+  {
+    "objectID": "cv.html#certifications",
+    "href": "cv.html#certifications",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Completed EPIC-led coursework for Cosmos (2025), Cogito, Clarity Data Model, Caboodle Data Model and Clinical Data Model (2024)\nSAS Certified Specialist: Base Programming Using SAS 9.4 (2021)\nDesign for Six Sigma (License: 13361772) and Six Sigma Green Belt Certified (License: 13361771) (2018)"
+  },
+  {
+    "objectID": "cv.html#references",
+    "href": "cv.html#references",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Available upon request"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Piyush Chaudhari",
+    "section": "",
+    "text": "I am a Data Analyst working at UF Health Integrated Data Repository. My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the OneFlorida+ Clinical Research Consortium. In my current role, I work on common data models like OMOP and PCORNET. Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests."
+  },
+  {
     "objectID": "posts/2018-04-24-easygenetics/index.html#nav",
     "href": "posts/2018-04-24-easygenetics/index.html#nav",
     "title": "easygenetics",
@@ -684,118 +985,6 @@
     "title": "easygenetics",
     "section": "Haseman-Elston_Regression()",
     "text": "Haseman-Elston_Regression()\n\n\n\n\nFig 7: Haseman-Elston_Regression()"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Piyush Chaudhari",
-    "section": "",
-    "text": "I am a Data Analyst working at UF Health Integrated Data Repository. My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the OneFlorida+ Clinical Research Consortium. In my current role, I work on common data models like OMOP and PCORNET. Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests."
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "📍 Gainesville, Florida\n✉️ piyushchaudhari@ufl.edu\n🌐 pc-piyush.github.io\n  \n\n\n\nI work at the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization\n\n\n\n\n\nStatistical Machine Learning\nClinical Informatics and Decision Support\nPatient Representation Learning\nPhenotyping and Sub-Phenotyping\nPrivacy-Preserving Zero Knowledge Learning\nData Democratization\n\n\n\n\n\n\n\nPython | R | SQL | SAS | Markdown\n\n\n\n\nOMOP | i2b2 | PCORNET | EPIC Clarity | EPIC Caboodle | EPIC Cosmos\n\n\n\nMS Power BI | SPSS | RedCAP | ArcGIS | Git | SAP Data Services | SAP Business Objects\n\n\n\n\n\nPhD in Biomedical Informatics (currently pursuing)\nUniversity of Florida | Gainesville, FL (2025-current)\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)\n\n\n\n\n\n\n\nUF Health Integrated Data Repository (Feb 2023 - Current)\n\nDesigning and developing data science pipelines to improve the coverage and quality of data for UF Health Research Enterprise\nCurating data elements from EPIC Clarity and Caboodle and make them available for use in interdisciplinary research projects\nDeveloping Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like OMOP, PCORNET and i2b2\nMaintaining databases for free-text sources like clinical notes, order and pathology reports, social determinants of health variables, genetic testing data, and additional health data sources\nBuilding patient-centric Digital Twin technology for UF Health Enterprise and implementing in i2b2 to improve cohort phenotyping\nLiasioning as an honest broker between researchers and UF Health/Shands data server to provision access to data based on IRB approved research protocols  \nCurrently working on projects involving UF Health, UF Cancer Institute, UF Clinical and Translational Science Institute, UF College of Medicine, UF College of Nursing, UF College of Dentistry, and OneFlorida+ Clinical Research Consortium\nSelected accomplishments\n\n10x+ improvement in data delivery for free-text clinical notes and order reports\n5x+ improvement in data delivery through OMOP Common Data Model\n5x+ improvement for custom de-identification for data delivery\n\n\n\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nConducted statistical analyses, data management and quality control at UF HealthStreet (substance abuse and public health epidemiology data) for ~13,000 individuals across 700 data points\nCreated visualizations, hotspots and heatmap analysis for intervention planning\nWorked with UF Integrated Data Repository to link self-reported data from community members to their Electronic Health Records at UF Health, analyzing data from UF Survey Research Center, BEBR \nProvided technical support for DSM-V software (developed on MS Access)\n\n\n\n\n\n\n\nTodoSelected Grants: Lead Statistician and Data Management Analyst\n\n\n\n\n\n\n\nProgram to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus Principal Investigator: Linda B. Cottler (Funded by CDC)\nWomen Helping Women- Lung Cancer Screening Study Principal Investigator: Catherine W. Striley; (Funded by UF Cancer Center; IRB202100009)\nCommunity Engagement and Research Program- HealthStreet Principal Investigator: Linda B. Cottler, (Funded by NIH NCATS; IRB201600459)\nPrecision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities Principal Investigator: Linda B. Cottler (Funded by FL Department of Health)\nStudy of Non-Oral Administration of Prescription Stimulants Principal Investigator: Linda B. Cottler (Funded by Arbor Pharmaceuticals)\n\n\n\n\n\n\n\nUF Department of Biostatistics (Aug 2017-May 2018)\n\nInvolved in data reconfiguration, management, and consulting for the Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)\n\n\n\n\n\n\n\n\n\nCurrently assisting with syllabus design and curation of classroom materials for GMS 6803 Data Science for Clinical Research (Fall 2026)\n\nCourse instructors: Drs. Yi Guo and Mei Liu\n\nConducting i2b2 and OHDSI ATLAS training workshops for professionally diverse cohorts like medical students, residents, clinical faculty, research staff and students at UF Health and other national research partners (OneFlorida+) from (Feb 2023 - Current)\nMentored for EGN 4912 Engineering Directed Independent Research undergraduate program (Spring 2026)\nManaged statistical design and provided research mentorship for graduate students and postdoctoral fellows working on Cottlerlab legacy and ongoing research data (Jun 2018 - Jan 2023)\n\n\n\n\nYou can find my publications in the Research tab or at my Google Scholar page \n\n\n\n\nEmerging Research Scholars PhD Fellow (Aug 2025 - Dec 2026)\nUniversity of Florida Superior Accomplishment Award\n\nUniversity-Gold Award for Individual Employee Performance in Finance, Research, and Compliance (Apr 2025)\nDivision-Level Winner (Division 5- Health Affairs) for Individual Employee Performance (Mar 2025)\n\n\n\n\n\n\n\nCompleted EPIC-led coursework for Cosmos (2025), Cogito, Clarity Data Model, Caboodle Data Model and Clinical Data Model (2024)\nSAS Certified Specialist: Base Programming Using SAS 9.4 (2021)\nDesign for Six Sigma (License: 13361772) and Six Sigma Green Belt Certified (License: 13361771) (2018)\n\n\n\n\n\n\nAvailable upon request"
-  },
-  {
-    "objectID": "cv.html#summary",
-    "href": "cv.html#summary",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "I work at the intersection of Statistics and Machine Learning, and their applications in Clinical Informatics, Modeling and Computation, and Data Democratization"
-  },
-  {
-    "objectID": "cv.html#research-interests",
-    "href": "cv.html#research-interests",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Statistical Machine Learning\nClinical Informatics and Decision Support\nPatient Representation Learning\nPhenotyping and Sub-Phenotyping\nPrivacy-Preserving Zero Knowledge Learning\nData Democratization"
-  },
-  {
-    "objectID": "cv.html#technical-skills",
-    "href": "cv.html#technical-skills",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Python | R | SQL | SAS | Markdown\n\n\n\n\nOMOP | i2b2 | PCORNET | EPIC Clarity | EPIC Caboodle | EPIC Cosmos\n\n\n\nMS Power BI | SPSS | RedCAP | ArcGIS | Git | SAP Data Services | SAP Business Objects"
-  },
-  {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "PhD in Biomedical Informatics (currently pursuing)\nUniversity of Florida | Gainesville, FL (2025-current)\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)"
-  },
-  {
-    "objectID": "cv.html#work-experience",
-    "href": "cv.html#work-experience",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "UF Health Integrated Data Repository (Feb 2023 - Current)\n\nDesigning and developing data science pipelines to improve the coverage and quality of data for UF Health Research Enterprise\nCurating data elements from EPIC Clarity and Caboodle and make them available for use in interdisciplinary research projects\nDeveloping Extract Transform Load (ETL) pipelines to deploy and validate data in Common Data Models like OMOP, PCORNET and i2b2\nMaintaining databases for free-text sources like clinical notes, order and pathology reports, social determinants of health variables, genetic testing data, and additional health data sources\nBuilding patient-centric Digital Twin technology for UF Health Enterprise and implementing in i2b2 to improve cohort phenotyping\nLiasioning as an honest broker between researchers and UF Health/Shands data server to provision access to data based on IRB approved research protocols  \nCurrently working on projects involving UF Health, UF Cancer Institute, UF Clinical and Translational Science Institute, UF College of Medicine, UF College of Nursing, UF College of Dentistry, and OneFlorida+ Clinical Research Consortium\nSelected accomplishments\n\n10x+ improvement in data delivery for free-text clinical notes and order reports\n5x+ improvement in data delivery through OMOP Common Data Model\n5x+ improvement for custom de-identification for data delivery\n\n\n\n\n\nUF Department of Epidemiology (Jun 2018-Jan 2023)\n\nConducted statistical analyses, data management and quality control at UF HealthStreet (substance abuse and public health epidemiology data) for ~13,000 individuals across 700 data points\nCreated visualizations, hotspots and heatmap analysis for intervention planning\nWorked with UF Integrated Data Repository to link self-reported data from community members to their Electronic Health Records at UF Health, analyzing data from UF Survey Research Center, BEBR \nProvided technical support for DSM-V software (developed on MS Access)\n\n\n\n\n\n\n\nTodoSelected Grants: Lead Statistician and Data Management Analyst\n\n\n\n\n\n\n\nProgram to Alleviate National Disparities in Ethnic and Minority Immunizations in the Community, Vaccination and Vaccine Education Focus Principal Investigator: Linda B. Cottler (Funded by CDC)\nWomen Helping Women- Lung Cancer Screening Study Principal Investigator: Catherine W. Striley; (Funded by UF Cancer Center; IRB202100009)\nCommunity Engagement and Research Program- HealthStreet Principal Investigator: Linda B. Cottler, (Funded by NIH NCATS; IRB201600459)\nPrecision Public Health Approaches to Reduce Disparities in Memory Disorder Screening in Rural Minority Communities Principal Investigator: Linda B. Cottler (Funded by FL Department of Health)\nStudy of Non-Oral Administration of Prescription Stimulants Principal Investigator: Linda B. Cottler (Funded by Arbor Pharmaceuticals)\n\n\n\n\n\n\n\nUF Department of Biostatistics (Aug 2017-May 2018)\n\nInvolved in data reconfiguration, management, and consulting for the Southeastern and Coastal Center for Agricultural Safety and Health (SEC-CAgSH)"
-  },
-  {
-    "objectID": "cv.html#teaching-and-mentorship",
-    "href": "cv.html#teaching-and-mentorship",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Currently assisting with syllabus design and curation of classroom materials for GMS 6803 Data Science for Clinical Research (Fall 2026)\n\nCourse instructors: Drs. Yi Guo and Mei Liu\n\nConducting i2b2 and OHDSI ATLAS training workshops for professionally diverse cohorts like medical students, residents, clinical faculty, research staff and students at UF Health and other national research partners (OneFlorida+) from (Feb 2023 - Current)\nMentored for EGN 4912 Engineering Directed Independent Research undergraduate program (Spring 2026)\nManaged statistical design and provided research mentorship for graduate students and postdoctoral fellows working on Cottlerlab legacy and ongoing research data (Jun 2018 - Jan 2023)"
-  },
-  {
-    "objectID": "cv.html#publications",
-    "href": "cv.html#publications",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "You can find my publications in the Research tab or at my Google Scholar page"
-  },
-  {
-    "objectID": "cv.html#awards-and-scholarships",
-    "href": "cv.html#awards-and-scholarships",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Emerging Research Scholars PhD Fellow (Aug 2025 - Dec 2026)\nUniversity of Florida Superior Accomplishment Award\n\nUniversity-Gold Award for Individual Employee Performance in Finance, Research, and Compliance (Apr 2025)\nDivision-Level Winner (Division 5- Health Affairs) for Individual Employee Performance (Mar 2025)"
-  },
-  {
-    "objectID": "cv.html#certifications",
-    "href": "cv.html#certifications",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Completed EPIC-led coursework for Cosmos (2025), Cogito, Clarity Data Model, Caboodle Data Model and Clinical Data Model (2024)\nSAS Certified Specialist: Base Programming Using SAS 9.4 (2021)\nDesign for Six Sigma (License: 13361772) and Six Sigma Green Belt Certified (License: 13361771) (2018)"
-  },
-  {
-    "objectID": "cv.html#references",
-    "href": "cv.html#references",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Available upon request"
-  },
-  {
-    "objectID": "archive_bkup/Untitled/2023-10-19-Quartoing/index.html",
-    "href": "archive_bkup/Untitled/2023-10-19-Quartoing/index.html",
-    "title": "Quartoing",
-    "section": "",
-    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Chaudhari, Piyush},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nChaudhari, Piyush. 2023. “Quartoing.” October 16. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
-  },
-  {
-    "objectID": "archive_bkup/index.html",
-    "href": "archive_bkup/index.html",
-    "title": "Piyush Chaudhari",
-    "section": "",
-    "text": "WelcomeWorkEducationProjectsPublications\n\n\nI am a Data Analyst working at UF Health Integrated Data Repository. My work primarily focuses on designing and developing data science pipelines to improve the coverage and quality of the data, primarily for the OneFlorida+ Clinical Research Consortium. In my current role, I work on common data models like OMOP and PCORNET. Additionally, I also help research at UF by providing consultation for research teams, supporting feasibility and cohort discovery, and receiving and fulfilling research data requests.\n\n\n\nData Management Analyst III\nUF Health Office of Data Science and Research Implementation\n\nDesign and develop data science pipelines to improve the coverage and quality of the data\nWorking as an honest broker for research data focusing on electronic health records\nRunning ETL pipelines for OneFlorida+, All of Us Research Program and AoU CLAD, National COVID Cohort Collaborative- N3C and other custom requests\nAdding new elements to source databases\nDevelop software and packages to run and validate data in OMOP Common Data Model\nConduct i2b2 and OMOP ATLAS trainings and workshops for hospital and research partners\n\n\n\nData Management Analyst II\nUF Department of Epidemiology\n\nLead Statistician on projects with NIH, NCATS, CDC and NIDA to design targeted interventions\nCreating visualizations, hotspots and heatmap analysis for community intervention planning\n\n\n\n\n\nMaster of Science in Biostatistics\nUniversity of Florida | Gainesville, FL (2016-2018)\n\n\nBachelor of Technology in Biotechnology\nVellore Institute of Technology | India (2012 - 2016)\n\n\n\nComing up 12345 ……\n\n\n\nAyodeji Otufowora, Kathleen L. Egan, Piyush V. Chaudhari, Aderonke A. Okusanya, Afeez O. Ogidan, Linda B. Cottler Drug Deactivation Pouches for Primary Prevention of Opioid Overdose: Perceptions and Attitudes of Community Members in North Central Florida. The Journal of the American Board of Family Medicine Dec 2023, jabfm.2023.230227R1; DOI: 10.3122/jabfm.2023.230227R1\nFidler AL, Chaudhari P, Sims V, Payne-Murphy J, Fischer J, Cottler LB. Insomnia among community members in Florida: Associations with demographics, health conditions, and social support. J Clin Transl Sci. 2023 May 5;7(1):e128. doi: 10.1017/cts.2023.536. PMID: 37313380; PMCID: PMC10260341.\nAustin-Datta RJ, Chaudhari PV, Cheng TD, Klarenberg G, Striley CW, Cottler LB. Electronic Nicotine Delivery Systems (ENDS) use Among Members of a Community Engagement Program. J Community Health. 2023 Apr;48(2):338-346. doi: 10.1007/s10900-022-01169-2. Epub 2022 Nov 27. PMID: 36436165; PMCID: PMC9702843.\nCheng TD, Chaudhari PV, Bitsie KR, Striley CW, Varma DS, Cottler LB. The HealthStreet Cancer Survivor Cohort: a Community Registry for Cancer Research. J Cancer Surviv. 2022 Jan 28:10.1007/s11764-022-01173-4. doi: 10.1007/s11764-022-01173-4. Epub ahead of print. PMID: 35089522; PMCID: PMC9329490."
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Piyush Chaudhari",
-    "section": "",
-    "text": "Quartoing\n\n\n\nQuarto\n\nR\n\nWebsite\n\n\n\nThe story of an old procrastination and a young inspiration\n\n\n\n\n\nOct 16, 2023\n\n\nPiyush Chaudhari\n\n\n\n\n\n\n\n\n\n\n\n\neasygenetics\n\n\n\nQuarto\n\nR\n\nTeaching\n\nShiny\n\n\n\n\n\n\n\n\n\nApr 24, 2018\n\n\nCandice Sammons, Piyush Chaudhari\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/2023-10-19-Quartoing/index.html",
-    "href": "posts/2023-10-19-Quartoing/index.html",
-    "title": "Quartoing",
-    "section": "",
-    "text": "I have always preached that in this century and this year and all years forward, every should have a personal website. A part of it is my own leaning towards reading something on my phone, tablet or computer and not requiring any sort of app or software installation (in a sense, PDFs have overcome this limitation). But a more significant part of it is establishing a presence in this big village of world wide web where people perceive you more than what you show on it. What better way to put your work in the center of it..\nObviously, preaching doesn’t get things done, and thankfully so. So while for a long time, I have been giving these sermons about the importance of having a website, I never took the plunge myself. When I look back, I cannot come up with a better explanation than a simple fact that I was letting perfect be the enemy of good. It came with a good lesson- if you think something is a good idea, go ahead and do it.\nThe inspiration came from a fresh angle- my friend Katie. She was one of the people I did give this sermon to, and she just made it a project for herself. I wasn’t much surprised given her work ethic is unparalleled, and she doesn’t stop until she figures out how to execute something that interests her. Very proudly, she went ahead and created her Quarto website way before me. You can check it out here. Its still a work in progress, like mine is, and like most of the world is.\n\n\n\nCitationBibTeX citation:@online{chaudhari2023,\n  author = {Chaudhari, Piyush},\n  title = {Quartoing},\n  date = {2023-10-16},\n  url = {https://pc-piyush.github.io/posts/2023-10-19-Quartoing/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nChaudhari, Piyush. 2023. “Quartoing.” October 16. https://pc-piyush.github.io/posts/2023-10-19-Quartoing/."
   },
   {
     "objectID": "presentations/GMS6804_20260217/slides.html#limitations-in-current-methods-of-variant-interpretation",
